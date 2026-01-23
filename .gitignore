@@ -13,7 +13,8 @@ dist/
 # Compiled Python bytecode
 *.py[cod]
 
-# Log files
+# Log filesgit add .gitignore
+
 *.log
 
 # Package files
