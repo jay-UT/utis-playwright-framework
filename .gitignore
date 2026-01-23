@@ -48,3 +48,38 @@ Thumbs.db
 *.mov
 *.wmv
 
+
+
+# Playwright
+node_modules/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/
+reports/
+# ======================
+# Allure
+# ======================
+allure-results/
+allure-report/
+
+# ======================
+# Environment
+# ======================
+.env
+.env.*
+
+# ======================
+# Logs
+# ======================
+*.log
+
+# ======================
+# IDE / OS
+# ======================
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+git add .gitignore
