@@ -48,3 +48,18 @@ Thumbs.db
 *.mov
 *.wmv
 
+#playwright files
+git/
+github/
+gitignore
+node_modules/
+package-lock.json
+package.json
+pages/
+playwright.config.ts
+test.config.ts
+testdata/
+tests/
+utils/
+.env
+
