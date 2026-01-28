@@ -1,4 +1,7 @@
 import { defineConfig, devices } from '@playwright/test'; 
+const timestamp = new Date()
+  .toISOString()
+  .replace(/[:.]/g, '-');
   
 export default defineConfig({ 
   timeout: 30 * 1000,   //30000 ms(30 secs) 
@@ -10,7 +13,7 @@ export default defineConfig({
   workers: 1, 
   
   reporter: [ 
-    ['html',{ outputFolder: 'reports/html-report', open: 'never' }], 
+    ['html',{ outputFolder: `reports/html-report-${timestamp}`, open: 'never' }], 
     ['allure-playwright'], 
     ['dot'], 
     ['list'] 

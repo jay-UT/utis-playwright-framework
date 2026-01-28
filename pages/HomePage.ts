@@ -13,6 +13,9 @@ export class HomePage {
     public readonly sign_in_error_icon_xpath: Locator;
     public readonly sign_in_error_msg_xpath: Locator;
     public readonly address_tooltip_xpath:Locator;
+    public readonly sliderBanner_xpath:Locator;
+    public readonly sliderBannerActive_xpath:Locator;
+    public readonly slideNavButton:Locator;
 
     //constructor
     constructor(page:Page){
@@ -26,6 +29,9 @@ export class HomePage {
         this.sign_in_error_icon_xpath=page.locator("//div[@class='errorIcon']")
         this.sign_in_error_msg_xpath=page.locator("//div[@class='errorIcon']/following::div[contains(@class,'errorMessage')]")
         this.address_tooltip_xpath=page.locator("(//div[@class='address-info cursor-pointer'])[1]")
+        this.sliderBanner_xpath = page.locator("//div[@class='carousel slide hero-carousel-container']")
+        this.sliderBannerActive_xpath=page.locator("//div[@class='carousel-item active']")
+        this.slideNavButton=page.locator("(//span[@class='carousel-control-next-icon'])[1]")
     //Action methods
     }
     async isHomePageExist(){
