@@ -2,14 +2,22 @@
   "name": "henryscheinwebbdd",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+  "clean": "powershell -Command \"if (Test-Path allure-results) { Remove-Item -Recurse -Force allure-results/* }\"",
+  "purge": "powershell -Command \"Get-ChildItem -Directory -Filter 'allure-report-*' | Where-Object { $_.LastWriteTime -lt (Get-Date).AddDays(-30) } | Remove-Item -Recurse -Force -ErrorAction SilentlyContinue\"",
+  "allure:env": "powershell -Command \"'[Environment]`nOS=Windows 11`nTester=' + $env:USERNAME | Out-File -FilePath allure-results/environment.properties -Encoding utf8\"",
+  "test": "playwright test",
+  "allure:timestamp": "powershell -Command \"$t=Get-Date -Format 'yyyy-MM-dd_HH-mm-ss'; $p='allure-report-' + $t; allure generate allure-results --clean -o $p; allure open $p\"",
+  "full-report": "npm run purge && npm run clean && npm run test && npm run allure:env && npm run allure:timestamp"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "@playwright/test": "^1.57.0",
+    "@playwright/test": "^1.58.0",
     "@types/node": "^25.0.9",
+    "allure-commandline": "^2.36.0",
     "allure-playwright": "^3.4.5"
   },
   "dependencies": {
