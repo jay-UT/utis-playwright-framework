@@ -91,4 +91,12 @@ export class CommonMethods {
     //return await page.locator(selector).textContent();
     return await Locator.textContent();
   }
+
+  static async mouseOver(
+    page:Page,
+    Locator: Locator,
+  ): Promise<void>{
+    await Locator.waitFor({ state: 'visible' });
+    await Locator.hover();
+  }
 }

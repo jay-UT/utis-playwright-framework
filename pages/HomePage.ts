@@ -12,6 +12,7 @@ export class HomePage {
     public readonly user_account_tab_xpath: Locator;
     public readonly sign_in_error_icon_xpath: Locator;
     public readonly sign_in_error_msg_xpath: Locator;
+    public readonly address_tooltip_xpath:Locator;
 
     //constructor
     constructor(page:Page){
@@ -24,6 +25,7 @@ export class HomePage {
         this.user_account_tab_xpath=page.locator("//li[@class='userdetails-mbl']")
         this.sign_in_error_icon_xpath=page.locator("//div[@class='errorIcon']")
         this.sign_in_error_msg_xpath=page.locator("//div[@class='errorIcon']/following::div[contains(@class,'errorMessage')]")
+        this.address_tooltip_xpath=page.locator("(//div[@class='address-info cursor-pointer'])[1]")
     //Action methods
     }
     async isHomePageExist(){
