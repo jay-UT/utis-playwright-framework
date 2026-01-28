@@ -1,4 +1,0 @@
-[ERROR] Navigation failed to https://www.henryschein.co.uk/: TimeoutError: page.goto: Timeout 10000ms exceeded.
-Call log:
-  - navigating to "https://www.henryschein.co.uk/", waiting until "load"
-

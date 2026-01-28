@@ -63,6 +63,7 @@ reports/
 # ======================
 allure-results/
 allure-report/
+allure-report-*
 
 # ======================
 # Environment

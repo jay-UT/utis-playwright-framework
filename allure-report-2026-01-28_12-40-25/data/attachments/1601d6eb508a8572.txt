@@ -1,5 +1,0 @@
-[ERROR] Navigation failed to https://www.henryschein.co.uk/: Error: page.goto: Target page, context or browser has been closed
-Call log:
-  - navigating to "https://www.henryschein.co.uk/", waiting until "load"
-
-[ERROR] Element is not displayed locator('//button[contains(@id,\'sign-in\')]'): Error: locator.waitFor: Target page, context or browser has been closed
