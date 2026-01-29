@@ -7,7 +7,7 @@ export class TestConfig {
     password = "Welcome@123"
 
     //invalid login credentials
-    invalid_username = "JammmyTest"
+    invalid_username = "JamesTest"
     invalid_password = "welcome123"
 
 

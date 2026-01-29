@@ -107,7 +107,7 @@ test('To Verify that the user cannot sign in with invalid credentials', async ({
    await CommonMethods.isElementDisplayed(page, home.sign_in_error_msg_xpath, 30000)
    console.log("Please enter valid Username/Password")
    const errorMsg = (home.sign_in_error_msg_xpath);
-   await expect(errorMsg).toBeVisible({ timeout: 30000 });
+   await expect(errorMsg).toBeVisible();
    await expect(errorMsg).toContainText('username and/or password entered is incorrect');
 
 })
@@ -241,22 +241,22 @@ test('Verify Main Menu Links Are Enabled and Interactive', async ({ page, home, 
    await CommonMethods.safeClick(page, home.main_menu_Clearance)
    console.log("Clicked Clearance Link")
    //7.Link should navigate to Clearance Page
-   await expect(page).toHaveURL('https://www.henryschein.co.uk/promo/promotions/medical-clearance', { timeout: 50000 });
+   await expect(page).toHaveURL('https://www.henryschein.co.uk/promo/promotions/medical-clearance');
    console.log("Verified the page is navigated to Clearance page")
-   await page.waitForTimeout(5000);
+   //await page.waitForTimeout(5000);
    //8.Click Blog link from main menu
    await CommonMethods.safeClick(page, home.main_menu_Blog)
    console.log("Clicked Blog Link")
    //9.Link should navigate to Blog Page
-   await expect(page).toHaveURL('https://www.henryschein.co.uk/blog/medical-blog', { timeout: 50000 });
+   await expect(page).toHaveURL('https://www.henryschein.co.uk/blog/medical-blog');
    console.log("Verified the page is navigated to Blog page")
-   await page.waitForTimeout(5000);
+   //await page.waitForTimeout(5000);
    //10.Click Order From History link from main menu
-   await CommonMethods.safeClick(page, home.main_menu_Order_From_History)
+   await CommonMethods.safeClick(page, home.main_menu_Order_From_History,3000)
    console.log("Clicked Order From History Link")
-   await page.waitForTimeout(5000);
+   //await page.waitForTimeout(50000);
    //11.Link should navigate to Order From History
-   await expect(page).toHaveURL('https://www.henryschein.co.uk/dashboard/myorders?activetab=item-history-tab', { timeout: 50000 });
+   await expect(page).toHaveURL('https://www.henryschein.co.uk/dashboard/myorders?activetab=item-history-tab');
    console.log("Verified the page is navigated to Order From History page")
 })
 
@@ -303,27 +303,29 @@ test('Verify Footer Links Are Interactive and Navigate to respective pages', asy
    await CommonMethods.isElementDisplayed(page, home.user_account_tab_xpath, 25000)
    console.log("Verified the user is successfully logged in")
    //6.Click Legal Terms link on footer section
-   await CommonMethods.safeClick(page, home.footer_Legal_Terms)
+   await CommonMethods.safeClick(page, home.footer_Legal_Terms,3000)
    console.log("Clicked Legal Terms Link")
    //7.Link should navigate to Legal Terms Page
-   await expect(page).toHaveURL('https://www.henryschein.co.uk/about/terms-and-conditions', { timeout: 70000 });
+   await expect(page).toHaveURL('https://www.henryschein.co.uk/about/terms-and-conditions');
    console.log("Verified the page is navigated to Legal Terms page")
    //8.Click Privacy Notice link on footer section
-   await CommonMethods.safeClick(page, home.footer_Privacy_Notice)
+   await CommonMethods.safeClick(page, home.footer_Privacy_Notice,30000)
    console.log("Clicked Privacy Notice Link")
    //9.Link should navigate to Privacy Notice Page
-   await expect(page).toHaveURL('https://www.henryschein.co.uk/about/privacy-notice', { timeout: 70000 });
+   await expect(page).toHaveURL('https://www.henryschein.co.uk/about/privacy-notice');
    console.log("Verified the page is navigated to Privacy Notice page")
    //10.Click Delivery and Returns link on footer section
-   await CommonMethods.safeClick(page, home.footer_Delivery_and_Returns)
+  await CommonMethods.safeClick(page, home.footer_Delivery_and_Returns,3000)
    console.log("Clicked Delivery and Returns Link")
    //11.Link should navigate to Delivery and Returns page
-   await expect(page).toHaveURL('https://www.henryschein.co.uk/about/delivery-and-returns', { timeout: 80000 });
-   console.log("Verified the page is navigated to Delivery and Returns page")
-   //12.Click LinkedIn link on footer section
-   await CommonMethods.safeClick(page, home.footer_LinkedIn)
-   console.log("Clicked LinkedIn Link")
-   //13.Link should navigate to LinkedIn page
-   await expect(page).toHaveURL('https://www.linkedin.com/showcase/henry-schein-medical-uk/?viewAsMember=true', { timeout: 80000 });
-   console.log("Verified the page is navigated to LinkedIn page")
+   await expect(page).toHaveURL('https://www.henryschein.co.uk/about/delivery-and-returns');
+  console.log("Verified the page is navigated to Delivery and Returns page")
+    // 12. Click LinkedIn link on footer section & wait for new tab
+   const [linkedinPage] = await Promise.all([page.context().waitForEvent('page'), CommonMethods.safeClick(page, home.footer_LinkedIn)]);
+   console.log("Clicked LinkedIn Link");
+   // Wait for LinkedIn page to load
+   await linkedinPage.waitForLoadState('domcontentloaded');
+   // 13. Verify LinkedIn URL
+   await expect(linkedinPage).toHaveURL('https://www.linkedin.com/showcase/henry-schein-medical-uk/?viewAsMember=true');
+   console.log("Verified navigation to LinkedIn page");
 })

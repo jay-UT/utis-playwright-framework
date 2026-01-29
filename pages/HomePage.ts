@@ -61,11 +61,11 @@ export class HomePage {
         this.main_menu_My_Dashboard = page.locator("//button[@data-test-id='mega_menu_component_button_37']//span[contains(normalize-space(),'My Dashboard')]")
         this.main_menu_Order_From_History = page.locator("//span[@data-test-id='megaMenu.NavigationTitle2' and contains(normalize-space(),'Order From History')]")
         this.main_menu_My_Dashboard_details = page.locator("//div[@class='tab-pane collapse show']")
-        this.footer_Legal_Terms = page.locator("//a[@data-test-id='footer_navigation_component_a_2' and contains(normalize-space(),'Legal Terms')]")
-        this.footer_Privacy_Notice = page.locator("//a[@data-test-id='footer_navigation_component_a_2' and contains(normalize-space(),'Privacy Notice')]")
-        this.footer_Delivery_and_Returns = page.locator("//a[@data-test-id='footer_navigation_component_a_2' and contains(normalize-space(),'Delivery and Returns')]")
+        this.footer_Legal_Terms=page.locator("//a[text()=' Legal Terms ']")
+        this.footer_Privacy_Notice=page.locator("//a[text()=' Privacy Notice ']")
+        this.footer_Delivery_and_Returns = page.locator("//a[text()=' Delivery and Returns ']")
         this.footer_LinkedIn = page.locator("//a[@text='Follow HenrySchein on linkedIn link ']")
-
+        
 
     }
     async isHomePageExist() {
