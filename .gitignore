@@ -13,7 +13,8 @@ dist/
 allure-results/
 allure-report/
 
-# Environment
+# Environmentgit add .gitignore
+
 .env
 .env.*
 
@@ -25,3 +26,5 @@ allure-report/
 .idea/
 .DS_Store
 Thumbs.db
+reports/
+test-results/
