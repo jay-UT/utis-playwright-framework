@@ -1,7 +1,7 @@
-export class TestConfig{ 
-    
-    appUrl="https://www.henryschein.co.uk/" 
-       
+export class TestConfig {
+
+    appUrl = "https://www.henryschein.co.uk/"
+
     //valid login credentials- create your own login account 
     //UK Medical
     username="Naveenkumar" 
@@ -11,6 +11,10 @@ export class TestConfig{
     USERNAME ="Shamrock"
     PASSWORD ="Shamrock@123"
 
- 
-   
+
+    //invalid login credentials
+    invalid_username = "JamesTest"
+    invalid_password = "welcome123"
+
+
 }
