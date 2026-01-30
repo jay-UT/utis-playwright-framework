@@ -1,5 +1,5 @@
 import { Page } from '@playwright/test';
-import { HomePage } from '../pages/homepage'
+import { HomePage } from '../pages/HomePage'
 import { CommonMethods } from './commonSteps'
 import { TestConfig} from '../test.config'
 
