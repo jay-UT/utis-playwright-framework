@@ -1,6 +1,5 @@
-
-
 //import {test,expect} from '@playwright/test' 
+import { HomePage } from '../pages/HomePage'
 import { HomePage } from '../pages/HomePage'
 import { CommonMethods } from '../utils/commonSteps'
 import { DataProvider } from '../utils/dataProviders'
@@ -10,11 +9,8 @@ import { Assert, fail } from 'node:assert'
 import { assert } from 'node:console'
 
 /*
-1)Test case : To verify the Henry Schein icon is present on the Home page
-     
-
+1)Testcase-01 : To verify the Henry Schein icon is present on the Home page
  Tags : @regression
-
  Steps 
  1.Navigate to  Henry Schein url
  2.verify the Henry Schein icon should be visible on the page
@@ -50,11 +46,9 @@ test('To verify the Henry Schein icon is present on the Home page', async({page,
 
 
 /*
-2)Test case : Verify the sign-in functionality on the Home page
-    
-
+2)Testcase-02 : Verify the sign-in functionality on the Home page
  Tags : @regression
-
+ 
  Steps 
  1.Navigate to  Henry Schein url
  2.Verify the sign in button should be visible on the home page
