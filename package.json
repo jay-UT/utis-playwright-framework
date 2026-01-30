@@ -15,6 +15,10 @@
 
   "full-report": "npm run purge && npm run clean && npm run test && npm run allure:env && npm run allure:timestamp"
 },
+  "bin": {
+  "full-report": "./scripts/full-report.js"
+},
+
   "keywords": [],
   "author": "",
   "license": "ISC",
