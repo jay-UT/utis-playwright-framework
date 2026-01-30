@@ -1,9 +1,4 @@
-# These are some examples of commonly ignored file patterns.
-# You should customize this list as applicable to your project.
-# Learn more about .gitignore:
-#     https://www.atlassian.com/git/tutorials/saving-changes/gitignore
-
-# Node artifact files
+# Node
 node_modules/
 dist/
 
@@ -51,33 +46,25 @@ Thumbs.db
 
 
 # Playwright
-node_modules/
 /test-results/
 /playwright-report/
 /blob-report/
 /playwright/.cache/
 /playwright/.auth/
-reports/
-# ======================
+
 # Allure
-# ======================
 allure-results/
 allure-report/
 
-# ======================
-# Environment
-# ======================
+# Environmentgit add .gitignore
+
 .env
 .env.*
 
-# ======================
 # Logs
-# ======================
 *.log
 
-# ======================
-# IDE / OS
-# ======================
+# OS / IDE
 .vscode/
 .idea/
 .DS_Store
