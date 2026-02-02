@@ -28,7 +28,7 @@ export default defineConfig({
     /* Capture trace on first retry */
     trace: 'on-first-retry',
 
-    headless: true,
+    headless: false,
 
     launchOptions: {
       slowMo: 500, // wait 500ms between each action
