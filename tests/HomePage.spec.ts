@@ -650,3 +650,36 @@ await test.step("Step 2: Verify the sign in button should be visible on the home
   });
    
 });
+
+/*
+11)Test case : Verify that the user cannot sign in with invalid credentials
+*/
+test('@regression To Verify that the user cannot sign in with invalid credentials', async ({ page, home, config }) => {
+
+   await test.step("Step 1: Navigate to  HenrySchein url", async () => {
+      await CommonMethods.navigateToPageUKMedical(page, config.appUrl, 30000)
+      console.log("Navigated to  HenrySchein url")
+   })
+   await test.step("Step 2: Verify the sign in button should be visible on the home page", async () => {
+      await CommonMethods.isElementDisplayed(page, home.sign_in_xpath, 30000)
+      console.log("Verified the sign in button should be visible on the home page")
+   })
+   await test.step("Step 3: Enter invalid username and password", async () => {
+      await CommonMethods.safeClick(page, home.sign_in_xpath, 35000)
+      await CommonMethods.writeText(page, home.username_xpath, config.invalid_username, 30000)
+      await CommonMethods.writeText(page, home.password_xpath, config.invalid_password, 30000)
+      console.log("Entered invalid username and password")
+   })
+   await test.step("Step 4: Click the sign-in submit button", async () => {
+      await CommonMethods.safeClick(page, home.sign_in_submit_btn_xpath)
+      console.log("Clicked the sign-in submit button")
+   })
+   await test.step("Step 5: Verify the user cannot sign in successfully", async () => {
+      await CommonMethods.isElementDisplayed(page, home.sign_in_error_msg_xpath, 30000)
+      console.log("Please enter valid Username/Password")
+      const errorMsg = (home.sign_in_error_msg_xpath);
+      await expect(errorMsg).toBeVisible();
+      await expect(errorMsg).toContainText('Hi');
+   })
+
+})
