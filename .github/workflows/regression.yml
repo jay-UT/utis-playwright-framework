@@ -4,10 +4,10 @@ on:
   pull_request:
     branches:
       - main
-      - Shaarif
+      - develop
   push:
     branches:
-      - main
+      - Shaarif
 
 jobs:
   regression:

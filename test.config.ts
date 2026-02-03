@@ -13,7 +13,7 @@ export class TestConfig {
 
 
     //invalid login credentials
-    invalid_username = 'Tester${this.getTimestamp()}'
+    invalid_username = `Tester${this.getTimestamp()}`
     invalid_password = "welcome123"
 
     private getTimestamp(): string {
