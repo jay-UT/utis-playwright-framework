@@ -30,7 +30,7 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Run regression tests
-        run: npm run test:ci:regression
+        run: npm run test:ci:regression -- headed
 
       - name: Upload Playwright report
         if: always()
@@ -43,7 +43,7 @@ jobs:
         if: always()
         uses: actions/upload-pages-artifact@v4.0.0
         with:
-          name: playwright-report
+          name: playwright-pagesreport
           path: playwright-report/
           
 
