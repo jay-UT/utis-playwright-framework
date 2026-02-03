@@ -18,7 +18,7 @@ import { assert } from 'node:console'
 */
 
 test('@regression To verify the Henry Schein icon is present on the Home page', async({page,home,config})=>{
-//  const config= new TestConfig();
+//  const config= new TestConfig(); 
 //  const home =new HomePage(page);
  
  await test.step("Step 1: Navigate to Henry Schein UK Medical URL"  , async () => {
