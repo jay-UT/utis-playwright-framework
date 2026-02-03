@@ -51,7 +51,7 @@ test('@regression To verify the Henry Schein icon is present on the Home page', 
  5.Verify the user is successfully logged in
 */
 
-test.only('@regression To Verify the sign-in functionality on the Home page',async({page,home,config})=>{
+test('@regression To Verify the sign-in functionality on the Home page',async({page,home,config})=>{
    
 //  1.Navigate to  Henry Schein url
    await test.step("Step 1: Navigate to the Henry Schein website.",async()=>{
