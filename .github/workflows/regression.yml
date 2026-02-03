@@ -51,14 +51,6 @@ jobs:
         with:
           path: playwright-report
 
-      - name: Generate Allure report
-        if: always()
-        uses: simple-elf/allure-report-action@v1.9
-        with:
-          allure_results: allure-results
-          allure_report: allure-report
-
-
       - name: Upload Allure results (optional)
         if: always()
         uses: actions/upload-artifact@v4
