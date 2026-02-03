@@ -28,7 +28,7 @@ export default defineConfig({
     /* Capture trace on first retry */
     trace: 'on-first-retry',
 
-    headless: false,
+    headless: true,
 
     launchOptions: {
       slowMo: 500, // wait 500ms between each action
@@ -39,19 +39,21 @@ export default defineConfig({
     video: 'retain-on-failure'
   },
 
-  /* Configure projects for major browsers */
+  //grep: /@master/, 
+
   projects: [
     {
-      name: 'chromium',
+      name: 'HenrySchein',
       use: { ...devices['Desktop Chrome'] },
     },
-    // {
-    //   name: 'firefox',
-    //   use: { ...devices['Desktop Firefox'] },
-    // },
+    {
+      name: 'firefox',
+      use: { ...devices['Desktop Firefox'] },
+    },
     // {
     //   name: 'webkit',
     //   use: { ...devices['Desktop Safari'] },
     // }
   ],
+
 });

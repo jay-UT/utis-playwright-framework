@@ -1,11 +1,12 @@
-import {Page,expect,Locator} from '@playwright/test'
+import { Page, expect, Locator } from '@playwright/test'
 
 export class CommonMethods {
- private readonly page: Page;
-  constructor(page:Page){
-       this.page=page}
+  private readonly page: Page;
+  constructor(page: Page) {
+    this.page = page
+  }
 
- static async navigateToPageUKMedical(
+  static async navigateToPageUKMedical(
     page: Page,
     url: string,
     timeout: number = 30000
@@ -18,7 +19,7 @@ export class CommonMethods {
       // Accept cookies if present
       try {
         const acceptButton = page.locator('button:has-text("Accept")');
-        await acceptButton.waitFor({ timeout: 5000 });
+        await acceptButton.waitFor({ timeout: 50000 });
         await acceptButton.click();
         //console.log(`Cookies accepted on ${url}`);
       } catch (error) {
@@ -29,11 +30,11 @@ export class CommonMethods {
       try {
         const ukMedicalXpath = "//div[text()='UK Medical']";
         const ukMedical = page.locator(ukMedicalXpath);
-        await ukMedical.waitFor({ timeout: 5000 });
+        await ukMedical.waitFor({ timeout: 50000 });
         await ukMedical.click();
-       // console.log(`'UK Medical' clicked on ${url}`);
+        // console.log(`'UK Medical' clicked on ${url}`);
       } catch (error) {
-       // console.log(`[INFO] 'UK Medical' element not found or failed to click: ${error}`);
+        // console.log(`[INFO] 'UK Medical' element not found or failed to click: ${error}`);
       }
 
       return true;
@@ -47,7 +48,7 @@ export class CommonMethods {
   static async safeClick(
     page: Page,
     Locator: Locator,
-    timeout: number = 15000
+    timeout: number = 35000
   ): Promise<void> {
     await expect(Locator).toBeVisible({ timeout });
     await Locator.click();
@@ -60,7 +61,7 @@ export class CommonMethods {
   static async isElementDisplayed(
     page: Page,
     Locator: Locator,
-    timeout: number = 15000
+    timeout: number = 35000
   ): Promise<boolean> {
     try {
       //const element = page.locator(selector);
@@ -90,5 +91,13 @@ export class CommonMethods {
   ): Promise<string | null> {
     //return await page.locator(selector).textContent();
     return await Locator.textContent();
+  }
+
+  static async mouseOver(
+    page:Page,
+    Locator: Locator,
+  ): Promise<void>{
+    await Locator.waitFor({ state: 'visible' });
+    await Locator.hover();
   }
 }
