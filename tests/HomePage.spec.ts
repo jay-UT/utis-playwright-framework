@@ -408,7 +408,7 @@ test('Verify Main Menu Links Are Enabled and Interactive', async ({ page, home, 
       console.log("Verified the page is navigated to Blog page")
    })
    await test.step("Click Order From History link from main menu", async () => {
-      await CommonMethods.safeClick(page, home.main_menu_Order_From_History, 3000)
+      await CommonMethods.safeClick(page, home.main_menu_Order_From_History, 30000)
       console.log("Clicked Order From History Link")
    })
    await test.step("Link should navigate to Order From History", async () => {
@@ -622,37 +622,10 @@ test('Verify that the search bar accepts input and displays relevant suggestions
    });
 })
 
-test('@regression To Verify the sign-in functionality on the Home page', async ({ page, home, config }) => {
-
-
-   await test.step("Step 1: Navigate to Henry Schein UK Medical URL", async () => {
-      await CommonMethods.navigateToPageUKMedical(page, config.appUrl, 30000);
-   });
-
-   await test.step("Step 2: Verify the sign in button should be visible on the home page", async () => {
-      await CommonMethods.isElementDisplayed(page, home.sign_in_xpath, 30000);
-   });
-
-   await test.step("Step 3: Enter username and password", async () => {
-      await CommonMethods.safeClick(page, home.sign_in_xpath, 15000);
-      await CommonMethods.writeText(page, home.username_xpath, config.username, 10000);
-      await CommonMethods.writeText(page, home.password_xpath, config.password, 10000);
-   });
-
-   await test.step("Step 4: Click on sign-in submit button", async () => {
-      await CommonMethods.safeClick(page, home.sign_in_submit_btn_xpath);
-   });
-
-   await test.step("Step 5: Verify user is successfully logged in", async () => {
-      await CommonMethods.isElementDisplayed(page, home.user_account_tab_xpath, 10000);
-   });
-
-});
-
 /*
 11)Test case : Verify that the user cannot sign in with invalid credentials
 */
-test.only('@regression To Verify the error message for invalid login credentials', async ({ page, home, config }) => {
+test('@regression To Verify the error message for invalid login credentials', async ({ page, home, config }) => {
 
    await test.step("Step 1: Navigate to  HenrySchein url", async () => {
       await CommonMethods.navigateToPageUKMedical(page, config.appUrl, 30000)

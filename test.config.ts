@@ -13,12 +13,15 @@ export class TestConfig {
 
 
     //invalid login credentials
-    invalid_username = "Tester${this.getTimestamp()}"
+    invalid_username = `Tester${this.getTimestamp()}`
     invalid_password = "welcome123"
 
     private getTimestamp(): string {
         const now = new Date()
-        return now.toTimeString().slice(0, 8).replace(/:/g, "")
+        return now
+            .toTimeString()
+            .slice(0, 8)
+            .replace(/:/g, "")
     }
 
 }
