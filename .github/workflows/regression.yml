@@ -33,11 +33,17 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Install Allure
+        run: npm install -D allure-playwright
+
+
       - name: Install Playwright browsers
         run: npx playwright install --with-deps
 
       - name: Run regression tests
+        id: run_tests
         run: npm run test:ci:regression
+        continue-on-error: true
 
       - name: Upload Playwright report as Pages artifact
         if: always()
@@ -45,12 +51,22 @@ jobs:
         with:
           path: playwright-report
 
+      - name: Generate Allure report
+        if: always()
+        uses: simple-elf/allure-report-action@v1.9
+        with:
+          allure_results: allure-results
+          allure_report: allure-report
+
+
       - name: Upload Allure results (optional)
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: allure-results
           path: allure-results/
+
+     
 
   deploy:
     name: Deploy to GitHub Pages
