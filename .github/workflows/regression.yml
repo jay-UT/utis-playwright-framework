@@ -45,16 +45,16 @@ jobs:
           name: allure-results
           path: allure-results/
 
-      - name: Generate Allure report
-        if: always()
-        uses: allure-framework/allure-action@v2
-        with:
-          results: allure-results
-          report-dir: allure-report
+      # - name: Generate Allure report
+      #   if: always()
+      #   uses: allure-framework/allure-action@v2
+      #   with:
+      #     results: allure-results
+      #     report-dir: allure-report
 
-      - name: Upload Allure HTML report
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: allure-report
-          path: allure-report/
+      # - name: Upload Allure HTML report
+      #   if: always()
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: allure-report
+      #     path: allure-report/
