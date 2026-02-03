@@ -2,8 +2,8 @@
 import { HomePage } from '../pages/HomePage'
 import { CommonMethods } from '../utils/commonSteps'
 import { DataProvider } from '../utils/dataProviders'
-import { TestConfig} from '../test.config'
-import { test,expect} from '../utils/fixture'
+import { TestConfig } from '../test.config'
+import { test, expect } from '../utils/fixture'
 import { Assert, fail } from 'node:assert'
 import { assert } from 'node:console'
 
@@ -17,26 +17,26 @@ import { assert } from 'node:console'
  4.verify the page is navigated to home page
 */
 
-test('@regression To verify the Henry Schein icon is present on the Home page', async({page,home,config})=>{
-//  const config= new TestConfig();
-//  const home =new HomePage(page);
- 
- await test.step("Step 1: Navigate to Henry Schein UK Medical URL"  , async () => {
-    await CommonMethods.navigateToPageUKMedical(page, config.appUrl, 30000);
-  }); 
+test('@regression To verify the Henry Schein icon is present on the Home page', async ({ page, home, config }) => {
+   //  const config= new TestConfig();
+   //  const home =new HomePage(page);
 
- await test.step("Step 2: Verify the Henry Schein icon should be visible on the page", async () => {
-    await CommonMethods.isElementDisplayed(page, home.icon_xpath, 30000);
-  });
+   await test.step("Step 1: Navigate to Henry Schein UK Medical URL", async () => {
+      await CommonMethods.navigateToPageUKMedical(page, config.appUrl, 30000);
+   });
 
- await test.step("Step 3: Click the Henry Schein icon", async () => {
-    await CommonMethods.safeClick(page, home.icon_xpath, 30000);
-  });
+   await test.step("Step 2: Verify the Henry Schein icon should be visible on the page", async () => {
+      await CommonMethods.isElementDisplayed(page, home.icon_xpath, 30000);
+   });
 
- await test.step("Step 4: Verify page navigates to Henry Schein home page", async () => {
-    await expect(page).toHaveURL('https://www.henryschein.co.uk/');
+   await test.step("Step 3: Click the Henry Schein icon", async () => {
+      await CommonMethods.safeClick(page, home.icon_xpath, 30000);
+   });
+
+   await test.step("Step 4: Verify page navigates to Henry Schein home page", async () => {
+      await expect(page).toHaveURL('https://www.henryschein.co.uk/');
       console.log("verified the page is navigated to home page")
- });
+   });
 });
 
 /*
@@ -51,34 +51,34 @@ test('@regression To verify the Henry Schein icon is present on the Home page', 
  5.Verify the user is successfully logged in
 */
 
-test('To Verify the sign-in functionality on the Home page',async({page,home,config})=>{
-   
-//  1.Navigate to  Henry Schein url
-   await test.step("Navigate to the Henry Schein website.",async()=>{
-      await CommonMethods.navigateToPageUKMedical(page,config.appUrl,10000)
+test('To Verify the sign-in functionality on the Home page', async ({ page, home, config }) => {
+
+   //  1.Navigate to  Henry Schein url
+   await test.step("Navigate to the Henry Schein website.", async () => {
+      await CommonMethods.navigateToPageUKMedical(page, config.appUrl, 10000)
       console.log("Navigated to  Henry Schein url")
    })
-// 2.Verify the sign in button should be visible on the home page
-   await test.step("Confirm that the Sign In button is visible.",async()=>{
-      await CommonMethods.isElementDisplayed(page,home.sign_in_xpath,20000)
+   // 2.Verify the sign in button should be visible on the home page
+   await test.step("Confirm that the Sign In button is visible.", async () => {
+      await CommonMethods.isElementDisplayed(page, home.sign_in_xpath, 20000)
       console.log("Verified the sign in button should be visible on the home page")
    })
-// 3.Enter the username and password
-   await test.step("Enter a valid username and password.",async()=>{
-      await CommonMethods.safeClick(page,home.sign_in_xpath,15000)
-      await CommonMethods.writeText(page,home.username_xpath,config.username,10000)
-      await CommonMethods.writeText(page,home.password_xpath,config.password,10000)
+   // 3.Enter the username and password
+   await test.step("Enter a valid username and password.", async () => {
+      await CommonMethods.safeClick(page, home.sign_in_xpath, 15000)
+      await CommonMethods.writeText(page, home.username_xpath, config.username, 10000)
+      await CommonMethods.writeText(page, home.password_xpath, config.password, 10000)
       console.log("Entered the username and password")
    })
-// 4.click the sign-in submit button
-   await test.step("Click the Sign In button.",async()=>{
-      await CommonMethods.safeClick(page,home.sign_in_submit_btn_xpath)
+   // 4.click the sign-in submit button
+   await test.step("Click the Sign In button.", async () => {
+      await CommonMethods.safeClick(page, home.sign_in_submit_btn_xpath)
       console.log("clicked the sign-in submit button")
    })
-// 5.Verify the user is successfully logged in
-   await test.step("Verify the user is successfully logged in",async()=>{
-    await CommonMethods.isElementDisplayed(page,home.user_account_tab_xpath,10000)
-    console.log("Verified the user is successfully logged in")
+   // 5.Verify the user is successfully logged in
+   await test.step("Verify the user is successfully logged in", async () => {
+      await CommonMethods.isElementDisplayed(page, home.user_account_tab_xpath, 10000)
+      console.log("Verified the user is successfully logged in")
    })
 })
 
@@ -97,54 +97,53 @@ Steps:
 6.)Hover over the address tooltip and check that the tooltip displays the address information.
 */
 
-test("Verify that the tooltip is displays the address when hovering over the address information icon",async({page,home,config})=>{
+test("Verify that the tooltip is displays the address when hovering over the address information icon", async ({ page, home, config }) => {
 
-// 1.)Go to the Henry Schein website.
-   await test.step("Navigate to the Henry Schein website.",async()=>{
-      await CommonMethods.navigateToPageUKMedical(page,config.appUrl,10000)
+   // 1.)Go to the Henry Schein website.
+   await test.step("Navigate to the Henry Schein website.", async () => {
+      await CommonMethods.navigateToPageUKMedical(page, config.appUrl, 10000)
       console.log("Navigated to  Henry Schein url")
    })
-// 2.)Ensure the Sign In button is visible.
-   await test.step("Confirm that the Sign In button is visible.",async()=>{
-      await CommonMethods.isElementDisplayed(page,home.sign_in_xpath,20000)
+   // 2.)Ensure the Sign In button is visible.
+   await test.step("Confirm that the Sign In button is visible.", async () => {
+      await CommonMethods.isElementDisplayed(page, home.sign_in_xpath, 20000)
       console.log("Verified the sign in button should be visible on the home page")
    })
-// 3.)Enter valid username and password.
-   await test.step("Enter a valid username and password.",async()=>{
-      await CommonMethods.safeClick(page,home.sign_in_xpath,15000)
-      await CommonMethods.writeText(page,home.username_xpath,config.USERNAME,10000)
-      await CommonMethods.writeText(page,home.password_xpath,config.PASSWORD,10000)
+   // 3.)Enter valid username and password.
+   await test.step("Enter a valid username and password.", async () => {
+      await CommonMethods.safeClick(page, home.sign_in_xpath, 15000)
+      await CommonMethods.writeText(page, home.username_xpath, config.USERNAME, 10000)
+      await CommonMethods.writeText(page, home.password_xpath, config.PASSWORD, 10000)
       console.log("Entered the username and password")
    })
-// 4.)Click the Sign In button.
-   await test.step("Click the Sign In button.",async()=>{
-      await CommonMethods.safeClick(page,home.sign_in_submit_btn_xpath)
+   // 4.)Click the Sign In button.
+   await test.step("Click the Sign In button.", async () => {
+      await CommonMethods.safeClick(page, home.sign_in_submit_btn_xpath)
       console.log("clicked the sign-in submit button")
    })
-// 5.)Verify that the address tooltip is visible in the menu bar.
-   await test.step("Verify that the address tooltip is visible in the menu bar.",async()=>{
-   await CommonMethods.isElementDisplayed(page,home.address_tooltip_xpath)
-   console.log("the address-tooltip is visible")
+   // 5.)Verify that the address tooltip is visible in the menu bar.
+   await test.step("Verify that the address tooltip is visible in the menu bar.", async () => {
+      await CommonMethods.isElementDisplayed(page, home.address_tooltip_xpath)
+      console.log("the address-tooltip is visible")
    })
-// 6.)Hover over the address tooltip and check that the tooltip displays the address information.
-   await test.step("Hover over the address tooltip and check that the tooltip displays the address information.",async()=>{
-   await CommonMethods.mouseOver(page,home.address_tooltip_xpath)
-   //var addressInfo:String;
-   const tooltipText: string|null = await CommonMethods.getTextFromElement(page,home.address_tooltip_xpath)
-   if(tooltipText==null)
-   {
-    fail("The address-tool tip is empty");
-   }
-   expect(tooltipText).toContain('Address');
-   expect(tooltipText).toContain('Ship Location');
-   const  shipLocationXpath = page.locator("//div[@data-test-id='userdata_shiploc']")
-   const  addressXpath= page.locator("//div[@data-test-id='userdata_address_text']")
-   const shipLocation: string|null  =await CommonMethods.getTextFromElement(page,shipLocationXpath)
-   const address: string|null = await CommonMethods.getTextFromElement(page,addressXpath)
+   // 6.)Hover over the address tooltip and check that the tooltip displays the address information.
+   await test.step("Hover over the address tooltip and check that the tooltip displays the address information.", async () => {
+      await CommonMethods.mouseOver(page, home.address_tooltip_xpath)
+      //var addressInfo:String;
+      const tooltipText: string | null = await CommonMethods.getTextFromElement(page, home.address_tooltip_xpath)
+      if (tooltipText == null) {
+         fail("The address-tool tip is empty");
+      }
+      expect(tooltipText).toContain('Address');
+      expect(tooltipText).toContain('Ship Location');
+      const shipLocationXpath = page.locator("//div[@data-test-id='userdata_shiploc']")
+      const addressXpath = page.locator("//div[@data-test-id='userdata_address_text']")
+      const shipLocation: string | null = await CommonMethods.getTextFromElement(page, shipLocationXpath)
+      const address: string | null = await CommonMethods.getTextFromElement(page, addressXpath)
 
-   console.log("Verified that the address-tooltip is displays the address when it is hovered ")
-   console.log("Ship Location :"+shipLocation)
-   console.log("Address "+address)
+      console.log("Verified that the address-tooltip is displays the address when it is hovered ")
+      console.log("Ship Location :" + shipLocation)
+      console.log("Address " + address)
    })
 })
 
@@ -161,46 +160,45 @@ Steps:
 5.)Verify that the banner is displayed on the home page.
 6.)Verify that the banner slides automatically without any user interaction.*/
 
-test("Verify that the banner slider displays all slides with their respective content and transitions between slides when the Navigation Arrows buttons are clicked .",async({page,home,config})=>{
+test("Verify that the banner slider displays all slides with their respective content and transitions between slides when the Navigation Arrows buttons are clicked .", async ({ page, home, config }) => {
 
-   await test.step("Navigate to the Henry Schein website.",async()=>{
-      await CommonMethods.navigateToPageUKMedical(page,config.appUrl,10000)
+   await test.step("Navigate to the Henry Schein website.", async () => {
+      await CommonMethods.navigateToPageUKMedical(page, config.appUrl, 10000)
       console.log("Navigated to  Henry Schein url")
    })
-   await test.step("Confirm that the Sign In button is visible.",async()=>{
-      await CommonMethods.isElementDisplayed(page,home.sign_in_xpath,20000)
+   await test.step("Confirm that the Sign In button is visible.", async () => {
+      await CommonMethods.isElementDisplayed(page, home.sign_in_xpath, 20000)
       console.log("Verified the sign in button should be visible on the home page")
    })
 
-   await test.step("Enter a valid username and password.",async()=>{
-      await CommonMethods.safeClick(page,home.sign_in_xpath,15000)
-      await CommonMethods.writeText(page,home.username_xpath,config.username,10000)
-      await CommonMethods.writeText(page,home.password_xpath,config.password,10000)
+   await test.step("Enter a valid username and password.", async () => {
+      await CommonMethods.safeClick(page, home.sign_in_xpath, 15000)
+      await CommonMethods.writeText(page, home.username_xpath, config.username, 10000)
+      await CommonMethods.writeText(page, home.password_xpath, config.password, 10000)
       console.log("Entered the username and password")
    })
 
-   await test.step("Click the Sign In button.",async()=>{
-      await CommonMethods.safeClick(page,home.sign_in_submit_btn_xpath)
+   await test.step("Click the Sign In button.", async () => {
+      await CommonMethods.safeClick(page, home.sign_in_submit_btn_xpath)
       console.log("clicked the sign-in submit button")
    })
 
-   await test.step("Verify that the banner is displayed on the home page.",async()=>{
-      await CommonMethods.isElementDisplayed(page,home.sliderBanner_xpath)
-      console.log("The banner is displayed") 
+   await test.step("Verify that the banner is displayed on the home page.", async () => {
+      await CommonMethods.isElementDisplayed(page, home.sliderBanner_xpath)
+      console.log("The banner is displayed")
    })
 
-   await test.step("Verify that the banner slides when the user clicks Navigation Arrows buttons .",async()=>{
-      const bannerSlides: string[]=[];
-      for(let i=0;i<10;i++){
-         const bannerSlidesInfo = await CommonMethods.getTextFromElement(page,home.sliderBannerActive_xpath)
-         if(bannerSlidesInfo)
-         {
-         bannerSlides.push(bannerSlidesInfo)
+   await test.step("Verify that the banner slides when the user clicks Navigation Arrows buttons .", async () => {
+      const bannerSlides: string[] = [];
+      for (let i = 0; i < 10; i++) {
+         const bannerSlidesInfo = await CommonMethods.getTextFromElement(page, home.sliderBannerActive_xpath)
+         if (bannerSlidesInfo) {
+            bannerSlides.push(bannerSlidesInfo)
          }
-         else{
+         else {
             throw new Error(`Banner slide text is null at iteration ${i}`);
          }
-        await CommonMethods.safeClick(page,home.slideNavButton,10000)
+         await CommonMethods.safeClick(page, home.slideNavButton, 10000)
       }
       const UniqueSlides = new Set(bannerSlides)
       console.log(UniqueSlides)
@@ -516,61 +514,61 @@ Steps
 
 test('To verify the Sign up flow on the Home page', async ({ page, home, config }) => {
 
-  // 1.Navigate to Henry Schein url
-  await test.step("Navigate to Henry Schein url",async()=>{
-  await CommonMethods.navigateToPageUKMedical(page, config.appUrl, 10000)
-  console.log("Navigated to Henry Schein url")
-  })
-  /*// Maximize browser window (Playwright way)
-  await page.setViewportSize({ width: 1920, height: 1080 })
-  console.log("Browser window maximized")*/
+   // 1.Navigate to Henry Schein url
+   await test.step("Navigate to Henry Schein url", async () => {
+      await CommonMethods.navigateToPageUKMedical(page, config.appUrl, 10000)
+      console.log("Navigated to Henry Schein url")
+   })
+   /*// Maximize browser window (Playwright way)
+   await page.setViewportSize({ width: 1920, height: 1080 })
+   console.log("Browser window maximized")*/
 
-  // 2.Verify the Sign up button should be visible on the home page
-  await test.step("Verify the Sign up button should be visible on the home page",async()=>{
-  await CommonMethods.isElementDisplayed(page, home.sign_up_xpath, 15000)
-  console.log("Verified the Sign up button is visible on the home page")
-  })
-  // 3.Click on the Sign up button
-  await test.step("Click on the Sign up button", async()=>{
-  await CommonMethods.safeClick(page, home.sign_up_xpath, 10000)
-  console.log("Clicked on the Sign up button")
-  })
-  // 4.Verify user is navigated from home page
-  await test.step("Verify user is navigated from home page",async()=>{
-  await expect(page).toHaveURL(/registration/)
-  console.log("Verified navigation to Registration page")
-  await page.waitForTimeout(2000); // waits for 2 seconds
+   // 2.Verify the Sign up button should be visible on the home page
+   await test.step("Verify the Sign up button should be visible on the home page", async () => {
+      await CommonMethods.isElementDisplayed(page, home.sign_up_xpath, 15000)
+      console.log("Verified the Sign up button is visible on the home page")
+   })
+   // 3.Click on the Sign up button
+   await test.step("Click on the Sign up button", async () => {
+      await CommonMethods.safeClick(page, home.sign_up_xpath, 10000)
+      console.log("Clicked on the Sign up button")
+   })
+   // 4.Verify user is navigated from home page
+   await test.step("Verify user is navigated from home page", async () => {
+      await expect(page).toHaveURL(/registration/)
+      console.log("Verified navigation to Registration page")
+      await page.waitForTimeout(2000); // waits for 2 seconds
 
-  // Scroll username field into view (for visibility)
-  await home.reg_username_input.scrollIntoViewIfNeeded();
-  
-  // 5.Enter Username
-   const username = `testuser_${Date.now()}`;
-   await CommonMethods.writeText(page, home.reg_username_input, username, 10000);
-   
-  //Email-Verification 
-   const email = `testuser_${Date.now()}@gmail.com`;
-   await home.reg_email_input.scrollIntoViewIfNeeded();
-   await CommonMethods.writeText(page, home.reg_email_input, email, 10000);
+      // Scroll username field into view (for visibility)
+      await home.reg_username_input.scrollIntoViewIfNeeded();
 
-  //Password-Verification:
-   const password = "Test@1234";
+      // 5.Enter Username
+      const username = `testuser_${Date.now()}`;
+      await CommonMethods.writeText(page, home.reg_username_input, username, 10000);
 
-   await home.reg_password_input.scrollIntoViewIfNeeded();
-   await CommonMethods.writeText(page, home.reg_password_input, password, 10000);
-    
-   await home.reg_confirm_password_input.scrollIntoViewIfNeeded();
-   await CommonMethods.writeText(page, home.reg_confirm_password_input, password, 10000);
+      //Email-Verification 
+      const email = `testuser_${Date.now()}@gmail.com`;
+      await home.reg_email_input.scrollIntoViewIfNeeded();
+      await CommonMethods.writeText(page, home.reg_email_input, email, 10000);
 
-   await home.reg_next_step_btn.scrollIntoViewIfNeeded();
-   await CommonMethods.safeClick(page, home.reg_next_step_btn, 10000);
-   
+      //Password-Verification:
+      const password = "Test@1234";
 
-  // Handle New Customer Web Notice popup
-   await expect(home.continue_btn).toBeVisible({ timeout: 10000 });
-   await CommonMethods.safeClick(page, home.continue_btn, 10000);
-   await page.waitForTimeout(5000);
-   console.log("Clicked Continue and new sign-up stopped till here...");
+      await home.reg_password_input.scrollIntoViewIfNeeded();
+      await CommonMethods.writeText(page, home.reg_password_input, password, 10000);
+
+      await home.reg_confirm_password_input.scrollIntoViewIfNeeded();
+      await CommonMethods.writeText(page, home.reg_confirm_password_input, password, 10000);
+
+      await home.reg_next_step_btn.scrollIntoViewIfNeeded();
+      await CommonMethods.safeClick(page, home.reg_next_step_btn, 10000);
+
+
+      // Handle New Customer Web Notice popup
+      await expect(home.continue_btn).toBeVisible({ timeout: 10000 });
+      await CommonMethods.safeClick(page, home.continue_btn, 10000);
+      await page.waitForTimeout(5000);
+      console.log("Clicked Continue and new sign-up stopped till here...");
    })
 })
 
@@ -585,76 +583,76 @@ Steps
 */
 
 // 1. Navigate to Henry Schein url
-test('Verify that the search bar accepts input and displays relevant suggestions',async ({ page, home, config }) => {
-   await test.step("Navigate to Henry Schein url",async()=>{
-   await CommonMethods.navigateToPageUKMedical(page, config.appUrl, 10000);
-   console.log("Navigated to Henry Schein url");
+test('Verify that the search bar accepts input and displays relevant suggestions', async ({ page, home, config }) => {
+   await test.step("Navigate to Henry Schein url", async () => {
+      await CommonMethods.navigateToPageUKMedical(page, config.appUrl, 10000);
+      console.log("Navigated to Henry Schein url");
    })
-// 2. Verify search bar is visible
-   await test.step("Verify search bar is visible",async()=>{
-    await CommonMethods.isElementDisplayed(page, home.search_input, 10000);
-    console.log("Search bar is visible");
+   // 2. Verify search bar is visible
+   await test.step("Verify search bar is visible", async () => {
+      await CommonMethods.isElementDisplayed(page, home.search_input, 10000);
+      console.log("Search bar is visible");
    })
-// 3. Enter search keyword
-   await test.step("Enter search keyword",async()=>{
-    await CommonMethods.writeText(page, home.search_input, "mask", 10000);
-    console.log("Entered search keyword");
-    await page.keyboard.press("Enter");
-    })
-   await test.step( "Verify search suggestions are displayed",async()=>{})
-    await expect(page.locator("//div[contains(@class,'suggestions')]")).toHaveCount(1, { timeout: 10000 });
-    console.log("Search suggestions container exists");
-   
-//4 Scroll the page till bottom:
-    await page.evaluate(async () => {
-    await new Promise<void>((resolve) => {
-    let totalHeight = 0;
-    const distance = 150; // smaller = slower scroll
-    const timer = setInterval(() => {
-      const scrollHeight = document.body.scrollHeight;
-      window.scrollBy(0, distance);
-      totalHeight += distance;
+   // 3. Enter search keyword
+   await test.step("Enter search keyword", async () => {
+      await CommonMethods.writeText(page, home.search_input, "mask", 10000);
+      console.log("Entered search keyword");
+      await page.keyboard.press("Enter");
+   })
+   await test.step("Verify search suggestions are displayed", async () => { })
+   await expect(page.locator("//div[contains(@class,'suggestions')]")).toHaveCount(1, { timeout: 10000 });
+   console.log("Search suggestions container exists");
 
-      if (totalHeight >= scrollHeight) {
-        clearInterval(timer);
-        resolve();
-      }
-     }, 200); // increase time = slower scroll
+   //4 Scroll the page till bottom:
+   await page.evaluate(async () => {
+      await new Promise<void>((resolve) => {
+         let totalHeight = 0;
+         const distance = 150; // smaller = slower scroll
+         const timer = setInterval(() => {
+            const scrollHeight = document.body.scrollHeight;
+            window.scrollBy(0, distance);
+            totalHeight += distance;
+
+            if (totalHeight >= scrollHeight) {
+               clearInterval(timer);
+               resolve();
+            }
+         }, 200); // increase time = slower scroll
+      });
    });
-  });    
- })
+})
 
-test('@regression To Verify the sign-in functionality on the Home page',async({page,home,config})=>{
+test('@regression To Verify the sign-in functionality on the Home page', async ({ page, home, config }) => {
 
 
    await test.step("Step 1: Navigate to Henry Schein UK Medical URL", async () => {
-    await CommonMethods.navigateToPageUKMedical(page, config.appUrl, 30000);
-  });
-   
-await test.step("Step 2: Verify the sign in button should be visible on the home page", async () => {
-    await CommonMethods.isElementDisplayed(page, home.sign_in_xpath, 30000);
-  }); 
+      await CommonMethods.navigateToPageUKMedical(page, config.appUrl, 30000);
+   });
 
-   await test.step("Step 3: Enter username and password" , async () => {
-    await CommonMethods.safeClick(page, home.sign_in_xpath, 15000);
-    await CommonMethods.writeText(page, home.username_xpath, config.username, 10000);
-    await CommonMethods.writeText(page, home.password_xpath, config.password, 10000);
-  });
-   
+   await test.step("Step 2: Verify the sign in button should be visible on the home page", async () => {
+      await CommonMethods.isElementDisplayed(page, home.sign_in_xpath, 30000);
+   });
+
+   await test.step("Step 3: Enter username and password", async () => {
+      await CommonMethods.safeClick(page, home.sign_in_xpath, 15000);
+      await CommonMethods.writeText(page, home.username_xpath, config.username, 10000);
+      await CommonMethods.writeText(page, home.password_xpath, config.password, 10000);
+   });
+
    await test.step("Step 4: Click on sign-in submit button", async () => {
-    await CommonMethods.safeClick(page, home.sign_in_submit_btn_xpath);
-  });
-   
+      await CommonMethods.safeClick(page, home.sign_in_submit_btn_xpath);
+   });
+
    await test.step("Step 5: Verify user is successfully logged in", async () => {
-    await CommonMethods.isElementDisplayed(page, home.user_account_tab_xpath, 10000);
-  });
-   
+      await CommonMethods.isElementDisplayed(page, home.user_account_tab_xpath, 10000);
+   });
+
 });
 
 /*
 11)Test case : Verify that the user cannot sign in with invalid credentials
 */
-test('@regression To Verify that the user cannot sign in with invalid credentials', async ({ page, home, config }) => {
+test.only('@regression To Verify the error message for invalid login credentials', async ({ page, home, config }) => {
 
    await test.step("Step 1: Navigate to  HenrySchein url", async () => {
       await CommonMethods.navigateToPageUKMedical(page, config.appUrl, 30000)
@@ -679,7 +677,7 @@ test('@regression To Verify that the user cannot sign in with invalid credential
       console.log("Please enter valid Username/Password")
       const errorMsg = (home.sign_in_error_msg_xpath);
       await expect(errorMsg).toBeVisible();
-      await expect(errorMsg).toContainText('Hi');
+      await expect(errorMsg).toContainText('Please enter valid Username/Password');
    })
 
 })
