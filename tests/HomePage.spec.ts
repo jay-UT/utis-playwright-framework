@@ -1,6 +1,5 @@
 //import {test,expect} from '@playwright/test' 
 import { HomePage } from '../pages/HomePage'
-import { HomePage } from '../pages/HomePage'
 import { CommonMethods } from '../utils/commonSteps'
 import { DataProvider } from '../utils/dataProviders'
 import { TestConfig} from '../test.config'
@@ -22,28 +21,6 @@ test('@regression To verify the Henry Schein icon is present on the Home page', 
 //  const config= new TestConfig();
 //  const home =new HomePage(page);
  
- //1.Navigate to  Henry Schein url
- await test.step("Navigate to the Henry Schein website.",async()=>{
-   await CommonMethods.navigateToPageUKMedical(page,config.appUrl,10000)
-   console.log("Navigated to  Henry Schein url")
-   })
- //2.verify the Henry Schein icon should be visible on the page
- await test.step("verify the Henry Schein icon should be visible on the page.",async()=>{
-   await CommonMethods.isElementDisplayed(page,home.icon_xpath,15000)
-   console.log("verified the Henry Schein icon should be visible on the page")
-   })
- //3.click the icon
- await test.step("click the icon",async()=>{
- await CommonMethods.safeClick(page,home.icon_xpath,10000)
- console.log("clicked the icon")
- })
- //4.verify the page is navigated to home page
- await test.step("verify the page is navigated to home page",async()=>{
- await expect(page).toHaveURL('https://www.henryschein.co.uk/');
-  console.log("verified the page is navigated to home page")
- })
-})
-
  await test.step("Step 1: Navigate to Henry Schein UK Medical URL"  , async () => {
     await CommonMethods.navigateToPageUKMedical(page, config.appUrl, 30000);
   }); 
@@ -58,6 +35,7 @@ test('@regression To verify the Henry Schein icon is present on the Home page', 
 
  await test.step("Step 4: Verify page navigates to Henry Schein home page", async () => {
     await expect(page).toHaveURL('https://www.henryschein.co.uk/');
+      console.log("verified the page is navigated to home page")
  });
 });
 
