@@ -19,7 +19,7 @@ export default defineConfig({
   /* 🔹 REPORTERS: Allure + HTML */
   reporter: [
     ['html', { open: 'never' }],
-    ['json', { outputFile: 'playwright-results.json' }]
+    ['json', { outputFile: 'playwright-results.json' }],
     ['list'],
     ['allure-playwright', { resultsDir: 'allure-results' }]
   ],
