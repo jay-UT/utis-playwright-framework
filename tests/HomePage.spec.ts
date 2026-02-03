@@ -17,7 +17,7 @@ import { assert } from 'node:console'
  4.verify the page is navigated to home page
 */
 
-test.only('@regression To verify the Henry Schein icon is present on the Home page', async({page,home,config})=>{
+test('@regression To verify the Henry Schein icon is present on the Home page', async({page,home,config})=>{
 //  const config= new TestConfig();
 //  const home =new HomePage(page);
  
