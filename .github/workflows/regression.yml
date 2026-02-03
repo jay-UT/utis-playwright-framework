@@ -1,4 +1,4 @@
-name: Regression Tests
+name: Regression Tests Suite
 
 on:
   pull_request:
@@ -11,7 +11,8 @@ on:
 jobs:
   regression:
     name: Run Automation Regression
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
+    
 
     steps:
       - name: Checkout code
