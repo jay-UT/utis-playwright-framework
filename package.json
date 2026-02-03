@@ -3,21 +3,20 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+  "test": "playwright test",
+  "test:ci:regression": "playwright test --grep @regression",
+
   "purge": "powershell -Command \"Get-ChildItem -Directory -Filter 'allure-report-*' | Where-Object { $_.LastWriteTime -lt (Get-Date).AddDays(-30) } | Remove-Item -Recurse -Force -ErrorAction SilentlyContinue\"",
 
   "clean": "powershell -Command \"if (Test-Path allure-results) { Remove-Item -Recurse -Force allure-results\\* }\"",
 
   "allure:env": "powershell -Command \"'[Environment]`nOS=Windows 11`nTester=' + $env:USERNAME | Out-File -FilePath allure-results/environment.properties -Encoding utf8\"",
 
-  "test": "playwright test",
+  "allure:timestamp": "powershell -Command \"...\"",
 
-  "allure:timestamp": "powershell -Command \"if (Test-Path allure-results\\history) { Remove-Item -Recurse -Force allure-results\\history }; $t=Get-Date -Format 'yyyy-MM-dd_HH-mm-ss'; $report='allure-report-' + $t; allure generate allure-results --clean --single-file -o $report; $driveBase='G:\\My Drive\\Automation-Reports\\Playwright-Allure'; $latest=Join-Path $driveBase 'latest'; $archive=Join-Path $driveBase 'archive'; if (!(Test-Path $latest)) { New-Item -ItemType Directory -Path $latest | Out-Null }; if (!(Test-Path $archive)) { New-Item -ItemType Directory -Path $archive | Out-Null }; Remove-Item -Recurse -Force \"$latest\\*\" -ErrorAction SilentlyContinue; Copy-Item -Recurse -Force $report (Join-Path $archive $report); Copy-Item -Recurse -Force \"$report\\*\" $latest\"",
-
-  "full-report": "npm run purge && npm run clean && (npm run test || true) && npm run allure:env && npm run allure:timestamp",
-
-  "test:ci:regression": "playwright test --grep @regression",
-  "allure:ci:generate": "node ./scripts/allure-ci.js"
-},
+  "full-report": "npm run purge && npm run clean && (npm run test || true) && npm run allure:env && npm run allure:timestamp"
+}
+,
   "bin": {
   "full-report": "./scripts/full-report.js"
 },
