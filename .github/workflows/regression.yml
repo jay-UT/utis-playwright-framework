@@ -4,9 +4,10 @@ on:
   pull_request:
     branches:
       - main
+      - develop
   push:
     branches:
-      - main
+      - ganesh      
 
 jobs:
   regression:
@@ -37,6 +38,14 @@ jobs:
         with:
           name: playwright-report
           path: playwright-report/
+
+      - name: Upload Playwright report into Github Pages
+        if: always()
+        uses: actions/upload-pages-artifact@v4.0.0
+        with:
+          name: playwright-report
+          path: playwright-report/
+          
 
       - name: Upload Allure results
         if: always()
