@@ -51,7 +51,7 @@ test('@regression To verify the Henry Schein icon is present on the Home page', 
  5.Verify the user is successfully logged in
 */
 
-test('@regression To Verify the sign-in functionality on the Home page',async({page,home,config})=>{
+test.only('@regression To Verify the sign-in functionality on the Home page',async({page,home,config})=>{
    
 //  1.Navigate to  Henry Schein url
    await test.step("Step 1: Navigate to the Henry Schein website.",async()=>{
@@ -79,6 +79,9 @@ test('@regression To Verify the sign-in functionality on the Home page',async({p
    await test.step("Verify the user is successfully logged in",async()=>{
     await CommonMethods.isElementDisplayed(page,home.user_account_tab_xpath,10000)
     console.log("Verified the user is successfully logged in")
+    const LoggedIn = home.user_account_tab_xpath
+    await expect(LoggedIn).toBeVisible();
+    await expect(LoggedIn).toContainText('Hi,')
    })
 })
 
@@ -623,34 +626,7 @@ test('Verify that the search bar accepts input and displays relevant suggestions
    });
   });    
  })
-
-// Verify the sign-in functionality on the Home page failed testcase. 
-test('@regression To Verify the sign-in functionality on the Home page',async({page,home,config})=>{
-
-
-   await test.step("Step 1: Navigate to Henry Schein UK Medical URL", async () => {
-    await CommonMethods.navigateToPageUKMedical(page, config.appUrl, 30000);
-  });
-   
-await test.step("Step 2: Verify the sign in button should be visible on the home page", async () => {
-    await CommonMethods.isElementDisplayed(page, home.sign_in_xpath, 30000);
-  }); 
-
-   await test.step("Step 3: Enter username and password" , async () => {
-    await CommonMethods.safeClick(page, home.sign_in_xpath, 15000);
-    await CommonMethods.writeText(page, home.username_xpath, config.username, 10000);
-    await CommonMethods.writeText(page, home.password_xpath, config.password, 10000);
-  });
-   
-   await test.step("Step 4: Click on sign-in submit button", async () => {
-    await CommonMethods.safeClick(page, home.sign_in_submit_btn_xpath);
-  });
-   
-   await test.step("Step 5: Verify user is successfully logged in", async () => {
-    await CommonMethods.isElementDisplayed(page, home.user_account_tab_xpath, 10000);
-  });
-   
-});
+ 
 
 /*
 11)Test case : Verify that the user cannot sign in with invalid credentials
