@@ -30,7 +30,7 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Run regression tests
-        run: npm run test:ci:regression -- headed
+        run: npm run test:ci:regression
 
       - name: Upload Playwright report
         if: always()
@@ -54,7 +54,7 @@ jobs:
         uses: actions/upload-pages-artifact@v4.0.0
         with:
           name: Test Result
-          path: playwright-report/
+          path: playwright-report/index.html
           
 
       - name: Upload Allure results
