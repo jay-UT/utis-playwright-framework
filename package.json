@@ -3,13 +3,24 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-  "clean": "powershell -Command \"if (Test-Path allure-results) { Remove-Item -Recurse -Force allure-results/* }\"",
-  "purge": "powershell -Command \"Get-ChildItem -Directory -Filter 'allure-report-*' | Where-Object { $_.LastWriteTime -lt (Get-Date).AddDays(-30) } | Remove-Item -Recurse -Force -ErrorAction SilentlyContinue\"",
-  "allure:env": "powershell -Command \"'[Environment]`nOS=Windows 11`nTester=' + $env:USERNAME | Out-File -FilePath allure-results/environment.properties -Encoding utf8\"",
   "test": "playwright test",
-  "allure:timestamp": "powershell -Command \"$t=Get-Date -Format 'yyyy-MM-dd_HH-mm-ss'; $p='allure-report-' + $t; allure generate allure-results --clean -o $p; allure open $p\"",
-  "full-report": "npm run purge && npm run clean && npm run test && npm run allure:env && npm run allure:timestamp"
+  "test:ci:regression": "playwright test --grep @regression",
+
+  "purge": "powershell -Command \"Get-ChildItem -Directory -Filter 'allure-report-*' | Where-Object { $_.LastWriteTime -lt (Get-Date).AddDays(-30) } | Remove-Item -Recurse -Force -ErrorAction SilentlyContinue\"",
+
+  "clean": "powershell -Command \"if (Test-Path allure-results) { Remove-Item -Recurse -Force allure-results\\* }\"",
+
+  "allure:env": "powershell -Command \"'[Environment]`nOS=Windows 11`nTester=' + $env:USERNAME | Out-File -FilePath allure-results/environment.properties -Encoding utf8\"",
+
+  "allure:timestamp": "powershell -Command \"...\"",
+
+  "full-report": "npm run purge && npm run clean && (npm run test || true) && npm run allure:env && npm run allure:timestamp"
+}
+,
+  "bin": {
+  "full-report": "./scripts/full-report.js"
 },
+
   "keywords": [],
   "author": "",
   "license": "ISC",
