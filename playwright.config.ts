@@ -1,8 +1,9 @@
 import { defineConfig, devices } from '@playwright/test';
 
 const timestamp = new Date()
-  .toISOString()
-  .replace(/[:.]/g, '-');
+  .toTimeString()
+  .slice(0, 8)
+  .replace(/:/g, "")
 
 export default defineConfig({
   
@@ -31,11 +32,23 @@ export default defineConfig({
   ],
 
   /* Shared settings for all the projects */
+//   use: {
+//   trace: process.env.CI ? 'retain-on-failure' : 'on',
+
+//   headless: false,
+
+//   launchOptions: {
+//     slowMo: 500,
+//   },
+
+//   screenshot: process.env.CI ? 'only-on-failure' : 'on',
+//   video: process.env.CI ? 'retain-on-failure' : 'on'
+// }
   use: {
     /* Capture trace on first retry */
     trace: 'on-first-retry',
 
-    headless: false,
+    headless: true,
 
     launchOptions: {
       slowMo: 500, // wait 500ms between each action
