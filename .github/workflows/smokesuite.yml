@@ -18,7 +18,11 @@ concurrency:
 
 jobs:
   regression:
+<<<<<<< HEAD
     name: Run Automation Regression + Deploy Github Pages Report
+=======
+    name: Run Automation Regression + Deploy Report
+>>>>>>> e1054031e3b56c52b876ed080685220e7bcd7bd7
     runs-on: ubuntu-latest
     environment:
       name: github-pages
@@ -59,6 +63,7 @@ jobs:
         with:
           name: allure-results
           path: allure-results/
+<<<<<<< HEAD
 
       - name: Deploy Playwright report to GitHub Pages
         if: always()
@@ -72,3 +77,70 @@ jobs:
                 echo "Tests failed ❌"
                 exit 1  
      
+=======
+
+      - name: Deploy Playwright report to GitHub Pages
+        if: always() && github.event_name == 'push'
+        id: deployment
+        uses: actions/deploy-pages@v4
+        continue-on-error: true
+          
+      # -------------------------
+      # PR TEST SUMMARY
+      # -------------------------
+      - name: Publish test summary to PR
+        if: always() && github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+
+            if (!fs.existsSync('playwright-results.json')) {
+              console.log('No Playwright JSON found');
+              return;
+            }
+
+            const results = JSON.parse(
+              fs.readFileSync('playwright-results.json', 'utf8')
+            );
+
+            let failed = 0;
+            let passed = 0;
+            let skipped = 0;
+
+             for (const suite of results.suites ?? []) {
+              for (const spec of suite.specs ?? []) {
+                for (const test of spec.tests ?? []) {
+                  for (const result of test.results ?? []) {
+                    if (result.status === 'passed') passed++;
+                    if (result.status === 'failed') failed++;
+                    if (result.status === 'skipped') skipped++;
+                }
+                }
+                }
+                }
+
+            const body = `
+            🧪 **Playwright Test Summary**
+
+            ✅ Passed: **${passed}**  
+            ❌ Failed: **${failed}**
+
+            📄 **HTML Report:**  
+            👉 https://jay-ut.github.io/utis-playwright-framework/
+            `;
+
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body
+            });
+
+            - name: Fail if test cases failed
+              if: steps.run_tests.outcome == 'failure'
+              run: |
+                echo "Tests failed ❌"
+                exit 1  
+     
+>>>>>>> e1054031e3b56c52b876ed080685220e7bcd7bd7
