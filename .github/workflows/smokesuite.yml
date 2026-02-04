@@ -63,7 +63,7 @@ jobs:
           path: allure-results/
 
       - name: Deploy Playwright report to GitHub Pages
-        if: always() && github.event_name != 'pull_request'
+        if: always() && github.event_name == 'push'
         id: deployment
         uses: actions/deploy-pages@v4
         continue-on-error: true
