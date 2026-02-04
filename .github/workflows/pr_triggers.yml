@@ -75,23 +75,20 @@ jobs:
               fs.readFileSync('playwright-results.json', 'utf8')
             );
 
-            let failed = 0;
-            let passed = 0;
+            const stats = results.stats || {};
 
-            for (const suite of results.suites ?? []) {
-              for (const spec of suite.specs ?? []) {
-                for (const test of spec.tests ?? []) {
-                  if (test.outcome === 'unexpected') failed++;
-                  if (test.outcome === 'expected') passed++;
-                }
-              }
-            }
+            const passed = stats.expected ?? 0;
+            const failed = stats.unexpected ?? 0;
+            const skipped = stats.skipped ?? 0;
+            const flaky = stats.flaky ?? 0;
 
             const body = `
             🧪 **Playwright Test Summary**
 
             ✅ Passed: **${passed}**  
-            ❌ Failed: **${failed}**
+            ❌ Failed: **${failed}**  
+            ⏭️ Skipped: **${skipped}**  
+            ⚠️ Flaky: **${flaky}**
 
             📄 **HTML Report:**  
             👉 https://jay-ut.github.io/utis-playwright-framework/
