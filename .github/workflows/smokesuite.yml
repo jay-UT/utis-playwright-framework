@@ -89,15 +89,19 @@ jobs:
 
             let failed = 0;
             let passed = 0;
+            let skipped = 0;
 
-            for (const suite of results.suites ?? []) {
+             for (const suite of results.suites ?? []) {
               for (const spec of suite.specs ?? []) {
                 for (const test of spec.tests ?? []) {
-                  if (test.outcome === 'unexpected') failed++;
-                  if (test.outcome === 'expected') passed++;
+                  for (const result of test.results ?? []) {
+                    if (result.status === 'passed') passed++;
+                    if (result.status === 'failed') failed++;
+                    if (result.status === 'skipped') skipped++;
                 }
-              }
-            }
+                }
+                }
+                }
 
             const body = `
             🧪 **Playwright Test Summary**
