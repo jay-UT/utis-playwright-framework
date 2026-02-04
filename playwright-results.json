@@ -1,0 +1,1091 @@
+{
+  "config": {
+    "configFile": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\playwright.config.ts",
+    "rootDir": "C:/Users/UTIS LAPTOP 570/Desktop/PlaywrightHS/utis-playwright-framework/tests",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/UTIS LAPTOP 570/Desktop/PlaywrightHS/utis-playwright-framework/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "HenrySchein",
+        "name": "HenrySchein",
+        "testDir": "C:/Users/UTIS LAPTOP 570/Desktop/PlaywrightHS/utis-playwright-framework/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "html",
+        {
+          "outputFolder": "reports/html-report-2026-02-04T11-17-19-404Z",
+          "open": "never"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "playwright-results.json"
+        }
+      ],
+      [
+        "list",
+        null
+      ],
+      [
+        "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\node_modules\\allure-playwright\\dist\\cjs\\index.js",
+        {
+          "resultsDir": "allure-results"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "runAgents": "none",
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.58.0",
+    "workers": 4,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "HomePage.spec.ts",
+      "file": "HomePage.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": " To verify the Henry Schein icon is present on the Home page",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "HenrySchein",
+              "projectName": "HenrySchein",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8756,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "verified the page is navigated to home page\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Step 1: Navigate to Henry Schein UK Medical URL",
+                      "duration": 6888
+                    },
+                    {
+                      "title": "Step 2: Verify the Henry Schein icon should be visible on the page",
+                      "duration": 68
+                    },
+                    {
+                      "title": "Step 3: Click the Henry Schein icon",
+                      "duration": 874
+                    },
+                    {
+                      "title": "Step 4: Verify page navigates to Henry Schein home page",
+                      "duration": 235
+                    }
+                  ],
+                  "startTime": "2026-02-04T11:17:20.365Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "62a0194cb94d3eec4948-8cf52999d0ff1e12199a",
+          "file": "HomePage.spec.ts",
+          "line": 20,
+          "column": 5
+        },
+        {
+          "title": " To Verify the sign-in functionality on the Home page",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "HenrySchein",
+              "projectName": "HenrySchein",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 12164,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Navigated to  Henry Schein url\n"
+                    },
+                    {
+                      "text": "Verified the sign in button should be visible on the home page\n"
+                    },
+                    {
+                      "text": "Entered the username and password\n"
+                    },
+                    {
+                      "text": "clicked the sign-in submit button\n"
+                    },
+                    {
+                      "text": "Verified the user is successfully logged in\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Step 1: Navigate to the Henry Schein website.",
+                      "duration": 7743
+                    },
+                    {
+                      "title": "Step 2: Confirm that the Sign In button is visible.",
+                      "duration": 101
+                    },
+                    {
+                      "title": "Step 3: Enter a valid username and password.",
+                      "duration": 2174
+                    },
+                    {
+                      "title": "Step 4: Click the Sign In button.",
+                      "duration": 665
+                    },
+                    {
+                      "title": "Verify the user is successfully logged in",
+                      "duration": 914
+                    }
+                  ],
+                  "startTime": "2026-02-04T11:17:29.416Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "62a0194cb94d3eec4948-cec4fe3fe24cd6993f20",
+          "file": "HomePage.spec.ts",
+          "line": 54,
+          "column": 5
+        },
+        {
+          "title": " Verify that the tooltip is displays the address when hovering over the address information icon",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "HenrySchein",
+              "projectName": "HenrySchein",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 13974,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Navigated to  Henry Schein url\n"
+                    },
+                    {
+                      "text": "Verified the sign in button should be visible on the home page\n"
+                    },
+                    {
+                      "text": "Entered the username and password\n"
+                    },
+                    {
+                      "text": "clicked the sign-in submit button\n"
+                    },
+                    {
+                      "text": "the address-tooltip is visible\n"
+                    },
+                    {
+                      "text": "Verified that the address-tooltip is displays the address when it is hovered \n"
+                    },
+                    {
+                      "text": "Ship Location :Test company\n"
+                    },
+                    {
+                      "text": "Address  test address  \n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Step 1: Navigate to the Henry Schein website.",
+                      "duration": 7935
+                    },
+                    {
+                      "title": "Step 2: Confirm that the Sign In button is visible.",
+                      "duration": 141
+                    },
+                    {
+                      "title": "Step 3: Enter a valid username and password.",
+                      "duration": 2002
+                    },
+                    {
+                      "title": "Step 4: Click the Sign In button.",
+                      "duration": 611
+                    },
+                    {
+                      "title": "Step 5:  Verify that the address tooltip is visible in the menu bar.",
+                      "duration": 1375
+                    },
+                    {
+                      "title": "Step 6: Hover over the address tooltip and check that the tooltip displays the address information.",
+                      "duration": 1376
+                    }
+                  ],
+                  "startTime": "2026-02-04T11:17:41.603Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "62a0194cb94d3eec4948-de400738627d730a4b15",
+          "file": "HomePage.spec.ts",
+          "line": 103,
+          "column": 5
+        },
+        {
+          "title": "Verify that the banner slider displays all slides with their respective content and transitions between slides when the Navigation Arrows buttons are clicked .",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "HenrySchein",
+              "projectName": "HenrySchein",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 26025,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Navigated to  Henry Schein url\n"
+                    },
+                    {
+                      "text": "Verified the sign in button should be visible on the home page\n"
+                    },
+                    {
+                      "text": "Entered the username and password\n"
+                    },
+                    {
+                      "text": "clicked the sign-in submit button\n"
+                    },
+                    {
+                      "text": "The banner is displayed\n"
+                    },
+                    {
+                      "text": "Set(5) {\n  \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                    \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                            \\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'                                    Have You Tried Our Own Brand?\\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'                                Join those who are testing smarter\\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'                                    \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                                        Shop Now \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                            \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'                            \\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'                            \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'                    \\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                     \\n'\u001b[39m +\n    \u001b[32m'                    \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                    \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'            '\u001b[39m,\n  \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                    \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                            \\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'                                    High Quality, Reliable, Single-Use\\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'                                Guaranteed With Our Money-Back Promise\\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'                                    \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                                        Buy Now\\n'\u001b[39m +\n    \u001b[32m'                                    \\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                            \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'                            \\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'                            \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'                    \\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                     \\n'\u001b[39m +\n    \u001b[32m'                    \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                    \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'            '\u001b[39m,\n  \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                    \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                            \\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'                                    Rolling Out Big Value\\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'                                Give Our Own Brand A Go\\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                                    \\n'\u001b[39m +\n    \u001b[32m'                                        Try Our Recycled Couch Roll\\n'\u001b[39m +\n    \u001b[32m'                                    \\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                            \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'                            \\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'                            \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'                    \\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                     \\n'\u001b[39m +\n    \u001b[32m'                    \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                    \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'            '\u001b[39m,\n  \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                    \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                            \\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'                                    Freshen Up Your Consulting Room\\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'                                Curtains and Accessories in A Range of Colours\\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'                                    \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                                        Try Our Own Brand Curtains and Accessories \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                            \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'                            \\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'                            \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'                    \\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                     \\n'\u001b[39m +\n    \u001b[32m'                    \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                    \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'            '\u001b[39m,\n  \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                    \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                            \\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'                                    Have You Examined Our New Ranges?\\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'                                New Products, Same Fair Prices\\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                                    \\n'\u001b[39m +\n    \u001b[32m'                                        Shop New In\\n'\u001b[39m +\n    \u001b[32m'                                    \\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                            \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'                            \\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'                            \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'                    \\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                     \\n'\u001b[39m +\n    \u001b[32m'                    \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                    \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'            '\u001b[39m\n}\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Step 1: Navigate to the Henry Schein website.",
+                      "duration": 9410
+                    },
+                    {
+                      "title": "Step 2: Confirm that the Sign In button is visible.",
+                      "duration": 247
+                    },
+                    {
+                      "title": "Step 3: Enter a valid username and password.",
+                      "duration": 3493
+                    },
+                    {
+                      "title": "Step 4: Click the Sign In button.",
+                      "duration": 883
+                    },
+                    {
+                      "title": "Step 5: Verify that the banner is displayed on the home page.",
+                      "duration": 40
+                    },
+                    {
+                      "title": "Step 6: Verify that the banner slides when the user clicks Navigation Arrows buttons .",
+                      "duration": 10429
+                    }
+                  ],
+                  "startTime": "2026-02-04T11:17:55.593Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "62a0194cb94d3eec4948-858c6c20301a41357485",
+          "file": "HomePage.spec.ts",
+          "line": 167,
+          "column": 5
+        },
+        {
+          "title": " To Verify that the user cannot sign in with invalid credentials",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "HenrySchein",
+              "projectName": "HenrySchein",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 20284,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Navigated to  HenrySchein url\n"
+                    },
+                    {
+                      "text": "Verified the sign in button should be visible on the home page\n"
+                    },
+                    {
+                      "text": "Entered invalid username and password\n"
+                    },
+                    {
+                      "text": "Clicked the sign-in submit button\n"
+                    },
+                    {
+                      "text": "Please enter valid Username/Password\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Step 1: Navigate to  HenrySchein url",
+                      "duration": 12887
+                    },
+                    {
+                      "title": "Step 2: Verify the sign in button should be visible on the home page",
+                      "duration": 401
+                    },
+                    {
+                      "title": "Step 3: Enter invalid username and password",
+                      "duration": 4289
+                    },
+                    {
+                      "title": "Step 4: Click the sign-in submit button",
+                      "duration": 739
+                    },
+                    {
+                      "title": "Step 5: Verify the user cannot sign in successfully",
+                      "duration": 392
+                    }
+                  ],
+                  "startTime": "2026-02-04T11:18:21.633Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "62a0194cb94d3eec4948-4af28b7ace210cb4f39c",
+          "file": "HomePage.spec.ts",
+          "line": 228,
+          "column": 5
+        },
+        {
+          "title": " Verify Main Menu Buttons Are Enabled and Interactive",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "HenrySchein",
+              "projectName": "HenrySchein",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 28942,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Navigated to  Henry Schein url\n"
+                    },
+                    {
+                      "text": "Clicked the Sign-In button on home page\n"
+                    },
+                    {
+                      "text": "Entered the username and password\n"
+                    },
+                    {
+                      "text": "Clicked the sign-in submit button\n"
+                    },
+                    {
+                      "text": "Verified the user is successfully logged in\n"
+                    },
+                    {
+                      "text": "Top Supplies button is enabled\n"
+                    },
+                    {
+                      "text": "List of Top Supplies are displayed\n"
+                    },
+                    {
+                      "text": "Top Equipment button is enabled\n"
+                    },
+                    {
+                      "text": "List of Top Equipment are displayed\n"
+                    },
+                    {
+                      "text": "Pharmaceuticals button is enabled\n"
+                    },
+                    {
+                      "text": "List of Pharmaceuticals are displayed\n"
+                    },
+                    {
+                      "text": "Furniture button is enabled\n"
+                    },
+                    {
+                      "text": "List of Furniture are displayed\n"
+                    },
+                    {
+                      "text": "My Dashboard button is enabled\n"
+                    },
+                    {
+                      "text": "My Dashboard details are displayed\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Step 1: Navigate to  HenrySchein url",
+                      "duration": 13914
+                    },
+                    {
+                      "title": "Step 2: Click Sign-In button on the home page to log in",
+                      "duration": 582
+                    },
+                    {
+                      "title": "Step 3: Enter the username and password",
+                      "duration": 4419
+                    },
+                    {
+                      "title": "Step 4: click the sign-in submit button",
+                      "duration": 719
+                    },
+                    {
+                      "title": "Step 5: Verify the user is successfully logged in",
+                      "duration": 924
+                    },
+                    {
+                      "title": "Step 6: Click Top Supplies button from main menu",
+                      "duration": 78
+                    },
+                    {
+                      "title": "Step 7: I should see list of Top Supplies",
+                      "duration": 3763
+                    },
+                    {
+                      "title": "Step 8: Click Top Equipment button from main menu",
+                      "duration": 247
+                    },
+                    {
+                      "title": "Step 9: I should see list of Top Equipment",
+                      "duration": 821
+                    },
+                    {
+                      "title": "Step 10: Click Pharmaceuticals button from main menu",
+                      "duration": 31
+                    },
+                    {
+                      "title": "Step 11: I should see list of Pharmaceuticals",
+                      "duration": 951
+                    },
+                    {
+                      "title": "Step 12: Click Furniture button from main menu",
+                      "duration": 38
+                    },
+                    {
+                      "title": "Step 13: I should see list of Furniture",
+                      "duration": 869
+                    },
+                    {
+                      "title": "Step 14: Click My Dashboard button from main menu",
+                      "duration": 11
+                    },
+                    {
+                      "title": "Step 15: I should see list of My Dashboard",
+                      "duration": 661
+                    }
+                  ],
+                  "startTime": "2026-02-04T11:18:41.952Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "62a0194cb94d3eec4948-0e38183e157b784ba1f3",
+          "file": "HomePage.spec.ts",
+          "line": 280,
+          "column": 5
+        },
+        {
+          "title": " Verify Main Menu Links Are Enabled and Interactive",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "HenrySchein",
+              "projectName": "HenrySchein",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 35489,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Navigated to  Henry Schein url\n"
+                    },
+                    {
+                      "text": "Clicked the Sign-In button on home page\n"
+                    },
+                    {
+                      "text": "Entered the username and password\n"
+                    },
+                    {
+                      "text": "Clicked the sign-in submit button\n"
+                    },
+                    {
+                      "text": "Verified the user is successfully logged in\n"
+                    },
+                    {
+                      "text": "Clicked Clearance Link\n"
+                    },
+                    {
+                      "text": "Verified the page is navigated to Clearance page\n"
+                    },
+                    {
+                      "text": "Clicked Blog Link\n"
+                    },
+                    {
+                      "text": "Verified the page is navigated to Blog page\n"
+                    },
+                    {
+                      "text": "Clicked Order From History Link\n"
+                    },
+                    {
+                      "text": "Verified the page is navigated to Order From History page\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Step 1: Navigate to  Henry Schein url",
+                      "duration": 12687
+                    },
+                    {
+                      "title": "Step 2: Click Sign-In button on the home page to log in",
+                      "duration": 300
+                    },
+                    {
+                      "title": "Step 3: Enter the username and password",
+                      "duration": 4297
+                    },
+                    {
+                      "title": "Step 4: click the sign-in submit button",
+                      "duration": 722
+                    },
+                    {
+                      "title": "Step 5: Verify the user is successfully logged in",
+                      "duration": 1070
+                    },
+                    {
+                      "title": "Step 6: Click Clearance link from main menu",
+                      "duration": 3380
+                    },
+                    {
+                      "title": "Step 7: Link should navigate to Clearance Page",
+                      "duration": 18
+                    },
+                    {
+                      "title": "Step 8: Click Blog link from main menu",
+                      "duration": 626
+                    },
+                    {
+                      "title": "Step 9: Link should navigate to Blog Page",
+                      "duration": 133
+                    },
+                    {
+                      "title": "Step 10: Click Order From History link from main menu",
+                      "duration": 946
+                    },
+                    {
+                      "title": "Step 11: Link should navigate to Order From History",
+                      "duration": 10593
+                    }
+                  ],
+                  "startTime": "2026-02-04T11:19:10.948Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "62a0194cb94d3eec4948-058d8b7769a72b0e0323",
+          "file": "HomePage.spec.ts",
+          "line": 375,
+          "column": 5
+        },
+        {
+          "title": " Verify Footer Links Are Interactive and Navigate to respective pages",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "HenrySchein",
+              "projectName": "HenrySchein",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 67462,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Navigated to  Henry Schein url\n"
+                    },
+                    {
+                      "text": "Clicked the Sign-In button on home page\n"
+                    },
+                    {
+                      "text": "Entered the username and password\n"
+                    },
+                    {
+                      "text": "Clicked the sign-in submit button\n"
+                    },
+                    {
+                      "text": "Verified the user is successfully logged in\n"
+                    },
+                    {
+                      "text": "Clicked Legal Terms Link\n"
+                    },
+                    {
+                      "text": "Verified the page is navigated to Legal Terms page\n"
+                    },
+                    {
+                      "text": "Clicked Privacy Notice Link\n"
+                    },
+                    {
+                      "text": "Verified the page is navigated to Privacy Notice page\n"
+                    },
+                    {
+                      "text": "Clicked Delivery and Returns Link\n"
+                    },
+                    {
+                      "text": "Verified the page is navigated to Delivery and Returns page\n"
+                    },
+                    {
+                      "text": "Clicked LinkedIn Link\n"
+                    },
+                    {
+                      "text": "Verified navigation to LinkedIn page\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Step 1: Navigate to  Henry Schein url",
+                      "duration": 12334
+                    },
+                    {
+                      "title": "Step 2: Click Sign-In button on the home page to log in",
+                      "duration": 526
+                    },
+                    {
+                      "title": "Step 3: Enter the username and password",
+                      "duration": 4239
+                    },
+                    {
+                      "title": "Step 4: Click the sign-in submit button",
+                      "duration": 748
+                    },
+                    {
+                      "title": "Step 5: Verify the user is successfully logged in",
+                      "duration": 1159
+                    },
+                    {
+                      "title": "Step 6: Click Legal Terms link on footer section",
+                      "duration": 4258
+                    },
+                    {
+                      "title": "Step 7: Link should navigate to Legal Terms Page",
+                      "duration": 11653
+                    },
+                    {
+                      "title": "Step 8: Click Privacy Notice link on footer section",
+                      "duration": 1066
+                    },
+                    {
+                      "title": "Step 9: Link should navigate to Privacy Notice Page",
+                      "duration": 11927
+                    },
+                    {
+                      "title": "Step 10: Click Delivery and Returns link on footer section",
+                      "duration": 1193
+                    },
+                    {
+                      "title": "Step 11:  Link should navigate to Delivery and Returns page",
+                      "duration": 11648
+                    },
+                    {
+                      "title": "Step 12: Click LinkedIn link on footer section & wait for new tab",
+                      "duration": 1535
+                    },
+                    {
+                      "title": "Step 13: Verify LinkedIn URL",
+                      "duration": 3867
+                    }
+                  ],
+                  "startTime": "2026-02-04T11:19:46.448Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "62a0194cb94d3eec4948-b4a8dd597d706acac854",
+          "file": "HomePage.spec.ts",
+          "line": 446,
+          "column": 5
+        },
+        {
+          "title": " To verify the Sign up flow on the Home page",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "HenrySchein",
+              "projectName": "HenrySchein",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 31865,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Navigated to Henry Schein url\n"
+                    },
+                    {
+                      "text": "Verified the Sign up button is visible on the home page\n"
+                    },
+                    {
+                      "text": "Clicked on the Sign up button\n"
+                    },
+                    {
+                      "text": "Verified navigation to Registration page\n"
+                    },
+                    {
+                      "text": "Clicked Continue and new sign-up stopped till here...\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Step 1: Navigate to Henry Schein url",
+                      "duration": 12729
+                    },
+                    {
+                      "title": "Step 2: Verify the Sign up button should be visible on the home page",
+                      "duration": 455
+                    },
+                    {
+                      "title": "Step 3: Click on the Sign up button",
+                      "duration": 3551
+                    },
+                    {
+                      "title": "Step 4: Verify user is navigated from home page",
+                      "duration": 14138
+                    }
+                  ],
+                  "startTime": "2026-02-04T11:20:53.925Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "62a0194cb94d3eec4948-e75cd7fc75e59a3c737f",
+          "file": "HomePage.spec.ts",
+          "line": 520,
+          "column": 5
+        },
+        {
+          "title": " Verify that the search bar accepts input and displays relevant suggestions",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "HenrySchein",
+              "projectName": "HenrySchein",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 37736,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Navigated to Henry Schein url\n"
+                    },
+                    {
+                      "text": "Search bar is visible\n"
+                    },
+                    {
+                      "text": "Entered search keyword\n"
+                    },
+                    {
+                      "text": "Search suggestions container exists\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Step 1: Navigate to Henry Schein url",
+                      "duration": 13266
+                    },
+                    {
+                      "title": "Step 2: Verify search bar is visible",
+                      "duration": 446
+                    },
+                    {
+                      "title": "Step 3: Enter search keyword",
+                      "duration": 3481
+                    },
+                    {
+                      "title": "Step 4: Verify search suggestions are displayed",
+                      "duration": 0
+                    }
+                  ],
+                  "startTime": "2026-02-04T11:21:25.806Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "62a0194cb94d3eec4948-dac5ac2365e579453096",
+          "file": "HomePage.spec.ts",
+          "line": 591,
+          "column": 5
+        },
+        {
+          "title": " To Verify that the user cannot sign in",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "HenrySchein",
+              "projectName": "HenrySchein",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 33468,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('//div[@data-test-id=\\'login.unknownKey1\\']')\nTimeout: 5000ms\n\u001b[32m- Expected substring  - 1\u001b[39m\n\u001b[31m+ Received string     + 5\u001b[39m\n\n\u001b[32m- Hi\u001b[39m\n\u001b[31m+ The username and/or password entered is incorrect,\u001b[39m\n\u001b[31m+ please re-enter correct username or password.\u001b[39m\n\u001b[31m+ If you enter incorrect user password three times,\u001b[39m\n\u001b[31m+ then your account will be locked and you will need to\u001b[39m\n\u001b[31m+ reset your password or contact support.\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('//div[@data-test-id=\\'login.unknownKey1\\']')\u001b[22m\n\u001b[2m    8 × locator resolved to <div role=\"alert\" aria-atomic=\"true\" _ngcontent-my-app-c341=\"\" data-test-id=\"login.unknownKey1\" class=\"errorMessage caption1-regular text-left ng-star-inserted\">The username and/or password entered is incorrect…</div>\u001b[22m\n\u001b[2m      - unexpected value \"The username and/or password entered is incorrect,\u001b[22m\n\u001b[2mplease re-enter correct username or password.\u001b[22m\n\u001b[2mIf you enter incorrect user password three times,\u001b[22m\n\u001b[2mthen your account will be locked and you will need to\u001b[22m\n\u001b[2mreset your password or contact support.\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('//div[@data-test-id=\\'login.unknownKey1\\']')\nTimeout: 5000ms\n\u001b[32m- Expected substring  - 1\u001b[39m\n\u001b[31m+ Received string     + 5\u001b[39m\n\n\u001b[32m- Hi\u001b[39m\n\u001b[31m+ The username and/or password entered is incorrect,\u001b[39m\n\u001b[31m+ please re-enter correct username or password.\u001b[39m\n\u001b[31m+ If you enter incorrect user password three times,\u001b[39m\n\u001b[31m+ then your account will be locked and you will need to\u001b[39m\n\u001b[31m+ reset your password or contact support.\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('//div[@data-test-id=\\'login.unknownKey1\\']')\u001b[22m\n\u001b[2m    8 × locator resolved to <div role=\"alert\" aria-atomic=\"true\" _ngcontent-my-app-c341=\"\" data-test-id=\"login.unknownKey1\" class=\"errorMessage caption1-regular text-left ng-star-inserted\">The username and/or password entered is incorrect…</div>\u001b[22m\n\u001b[2m      - unexpected value \"The username and/or password entered is incorrect,\u001b[22m\n\u001b[2mplease re-enter correct username or password.\u001b[22m\n\u001b[2mIf you enter incorrect user password three times,\u001b[22m\n\u001b[2mthen your account will be locked and you will need to\u001b[22m\n\u001b[2mreset your password or contact support.\"\u001b[22m\n\n    at C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\tests\\HomePage.spec.ts:659:30\n    at C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\tests\\HomePage.spec.ts:654:4",
+                    "location": {
+                      "file": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\tests\\HomePage.spec.ts",
+                      "column": 30,
+                      "line": 659
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 657 |\u001b[39m       \u001b[36mconst\u001b[39m errorMsg \u001b[33m=\u001b[39m (home\u001b[33m.\u001b[39msign_in_error_msg_xpath)\u001b[33m;\u001b[39m\n \u001b[90m 658 |\u001b[39m       \u001b[36mawait\u001b[39m expect(errorMsg)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 659 |\u001b[39m       \u001b[36mawait\u001b[39m expect(errorMsg)\u001b[33m.\u001b[39mtoContainText(\u001b[32m'Hi'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 660 |\u001b[39m    })\n \u001b[90m 661 |\u001b[39m\n \u001b[90m 662 |\u001b[39m })\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\tests\\HomePage.spec.ts",
+                        "column": 30,
+                        "line": 659
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('//div[@data-test-id=\\'login.unknownKey1\\']')\nTimeout: 5000ms\n\u001b[32m- Expected substring  - 1\u001b[39m\n\u001b[31m+ Received string     + 5\u001b[39m\n\n\u001b[32m- Hi\u001b[39m\n\u001b[31m+ The username and/or password entered is incorrect,\u001b[39m\n\u001b[31m+ please re-enter correct username or password.\u001b[39m\n\u001b[31m+ If you enter incorrect user password three times,\u001b[39m\n\u001b[31m+ then your account will be locked and you will need to\u001b[39m\n\u001b[31m+ reset your password or contact support.\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('//div[@data-test-id=\\'login.unknownKey1\\']')\u001b[22m\n\u001b[2m    8 × locator resolved to <div role=\"alert\" aria-atomic=\"true\" _ngcontent-my-app-c341=\"\" data-test-id=\"login.unknownKey1\" class=\"errorMessage caption1-regular text-left ng-star-inserted\">The username and/or password entered is incorrect…</div>\u001b[22m\n\u001b[2m      - unexpected value \"The username and/or password entered is incorrect,\u001b[22m\n\u001b[2mplease re-enter correct username or password.\u001b[22m\n\u001b[2mIf you enter incorrect user password three times,\u001b[22m\n\u001b[2mthen your account will be locked and you will need to\u001b[22m\n\u001b[2mreset your password or contact support.\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 657 |\u001b[39m       \u001b[36mconst\u001b[39m errorMsg \u001b[33m=\u001b[39m (home\u001b[33m.\u001b[39msign_in_error_msg_xpath)\u001b[33m;\u001b[39m\n \u001b[90m 658 |\u001b[39m       \u001b[36mawait\u001b[39m expect(errorMsg)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 659 |\u001b[39m       \u001b[36mawait\u001b[39m expect(errorMsg)\u001b[33m.\u001b[39mtoContainText(\u001b[32m'Hi'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 660 |\u001b[39m    })\n \u001b[90m 661 |\u001b[39m\n \u001b[90m 662 |\u001b[39m })\u001b[0m\n\u001b[2m    at C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\tests\\HomePage.spec.ts:659:30\u001b[22m\n\u001b[2m    at C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\tests\\HomePage.spec.ts:654:4\u001b[22m"
+                    }
+                  ],
+                  "stdout": [
+                    {
+                      "text": "Navigated to  HenrySchein url\n"
+                    },
+                    {
+                      "text": "Verified the sign in button should be visible on the home page\n"
+                    },
+                    {
+                      "text": "Entered invalid username and password\n"
+                    },
+                    {
+                      "text": "Clicked the sign-in submit button\n"
+                    },
+                    {
+                      "text": "Please enter valid Username/Password\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Step 1: Navigate to  HenrySchein url",
+                      "duration": 18707
+                    },
+                    {
+                      "title": "Step 2: Verify the sign in button should be visible on the home page",
+                      "duration": 1044
+                    },
+                    {
+                      "title": "Step 3: Enter invalid username and password",
+                      "duration": 6103
+                    },
+                    {
+                      "title": "Step 4: Click the sign-in submit button",
+                      "duration": 884
+                    },
+                    {
+                      "title": "Step 5: Verify the user cannot sign in successfully",
+                      "duration": 5583,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('//div[@data-test-id=\\'login.unknownKey1\\']')\nTimeout: 5000ms\n\u001b[32m- Expected substring  - 1\u001b[39m\n\u001b[31m+ Received string     + 5\u001b[39m\n\n\u001b[32m- Hi\u001b[39m\n\u001b[31m+ The username and/or password entered is incorrect,\u001b[39m\n\u001b[31m+ please re-enter correct username or password.\u001b[39m\n\u001b[31m+ If you enter incorrect user password three times,\u001b[39m\n\u001b[31m+ then your account will be locked and you will need to\u001b[39m\n\u001b[31m+ reset your password or contact support.\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('//div[@data-test-id=\\'login.unknownKey1\\']')\u001b[22m\n\u001b[2m    8 × locator resolved to <div role=\"alert\" aria-atomic=\"true\" _ngcontent-my-app-c341=\"\" data-test-id=\"login.unknownKey1\" class=\"errorMessage caption1-regular text-left ng-star-inserted\">The username and/or password entered is incorrect…</div>\u001b[22m\n\u001b[2m      - unexpected value \"The username and/or password entered is incorrect,\u001b[22m\n\u001b[2mplease re-enter correct username or password.\u001b[22m\n\u001b[2mIf you enter incorrect user password three times,\u001b[22m\n\u001b[2mthen your account will be locked and you will need to\u001b[22m\n\u001b[2mreset your password or contact support.\"\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('//div[@data-test-id=\\'login.unknownKey1\\']')\nTimeout: 5000ms\n\u001b[32m- Expected substring  - 1\u001b[39m\n\u001b[31m+ Received string     + 5\u001b[39m\n\n\u001b[32m- Hi\u001b[39m\n\u001b[31m+ The username and/or password entered is incorrect,\u001b[39m\n\u001b[31m+ please re-enter correct username or password.\u001b[39m\n\u001b[31m+ If you enter incorrect user password three times,\u001b[39m\n\u001b[31m+ then your account will be locked and you will need to\u001b[39m\n\u001b[31m+ reset your password or contact support.\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('//div[@data-test-id=\\'login.unknownKey1\\']')\u001b[22m\n\u001b[2m    8 × locator resolved to <div role=\"alert\" aria-atomic=\"true\" _ngcontent-my-app-c341=\"\" data-test-id=\"login.unknownKey1\" class=\"errorMessage caption1-regular text-left ng-star-inserted\">The username and/or password entered is incorrect…</div>\u001b[22m\n\u001b[2m      - unexpected value \"The username and/or password entered is incorrect,\u001b[22m\n\u001b[2mplease re-enter correct username or password.\u001b[22m\n\u001b[2mIf you enter incorrect user password three times,\u001b[22m\n\u001b[2mthen your account will be locked and you will need to\u001b[22m\n\u001b[2mreset your password or contact support.\"\u001b[22m\n\n    at C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\tests\\HomePage.spec.ts:659:30\n    at C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\tests\\HomePage.spec.ts:654:4",
+                        "location": {
+                          "file": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\tests\\HomePage.spec.ts",
+                          "column": 30,
+                          "line": 659
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 657 |\u001b[39m       \u001b[36mconst\u001b[39m errorMsg \u001b[33m=\u001b[39m (home\u001b[33m.\u001b[39msign_in_error_msg_xpath)\u001b[33m;\u001b[39m\n \u001b[90m 658 |\u001b[39m       \u001b[36mawait\u001b[39m expect(errorMsg)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 659 |\u001b[39m       \u001b[36mawait\u001b[39m expect(errorMsg)\u001b[33m.\u001b[39mtoContainText(\u001b[32m'Hi'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 660 |\u001b[39m    })\n \u001b[90m 661 |\u001b[39m\n \u001b[90m 662 |\u001b[39m })\u001b[0m"
+                      }
+                    }
+                  ],
+                  "startTime": "2026-02-04T11:22:03.559Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\test-results\\HomePage--To-Verify-that-the-user-cannot-sign-in-HenrySchein\\test-failed-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\test-results\\HomePage--To-Verify-that-the-user-cannot-sign-in-HenrySchein\\video.webm"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\tests\\HomePage.spec.ts",
+                    "column": 30,
+                    "line": 659
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "62a0194cb94d3eec4948-f52153c7a30a655c3e00",
+          "file": "HomePage.spec.ts",
+          "line": 634,
+          "column": 5
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-02-04T11:17:19.428Z",
+    "duration": 318207.269,
+    "expected": 10,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

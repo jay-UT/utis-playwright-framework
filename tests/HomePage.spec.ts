@@ -17,7 +17,7 @@ import { assert } from 'node:console'
  4.verify the page is navigated to home page
 */
 
-test('@regression To verify the Henry Schein icon is present on the Home page', async({page,home,config})=>{
+test(' To verify the Henry Schein icon is present on the Home page', async({page,home,config})=>{
 //  const config= new TestConfig(); 
 //  const home =new HomePage(page);
  
@@ -51,7 +51,7 @@ test('@regression To verify the Henry Schein icon is present on the Home page', 
  5.Verify the user is successfully logged in
 */
 
-test('@regression To Verify the sign-in functionality on the Home page',async({page,home,config})=>{
+test(' To Verify the sign-in functionality on the Home page',async({page,home,config})=>{
    
 //  1.Navigate to  Henry Schein url
    await test.step("Step 1: Navigate to the Henry Schein website.",async()=>{
@@ -100,7 +100,7 @@ Steps:
 6.)Hover over the address tooltip and check that the tooltip displays the address information.
 */
 
-test("@regression Verify that the tooltip is displays the address when hovering over the address information icon",async({page,home,config})=>{
+test(" Verify that the tooltip is displays the address when hovering over the address information icon",async({page,home,config})=>{
 
 // 1.)Go to the Henry Schein website.
    await test.step("Step 1: Navigate to the Henry Schein website.",async()=>{
@@ -164,7 +164,7 @@ Steps:
 5.)Verify that the banner is displayed on the home page.
 6.)Verify that the banner slides automatically without any user interaction.*/
 
-test("@regression Verify that the banner slider displays all slides with their respective content and transitions between slides when the Navigation Arrows buttons are clicked .",async({page,home,config})=>{
+test("Verify that the banner slider displays all slides with their respective content and transitions between slides when the Navigation Arrows buttons are clicked .",async({page,home,config})=>{
 
    await test.step("Step 1: Navigate to the Henry Schein website.",async()=>{
       await CommonMethods.navigateToPageUKMedical(page,config.appUrl,10000)
@@ -225,7 +225,7 @@ Steps
 5.Verify the user cannot sign in successfully
 */
 
-test('@regression To Verify that the user cannot sign in with invalid credentials', async ({ page, home, config }) => {
+test(' To Verify that the user cannot sign in with invalid credentials', async ({ page, home, config }) => {
 
    await test.step("Step 1: Navigate to  HenrySchein url", async () => {
       await CommonMethods.navigateToPageUKMedical(page, config.appUrl, 30000)
@@ -277,7 +277,7 @@ Steps
 15.I should see list of My Dashboard
 */
 
-test('@regression Verify Main Menu Buttons Are Enabled and Interactive', async ({ page, home, config }) => {
+test(' Verify Main Menu Buttons Are Enabled and Interactive', async ({ page, home, config }) => {
 
    await test.step("Step 1: Navigate to  HenrySchein url", async () => {
       await CommonMethods.navigateToPageUKMedical(page, config.appUrl, 30000)
@@ -372,7 +372,7 @@ Steps
 11.Link should navigate to Order From History
 */
 
-test('@regression Verify Main Menu Links Are Enabled and Interactive', async ({ page, home, config }) => {
+test(' Verify Main Menu Links Are Enabled and Interactive', async ({ page, home, config }) => {
 
    await test.step("Step 1: Navigate to  Henry Schein url", async () => {
       await CommonMethods.navigateToPageUKMedical(page, config.appUrl, 30000)
@@ -443,7 +443,7 @@ Steps
 13.Link should navigate to LinkedIn
 */
 
-test('@regression Verify Footer Links Are Interactive and Navigate to respective pages', async ({ page, home, config }) => {
+test(' Verify Footer Links Are Interactive and Navigate to respective pages', async ({ page, home, config }) => {
 
    await test.step("Step 1: Navigate to  Henry Schein url", async () => {
       await CommonMethods.navigateToPageUKMedical(page, config.appUrl, 30000)
@@ -517,7 +517,7 @@ Steps
 4.Verify user is navigated to Sign up / Registration page
 */
 
-test('@regression To verify the Sign up flow on the Home page', async ({ page, home, config }) => {
+test(' To verify the Sign up flow on the Home page', async ({ page, home, config }) => {
 
   // 1.Navigate to Henry Schein url
   await test.step("Step 1: Navigate to Henry Schein url",async()=>{
@@ -588,7 +588,7 @@ Steps
 */
 
 // 1. Navigate to Henry Schein url
-test('@regression Verify that the search bar accepts input and displays relevant suggestions',async ({ page, home, config }) => {
+test(' Verify that the search bar accepts input and displays relevant suggestions',async ({ page, home, config }) => {
    await test.step("Step 1: Navigate to Henry Schein url",async()=>{
    await CommonMethods.navigateToPageUKMedical(page, config.appUrl, 10000);
    console.log("Navigated to Henry Schein url");
@@ -629,9 +629,9 @@ test('@regression Verify that the search bar accepts input and displays relevant
  
 
 /*
-11)Test case : Verify that the user cannot sign in with invalid credentials
+11)Test case : Verify that the user cannot sign in 
 */
-test('@regression To Verify that the user cannot sign in', async ({ page, home, config }) => {
+test(' To Verify that the user cannot sign in', async ({ page, home, config }) => {
 
    await test.step("Step 1: Navigate to  HenrySchein url", async () => {
       await CommonMethods.navigateToPageUKMedical(page, config.appUrl, 30000)

@@ -1,7 +1,13 @@
 import { defineConfig, devices } from '@playwright/test';
 
+const timestamp = new Date()
+  .toISOString()
+  .replace(/[:.]/g, '-');
+
 export default defineConfig({
   
+  timeout: 90 * 1000,   //30000 ms(30 secs)
+
   testDir: './tests',
 
   /* Run tests in files in parallel */
@@ -18,7 +24,8 @@ export default defineConfig({
 
   /* 🔹 REPORTERS: Allure + HTML */
   reporter: [
-    ['html', { open: 'never' }],
+    ['html', { outputFolder: `reports/html-report-${timestamp}`, open: 'never' }],
+    ['json', { outputFile: 'playwright-results.json' }],
     ['list'],
     ['allure-playwright', { resultsDir: 'allure-results' }]
   ],
@@ -28,7 +35,7 @@ export default defineConfig({
     /* Capture trace on first retry */
     trace: 'on-first-retry',
 
-    headless: true,
+    headless: false,
 
     launchOptions: {
       slowMo: 500, // wait 500ms between each action
@@ -39,7 +46,7 @@ export default defineConfig({
     video: 'retain-on-failure'
   },
 
-  //grep: /@master/, 
+ // grep: /@smoke/, 
 
   projects: [
     {
