@@ -20,8 +20,10 @@ concurrency:
 
 jobs:
   regression:
-    name: Run Automation Regression
+    name: Run Automation Regression + Deploy Report
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
 
     steps:
       - name: Checkout code
@@ -59,8 +61,14 @@ jobs:
         with:
           name: allure-results
           path: allure-results/
+
+      - name: Deploy Playwright report to GitHub Pages
+        if: always()
+        id: deployment
+        uses: actions/deploy-pages@v4
+        continue-on-error: true
           
-     # -------------------------
+      # -------------------------
       # PR TEST SUMMARY
       # -------------------------
       - name: Publish test summary to PR
@@ -107,17 +115,10 @@ jobs:
               issue_number: context.issue.number,
               body
             });
+
+            - name: Fail if test cases failed
+              if: steps.run_tests.outcome == 'failure'
+              run: |
+                echo "Tests failed ❌"
+                exit 1  
      
-
-  deploy:
-    name: Deploy to GitHub Pages
-    needs: regression
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
-    steps:
-      - name: Deploy
-        id: deployment
-        uses: actions/deploy-pages@v4
