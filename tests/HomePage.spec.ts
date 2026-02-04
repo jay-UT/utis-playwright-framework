@@ -17,7 +17,12 @@ import { assert } from 'node:console'
  4.verify the page is navigated to home page
 */
 
-test('@regression To verify the Henry Schein icon is present on the Home page', async({page,home,config})=>{
+test(
+  'Verify Henry Schein icon is visible and navigates to home page',
+  {
+    tag: ['@regression', '@smoke', '@home', '@branding'],
+  },
+  async ({ page, home, config }) => {
 //  const config= new TestConfig();
 //  const home =new HomePage(page);
  
@@ -624,7 +629,7 @@ test('Verify that the search bar accepts input and displays relevant suggestions
   });    
  })
 
-test('@regression To Verify the sign-in functionality on the Home page',async({page,home,config})=>{
+test('To Verify the sign-in functionality on the Home page 2',async({page,home,config})=>{
 
 
    await test.step("Step 1: Navigate to Henry Schein UK Medical URL", async () => {
@@ -654,7 +659,7 @@ await test.step("Step 2: Verify the sign in button should be visible on the home
 /*
 11)Test case : Verify that the user cannot sign in with invalid credentials
 */
-test('@regression To Verify that the user cannot sign in with invalid credentials', async ({ page, home, config }) => {
+test('To Verify that the user cannot sign in with invalid credentials 2', async ({ page, home, config }) => {
 
    await test.step("Step 1: Navigate to  HenrySchein url", async () => {
       await CommonMethods.navigateToPageUKMedical(page, config.appUrl, 30000)
