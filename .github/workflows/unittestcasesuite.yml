@@ -3,7 +3,7 @@ name: Unit Test case Suite
 on:
   
   push:
-    branches: [jaydemo]
+    branches: [jay]
   workflow_dispatch:
 
 permissions:
