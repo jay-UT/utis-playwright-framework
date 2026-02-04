@@ -19,9 +19,7 @@ jobs:
   regression:
     name: Run Automation Regression + PR Comment
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-
+    
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
