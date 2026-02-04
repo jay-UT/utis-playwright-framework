@@ -17,11 +17,11 @@ import { assert } from 'node:console'
  4.verify the page is navigated to home page
 */
 
-test('@regression To verify the Henry Schein icon is present on the Home page', async({page,home,config})=>{
-//  const config= new TestConfig();
-//  const home =new HomePage(page);
+test('01 - To verify the Henry Schein icon is present on the Home page', async({page,home,config})=>{
+  //const config= new TestConfig();
+  //const home =new HomePage(page);
  
- await test.step("Step 1: Navigate to Henry Schein UK Medical URL"  , async () => {
+    await test.step("Step 1: Navigate to Henry Schein UK Medical URL"  , async () => {
     await CommonMethods.navigateToPageUKMedical(page, config.appUrl, 30000);
   }); 
 
@@ -51,7 +51,7 @@ test('@regression To verify the Henry Schein icon is present on the Home page', 
  5.Verify the user is successfully logged in
 */
 
-test('@regression To Verify the sign-in functionality on the Home page',async({page,home,config})=>{
+test('02 - To Verify the sign-in functionality on the Home page',async({page,home,config})=>{
    
 //  1.Navigate to  Henry Schein url
    await test.step("Step 1: Navigate to the Henry Schein website.",async()=>{
@@ -100,7 +100,7 @@ Steps:
 6.)Hover over the address tooltip and check that the tooltip displays the address information.
 */
 
-test("@regression Verify that the tooltip is displays the address when hovering over the address information icon",async({page,home,config})=>{
+test("03 - Verify that the tooltip is displays the address when hovering over the address information icon",async({page,home,config})=>{
 
 // 1.)Go to the Henry Schein website.
    await test.step("Step 1: Navigate to the Henry Schein website.",async()=>{
@@ -164,7 +164,7 @@ Steps:
 5.)Verify that the banner is displayed on the home page.
 6.)Verify that the banner slides automatically without any user interaction.*/
 
-test("@regression Verify that the banner slider displays all slides with their respective content and transitions between slides when the Navigation Arrows buttons are clicked .",async({page,home,config})=>{
+test("04 - Verify that the banner slider displays all slides with their respective content and transitions between slides when the Navigation Arrows buttons are clicked .",async({page,home,config})=>{
 
    await test.step("Step 1: Navigate to the Henry Schein website.",async()=>{
       await CommonMethods.navigateToPageUKMedical(page,config.appUrl,10000)
@@ -225,7 +225,7 @@ Steps
 5.Verify the user cannot sign in successfully
 */
 
-test('@regression To Verify that the user cannot sign in with invalid credentials', async ({ page, home, config }) => {
+test('05 - To Verify that the user cannot sign in with invalid credentials', async ({ page, home, config }) => {
 
    await test.step("Step 1: Navigate to  HenrySchein url", async () => {
       await CommonMethods.navigateToPageUKMedical(page, config.appUrl, 30000)
@@ -277,7 +277,7 @@ Steps
 15.I should see list of My Dashboard
 */
 
-test('@regression Verify Main Menu Buttons Are Enabled and Interactive', async ({ page, home, config }) => {
+test('06 - Verify Main Menu Buttons Are Enabled and Interactive', async ({ page, home, config }) => {
 
    await test.step("Step 1: Navigate to  HenrySchein url", async () => {
       await CommonMethods.navigateToPageUKMedical(page, config.appUrl, 30000)
@@ -372,7 +372,7 @@ Steps
 11.Link should navigate to Order From History
 */
 
-test('@regression Verify Main Menu Links Are Enabled and Interactive', async ({ page, home, config }) => {
+test('07 - Verify Main Menu Links Are Enabled and Interactive', async ({ page, home, config }) => {
 
    await test.step("Step 1: Navigate to  Henry Schein url", async () => {
       await CommonMethods.navigateToPageUKMedical(page, config.appUrl, 30000)
@@ -443,7 +443,7 @@ Steps
 13.Link should navigate to LinkedIn
 */
 
-test('@regression Verify Footer Links Are Interactive and Navigate to respective pages', async ({ page, home, config }) => {
+test('08 - Verify Footer Links Are Interactive and Navigate to respective pages', async ({ page, home, config }) => {
 
    await test.step("Step 1: Navigate to  Henry Schein url", async () => {
       await CommonMethods.navigateToPageUKMedical(page, config.appUrl, 30000)
@@ -517,7 +517,7 @@ Steps
 4.Verify user is navigated to Sign up / Registration page
 */
 
-test('@regression To verify the Sign up flow on the Home page', async ({ page, home, config }) => {
+test('09 - To verify the Sign up flow on the Home page', async ({ page, home, config }) => {
 
   // 1.Navigate to Henry Schein url
   await test.step("Step 1: Navigate to Henry Schein url",async()=>{
@@ -588,7 +588,7 @@ Steps
 */
 
 // 1. Navigate to Henry Schein url
-test('@regression Verify that the search bar accepts input and displays relevant suggestions',async ({ page, home, config }) => {
+test('10 - Verify that the search bar accepts input and displays relevant suggestions',async ({ page, home, config }) => {
    await test.step("Step 1: Navigate to Henry Schein url",async()=>{
    await CommonMethods.navigateToPageUKMedical(page, config.appUrl, 10000);
    console.log("Navigated to Henry Schein url");
@@ -626,37 +626,3 @@ test('@regression Verify that the search bar accepts input and displays relevant
    });
   });    
  })
- 
-
-/*
-11)Test case : Verify that the user cannot sign in with invalid credentials
-*/
-test('@regression To Verify that the user cannot sign in', async ({ page, home, config }) => {
-
-   await test.step("Step 1: Navigate to  HenrySchein url", async () => {
-      await CommonMethods.navigateToPageUKMedical(page, config.appUrl, 30000)
-      console.log("Navigated to  HenrySchein url")
-   })
-   await test.step("Step 2: Verify the sign in button should be visible on the home page", async () => {
-      await CommonMethods.isElementDisplayed(page, home.sign_in_xpath, 30000)
-      console.log("Verified the sign in button should be visible on the home page")
-   })
-   await test.step("Step 3: Enter invalid username and password", async () => {
-      await CommonMethods.safeClick(page, home.sign_in_xpath, 35000)
-      await CommonMethods.writeText(page, home.username_xpath, config.invalid_username, 30000)
-      await CommonMethods.writeText(page, home.password_xpath, config.invalid_password, 30000)
-      console.log("Entered invalid username and password")
-   })
-   await test.step("Step 4: Click the sign-in submit button", async () => {
-      await CommonMethods.safeClick(page, home.sign_in_submit_btn_xpath)
-      console.log("Clicked the sign-in submit button")
-   })
-   await test.step("Step 5: Verify the user cannot sign in successfully", async () => {
-      await CommonMethods.isElementDisplayed(page, home.sign_in_error_msg_xpath, 30000)
-      console.log("Please enter valid Username/Password")
-      const errorMsg = (home.sign_in_error_msg_xpath);
-      await expect(errorMsg).toBeVisible();
-      await expect(errorMsg).toContainText('Hi');
-   })
-
-})
