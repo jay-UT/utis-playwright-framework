@@ -735,7 +735,7 @@ test('11-Verify Footer Links Are Interactive and Navigate to respective pages',
 */
 test('12-To Verify the error message for invalid login credentials',
    {
-      tag: ['@regression', '@signin', '@failure_case'],
+      tag: ['@regression', '@signin', '@failure_case' , '@demo'],
    },
    async ({ page, home, config }) => {
 
