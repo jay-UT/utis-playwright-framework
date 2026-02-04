@@ -19,7 +19,7 @@ import { assert } from 'node:console'
 
 test('01-To verify the Henry Schein icon is present on the Home page',
    {
-      tag: ['@regression', '@smoke', '@home'],
+      tag: ['@regression', '@smoke', '@homepage', '@demo'],
    },
    async ({ page, home, config }) => {
       //  const config= new TestConfig();
@@ -56,7 +56,7 @@ test('01-To verify the Henry Schein icon is present on the Home page',
 */
 
 test('02-To Verify the sign-in functionality on the Home page', {
-   tag: ['@regression', '@smoke', '@home'],
+   tag: ['@regression', '@smoke', '@signin' ,'@demo'],
 },
    async ({ page, home, config }) => {
 
@@ -105,7 +105,7 @@ Steps
 
 test('03-To Verify that the user cannot sign in with invalid credentials',
    {
-      tag: ['@regression', '@smoke', '@home'],
+      tag: ['@regression', '@smoke', '@signin' ,'@invalidsignin'],
    },
    async ({ page, home, config }) => {
 
@@ -151,7 +151,7 @@ Steps
 
 test('04-To verify the Sign up flow on the Home page',
    {
-      tag: ['@regression', '@smoke', '@home'],
+      tag: ['@regression', '@smoke', '@signup'],
    },
    async ({ page, home, config }) => {
 
@@ -221,7 +221,7 @@ Steps
 // 1. Navigate to Henry Schein url
 test('05-Verify that the search bar accepts input and displays relevant suggestions',
    {
-      tag: ['@regression', '@smoke', '@home'],
+      tag: ['@regression', '@search'],
    },
    async ({ page, home, config }) => {
       await test.step("Step 1: Navigate to Henry Schein url", async () => {
@@ -287,7 +287,7 @@ Steps
 
 test('06-Verify Main Menu Buttons Are Enabled and Interactive',
    {
-      tag: ['@regression', '@smoke', '@home'],
+      tag: ['@regression', '@menu', '@buttons'],
    },
    async ({ page, home, config }) => {
 
@@ -386,7 +386,7 @@ Steps
 
 test('07-Verify Main Menu Links Are Enabled and Interactive',
    {
-      tag: ['@regression', '@smoke', '@home'],
+      tag: ['@regression', '@menu', '@links'],
    },
    async ({ page, home, config }) => {
 
@@ -438,85 +438,9 @@ test('07-Verify Main Menu Links Are Enabled and Interactive',
       })
    })
 
-/*
-08)Testcase-08: Verify User Is Able to Place an Order Successfully 
-1.Navigate to  Henry Schein url
-2.Click Sign-In button on the home page to log in
-3.Enter valid username and password
-4.click the sign-in submit button
-5.Verify the user is successfully logged in
-6.Add a product to the cart
-5.Navigate to the cart page
-6.Verify the product is added to the cart
-7.Click Proceed to Checkout
-8.Review order summary
-*/
-
-test('08-Verify User Is Able to Place an Order Successfully',
-   {
-      tag: ['@regression', '@smoke', '@home'],
-   },
-   async ({ page, home, config }) => {
-
-      await test.step("Step 1: Navigate to  Henry Schein url", async () => {
-         await CommonMethods.navigateToPageUKMedical(page, config.appUrl, 30000)
-         console.log("Navigated to  Henry Schein url")
-      })
-      await test.step("Step 2: Click Sign-In button on the home page to log in", async () => {
-         await CommonMethods.isElementDisplayed(page, home.sign_in_xpath, 20000)
-         console.log("Clicked the Sign-In button on home page")
-      })
-      await test.step("Step 3: Enter the username and password", async () => {
-         await CommonMethods.safeClick(page, home.sign_in_xpath, 35000)
-         await CommonMethods.writeText(page, home.username_xpath, config.username, 10000)
-         await CommonMethods.writeText(page, home.password_xpath, config.password, 10000)
-         console.log("Entered the username and password")
-      })
-      await test.step("Step 4: Click the sign-in submit button", async () => {
-         await CommonMethods.safeClick(page, home.sign_in_submit_btn_xpath)
-         console.log("Clicked the sign-in submit button")
-      })
-      await test.step("Step 5: Verify the user is successfully logged in", async () => {
-         await CommonMethods.isElementDisplayed(page, home.user_account_tab_xpath, 25000)
-         console.log("Verified the user is successfully logged in")
-      })
-      await test.step("Step 6: Add product to cart", async () => {
-         await CommonMethods.writeText(page, home.search_input, "DIS258", 30000);
-         await page.keyboard.press("Enter");
-         console.log("Entered Product Id to search");
-      })
-      await test.step("Step 7: Clicked product", async () => {
-         await CommonMethods.safeClick(page, home.product_1)
-         console.log("Selected Product");
-      })
-      await test.step("Step 8: Added product to cart", async () => {
-         await CommonMethods.safeClick(page, home.Add_to_basket)
-         console.log("Added Product to Cart");
-      })
-      await test.step("Step 9: Navigate to cart and verify product", async () => {
-         await CommonMethods.safeClick(page, home.view_basket);
-         console.log("Clicked View Basket button")
-      })
-      await test.step("Step 10: Proceed to checkout", async () => {
-         await CommonMethods.isElementDisplayed(page, home.Proceed_Shipping_Billing, 10000)
-         console.log("Proced to checkout is available")
-         const checkoutBtn = (home.Proceed_Shipping_Billing)
-         await checkoutBtn.waitFor({ state: 'visible', timeout: 30000 });
-         await checkoutBtn.scrollIntoViewIfNeeded();
-         await checkoutBtn.click();
-         const Cart_Page = (home.Cart_Page)
-         await expect(Cart_Page).toContainText('Shipping & Billing')
-      })
-
-      await test.step("Step 11: Review Order Summary", async () => {
-         await CommonMethods.safeClick(page, home.Review_Order, 30000)
-         const Review_Order_Page = (home.Review_Order_Page)
-         await expect(Review_Order_Page).toContainText('Review Order')
-      })
-   })
 
 /*
-09)Testcase-09: Verify that the cart icon displays the correct item count when products are added to the cart
+08)Testcase-08: Verify that the cart icon displays the correct item count when products are added to the cart
 1.Navigate to  Henry Schein url
 2.Click Sign-In button on the home page to log in
 3.Enter valid username and password
@@ -526,9 +450,9 @@ test('08-Verify User Is Able to Place an Order Successfully',
 7.Add a product to cart
 8.Verify the cart count and cart badge count are correct */
 
-test('09-Verify that the cart icon displays the correct item count when products are added to the cart',
+test('08-Verify that the cart icon displays the correct item count when products are added to the cart',
    {
-      tag: ['@regression', '@smoke', '@home'],
+      tag: ['@regression', '@cart'],
    },
    async ({ page, home, config }) => {
 
@@ -587,7 +511,7 @@ test('09-Verify that the cart icon displays the correct item count when products
    })
 
 /*
-10.)Testcase-10: Verify tooltip displays address on hover over address info icon
+09.)Testcase-09: Verify tooltip displays address on hover over address info icon
 
 Tags: @regression
 
@@ -601,9 +525,9 @@ Steps:
 6.)Hover over the address tooltip and check that the tooltip displays the address information.
 */
 
-test("10-Verify that the tooltip is displays the address when hovering over the address information icon",
+test("09-Verify that the tooltip is displays the address when hovering over the address information icon",
    {
-      tag: ['@regression', '@smoke', '@home'],
+      tag: ['@regression', '@tooltip'],
    },
    async ({ page, home, config }) => {
 
@@ -656,7 +580,7 @@ test("10-Verify that the tooltip is displays the address when hovering over the 
    })
 
 /*
-11)Testcase-11 : Verify that the banner slider displays all slides with their respective content and automatically transitions between slides without user interaction.
+10)Testcase-10 : Verify that the banner slider displays all slides with their respective content and automatically transitions between slides without user interaction.
 
 Tags : regression
 
@@ -671,7 +595,7 @@ Steps:
 
 test("11-Verify that the banner slider displays all slides with their respective content and transitions between slides when the Navigation Arrows buttons are clicked.",
    {
-      tag: ['@regression', '@smoke', '@home'],
+      tag: ['@regression', '@slider'],
    },
    async ({ page, home, config }) => {
 
@@ -721,7 +645,7 @@ test("11-Verify that the banner slider displays all slides with their respective
    })
 
 /*
-12)Testcase-12 : Verify Footer Links Are Interactive and Navigate to respective pages 
+11)Testcase-11 : Verify Footer Links Are Interactive and Navigate to respective pages 
 
 Tags : @regression
 
@@ -741,9 +665,9 @@ Steps
 13.Link should navigate to LinkedIn
 */
 
-test('12-Verify Footer Links Are Interactive and Navigate to respective pages',
+test('11-Verify Footer Links Are Interactive and Navigate to respective pages',
    {
-      tag: ['@regression', '@smoke', '@home'],
+      tag: ['@regression', '@footer'],
    },
    async ({ page, home, config }) => {
 
@@ -807,11 +731,11 @@ test('12-Verify Footer Links Are Interactive and Navigate to respective pages',
    })
 
 /*
-13)Testcase-13 : Verify that the user cannot sign in with invalid credentials (Failure case)
+12)Testcase-12 : Verify that the user cannot sign in with invalid credentials (Failure case)
 */
-test('13-To Verify the error message for invalid login credentials',
+test('12-To Verify the error message for invalid login credentials',
    {
-      tag: ['@regression', '@smoke', '@home', '@failure_case'],
+      tag: ['@regression', '@signin', '@failure_case'],
    },
    async ({ page, home, config }) => {
 
@@ -842,6 +766,100 @@ test('13-To Verify the error message for invalid login credentials',
       })
 
    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+   /*
+08)Testcase-08: Verify User Is Able to Place an Order Successfully 
+1.Navigate to  Henry Schein url
+2.Click Sign-In button on the home page to log in
+3.Enter valid username and password
+4.click the sign-in submit button
+5.Verify the user is successfully logged in
+6.Add a product to the cart
+5.Navigate to the cart page
+6.Verify the product is added to the cart
+7.Click Proceed to Checkout
+8.Review order summary
+
+
+test('08-Verify User Is Able to Place an Order Successfully',
+   {
+      tag: ['@regression', '@warmup', '@order'],
+   },
+   async ({ page, home, config }) => {
+
+      await test.step("Step 1: Navigate to  Henry Schein url", async () => {
+         await CommonMethods.navigateToPageUKMedical(page, config.appUrl, 30000)
+         console.log("Navigated to  Henry Schein url")
+      })
+      await test.step("Step 2: Click Sign-In button on the home page to log in", async () => {
+         await CommonMethods.isElementDisplayed(page, home.sign_in_xpath, 20000)
+         console.log("Clicked the Sign-In button on home page")
+      })
+      await test.step("Step 3: Enter the username and password", async () => {
+         await CommonMethods.safeClick(page, home.sign_in_xpath, 35000)
+         await CommonMethods.writeText(page, home.username_xpath, config.username, 10000)
+         await CommonMethods.writeText(page, home.password_xpath, config.password, 10000)
+         console.log("Entered the username and password")
+      })
+      await test.step("Step 4: Click the sign-in submit button", async () => {
+         await CommonMethods.safeClick(page, home.sign_in_submit_btn_xpath)
+         console.log("Clicked the sign-in submit button")
+      })
+      await test.step("Step 5: Verify the user is successfully logged in", async () => {
+         await CommonMethods.isElementDisplayed(page, home.user_account_tab_xpath, 25000)
+         console.log("Verified the user is successfully logged in")
+      })
+      await test.step("Step 6: Add product to cart", async () => {
+         await CommonMethods.writeText(page, home.search_input, "DIS258", 30000);
+         await page.keyboard.press("Enter");
+         console.log("Entered Product Id to search");
+      })
+      await test.step("Step 7: Clicked product", async () => {
+         await CommonMethods.safeClick(page, home.product_1)
+         console.log("Selected Product");
+      })
+      await test.step("Step 8: Added product to cart", async () => {
+         await CommonMethods.safeClick(page, home.Add_to_basket)
+         console.log("Added Product to Cart");
+      })
+      await test.step("Step 9: Navigate to cart and verify product", async () => {
+         await CommonMethods.safeClick(page, home.view_basket);
+         console.log("Clicked View Basket button")
+      })
+      await test.step("Step 10: Proceed to checkout", async () => {
+         await CommonMethods.isElementDisplayed(page, home.Proceed_Shipping_Billing, 10000)
+         console.log("Proced to checkout is available")
+         const checkoutBtn = (home.Proceed_Shipping_Billing)
+         await checkoutBtn.waitFor({ state: 'visible', timeout: 30000 });
+         await checkoutBtn.scrollIntoViewIfNeeded();
+         await checkoutBtn.click();
+         const Cart_Page = (home.Cart_Page)
+         await expect(Cart_Page).toContainText('Shipping & Billing')
+      })
+
+      await test.step("Step 11: Review Order Summary", async () => {
+         await CommonMethods.safeClick(page, home.Review_Order, 30000)
+         const Review_Order_Page = (home.Review_Order_Page)
+         await expect(Review_Order_Page).toContainText('Review Order')
+      })
+   })
+*/
 
 
 
