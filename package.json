@@ -4,7 +4,6 @@
   "main": "index.js",
   "scripts": {
   "test": "playwright test",
- "test": "playwright test",
   "test:ci:regression": "playwright test --grep @regression",
   "test:ci:smoke": "playwright test --grep @smoke",
   "test:ci:failure": "playwright test --grep @failure",
