@@ -1,10 +1,12 @@
 import { defineConfig, devices } from '@playwright/test';
 
 const timestamp = new Date()
-  .toISOString()
-  .replace(/[:.]/g, '-');
+  .toTimeString()
+  .slice(0, 8)
+  .replace(/:/g, "")
 
 export default defineConfig({
+  
   timeout: 90 * 1000,   //30000 ms(30 secs)
 
   testDir: './tests',
@@ -24,11 +26,24 @@ export default defineConfig({
   /* 🔹 REPORTERS: Allure + HTML */
   reporter: [
     ['html', { outputFolder: `reports/html-report-${timestamp}`, open: 'never' }],
+    ['json', { outputFile: 'playwright-results.json' }],
     ['list'],
     ['allure-playwright', { resultsDir: 'allure-results' }]
   ],
 
   /* Shared settings for all the projects */
+//   use: {
+//   trace: process.env.CI ? 'retain-on-failure' : 'on',
+
+//   headless: false,
+
+//   launchOptions: {
+//     slowMo: 500,
+//   },
+
+//   screenshot: process.env.CI ? 'only-on-failure' : 'on',
+//   video: process.env.CI ? 'retain-on-failure' : 'on'
+// }
   use: {
     /* Capture trace on first retry */
     trace: 'on-first-retry',
@@ -44,7 +59,7 @@ export default defineConfig({
     video: 'retain-on-failure'
   },
 
-  //grep: /@master/, 
+ // grep: /@smoke/, 
 
   projects: [
     {
