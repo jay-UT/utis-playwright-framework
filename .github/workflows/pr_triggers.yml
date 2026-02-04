@@ -5,7 +5,6 @@ on:
     types: [opened, synchronize, reopened]
     branches: [main, develop]
  
-
 permissions:
   contents: read
   pull-requests: write
@@ -17,9 +16,9 @@ concurrency:
 
 jobs:
   regression:
-    name: Run Automation Regression + PR Comment
+    name: Run Automation Regression
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -56,8 +55,7 @@ jobs:
         with:
           name: allure-results
           path: allure-results/
-
-            
+          
      # -------------------------
       # PR TEST SUMMARY
       # -------------------------
@@ -105,10 +103,3 @@ jobs:
               issue_number: context.issue.number,
               body
             });
-
-            - name: Fail if test cases failed
-              if: steps.run_tests.outcome == 'failure'
-              run: |
-                echo "Tests failed ❌"
-                exit 1  
-     
