@@ -1,4 +1,4 @@
-name: Regression Tests
+name: Smoke Suite
 
 on:
   pull_request:
@@ -11,6 +11,7 @@ on:
 permissions:
   contents: read
   pages: write
+  pull-requests: write
   id-token: write
 
 concurrency:
