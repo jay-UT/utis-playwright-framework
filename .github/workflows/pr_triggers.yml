@@ -16,7 +16,7 @@ concurrency:
 
 jobs:
   regression:
-    name: Run Automation Regression
+    name: Run Automation Regression + PR Comment
     runs-on: ubuntu-latest
 
     steps:
