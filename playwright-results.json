@@ -1,0 +1,152 @@
+{
+  "config": {
+    "configFile": "C:\\Users\\UTIS LAPTOP\\src\\repo\\main\\playwright.config.ts",
+    "rootDir": "C:/Users/UTIS LAPTOP/src/repo/main/tests",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "html",
+        {
+          "open": "never"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "playwright-results.json"
+        }
+      ],
+      [
+        "list",
+        null
+      ],
+      [
+        "C:\\Users\\UTIS LAPTOP\\src\\repo\\main\\node_modules\\allure-playwright\\dist\\cjs\\index.js",
+        {
+          "resultsDir": "allure-results"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "C:/Users/UTIS LAPTOP/src/repo/main/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "HenrySchein",
+        "name": "HenrySchein",
+        "testDir": "C:/Users/UTIS LAPTOP/src/repo/main/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.57.0",
+    "workers": 4,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "HomePage.spec.ts",
+      "file": "HomePage.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Verify Henry Schein icon is visible and navigates to home page",
+          "ok": true,
+          "tags": [
+            "regression",
+            "smoke",
+            "home",
+            "branding"
+          ],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "HenrySchein",
+              "projectName": "HenrySchein",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 16907,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "verified the page is navigated to home page\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Step 1: Navigate to Henry Schein UK Medical URL",
+                      "duration": 14949
+                    },
+                    {
+                      "title": "Step 2: Verify the Henry Schein icon should be visible on the page",
+                      "duration": 8
+                    },
+                    {
+                      "title": "Step 3: Click the Henry Schein icon",
+                      "duration": 829
+                    },
+                    {
+                      "title": "Step 4: Verify page navigates to Henry Schein home page",
+                      "duration": 115
+                    }
+                  ],
+                  "startTime": "2026-02-04T09:14:24.529Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "62a0194cb94d3eec4948-d1b02e4921ed36c05359",
+          "file": "HomePage.spec.ts",
+          "line": 20,
+          "column": 5
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-02-04T09:14:23.774Z",
+    "duration": 17892.551,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}
