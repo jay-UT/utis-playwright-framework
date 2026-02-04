@@ -45,7 +45,7 @@ jobs:
 
       - name: Upload Playwright report as Pages artifact
         if: always()
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-artifact@v4
         with:
           path: playwright-report
 
@@ -82,6 +82,7 @@ jobs:
             const skipped = stats.skipped ?? 0;
             const flaky = stats.flaky ?? 0;
 
+            const runUrl = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
             const body = `
             🧪 **Playwright Test Summary**
 
@@ -89,6 +90,9 @@ jobs:
             ❌ Failed: **${failed}**  
             ⏭️ Skipped: **${skipped}**  
             ⚠️ Flaky: **${flaky}**
+
+            📄 **Report:**  
+            👉 ${runUrl}
 
             📄 **HTML Report:**  
             👉 https://jay-ut.github.io/utis-playwright-framework/
