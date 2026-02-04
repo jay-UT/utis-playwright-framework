@@ -1,7 +1,12 @@
 import { defineConfig, devices } from '@playwright/test';
 
+const timestamp = new Date()
+  .toISOString()
+  .replace(/[:.]/g, '-');
+
 export default defineConfig({
-  
+  timeout: 90 * 1000,   //30000 ms(30 secs)
+
   testDir: './tests',
 
   /* Run tests in files in parallel */
@@ -18,7 +23,7 @@ export default defineConfig({
 
   /* 🔹 REPORTERS: Allure + HTML */
   reporter: [
-    ['html', { open: 'never' }],
+    ['html', { outputFolder: `reports/html-report-${timestamp}`, open: 'never' }],
     ['list'],
     ['allure-playwright', { resultsDir: 'allure-results' }]
   ],
@@ -47,8 +52,8 @@ export default defineConfig({
       use: { ...devices['Desktop Chrome'] },
     },
     //{
-      //name: 'firefox',
-      //use: { ...devices['Desktop Firefox'] },
+    //name: 'firefox',
+    //use: { ...devices['Desktop Firefox'] },
     //},
     // {
     //   name: 'webkit',
