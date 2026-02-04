@@ -3,7 +3,7 @@ name: Smoke Suite
 on:
   
   push:
-    branches: [jay]
+    branches: [jaydemo]
   workflow_dispatch:
 
 permissions:

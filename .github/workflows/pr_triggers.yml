@@ -58,7 +58,7 @@ jobs:
           path: allure-results/
 
             
-      # -------------------------
+     # -------------------------
       # PR TEST SUMMARY
       # -------------------------
       - name: Publish test summary to PR
@@ -79,19 +79,15 @@ jobs:
 
             let failed = 0;
             let passed = 0;
-            let skipped = 0;
 
-             for (const suite of results.suites ?? []) {
+            for (const suite of results.suites ?? []) {
               for (const spec of suite.specs ?? []) {
                 for (const test of spec.tests ?? []) {
-                  for (const result of test.results ?? []) {
-                    if (result.status === 'passed') passed++;
-                    if (result.status === 'failed') failed++;
-                    if (result.status === 'skipped') skipped++;
+                  if (test.outcome === 'unexpected') failed++;
+                  if (test.outcome === 'expected') passed++;
                 }
-                }
-                }
-                }
+              }
+            }
 
             const body = `
             🧪 **Playwright Test Summary**
