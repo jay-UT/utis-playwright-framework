@@ -2,7 +2,7 @@ name: Smoke Suite
 
 on:
   pull_request:
-    types: [opened, synchronize, reopened]
+    # types: [opened, synchronize, reopened]
     branches: [main, develop]
   push:
     branches: [jay]
@@ -63,7 +63,7 @@ jobs:
           path: allure-results/
 
       - name: Deploy Playwright report to GitHub Pages
-        if: always()
+        if: always() && github.event_name != 'pull_request'
         id: deployment
         uses: actions/deploy-pages@v4
         continue-on-error: true
