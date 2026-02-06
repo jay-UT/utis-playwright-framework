@@ -30,7 +30,7 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Run regression tests
-        run: npm run test:ci:failure
+        run: npm run test:ci:regression
 
       - name: Upload Playwright report
         if: always()
