@@ -21,9 +21,9 @@ export default defineConfig({
   retries: process.env.CI ? 2 : 0,
 
   /* Opt out of parallel tests on CI */
-  workers: process.env.CI ? 1 : undefined,
+  workers: process.env.CI ? 1 : 1,
 
-  /* 🔹 REPORTERS: Allure + HTML */
+  /* 🔹 REPORTERS: Allure + HTML */ 
   reporter: [
     ['html', { outputFolder: `reports/html-report-${timestamp}`, open: 'never' }],
     ['json', { outputFile: 'playwright-results.json' }],
