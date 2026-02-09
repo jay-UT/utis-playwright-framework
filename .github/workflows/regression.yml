@@ -22,6 +22,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: 'npm'
 
       - name: Install dependencies
         run: npm ci
@@ -58,15 +59,16 @@ jobs:
       #     # Look for the most recent cache starting with this prefix
       #     restore-keys: |
       #       allure-history-   
-      
+
       - name: Run regression tests
         env:
           CI: true
-        run: node scripts/report.js smoke
+        run: node scripts/report.js failure_case
 
       - name: Add Allure Environment Info
         if: always()
         run: |
+          mkdir -p reports/allurereport/cireports
           echo "Environment=CI" >> reports/allurereport/cireports/environment.properties
           echo "Executor=GitHub Actions" >> reports/allurereport/cireports/environment.properties  
 
@@ -81,7 +83,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: allure-results
+          name: allure-html-report
           path: reports/allurereport/cireports/    
 
 
