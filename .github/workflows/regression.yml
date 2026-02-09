@@ -26,25 +26,39 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Install Playwright browsers
-        run: npx playwright install --with-deps
-     
       # Cache Playwright Browsers
       - name: Cache Playwright browsers
         uses: actions/cache@v4
         with:
           path: ~/.cache/ms-playwright
-          key: playwright-${{ runner.os }}  
+          key: playwright-${{ runner.os }}   
 
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+     
+    
       - name: Run regression tests
-        run: npm run report:regression
+        run: node scripts/report.js smoke
+
+      - name: Add Allure Environment Info
+        if: always()
+        run: |
+          echo "Environment=CI" >> reports/allurereport/cireports/environment.properties
+          echo "Executor=GitHub Actions" >> reports/allurereport/cireports/environment.properties  
 
       - name: Upload Playwright HTML reports
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: playwright-html-reports
-          path: reports/
+          path: reports/playwrightreport/cireports/
+
+      - name: Upload Allure Results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-results
+          path: reports/allurereport/cireports/    
 
 
       # - name: Upload Playwright report
@@ -54,19 +68,19 @@ jobs:
       #     name: playwright-report
       #     path: playwright-report/
 
-      - name: Upload Latest Allure Report
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: allure-latest-report
-          path: reports/latest
+      # - name: Upload Latest Allure Report
+      #   if: always()
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: allure-latest-report
+      #     path: reports/latest
 
-      - name: Upload Allure Archived Reports
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: allure-archive-reports
-          path: reports/archive    
+      # - name: Upload Allure Archived Reports
+      #   if: always()
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: allure-archive-reports
+      #     path: reports/archive    
 
       # - name: Upload Allure results
       #   if: always()

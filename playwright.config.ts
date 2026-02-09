@@ -1,4 +1,6 @@
 import { defineConfig, devices } from '@playwright/test';
+
+const isCI = !!process.env.CI;
 const now = new Date();
 
 const timestamp =
@@ -14,30 +16,35 @@ const timestamp =
 //   .slice(0, 8)
 //   .replace(/:/g, "")
 
+// Dynamic folder naming based on environment
+const folderSuffix = isCI ? 'cireports' : `localreport-${timestamp}`;
+
 export default defineConfig({
   
   timeout: 90 * 1000,   //30000 ms(30 secs)
-
   testDir: './tests',
 
   /* Run tests in files in parallel */
   fullyParallel: true,
 
   /* Fail the build on CI if test.only is left */
-  forbidOnly: !!process.env.CI,
+  forbidOnly: isCI,
 
   /* Retry on CI only */
-  retries: process.env.CI ? 2 : 0,
+  retries: isCI ? 2 : 0,
 
   /* Opt out of parallel tests on CI */
-  workers: process.env.CI ? 1 : 1,
+  workers: isCI ? 1 : 1,
 
   /* 🔹 REPORTERS: Allure + HTML */ 
   reporter: [
-    ['html', { outputFolder: `reports/html-report-${timestamp}`, open: 'never' }],
+    ['html', { outputFolder: `reports/playwrightreport-${folderSuffix}`, open: 'never' }],
     ['json', { outputFile: 'playwright-results.json' }],
     ['list'],
-    ['allure-playwright', { resultsDir: 'allure-results' }]
+    ['allure-playwright', { 
+      outputFolder: `reports/allurereport/${folderSuffix}` 
+    }],
+    // ['allure-playwright', { resultsDir: 'allure-results' }]
   ],
 
   /* Shared settings for all the projects */
@@ -64,8 +71,8 @@ export default defineConfig({
     },
 
     /* Allure-friendly attachments */
-    screenshot: process.env.CI ? 'only-on-failure' : 'on',
-    video:  process.env.CI ? 'retain-on-failure' : 'on',
+    screenshot: isCI ? 'only-on-failure' : 'on',
+    video:  isCI ? 'retain-on-failure' : 'on',
   },
 
  // grep: /@smoke/, 

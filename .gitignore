@@ -53,6 +53,7 @@ Thumbs.db
 /playwright/.auth/
 
 # Allure
+reports/
 allure-results/
 allure-report/
 allure-report-*/
