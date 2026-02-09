@@ -3,7 +3,7 @@
     "configFile": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\playwright.config.ts",
     "rootDir": "C:/Users/UTIS LAPTOP 570/Desktop/PlaywrightHS/utis-playwright-framework/tests",
     "forbidOnly": false,
-    "fullyParallel": false,
+    "fullyParallel": true,
     "globalSetup": null,
     "globalTeardown": null,
     "globalTimeout": 0,
@@ -37,7 +37,7 @@
       [
         "html",
         {
-          "outputFolder": "reports/html-report-2026-02-04T12-43-11-009Z",
+          "outputFolder": "reports/html-report-09-02-2026_13-59-52",
           "open": "never"
         }
       ],
@@ -68,7 +68,7 @@
     "updateSnapshots": "missing",
     "updateSourceMethod": "patch",
     "version": "1.58.0",
-    "workers": 4,
+    "workers": 1,
     "webServer": null
   },
   "suites": [
@@ -79,9 +79,830 @@
       "line": 0,
       "specs": [
         {
-          "title": " To Verify that the user cannot sign in",
+          "title": "01-To verify the Henry Schein icon is present on the Home page",
+          "ok": true,
+          "tags": [
+            "regression",
+            "smoke",
+            "homepage",
+            "demo"
+          ],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "HenrySchein",
+              "projectName": "HenrySchein",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 11558,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "verified the page is navigated to home page\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Step 1: Navigate to Henry Schein UK Medical URL",
+                      "duration": 10140
+                    },
+                    {
+                      "title": "Step 2: Verify the Henry Schein icon should be visible on the page",
+                      "duration": 156
+                    },
+                    {
+                      "title": "Step 3: Click the Henry Schein icon",
+                      "duration": 663
+                    },
+                    {
+                      "title": "Step 4: Verify page navigates to Henry Schein home page",
+                      "duration": 44
+                    }
+                  ],
+                  "startTime": "2026-02-09T08:29:53.936Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6ImVwaWMiLCJ2YWx1ZSI6IkhvbWUgUGFnZSJ9XX19"
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6ImZlYXR1cmUiLCJ2YWx1ZSI6IkJyYW5kaW5nICYgTmF2aWdhdGlvbiJ9XX19"
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InN0b3J5IiwidmFsdWUiOiJWZXJpZnkgSGVucnkgU2NoZWluIExvZ28ifV19fQ=="
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6Im93bmVyIiwidmFsdWUiOiJTaGFhcmlmIn1dfX0="
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InNldmVyaXR5IiwidmFsdWUiOiJub3JtYWwifV19fQ=="
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InRhZyIsInZhbHVlIjoicmVncmVzc2lvbiJ9XX19"
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InRhZyIsInZhbHVlIjoic21va2UifV19fQ=="
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InRhZyIsInZhbHVlIjoiaG9tZXBhZ2UifV19fQ=="
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InRhZyIsInZhbHVlIjoiZGVtbyJ9XX19"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\test-results\\HomePage-01-To-verify-the--3445b-is-present-on-the-Home-page-HenrySchein\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\test-results\\HomePage-01-To-verify-the--3445b-is-present-on-the-Home-page-HenrySchein\\video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "62a0194cb94d3eec4948-d66d471a4a626f4e5d6a",
+          "file": "HomePage.spec.ts",
+          "line": 21,
+          "column": 5
+        },
+        {
+          "title": "02-To Verify the sign-in functionality on the Home page",
+          "ok": true,
+          "tags": [
+            "regression",
+            "smoke",
+            "signin",
+            "demo"
+          ],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "HenrySchein",
+              "projectName": "HenrySchein",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 12253,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Navigated to  Henry Schein url\n"
+                    },
+                    {
+                      "text": "Verified the sign in button should be visible on the home page\n"
+                    },
+                    {
+                      "text": "Entered the username and password\n"
+                    },
+                    {
+                      "text": "clicked the sign-in submit button\n"
+                    },
+                    {
+                      "text": "Verified the user is successfully logged in\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Step 1: Navigate to the Henry Schein website.",
+                      "duration": 7156
+                    },
+                    {
+                      "title": "Step 2: Confirm that the Sign In button is visible.",
+                      "duration": 92
+                    },
+                    {
+                      "title": "Step 3: Enter a valid username and password.",
+                      "duration": 2174
+                    },
+                    {
+                      "title": "Step 4: Click the Sign In button.",
+                      "duration": 810
+                    },
+                    {
+                      "title": "Step 5: Verify the user is successfully logged in",
+                      "duration": 1463
+                    }
+                  ],
+                  "startTime": "2026-02-09T08:30:05.614Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6ImVwaWMiLCJ2YWx1ZSI6IkF1dGhlbnRpY2F0aW9uIn1dfX0="
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6ImZlYXR1cmUiLCJ2YWx1ZSI6IkhvbWUgUGFnZSBTaWduIEluIn1dfX0="
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InN0b3J5IiwidmFsdWUiOiJWYWxpZCBVc2VyIExvZ2luIn1dfX0="
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6Im93bmVyIiwidmFsdWUiOiJTaGFhcmlmIn1dfX0="
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InNldmVyaXR5IiwidmFsdWUiOiJjcml0aWNhbCJ9XX19"
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InRhZyIsInZhbHVlIjoicmVncmVzc2lvbiJ9XX19"
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InRhZyIsInZhbHVlIjoic21va2UifV19fQ=="
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InRhZyIsInZhbHVlIjoic2lnbmluIn1dfX0="
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InRhZyIsInZhbHVlIjoiZGVtbyJ9XX19"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\test-results\\HomePage-02-To-Verify-the--a2e75-ctionality-on-the-Home-page-HenrySchein\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\test-results\\HomePage-02-To-Verify-the--a2e75-ctionality-on-the-Home-page-HenrySchein\\video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "62a0194cb94d3eec4948-e7a1f0bc77cbc3b39c73",
+          "file": "HomePage.spec.ts",
+          "line": 70,
+          "column": 5
+        },
+        {
+          "title": "03-To Verify that the user cannot sign in with invalid credentials",
+          "ok": true,
+          "tags": [
+            "regression",
+            "smoke",
+            "signin",
+            "invalidsignin"
+          ],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "HenrySchein",
+              "projectName": "HenrySchein",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 10882,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Navigated to  HenrySchein url\n"
+                    },
+                    {
+                      "text": "Verified the sign in button should be visible on the home page\n"
+                    },
+                    {
+                      "text": "Entered invalid username and password\n"
+                    },
+                    {
+                      "text": "Clicked the sign-in submit button\n"
+                    },
+                    {
+                      "text": "Please enter valid Username/Password\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Step 1: Navigate to  HenrySchein url",
+                      "duration": 7333
+                    },
+                    {
+                      "title": "Step 2: Verify the sign in button should be visible on the home page",
+                      "duration": 102
+                    },
+                    {
+                      "title": "Step 3: Enter invalid username and password",
+                      "duration": 2105
+                    },
+                    {
+                      "title": "Step 4: Click the sign-in submit button",
+                      "duration": 729
+                    },
+                    {
+                      "title": "Step 5: Verify the user cannot sign in successfully",
+                      "duration": 189
+                    }
+                  ],
+                  "startTime": "2026-02-09T08:30:17.897Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6ImVwaWMiLCJ2YWx1ZSI6IkF1dGhlbnRpY2F0aW9uIn1dfX0="
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6ImZlYXR1cmUiLCJ2YWx1ZSI6IkhvbWUgUGFnZSBTaWduIEluIn1dfX0="
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InN0b3J5IiwidmFsdWUiOiJJbnZhbGlkIFVzZXIgTG9naW4ifV19fQ=="
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6Im93bmVyIiwidmFsdWUiOiJTaGFhcmlmIn1dfX0="
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InNldmVyaXR5IiwidmFsdWUiOiJjcml0aWNhbCJ9XX19"
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InRhZyIsInZhbHVlIjoicmVncmVzc2lvbiJ9XX19"
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InRhZyIsInZhbHVlIjoic21va2UifV19fQ=="
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InRhZyIsInZhbHVlIjoic2lnbmluIn1dfX0="
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InRhZyIsInZhbHVlIjoiaW52YWxpZHNpZ25pbiJ9XX19"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\test-results\\HomePage-03-To-Verify-that-323a3-in-with-invalid-credentials-HenrySchein\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\test-results\\HomePage-03-To-Verify-that-323a3-in-with-invalid-credentials-HenrySchein\\video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "62a0194cb94d3eec4948-4d3dd391216d4c1efb66",
+          "file": "HomePage.spec.ts",
+          "line": 129,
+          "column": 5
+        },
+        {
+          "title": "04-To verify the Sign up flow on the Home page",
+          "ok": true,
+          "tags": [
+            "regression",
+            "smoke",
+            "signup"
+          ],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "HenrySchein",
+              "projectName": "HenrySchein",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 27981,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Navigated to Henry Schein url\n"
+                    },
+                    {
+                      "text": "Verified the Sign up button is visible on the home page\n"
+                    },
+                    {
+                      "text": "Clicked on the Sign up button\n"
+                    },
+                    {
+                      "text": "Verified navigation to Registration page\n"
+                    },
+                    {
+                      "text": "Clicked Continue and new sign-up stopped till here...\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Step 1: Navigate to Henry Schein url",
+                      "duration": 9682
+                    },
+                    {
+                      "title": "Step 2: Verify the Sign up button should be visible on the home page",
+                      "duration": 1273
+                    },
+                    {
+                      "title": "Step 3: Click on the Sign up button",
+                      "duration": 1252
+                    },
+                    {
+                      "title": "Step 4: Verify user is navigated from home page",
+                      "duration": 15223
+                    }
+                  ],
+                  "startTime": "2026-02-09T08:30:28.807Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6ImVwaWMiLCJ2YWx1ZSI6IkF1dGhlbnRpY2F0aW9uIn1dfX0="
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6ImZlYXR1cmUiLCJ2YWx1ZSI6IkhvbWUgUGFnZSBTaWduIFVwIn1dfX0="
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InN0b3J5IiwidmFsdWUiOiJVc2VyIFJlZ2lzdHJhdGlvbiJ9XX19"
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6Im93bmVyIiwidmFsdWUiOiJTaGFhcmlmIn1dfX0="
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InNldmVyaXR5IiwidmFsdWUiOiJjcml0aWNhbCJ9XX19"
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InRhZyIsInZhbHVlIjoicmVncmVzc2lvbiJ9XX19"
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InRhZyIsInZhbHVlIjoic21va2UifV19fQ=="
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InRhZyIsInZhbHVlIjoic2lnbnVwIn1dfX0="
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\test-results\\HomePage-04-To-verify-the-Sign-up-flow-on-the-Home-page-HenrySchein\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\test-results\\HomePage-04-To-verify-the-Sign-up-flow-on-the-Home-page-HenrySchein\\video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "62a0194cb94d3eec4948-c7a9ec292eb481ad3e3d",
+          "file": "HomePage.spec.ts",
+          "line": 186,
+          "column": 5
+        },
+        {
+          "title": "05-Verify that the search bar accepts input and displays relevant suggestions",
+          "ok": true,
+          "tags": [
+            "regression",
+            "search"
+          ],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "HenrySchein",
+              "projectName": "HenrySchein",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 10908,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Navigated to Henry Schein url\n"
+                    },
+                    {
+                      "text": "Search bar is visible\n"
+                    },
+                    {
+                      "text": "Entered search keyword\n"
+                    },
+                    {
+                      "text": "Search suggestions container exists\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Step 1: Navigate to Henry Schein url",
+                      "duration": 7544
+                    },
+                    {
+                      "title": "Step 2: Verify search bar is visible",
+                      "duration": 84
+                    },
+                    {
+                      "title": "Step 3: Enter search keyword",
+                      "duration": 1128
+                    },
+                    {
+                      "title": "Step 4: Verify search suggestions are displayed",
+                      "duration": 0
+                    }
+                  ],
+                  "startTime": "2026-02-09T08:30:56.822Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6ImVwaWMiLCJ2YWx1ZSI6IlNlYXJjaCBGdW5jdGlvbmFsaXR5In1dfX0="
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6ImZlYXR1cmUiLCJ2YWx1ZSI6IkhvbWUgUGFnZSBTZWFyY2gifV19fQ=="
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InN0b3J5IiwidmFsdWUiOiJTZWFyY2ggU3VnZ2VzdGlvbnMifV19fQ=="
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6Im93bmVyIiwidmFsdWUiOiJTaGFhcmlmIn1dfX0="
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InNldmVyaXR5IiwidmFsdWUiOiJub3JtYWwifV19fQ=="
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InRhZyIsInZhbHVlIjoicmVncmVzc2lvbiJ9XX19"
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InRhZyIsInZhbHVlIjoic2VhcmNoIn1dfX0="
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\test-results\\HomePage-05-Verify-that-th-11bb9-splays-relevant-suggestions-HenrySchein\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\test-results\\HomePage-05-Verify-that-th-11bb9-splays-relevant-suggestions-HenrySchein\\video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "62a0194cb94d3eec4948-4e066987826912aa2c75",
+          "file": "HomePage.spec.ts",
+          "line": 266,
+          "column": 5
+        },
+        {
+          "title": "06-Verify Main Menu Buttons Are Enabled and Interactive",
+          "ok": true,
+          "tags": [
+            "regression",
+            "menu",
+            "buttons"
+          ],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "HenrySchein",
+              "projectName": "HenrySchein",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 17053,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Navigated to  Henry Schein url\n"
+                    },
+                    {
+                      "text": "Clicked the Sign-In button on home page\n"
+                    },
+                    {
+                      "text": "Entered the username and password\n"
+                    },
+                    {
+                      "text": "Clicked the sign-in submit button\n"
+                    },
+                    {
+                      "text": "Verified the user is successfully logged in\n"
+                    },
+                    {
+                      "text": "Top Supplies button is enabled\n"
+                    },
+                    {
+                      "text": "List of Top Supplies are displayed\n"
+                    },
+                    {
+                      "text": "Top Equipment button is enabled\n"
+                    },
+                    {
+                      "text": "List of Top Equipment are displayed\n"
+                    },
+                    {
+                      "text": "Pharmaceuticals button is enabled\n"
+                    },
+                    {
+                      "text": "List of Pharmaceuticals are displayed\n"
+                    },
+                    {
+                      "text": "Furniture button is enabled\n"
+                    },
+                    {
+                      "text": "List of Furniture are displayed\n"
+                    },
+                    {
+                      "text": "My Dashboard button is enabled\n"
+                    },
+                    {
+                      "text": "My Dashboard details are displayed\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Step 1: Navigate to  HenrySchein url",
+                      "duration": 7605
+                    },
+                    {
+                      "title": "Step 2: Click Sign-In button on the home page to log in",
+                      "duration": 82
+                    },
+                    {
+                      "title": "Step 3: Enter the username and password",
+                      "duration": 2253
+                    },
+                    {
+                      "title": "Step 4: Click the sign-in submit button",
+                      "duration": 704
+                    },
+                    {
+                      "title": "Step 5: Verify the user is successfully logged in",
+                      "duration": 955
+                    },
+                    {
+                      "title": "Step 6: Click Top Supplies button from main menu",
+                      "duration": 61
+                    },
+                    {
+                      "title": "Step 7: I should see list of Top Supplies",
+                      "duration": 2005
+                    },
+                    {
+                      "title": "Step 8: Click Top Equipment button from main menu",
+                      "duration": 67
+                    },
+                    {
+                      "title": "Step 9: I should see list of Top Equipment",
+                      "duration": 690
+                    },
+                    {
+                      "title": "Step 10: Click Pharmaceuticals button from main menu",
+                      "duration": 32
+                    },
+                    {
+                      "title": "Step 11: I should see list of Pharmaceuticals",
+                      "duration": 709
+                    },
+                    {
+                      "title": "Step 12: Click Furniture button from main menu",
+                      "duration": 28
+                    },
+                    {
+                      "title": "Step 13: I should see list of Furniture",
+                      "duration": 694
+                    },
+                    {
+                      "title": "Step 14: Click My Dashboard button from main menu",
+                      "duration": 21
+                    },
+                    {
+                      "title": "Step 15: I should see list of My Dashboard",
+                      "duration": 649
+                    }
+                  ],
+                  "startTime": "2026-02-09T08:31:07.758Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6ImVwaWMiLCJ2YWx1ZSI6Ik1haW4gTWVudSJ9XX19"
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6ImZlYXR1cmUiLCJ2YWx1ZSI6Ik1haW4gTWVudSBGdW5jdGlvbmFsaXR5In1dfX0="
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InN0b3J5IiwidmFsdWUiOiJNYWluIE1lbnUgQnV0dG9ucyJ9XX19"
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6Im93bmVyIiwidmFsdWUiOiJTaGFhcmlmIn1dfX0="
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InNldmVyaXR5IiwidmFsdWUiOiJub3JtYWwifV19fQ=="
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InRhZyIsInZhbHVlIjoicmVncmVzc2lvbiJ9XX19"
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InRhZyIsInZhbHVlIjoibWVudSJ9XX19"
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InRhZyIsInZhbHVlIjoiYnV0dG9ucyJ9XX19"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\test-results\\HomePage-06-Verify-Main-Me-06f7f-Are-Enabled-and-Interactive-HenrySchein\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\test-results\\HomePage-06-Verify-Main-Me-06f7f-Are-Enabled-and-Interactive-HenrySchein\\video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "62a0194cb94d3eec4948-504e93489646b7d5a183",
+          "file": "HomePage.spec.ts",
+          "line": 342,
+          "column": 5
+        },
+        {
+          "title": "07-Verify Main Menu Links Are Enabled and Interactive",
           "ok": false,
-          "tags": [],
+          "tags": [
+            "regression",
+            "menu",
+            "links"
+          ],
           "tests": [
             {
               "timeout": 90000,
@@ -94,25 +915,812 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "failed",
-                  "duration": 15969,
+                  "duration": 18436,
                   "error": {
-                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('//div[@data-test-id=\\'login.unknownKey1\\']')\nTimeout: 5000ms\n\u001b[32m- Expected substring  - 1\u001b[39m\n\u001b[31m+ Received string     + 5\u001b[39m\n\n\u001b[32m- Hi\u001b[39m\n\u001b[31m+ The username and/or password entered is incorrect,\u001b[39m\n\u001b[31m+ please re-enter correct username or password.\u001b[39m\n\u001b[31m+ If you enter incorrect user password three times,\u001b[39m\n\u001b[31m+ then your account will be locked and you will need to\u001b[39m\n\u001b[31m+ reset your password or contact support.\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('//div[@data-test-id=\\'login.unknownKey1\\']')\u001b[22m\n\u001b[2m    9 × locator resolved to <div role=\"alert\" aria-atomic=\"true\" _ngcontent-my-app-c341=\"\" data-test-id=\"login.unknownKey1\" class=\"errorMessage caption1-regular text-left ng-star-inserted\">The username and/or password entered is incorrect…</div>\u001b[22m\n\u001b[2m      - unexpected value \"The username and/or password entered is incorrect,\u001b[22m\n\u001b[2mplease re-enter correct username or password.\u001b[22m\n\u001b[2mIf you enter incorrect user password three times,\u001b[22m\n\u001b[2mthen your account will be locked and you will need to\u001b[22m\n\u001b[2mreset your password or contact support.\"\u001b[22m\n",
-                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('//div[@data-test-id=\\'login.unknownKey1\\']')\nTimeout: 5000ms\n\u001b[32m- Expected substring  - 1\u001b[39m\n\u001b[31m+ Received string     + 5\u001b[39m\n\n\u001b[32m- Hi\u001b[39m\n\u001b[31m+ The username and/or password entered is incorrect,\u001b[39m\n\u001b[31m+ please re-enter correct username or password.\u001b[39m\n\u001b[31m+ If you enter incorrect user password three times,\u001b[39m\n\u001b[31m+ then your account will be locked and you will need to\u001b[39m\n\u001b[31m+ reset your password or contact support.\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('//div[@data-test-id=\\'login.unknownKey1\\']')\u001b[22m\n\u001b[2m    9 × locator resolved to <div role=\"alert\" aria-atomic=\"true\" _ngcontent-my-app-c341=\"\" data-test-id=\"login.unknownKey1\" class=\"errorMessage caption1-regular text-left ng-star-inserted\">The username and/or password entered is incorrect…</div>\u001b[22m\n\u001b[2m      - unexpected value \"The username and/or password entered is incorrect,\u001b[22m\n\u001b[2mplease re-enter correct username or password.\u001b[22m\n\u001b[2mIf you enter incorrect user password three times,\u001b[22m\n\u001b[2mthen your account will be locked and you will need to\u001b[22m\n\u001b[2mreset your password or contact support.\"\u001b[22m\n\n    at C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\tests\\HomePage.spec.ts:659:30\n    at C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\tests\\HomePage.spec.ts:654:4",
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected: \u001b[32m\"https://www.henryschein.co.uk/\u001b[7mpromo/promotions/medical-clearance\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"https://www.henryschein.co.uk/\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 5000ms\u001b[22m\n\u001b[2m    9 × unexpected value \"https://www.henryschein.co.uk/\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected: \u001b[32m\"https://www.henryschein.co.uk/\u001b[7mpromo/promotions/medical-clearance\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"https://www.henryschein.co.uk/\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 5000ms\u001b[22m\n\u001b[2m    9 × unexpected value \"https://www.henryschein.co.uk/\"\u001b[22m\n\n    at C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\tests\\HomePage.spec.ts:492:29\n    at C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\tests\\HomePage.spec.ts:491:18",
                     "location": {
                       "file": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\tests\\HomePage.spec.ts",
-                      "column": 30,
-                      "line": 659
+                      "column": 29,
+                      "line": 492
                     },
-                    "snippet": "\u001b[0m \u001b[90m 657 |\u001b[39m       \u001b[36mconst\u001b[39m errorMsg \u001b[33m=\u001b[39m (home\u001b[33m.\u001b[39msign_in_error_msg_xpath)\u001b[33m;\u001b[39m\n \u001b[90m 658 |\u001b[39m       \u001b[36mawait\u001b[39m expect(errorMsg)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 659 |\u001b[39m       \u001b[36mawait\u001b[39m expect(errorMsg)\u001b[33m.\u001b[39mtoContainText(\u001b[32m'Hi'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 660 |\u001b[39m    })\n \u001b[90m 661 |\u001b[39m\n \u001b[90m 662 |\u001b[39m })\u001b[0m"
+                    "snippet": "\u001b[0m \u001b[90m 490 |\u001b[39m       })\n \u001b[90m 491 |\u001b[39m       \u001b[36mawait\u001b[39m test\u001b[33m.\u001b[39mstep(\u001b[32m\"Step 7: Link should navigate to Clearance Page\"\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 492 |\u001b[39m          \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveURL(\u001b[32m'https://www.henryschein.co.uk/promo/promotions/medical-clearance'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 493 |\u001b[39m          console\u001b[33m.\u001b[39mlog(\u001b[32m\"Verified the page is navigated to Clearance page\"\u001b[39m)\n \u001b[90m 494 |\u001b[39m       })\n \u001b[90m 495 |\u001b[39m       \u001b[36mawait\u001b[39m test\u001b[33m.\u001b[39mstep(\u001b[32m\"Step 8: Click Blog link from main menu\"\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\u001b[0m"
                   },
                   "errors": [
                     {
                       "location": {
                         "file": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\tests\\HomePage.spec.ts",
-                        "column": 30,
-                        "line": 659
+                        "column": 29,
+                        "line": 492
                       },
-                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('//div[@data-test-id=\\'login.unknownKey1\\']')\nTimeout: 5000ms\n\u001b[32m- Expected substring  - 1\u001b[39m\n\u001b[31m+ Received string     + 5\u001b[39m\n\n\u001b[32m- Hi\u001b[39m\n\u001b[31m+ The username and/or password entered is incorrect,\u001b[39m\n\u001b[31m+ please re-enter correct username or password.\u001b[39m\n\u001b[31m+ If you enter incorrect user password three times,\u001b[39m\n\u001b[31m+ then your account will be locked and you will need to\u001b[39m\n\u001b[31m+ reset your password or contact support.\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('//div[@data-test-id=\\'login.unknownKey1\\']')\u001b[22m\n\u001b[2m    9 × locator resolved to <div role=\"alert\" aria-atomic=\"true\" _ngcontent-my-app-c341=\"\" data-test-id=\"login.unknownKey1\" class=\"errorMessage caption1-regular text-left ng-star-inserted\">The username and/or password entered is incorrect…</div>\u001b[22m\n\u001b[2m      - unexpected value \"The username and/or password entered is incorrect,\u001b[22m\n\u001b[2mplease re-enter correct username or password.\u001b[22m\n\u001b[2mIf you enter incorrect user password three times,\u001b[22m\n\u001b[2mthen your account will be locked and you will need to\u001b[22m\n\u001b[2mreset your password or contact support.\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 657 |\u001b[39m       \u001b[36mconst\u001b[39m errorMsg \u001b[33m=\u001b[39m (home\u001b[33m.\u001b[39msign_in_error_msg_xpath)\u001b[33m;\u001b[39m\n \u001b[90m 658 |\u001b[39m       \u001b[36mawait\u001b[39m expect(errorMsg)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 659 |\u001b[39m       \u001b[36mawait\u001b[39m expect(errorMsg)\u001b[33m.\u001b[39mtoContainText(\u001b[32m'Hi'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 660 |\u001b[39m    })\n \u001b[90m 661 |\u001b[39m\n \u001b[90m 662 |\u001b[39m })\u001b[0m\n\u001b[2m    at C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\tests\\HomePage.spec.ts:659:30\u001b[22m\n\u001b[2m    at C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\tests\\HomePage.spec.ts:654:4\u001b[22m"
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected: \u001b[32m\"https://www.henryschein.co.uk/\u001b[7mpromo/promotions/medical-clearance\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"https://www.henryschein.co.uk/\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 5000ms\u001b[22m\n\u001b[2m    9 × unexpected value \"https://www.henryschein.co.uk/\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 490 |\u001b[39m       })\n \u001b[90m 491 |\u001b[39m       \u001b[36mawait\u001b[39m test\u001b[33m.\u001b[39mstep(\u001b[32m\"Step 7: Link should navigate to Clearance Page\"\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 492 |\u001b[39m          \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveURL(\u001b[32m'https://www.henryschein.co.uk/promo/promotions/medical-clearance'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 493 |\u001b[39m          console\u001b[33m.\u001b[39mlog(\u001b[32m\"Verified the page is navigated to Clearance page\"\u001b[39m)\n \u001b[90m 494 |\u001b[39m       })\n \u001b[90m 495 |\u001b[39m       \u001b[36mawait\u001b[39m test\u001b[33m.\u001b[39mstep(\u001b[32m\"Step 8: Click Blog link from main menu\"\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\u001b[0m\n\u001b[2m    at C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\tests\\HomePage.spec.ts:492:29\u001b[22m\n\u001b[2m    at C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\tests\\HomePage.spec.ts:491:18\u001b[22m"
+                    }
+                  ],
+                  "stdout": [
+                    {
+                      "text": "Navigated to  Henry Schein url\n"
+                    },
+                    {
+                      "text": "Clicked the Sign-In button on home page\n"
+                    },
+                    {
+                      "text": "Entered the username and password\n"
+                    },
+                    {
+                      "text": "Clicked the sign-in submit button\n"
+                    },
+                    {
+                      "text": "Verified the user is successfully logged in\n"
+                    },
+                    {
+                      "text": "Clicked Clearance Link\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Step 1: Navigate to  Henry Schein url",
+                      "duration": 7624
+                    },
+                    {
+                      "title": "Step 2: Click Sign-In button on the home page to log in",
+                      "duration": 103
+                    },
+                    {
+                      "title": "Step 3: Enter the username and password",
+                      "duration": 2089
+                    },
+                    {
+                      "title": "Step 4: Click the sign-in submit button",
+                      "duration": 718
+                    },
+                    {
+                      "title": "Step 5: Verify the user is successfully logged in",
+                      "duration": 967
+                    },
+                    {
+                      "title": "Step 6: Click Clearance link from main menu",
+                      "duration": 825
+                    },
+                    {
+                      "title": "Step 7: Link should navigate to Clearance Page",
+                      "duration": 5237,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected: \u001b[32m\"https://www.henryschein.co.uk/\u001b[7mpromo/promotions/medical-clearance\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"https://www.henryschein.co.uk/\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 5000ms\u001b[22m\n\u001b[2m    9 × unexpected value \"https://www.henryschein.co.uk/\"\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected: \u001b[32m\"https://www.henryschein.co.uk/\u001b[7mpromo/promotions/medical-clearance\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"https://www.henryschein.co.uk/\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 5000ms\u001b[22m\n\u001b[2m    9 × unexpected value \"https://www.henryschein.co.uk/\"\u001b[22m\n\n    at C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\tests\\HomePage.spec.ts:492:29\n    at C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\tests\\HomePage.spec.ts:491:18",
+                        "location": {
+                          "file": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\tests\\HomePage.spec.ts",
+                          "column": 29,
+                          "line": 492
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 490 |\u001b[39m       })\n \u001b[90m 491 |\u001b[39m       \u001b[36mawait\u001b[39m test\u001b[33m.\u001b[39mstep(\u001b[32m\"Step 7: Link should navigate to Clearance Page\"\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 492 |\u001b[39m          \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveURL(\u001b[32m'https://www.henryschein.co.uk/promo/promotions/medical-clearance'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 493 |\u001b[39m          console\u001b[33m.\u001b[39mlog(\u001b[32m\"Verified the page is navigated to Clearance page\"\u001b[39m)\n \u001b[90m 494 |\u001b[39m       })\n \u001b[90m 495 |\u001b[39m       \u001b[36mawait\u001b[39m test\u001b[33m.\u001b[39mstep(\u001b[32m\"Step 8: Click Blog link from main menu\"\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\u001b[0m"
+                      }
+                    }
+                  ],
+                  "startTime": "2026-02-09T08:31:24.833Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6ImVwaWMiLCJ2YWx1ZSI6Ik1haW4gTWVudSJ9XX19"
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6ImZlYXR1cmUiLCJ2YWx1ZSI6Ik1haW4gTWVudSBGdW5jdGlvbmFsaXR5In1dfX0="
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InN0b3J5IiwidmFsdWUiOiJNYWluIE1lbnUgTGlua3MifV19fQ=="
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6Im93bmVyIiwidmFsdWUiOiJTaGFhcmlmIn1dfX0="
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InNldmVyaXR5IiwidmFsdWUiOiJub3JtYWwifV19fQ=="
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InRhZyIsInZhbHVlIjoicmVncmVzc2lvbiJ9XX19"
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InRhZyIsInZhbHVlIjoibWVudSJ9XX19"
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InRhZyIsInZhbHVlIjoibGlua3MifV19fQ=="
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\test-results\\HomePage-07-Verify-Main-Me-0bc3c-Are-Enabled-and-Interactive-HenrySchein\\test-failed-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\test-results\\HomePage-07-Verify-Main-Me-0bc3c-Are-Enabled-and-Interactive-HenrySchein\\video.webm"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\test-results\\HomePage-07-Verify-Main-Me-0bc3c-Are-Enabled-and-Interactive-HenrySchein\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\tests\\HomePage.spec.ts",
+                    "column": 29,
+                    "line": 492
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "62a0194cb94d3eec4948-275917dcb36ef264c7bd",
+          "file": "HomePage.spec.ts",
+          "line": 450,
+          "column": 5
+        },
+        {
+          "title": "08-Verify that the cart icon displays the correct item count when products are added to the cart",
+          "ok": true,
+          "tags": [
+            "regression",
+            "cart"
+          ],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "HenrySchein",
+              "projectName": "HenrySchein",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 31656,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Navigated to  Henry Schein url\n"
+                    },
+                    {
+                      "text": "Clicked the Sign-In button on home page\n"
+                    },
+                    {
+                      "text": "Entered the username and password\n"
+                    },
+                    {
+                      "text": "Clicked the sign-in submit button\n"
+                    },
+                    {
+                      "text": "Verified the user is successfully logged in\n"
+                    },
+                    {
+                      "text": "Cart badge text: 93\n"
+                    },
+                    {
+                      "text": "Entered Product Id\n"
+                    },
+                    {
+                      "text": "Selected Product\n"
+                    },
+                    {
+                      "text": "Product added to Cart\n"
+                    },
+                    {
+                      "text": "Clicked View Basket\n"
+                    },
+                    {
+                      "text": "Updated cart count: 94\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Step 1: Navigate to  Henry Schein url",
+                      "duration": 7775
+                    },
+                    {
+                      "title": "Step 2: Click Sign-In button on the home page to log in",
+                      "duration": 128
+                    },
+                    {
+                      "title": "Step 3: Enter the username and password",
+                      "duration": 2229
+                    },
+                    {
+                      "title": "Step 4: Click the sign-in submit button",
+                      "duration": 689
+                    },
+                    {
+                      "title": "Step 5: Verify the user is successfully logged in",
+                      "duration": 874
+                    },
+                    {
+                      "title": "Step 6: Verify the Cart badge quantity",
+                      "duration": 53
+                    },
+                    {
+                      "title": "Step 7: Add product to cart",
+                      "duration": 7039
+                    },
+                    {
+                      "title": "Step 8: Verify the cart count and cart badge count are correct",
+                      "duration": 12451
+                    }
+                  ],
+                  "startTime": "2026-02-09T08:31:45.689Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6ImVwaWMiLCJ2YWx1ZSI6IlNob3BwaW5nIENhcnQifV19fQ=="
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6ImZlYXR1cmUiLCJ2YWx1ZSI6IkNhcnQgRnVuY3Rpb25hbGl0eSJ9XX19"
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InN0b3J5IiwidmFsdWUiOiJDYXJ0IEl0ZW0gQ291bnQifV19fQ=="
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6Im93bmVyIiwidmFsdWUiOiJTaGFhcmlmIn1dfX0="
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InNldmVyaXR5IiwidmFsdWUiOiJjcml0aWNhbCJ9XX19"
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InRhZyIsInZhbHVlIjoicmVncmVzc2lvbiJ9XX19"
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InRhZyIsInZhbHVlIjoiY2FydCJ9XX19"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\test-results\\HomePage-08-Verify-that-th-7f73e-ducts-are-added-to-the-cart-HenrySchein\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\test-results\\HomePage-08-Verify-that-th-7f73e-ducts-are-added-to-the-cart-HenrySchein\\video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "62a0194cb94d3eec4948-15bdb8f843bc71abcc75",
+          "file": "HomePage.spec.ts",
+          "line": 525,
+          "column": 5
+        },
+        {
+          "title": "09-Verify that the tooltip is displays the address when hovering over the address information icon",
+          "ok": true,
+          "tags": [
+            "regression",
+            "tooltip"
+          ],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "HenrySchein",
+              "projectName": "HenrySchein",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 15847,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Navigated to  Henry Schein url\n"
+                    },
+                    {
+                      "text": "Verified the sign in button should be visible on the home page\n"
+                    },
+                    {
+                      "text": "Entered the username and password\n"
+                    },
+                    {
+                      "text": "clicked the sign-in submit button\n"
+                    },
+                    {
+                      "text": "the address-tooltip is visible\n"
+                    },
+                    {
+                      "text": "Verified that the address-tooltip is displays the address when it is hovered \n"
+                    },
+                    {
+                      "text": "Ship Location :Test company\n"
+                    },
+                    {
+                      "text": "Address  test address  \n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Step 1: Navigate to the Henry Schein website.",
+                      "duration": 8435
+                    },
+                    {
+                      "title": "Step 2: Confirm that the Sign In button is visible.",
+                      "duration": 98
+                    },
+                    {
+                      "title": "Step 3: Enter a valid username and password.",
+                      "duration": 2200
+                    },
+                    {
+                      "title": "Step 4: Click the Sign In button.",
+                      "duration": 825
+                    },
+                    {
+                      "title": "Step 5: Verify that the address tooltip is visible in the menu bar.",
+                      "duration": 2338
+                    },
+                    {
+                      "title": "Step 6: Hover over the address tooltip and check that the tooltip displays the address information.",
+                      "duration": 1425
+                    }
+                  ],
+                  "startTime": "2026-02-09T08:32:17.461Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6ImVwaWMiLCJ2YWx1ZSI6IlVzZXIgSW50ZXJmYWNlIn1dfX0="
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6ImZlYXR1cmUiLCJ2YWx1ZSI6IlRvb2x0aXAgRnVuY3Rpb25hbGl0eSJ9XX19"
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InN0b3J5IiwidmFsdWUiOiJBZGRyZXNzIFRvb2x0aXAifV19fQ=="
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6Im93bmVyIiwidmFsdWUiOiJTaGFhcmlmIn1dfX0="
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InNldmVyaXR5IiwidmFsdWUiOiJub3JtYWwifV19fQ=="
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InRhZyIsInZhbHVlIjoicmVncmVzc2lvbiJ9XX19"
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InRhZyIsInZhbHVlIjoidG9vbHRpcCJ9XX19"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\test-results\\HomePage-09-Verify-that-th-72c62-he-address-information-icon-HenrySchein\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\test-results\\HomePage-09-Verify-that-th-72c62-he-address-information-icon-HenrySchein\\video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "62a0194cb94d3eec4948-3ec11d242d873a3be1c6",
+          "file": "HomePage.spec.ts",
+          "line": 608,
+          "column": 5
+        },
+        {
+          "title": "11-Verify that the banner slider displays all slides with their respective content and transitions between slides when the Navigation Arrows buttons are clicked.",
+          "ok": true,
+          "tags": [
+            "regression",
+            "slider"
+          ],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "HenrySchein",
+              "projectName": "HenrySchein",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 20723,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Navigated to  Henry Schein url\n"
+                    },
+                    {
+                      "text": "Verified the sign in button should be visible on the home page\n"
+                    },
+                    {
+                      "text": "Entered the username and password\n"
+                    },
+                    {
+                      "text": "clicked the sign-in submit button\n"
+                    },
+                    {
+                      "text": "The banner is displayed\n"
+                    },
+                    {
+                      "text": "Set(5) {\n  \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                    \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                            \\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'                                    Have You Tried Our Own Brand?\\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'                                Join those who are testing smarter\\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'                                    \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                                        Shop Now \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                            \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'                            \\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'                            \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'                    \\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                     \\n'\u001b[39m +\n    \u001b[32m'                    \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                    \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'            '\u001b[39m,\n  \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                    \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                            \\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'                                    High Quality, Reliable, Single-Use\\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'                                Guaranteed With Our Money-Back Promise\\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'                                    \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                                        Buy Now\\n'\u001b[39m +\n    \u001b[32m'                                    \\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                            \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'                            \\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'                            \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'                    \\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                     \\n'\u001b[39m +\n    \u001b[32m'                    \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                    \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'            '\u001b[39m,\n  \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                    \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                            \\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'                                    Rolling Out Big Value\\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'                                Give Our Own Brand A Go\\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                                    \\n'\u001b[39m +\n    \u001b[32m'                                        Try Our Recycled Couch Roll\\n'\u001b[39m +\n    \u001b[32m'                                    \\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                            \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'                            \\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'                            \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'                    \\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                     \\n'\u001b[39m +\n    \u001b[32m'                    \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                    \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'            '\u001b[39m,\n  \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                    \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                            \\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'                                    Freshen Up Your Consulting Room\\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'                                Curtains and Accessories in A Range of Colours\\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'                                    \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                                        Try Our Own Brand Curtains and Accessories \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                            \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'                            \\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'                            \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'                    \\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                     \\n'\u001b[39m +\n    \u001b[32m'                    \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                    \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'            '\u001b[39m,\n  \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                    \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                            \\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'                                    Have You Examined Our New Ranges?\\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'                                New Products, Same Fair Prices\\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                                    \\n'\u001b[39m +\n    \u001b[32m'                                        Shop New In\\n'\u001b[39m +\n    \u001b[32m'                                    \\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                            \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'                            \\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'                            \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'                    \\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                     \\n'\u001b[39m +\n    \u001b[32m'                    \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                    \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'            '\u001b[39m\n}\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Step 1: Navigate to the Henry Schein website.",
+                      "duration": 7786
+                    },
+                    {
+                      "title": "Step 2: Confirm that the Sign In button is visible.",
+                      "duration": 77
+                    },
+                    {
+                      "title": "Step 3: Enter a valid username and password.",
+                      "duration": 2041
+                    },
+                    {
+                      "title": "Step 4: Click the Sign In button.",
+                      "duration": 685
+                    },
+                    {
+                      "title": "Step 5: Verify that the banner is displayed on the home page.",
+                      "duration": 44
+                    },
+                    {
+                      "title": "Step 6: Verify that the banner slides when the user clicks Navigation Arrows buttons .",
+                      "duration": 9569
+                    }
+                  ],
+                  "startTime": "2026-02-09T08:32:33.333Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6ImVwaWMiLCJ2YWx1ZSI6IkhvbWUgUGFnZSJ9XX19"
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6ImZlYXR1cmUiLCJ2YWx1ZSI6IkJhbm5lciBTbGlkZXIifV19fQ=="
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InN0b3J5IiwidmFsdWUiOiJCYW5uZXIgRnVuY3Rpb25hbGl0eSJ9XX19"
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6Im93bmVyIiwidmFsdWUiOiJTaGFhcmlmIn1dfX0="
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InNldmVyaXR5IiwidmFsdWUiOiJub3JtYWwifV19fQ=="
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InRhZyIsInZhbHVlIjoicmVncmVzc2lvbiJ9XX19"
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InRhZyIsInZhbHVlIjoic2xpZGVyIn1dfX0="
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\test-results\\HomePage-11-Verify-that-th-606d3-Arrows-buttons-are-clicked--HenrySchein\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\test-results\\HomePage-11-Verify-that-th-606d3-Arrows-buttons-are-clicked--HenrySchein\\video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "62a0194cb94d3eec4948-87ceae4336ab545310b8",
+          "file": "HomePage.spec.ts",
+          "line": 684,
+          "column": 5
+        },
+        {
+          "title": "11-Verify Footer Links Are Interactive and Navigate to respective pages",
+          "ok": true,
+          "tags": [
+            "regression",
+            "footer"
+          ],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "HenrySchein",
+              "projectName": "HenrySchein",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 47334,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Navigated to  Henry Schein url\n"
+                    },
+                    {
+                      "text": "Clicked the Sign-In button on home page\n"
+                    },
+                    {
+                      "text": "Entered the username and password\n"
+                    },
+                    {
+                      "text": "Clicked the sign-in submit button\n"
+                    },
+                    {
+                      "text": "Verified the user is successfully logged in\n"
+                    },
+                    {
+                      "text": "Clicked Legal Terms Link\n"
+                    },
+                    {
+                      "text": "Verified the page is navigated to Legal Terms page\n"
+                    },
+                    {
+                      "text": "Clicked Privacy Notice Link\n"
+                    },
+                    {
+                      "text": "Verified the page is navigated to Privacy Notice page\n"
+                    },
+                    {
+                      "text": "Clicked Delivery and Returns Link\n"
+                    },
+                    {
+                      "text": "Verified the page is navigated to Delivery and Returns page\n"
+                    },
+                    {
+                      "text": "Clicked LinkedIn Link\n"
+                    },
+                    {
+                      "text": "Verified navigation to LinkedIn page\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Step 1: Navigate to  Henry Schein url",
+                      "duration": 8247
+                    },
+                    {
+                      "title": "Step 2: Click Sign-In button on the home page to log in",
+                      "duration": 67
+                    },
+                    {
+                      "title": "Step 3: Enter the username and password",
+                      "duration": 2110
+                    },
+                    {
+                      "title": "Step 4: Click the sign-in submit button",
+                      "duration": 667
+                    },
+                    {
+                      "title": "Step 5: Verify the user is successfully logged in",
+                      "duration": 533
+                    },
+                    {
+                      "title": "Step 6: Click Legal Terms link on footer section",
+                      "duration": 11206
+                    },
+                    {
+                      "title": "Step 7: Link should navigate to Legal Terms Page",
+                      "duration": 157
+                    },
+                    {
+                      "title": "Step 8: Click Privacy Notice link on footer section",
+                      "duration": 6063
+                    },
+                    {
+                      "title": "Step 9: Link should navigate to Privacy Notice Page",
+                      "duration": 4438
+                    },
+                    {
+                      "title": "Step 10: Click Delivery and Returns link on footer section",
+                      "duration": 6497
+                    },
+                    {
+                      "title": "Step 11: Link should navigate to Delivery and Returns page",
+                      "duration": 3588
+                    },
+                    {
+                      "title": "Step 12: Click LinkedIn link on footer section & wait for new tab",
+                      "duration": 1594
+                    },
+                    {
+                      "title": "Step 13: Verify LinkedIn URL",
+                      "duration": 1546
+                    }
+                  ],
+                  "startTime": "2026-02-09T08:32:54.085Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6ImVwaWMiLCJ2YWx1ZSI6IkZvb3RlciBTZWN0aW9uIn1dfX0="
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6ImZlYXR1cmUiLCJ2YWx1ZSI6IkZvb3RlciBMaW5rcyJ9XX19"
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InN0b3J5IiwidmFsdWUiOiJGb290ZXIgRnVuY3Rpb25hbGl0eSJ9XX19"
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6Im93bmVyIiwidmFsdWUiOiJTaGFhcmlmIn1dfX0="
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InNldmVyaXR5IiwidmFsdWUiOiJub3JtYWwifV19fQ=="
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InRhZyIsInZhbHVlIjoicmVncmVzc2lvbiJ9XX19"
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InRhZyIsInZhbHVlIjoiZm9vdGVyIn1dfX0="
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\test-results\\HomePage-11-Verify-Footer--f7402-avigate-to-respective-pages-HenrySchein\\test-finished-1.png"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\test-results\\HomePage-11-Verify-Footer--f7402-avigate-to-respective-pages-HenrySchein\\test-finished-2.png"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\test-results\\HomePage-11-Verify-Footer--f7402-avigate-to-respective-pages-HenrySchein\\test-finished-3.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\test-results\\HomePage-11-Verify-Footer--f7402-avigate-to-respective-pages-HenrySchein\\video-2.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\test-results\\HomePage-11-Verify-Footer--f7402-avigate-to-respective-pages-HenrySchein\\video-1.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\test-results\\HomePage-11-Verify-Footer--f7402-avigate-to-respective-pages-HenrySchein\\video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "62a0194cb94d3eec4948-c7a96b7aaba792377fcf",
+          "file": "HomePage.spec.ts",
+          "line": 763,
+          "column": 5
+        },
+        {
+          "title": "12-To Verify the error message for invalid login credentials",
+          "ok": false,
+          "tags": [
+            "regression",
+            "signin",
+            "failure_case"
+          ],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "HenrySchein",
+              "projectName": "HenrySchein",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 16517,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('//div[@data-test-id=\\'login.unknownKey1\\']')\nTimeout: 5000ms\n\u001b[32m- Expected substring  - 1\u001b[39m\n\u001b[31m+ Received string     + 5\u001b[39m\n\n\u001b[32m- \u001b[7mP\u001b[27mlease enter \u001b[7mvalid Username/Password\u001b[27m\u001b[39m\n\u001b[31m+ The username and/or password entered is incorrect,\u001b[39m\n\u001b[31m+ \u001b[7mp\u001b[27mlease \u001b[7mre-\u001b[27menter \u001b[7mcorrect username or password.\u001b[27m\u001b[39m\n\u001b[31m+ If you enter incorrect user password three times,\u001b[39m\n\u001b[31m+ then your account will be locked and you will need to\u001b[39m\n\u001b[31m+ reset your password or contact support.\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('//div[@data-test-id=\\'login.unknownKey1\\']')\u001b[22m\n\u001b[2m    9 × locator resolved to <div role=\"alert\" aria-atomic=\"true\" _ngcontent-my-app-c344=\"\" data-test-id=\"login.unknownKey1\" class=\"errorMessage caption1-regular text-left ng-star-inserted\">The username and/or password entered is incorrect…</div>\u001b[22m\n\u001b[2m      - unexpected value \"The username and/or password entered is incorrect,\u001b[22m\n\u001b[2mplease re-enter correct username or password.\u001b[22m\n\u001b[2mIf you enter incorrect user password three times,\u001b[22m\n\u001b[2mthen your account will be locked and you will need to\u001b[22m\n\u001b[2mreset your password or contact support.\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('//div[@data-test-id=\\'login.unknownKey1\\']')\nTimeout: 5000ms\n\u001b[32m- Expected substring  - 1\u001b[39m\n\u001b[31m+ Received string     + 5\u001b[39m\n\n\u001b[32m- \u001b[7mP\u001b[27mlease enter \u001b[7mvalid Username/Password\u001b[27m\u001b[39m\n\u001b[31m+ The username and/or password entered is incorrect,\u001b[39m\n\u001b[31m+ \u001b[7mp\u001b[27mlease \u001b[7mre-\u001b[27menter \u001b[7mcorrect username or password.\u001b[27m\u001b[39m\n\u001b[31m+ If you enter incorrect user password three times,\u001b[39m\n\u001b[31m+ then your account will be locked and you will need to\u001b[39m\n\u001b[31m+ reset your password or contact support.\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('//div[@data-test-id=\\'login.unknownKey1\\']')\u001b[22m\n\u001b[2m    9 × locator resolved to <div role=\"alert\" aria-atomic=\"true\" _ngcontent-my-app-c344=\"\" data-test-id=\"login.unknownKey1\" class=\"errorMessage caption1-regular text-left ng-star-inserted\">The username and/or password entered is incorrect…</div>\u001b[22m\n\u001b[2m      - unexpected value \"The username and/or password entered is incorrect,\u001b[22m\n\u001b[2mplease re-enter correct username or password.\u001b[22m\n\u001b[2mIf you enter incorrect user password three times,\u001b[22m\n\u001b[2mthen your account will be locked and you will need to\u001b[22m\n\u001b[2mreset your password or contact support.\"\u001b[22m\n\n    at C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\tests\\HomePage.spec.ts:876:33\n    at C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\tests\\HomePage.spec.ts:871:7",
+                    "location": {
+                      "file": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\tests\\HomePage.spec.ts",
+                      "column": 33,
+                      "line": 876
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 874 |\u001b[39m          \u001b[36mconst\u001b[39m errorMsg \u001b[33m=\u001b[39m (home\u001b[33m.\u001b[39msign_in_error_msg_xpath)\u001b[33m;\u001b[39m\n \u001b[90m 875 |\u001b[39m          \u001b[36mawait\u001b[39m expect(errorMsg)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 876 |\u001b[39m          \u001b[36mawait\u001b[39m expect(errorMsg)\u001b[33m.\u001b[39mtoContainText(\u001b[32m'Please enter valid Username/Password'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 877 |\u001b[39m       })\n \u001b[90m 878 |\u001b[39m\n \u001b[90m 879 |\u001b[39m    })\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\tests\\HomePage.spec.ts",
+                        "column": 33,
+                        "line": 876
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('//div[@data-test-id=\\'login.unknownKey1\\']')\nTimeout: 5000ms\n\u001b[32m- Expected substring  - 1\u001b[39m\n\u001b[31m+ Received string     + 5\u001b[39m\n\n\u001b[32m- \u001b[7mP\u001b[27mlease enter \u001b[7mvalid Username/Password\u001b[27m\u001b[39m\n\u001b[31m+ The username and/or password entered is incorrect,\u001b[39m\n\u001b[31m+ \u001b[7mp\u001b[27mlease \u001b[7mre-\u001b[27menter \u001b[7mcorrect username or password.\u001b[27m\u001b[39m\n\u001b[31m+ If you enter incorrect user password three times,\u001b[39m\n\u001b[31m+ then your account will be locked and you will need to\u001b[39m\n\u001b[31m+ reset your password or contact support.\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('//div[@data-test-id=\\'login.unknownKey1\\']')\u001b[22m\n\u001b[2m    9 × locator resolved to <div role=\"alert\" aria-atomic=\"true\" _ngcontent-my-app-c344=\"\" data-test-id=\"login.unknownKey1\" class=\"errorMessage caption1-regular text-left ng-star-inserted\">The username and/or password entered is incorrect…</div>\u001b[22m\n\u001b[2m      - unexpected value \"The username and/or password entered is incorrect,\u001b[22m\n\u001b[2mplease re-enter correct username or password.\u001b[22m\n\u001b[2mIf you enter incorrect user password three times,\u001b[22m\n\u001b[2mthen your account will be locked and you will need to\u001b[22m\n\u001b[2mreset your password or contact support.\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 874 |\u001b[39m          \u001b[36mconst\u001b[39m errorMsg \u001b[33m=\u001b[39m (home\u001b[33m.\u001b[39msign_in_error_msg_xpath)\u001b[33m;\u001b[39m\n \u001b[90m 875 |\u001b[39m          \u001b[36mawait\u001b[39m expect(errorMsg)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 876 |\u001b[39m          \u001b[36mawait\u001b[39m expect(errorMsg)\u001b[33m.\u001b[39mtoContainText(\u001b[32m'Please enter valid Username/Password'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 877 |\u001b[39m       })\n \u001b[90m 878 |\u001b[39m\n \u001b[90m 879 |\u001b[39m    })\u001b[0m\n\u001b[2m    at C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\tests\\HomePage.spec.ts:876:33\u001b[22m\n\u001b[2m    at C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\tests\\HomePage.spec.ts:871:7\u001b[22m"
                     }
                   ],
                   "stdout": [
@@ -137,74 +1745,119 @@
                   "steps": [
                     {
                       "title": "Step 1: Navigate to  HenrySchein url",
-                      "duration": 7138
+                      "duration": 7393
                     },
                     {
                       "title": "Step 2: Verify the sign in button should be visible on the home page",
-                      "duration": 76
+                      "duration": 110
                     },
                     {
                       "title": "Step 3: Enter invalid username and password",
-                      "duration": 2216
+                      "duration": 2170
                     },
                     {
                       "title": "Step 4: Click the sign-in submit button",
-                      "duration": 664
+                      "duration": 719
                     },
                     {
                       "title": "Step 5: Verify the user cannot sign in successfully",
-                      "duration": 5355,
+                      "duration": 5262,
                       "error": {
-                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('//div[@data-test-id=\\'login.unknownKey1\\']')\nTimeout: 5000ms\n\u001b[32m- Expected substring  - 1\u001b[39m\n\u001b[31m+ Received string     + 5\u001b[39m\n\n\u001b[32m- Hi\u001b[39m\n\u001b[31m+ The username and/or password entered is incorrect,\u001b[39m\n\u001b[31m+ please re-enter correct username or password.\u001b[39m\n\u001b[31m+ If you enter incorrect user password three times,\u001b[39m\n\u001b[31m+ then your account will be locked and you will need to\u001b[39m\n\u001b[31m+ reset your password or contact support.\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('//div[@data-test-id=\\'login.unknownKey1\\']')\u001b[22m\n\u001b[2m    9 × locator resolved to <div role=\"alert\" aria-atomic=\"true\" _ngcontent-my-app-c341=\"\" data-test-id=\"login.unknownKey1\" class=\"errorMessage caption1-regular text-left ng-star-inserted\">The username and/or password entered is incorrect…</div>\u001b[22m\n\u001b[2m      - unexpected value \"The username and/or password entered is incorrect,\u001b[22m\n\u001b[2mplease re-enter correct username or password.\u001b[22m\n\u001b[2mIf you enter incorrect user password three times,\u001b[22m\n\u001b[2mthen your account will be locked and you will need to\u001b[22m\n\u001b[2mreset your password or contact support.\"\u001b[22m\n",
-                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('//div[@data-test-id=\\'login.unknownKey1\\']')\nTimeout: 5000ms\n\u001b[32m- Expected substring  - 1\u001b[39m\n\u001b[31m+ Received string     + 5\u001b[39m\n\n\u001b[32m- Hi\u001b[39m\n\u001b[31m+ The username and/or password entered is incorrect,\u001b[39m\n\u001b[31m+ please re-enter correct username or password.\u001b[39m\n\u001b[31m+ If you enter incorrect user password three times,\u001b[39m\n\u001b[31m+ then your account will be locked and you will need to\u001b[39m\n\u001b[31m+ reset your password or contact support.\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('//div[@data-test-id=\\'login.unknownKey1\\']')\u001b[22m\n\u001b[2m    9 × locator resolved to <div role=\"alert\" aria-atomic=\"true\" _ngcontent-my-app-c341=\"\" data-test-id=\"login.unknownKey1\" class=\"errorMessage caption1-regular text-left ng-star-inserted\">The username and/or password entered is incorrect…</div>\u001b[22m\n\u001b[2m      - unexpected value \"The username and/or password entered is incorrect,\u001b[22m\n\u001b[2mplease re-enter correct username or password.\u001b[22m\n\u001b[2mIf you enter incorrect user password three times,\u001b[22m\n\u001b[2mthen your account will be locked and you will need to\u001b[22m\n\u001b[2mreset your password or contact support.\"\u001b[22m\n\n    at C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\tests\\HomePage.spec.ts:659:30\n    at C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\tests\\HomePage.spec.ts:654:4",
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('//div[@data-test-id=\\'login.unknownKey1\\']')\nTimeout: 5000ms\n\u001b[32m- Expected substring  - 1\u001b[39m\n\u001b[31m+ Received string     + 5\u001b[39m\n\n\u001b[32m- \u001b[7mP\u001b[27mlease enter \u001b[7mvalid Username/Password\u001b[27m\u001b[39m\n\u001b[31m+ The username and/or password entered is incorrect,\u001b[39m\n\u001b[31m+ \u001b[7mp\u001b[27mlease \u001b[7mre-\u001b[27menter \u001b[7mcorrect username or password.\u001b[27m\u001b[39m\n\u001b[31m+ If you enter incorrect user password three times,\u001b[39m\n\u001b[31m+ then your account will be locked and you will need to\u001b[39m\n\u001b[31m+ reset your password or contact support.\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('//div[@data-test-id=\\'login.unknownKey1\\']')\u001b[22m\n\u001b[2m    9 × locator resolved to <div role=\"alert\" aria-atomic=\"true\" _ngcontent-my-app-c344=\"\" data-test-id=\"login.unknownKey1\" class=\"errorMessage caption1-regular text-left ng-star-inserted\">The username and/or password entered is incorrect…</div>\u001b[22m\n\u001b[2m      - unexpected value \"The username and/or password entered is incorrect,\u001b[22m\n\u001b[2mplease re-enter correct username or password.\u001b[22m\n\u001b[2mIf you enter incorrect user password three times,\u001b[22m\n\u001b[2mthen your account will be locked and you will need to\u001b[22m\n\u001b[2mreset your password or contact support.\"\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('//div[@data-test-id=\\'login.unknownKey1\\']')\nTimeout: 5000ms\n\u001b[32m- Expected substring  - 1\u001b[39m\n\u001b[31m+ Received string     + 5\u001b[39m\n\n\u001b[32m- \u001b[7mP\u001b[27mlease enter \u001b[7mvalid Username/Password\u001b[27m\u001b[39m\n\u001b[31m+ The username and/or password entered is incorrect,\u001b[39m\n\u001b[31m+ \u001b[7mp\u001b[27mlease \u001b[7mre-\u001b[27menter \u001b[7mcorrect username or password.\u001b[27m\u001b[39m\n\u001b[31m+ If you enter incorrect user password three times,\u001b[39m\n\u001b[31m+ then your account will be locked and you will need to\u001b[39m\n\u001b[31m+ reset your password or contact support.\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('//div[@data-test-id=\\'login.unknownKey1\\']')\u001b[22m\n\u001b[2m    9 × locator resolved to <div role=\"alert\" aria-atomic=\"true\" _ngcontent-my-app-c344=\"\" data-test-id=\"login.unknownKey1\" class=\"errorMessage caption1-regular text-left ng-star-inserted\">The username and/or password entered is incorrect…</div>\u001b[22m\n\u001b[2m      - unexpected value \"The username and/or password entered is incorrect,\u001b[22m\n\u001b[2mplease re-enter correct username or password.\u001b[22m\n\u001b[2mIf you enter incorrect user password three times,\u001b[22m\n\u001b[2mthen your account will be locked and you will need to\u001b[22m\n\u001b[2mreset your password or contact support.\"\u001b[22m\n\n    at C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\tests\\HomePage.spec.ts:876:33\n    at C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\tests\\HomePage.spec.ts:871:7",
                         "location": {
                           "file": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\tests\\HomePage.spec.ts",
-                          "column": 30,
-                          "line": 659
+                          "column": 33,
+                          "line": 876
                         },
-                        "snippet": "\u001b[0m \u001b[90m 657 |\u001b[39m       \u001b[36mconst\u001b[39m errorMsg \u001b[33m=\u001b[39m (home\u001b[33m.\u001b[39msign_in_error_msg_xpath)\u001b[33m;\u001b[39m\n \u001b[90m 658 |\u001b[39m       \u001b[36mawait\u001b[39m expect(errorMsg)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 659 |\u001b[39m       \u001b[36mawait\u001b[39m expect(errorMsg)\u001b[33m.\u001b[39mtoContainText(\u001b[32m'Hi'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 660 |\u001b[39m    })\n \u001b[90m 661 |\u001b[39m\n \u001b[90m 662 |\u001b[39m })\u001b[0m"
+                        "snippet": "\u001b[0m \u001b[90m 874 |\u001b[39m          \u001b[36mconst\u001b[39m errorMsg \u001b[33m=\u001b[39m (home\u001b[33m.\u001b[39msign_in_error_msg_xpath)\u001b[33m;\u001b[39m\n \u001b[90m 875 |\u001b[39m          \u001b[36mawait\u001b[39m expect(errorMsg)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 876 |\u001b[39m          \u001b[36mawait\u001b[39m expect(errorMsg)\u001b[33m.\u001b[39mtoContainText(\u001b[32m'Please enter valid Username/Password'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 877 |\u001b[39m       })\n \u001b[90m 878 |\u001b[39m\n \u001b[90m 879 |\u001b[39m    })\u001b[0m"
                       }
                     }
                   ],
-                  "startTime": "2026-02-04T12:43:12.132Z",
+                  "startTime": "2026-02-09T08:33:41.457Z",
                   "annotations": [],
                   "attachments": [
                     {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6ImVwaWMiLCJ2YWx1ZSI6IlVzZXIgQXV0aGVudGljYXRpb24ifV19fQ=="
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6ImZlYXR1cmUiLCJ2YWx1ZSI6IlNpZ24gSW4gRnVuY3Rpb25hbGl0eSJ9XX19"
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InN0b3J5IiwidmFsdWUiOiJJbnZhbGlkIExvZ2luIEF0dGVtcHQifV19fQ=="
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6Im93bmVyIiwidmFsdWUiOiJTaGFhcmlmIn1dfX0="
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InNldmVyaXR5IiwidmFsdWUiOiJjcml0aWNhbCJ9XX19"
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InRhZyIsInZhbHVlIjoicmVncmVzc2lvbiJ9XX19"
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InRhZyIsInZhbHVlIjoic2lnbmluIn1dfX0="
+                    },
+                    {
+                      "name": "Allure Metadata (metadata)",
+                      "contentType": "application/vnd.allure.message+json",
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InRhZyIsInZhbHVlIjoiZmFpbHVyZV9jYXNlIn1dfX0="
+                    },
+                    {
                       "name": "screenshot",
                       "contentType": "image/png",
-                      "path": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\test-results\\HomePage--To-Verify-that-the-user-cannot-sign-in-HenrySchein\\test-failed-1.png"
+                      "path": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\test-results\\HomePage-12-To-Verify-the--6e4b5-r-invalid-login-credentials-HenrySchein\\test-failed-1.png"
                     },
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\test-results\\HomePage--To-Verify-that-the-user-cannot-sign-in-HenrySchein\\video.webm"
+                      "path": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\test-results\\HomePage-12-To-Verify-the--6e4b5-r-invalid-login-credentials-HenrySchein\\video.webm"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\test-results\\HomePage-12-To-Verify-the--6e4b5-r-invalid-login-credentials-HenrySchein\\trace.zip"
                     }
                   ],
                   "errorLocation": {
                     "file": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\tests\\HomePage.spec.ts",
-                    "column": 30,
-                    "line": 659
+                    "column": 33,
+                    "line": 876
                   }
                 }
               ],
               "status": "unexpected"
             }
           ],
-          "id": "62a0194cb94d3eec4948-f52153c7a30a655c3e00",
+          "id": "62a0194cb94d3eec4948-30640f4fc34175a79513",
           "file": "HomePage.spec.ts",
-          "line": 634,
-          "column": 6
+          "line": 839,
+          "column": 5
         }
       ]
     }
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-02-04T12:43:11.033Z",
-    "duration": 17316.106,
-    "expected": 0,
+    "startTime": "2026-02-09T08:29:53.009Z",
+    "duration": 246116.766,
+    "expected": 10,
     "skipped": 0,
-    "unexpected": 1,
+    "unexpected": 2,
     "flaky": 0
   }
 }

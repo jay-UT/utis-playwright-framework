@@ -1,0 +1,13 @@
+Navigated to  Henry Schein url
+Clicked the Sign-In button on home page
+Entered the username and password
+Clicked the sign-in submit button
+Verified the user is successfully logged in
+Clicked Legal Terms Link
+Verified the page is navigated to Legal Terms page
+Clicked Privacy Notice Link
+Verified the page is navigated to Privacy Notice page
+Clicked Delivery and Returns Link
+Verified the page is navigated to Delivery and Returns page
+Clicked LinkedIn Link
+Verified navigation to LinkedIn page

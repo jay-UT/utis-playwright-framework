@@ -6,6 +6,7 @@ import { TestConfig} from '../test.config'
 import { test,expect} from '../utils/fixture'
 import { Assert, fail } from 'node:assert'
 import { assert } from 'node:console'
+import * as allure from "allure-js-commons";
 
 /*
 1)Testcase-01 : To verify the Henry Schein icon is present on the Home page
@@ -22,6 +23,17 @@ test('01-To verify the Henry Schein icon is present on the Home page',
       tag: ['@regression', '@smoke', '@homepage', '@demo'],
    },
    async ({ page, home, config }) => {
+allure.epic('Home Page');
+    allure.feature('Branding & Navigation');
+    allure.story('Verify Henry Schein Logo');
+
+    allure.owner('Shaarif');
+    allure.severity('normal');
+    allure.tag('regression');  
+    allure.tag('smoke');
+    allure.tag('homepage');
+    allure.tag('demo');
+
       //  const config= new TestConfig();
       //  const home =new HomePage(page);
 
@@ -59,6 +71,17 @@ test('02-To Verify the sign-in functionality on the Home page', {
    tag: ['@regression', '@smoke', '@signin' ,'@demo'],
 },
    async ({ page, home, config }) => {
+
+   allure.epic("Authentication");
+   allure.feature("Home Page Sign In");
+   allure.story("Valid User Login");
+
+   allure.owner("Shaarif");
+   allure.severity("critical");
+   allure.tag("regression");
+   allure.tag("smoke");
+   allure.tag("signin");
+   allure.tag("demo");
 
       //  1.Navigate to  Henry Schein url
       await test.step("Step 1: Navigate to the Henry Schein website.", async () => {
@@ -109,6 +132,17 @@ test('03-To Verify that the user cannot sign in with invalid credentials',
    },
    async ({ page, home, config }) => {
 
+      allure.epic("Authentication");
+      allure.feature("Home Page Sign In");
+      allure.story("Invalid User Login");
+      allure.owner("Shaarif");
+      allure.severity("critical");
+      allure.tag("regression");
+      allure.tag("smoke");
+      allure.tag("signin");
+      allure.tag("invalidsignin");
+
+
       await test.step("Step 1: Navigate to  HenrySchein url", async () => {
          await CommonMethods.navigateToPageUKMedical(page, config.appUrl, 30000)
          console.log("Navigated to  HenrySchein url")
@@ -154,6 +188,16 @@ test('04-To verify the Sign up flow on the Home page',
       tag: ['@regression', '@smoke', '@signup'],
    },
    async ({ page, home, config }) => {
+
+      allure.epic("Authentication");
+      allure.feature("Home Page Sign Up");
+      allure.story("User Registration");
+      allure.owner("Shaarif");
+      allure.severity("critical");
+      allure.tag("regression");
+      allure.tag("smoke");
+      allure.tag("signup");   
+
 
       // 1.Navigate to Henry Schein url
       await test.step("Step 1: Navigate to Henry Schein url", async () => {
@@ -224,6 +268,16 @@ test('05-Verify that the search bar accepts input and displays relevant suggesti
       tag: ['@regression', '@search'],
    },
    async ({ page, home, config }) => {
+
+      allure.epic("Search Functionality");
+      allure.feature("Home Page Search");
+      allure.story("Search Suggestions");
+      allure.owner("Shaarif");
+      allure.severity("normal");
+      allure.tag("regression");
+      allure.tag("search");
+      
+
       await test.step("Step 1: Navigate to Henry Schein url", async () => {
          await CommonMethods.navigateToPageUKMedical(page, config.appUrl, 10000);
          console.log("Navigated to Henry Schein url");
@@ -290,6 +344,15 @@ test('06-Verify Main Menu Buttons Are Enabled and Interactive',
       tag: ['@regression', '@menu', '@buttons'],
    },
    async ({ page, home, config }) => {
+
+      allure.epic('Main Menu');
+      allure.feature('Main Menu Functionality');
+      allure.story('Main Menu Buttons');
+      allure.owner('Shaarif');
+      allure.severity('normal');
+      allure.tag('regression');
+      allure.tag('menu');  
+      allure.tag('buttons');
 
       await test.step("Step 1: Navigate to  HenrySchein url", async () => {
          await CommonMethods.navigateToPageUKMedical(page, config.appUrl, 30000)
@@ -390,6 +453,15 @@ test('07-Verify Main Menu Links Are Enabled and Interactive',
    },
    async ({ page, home, config }) => {
 
+      allure.epic('Main Menu');
+      allure.feature('Main Menu Functionality');
+      allure.story('Main Menu Links');
+      allure.owner('Shaarif');
+      allure.severity('normal');
+      allure.tag('regression');
+      allure.tag('menu');
+      allure.tag('links');
+
       await test.step("Step 1: Navigate to  Henry Schein url", async () => {
          await CommonMethods.navigateToPageUKMedical(page, config.appUrl, 30000)
          console.log("Navigated to  Henry Schein url")
@@ -455,6 +527,14 @@ test('08-Verify that the cart icon displays the correct item count when products
       tag: ['@regression', '@cart'],
    },
    async ({ page, home, config }) => {
+
+      allure.epic('Shopping Cart');
+      allure.feature('Cart Functionality');
+      allure.story('Cart Item Count');
+      allure.owner('Shaarif');
+      allure.severity('critical');
+      allure.tag('regression');
+      allure.tag('cart'); 
 
       let initialCount: number;
 
@@ -531,6 +611,14 @@ test("09-Verify that the tooltip is displays the address when hovering over the 
    },
    async ({ page, home, config }) => {
 
+      allure.epic('User Interface');
+      allure.feature('Tooltip Functionality');
+      allure.story('Address Tooltip');    
+      allure.owner('Shaarif');
+      allure.severity('normal');
+      allure.tag('regression');
+      allure.tag('tooltip');  
+
       // 1.)Go to the Henry Schein website.
       await test.step("Step 1: Navigate to the Henry Schein website.", async () => {
          await CommonMethods.navigateToPageUKMedical(page, config.appUrl, 10000)
@@ -598,6 +686,13 @@ test("11-Verify that the banner slider displays all slides with their respective
       tag: ['@regression', '@slider'],
    },
    async ({ page, home, config }) => {
+      allure.epic('Home Page');
+      allure.feature('Banner Slider');
+      allure.story('Banner Functionality');     
+      allure.owner('Shaarif');
+      allure.severity('normal');
+      allure.tag('regression');
+      allure.tag('slider');   
 
       await test.step("Step 1: Navigate to the Henry Schein website.", async () => {
          await CommonMethods.navigateToPageUKMedical(page, config.appUrl, 10000)
@@ -671,6 +766,14 @@ test('11-Verify Footer Links Are Interactive and Navigate to respective pages',
    },
    async ({ page, home, config }) => {
 
+      allure.epic('Footer Section');
+      allure.feature('Footer Links');
+      allure.story('Footer Functionality');     
+      allure.owner('Shaarif');   
+      allure.severity('normal');
+      allure.tag('regression');
+      allure.tag('footer');
+
       await test.step("Step 1: Navigate to  Henry Schein url", async () => {
          await CommonMethods.navigateToPageUKMedical(page, config.appUrl, 30000)
          console.log("Navigated to  Henry Schein url")
@@ -738,6 +841,14 @@ test('12-To Verify the error message for invalid login credentials',
       tag: ['@regression', '@signin', '@failure_case'],
    },
    async ({ page, home, config }) => {
+      allure.epic('User Authentication');
+      allure.feature('Sign In Functionality');
+      allure.story('Invalid Login Attempt'); 
+      allure.owner('Shaarif');
+      allure.severity('critical');
+      allure.tag('regression');
+      allure.tag('signin');
+      allure.tag('failure_case');   
 
       await test.step("Step 1: Navigate to  HenrySchein url", async () => {
          await CommonMethods.navigateToPageUKMedical(page, config.appUrl, 30000)

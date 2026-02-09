@@ -1,0 +1,4 @@
+Navigated to Henry Schein url
+Search bar is visible
+Entered search keyword
+Search suggestions container exists

@@ -28,9 +28,16 @@ jobs:
 
       - name: Install Playwright browsers
         run: npx playwright install --with-deps
+     
+      # Cache Playwright Browsers
+      - name: Cache Playwright browsers
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}  
 
       - name: Run regression tests
-        run: npm run test:ci:regression
+        run: npm run report:regression
 
       - name: Upload Playwright HTML reports
         if: always()
@@ -47,23 +54,37 @@ jobs:
       #     name: playwright-report
       #     path: playwright-report/
 
-      - name: Upload Allure results
+      - name: Upload Latest Allure Report
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: allure-results
-          path: allure-results/
+          name: allure-latest-report
+          path: reports/latest
 
-      - name: Generate Allure report with timestamp
-        if: always()
-        run: |
-          TIME=$(date +'%Y%m%d_%H%M%S')
-          npx allure generate allure-results --clean --single-file -o allure-report-$TIME
-          echo "REPORT_FOLDER=allure-report-$TIME" >> $GITHUB_ENV
-
-      - name: Upload Allure HTML report
+      - name: Upload Allure Archived Reports
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ env.REPORT_FOLDER }}
-          path: ${{ env.REPORT_FOLDER }}/
+          name: allure-archive-reports
+          path: reports/archive    
+
+      # - name: Upload Allure results
+      #   if: always()
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: allure-results
+      #     path: allure-results/
+
+      # - name: Generate Allure report with timestamp
+      #   if: always()
+      #   run: |
+      #     TIME=$(date +'%Y%m%d_%H%M%S')
+      #     npx allure generate allure-results --clean --single-file -o allure-report-$TIME
+      #     echo "REPORT_FOLDER=allure-report-$TIME" >> $GITHUB_ENV
+
+      # - name: Upload Allure HTML report
+      #   if: always()
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: ${{ env.REPORT_FOLDER }}
+      #     path: ${{ env.REPORT_FOLDER }}/

@@ -1,9 +1,18 @@
 import { defineConfig, devices } from '@playwright/test';
+const now = new Date();
 
-const timestamp = new Date()
-  .toTimeString()
-  .slice(0, 8)
-  .replace(/:/g, "")
+const timestamp =
+  String(now.getDate()).padStart(2, '0') + '-' +
+  String(now.getMonth() + 1).padStart(2, '0') + '-' +
+  now.getFullYear() + '_' +
+  String(now.getHours()).padStart(2, '0') + '-' +
+  String(now.getMinutes()).padStart(2, '0') + '-' +
+  String(now.getSeconds()).padStart(2, '0');
+
+// const timestamp = new Date()
+//   .toTimeString()
+//   .slice(0, 8)
+//   .replace(/:/g, "")
 
 export default defineConfig({
   
@@ -46,8 +55,8 @@ export default defineConfig({
 // }
   use: {
     /* Capture trace on first retry */
-    trace: 'on-first-retry',
-
+    // trace: 'on-first-retry',
+    trace: 'retain-on-failure',
     headless: true,
 
     launchOptions: {
@@ -55,8 +64,8 @@ export default defineConfig({
     },
 
     /* Allure-friendly attachments */
-    screenshot: 'only-on-failure',
-    video: 'retain-on-failure'
+    screenshot: process.env.CI ? 'only-on-failure' : 'on',
+    video:  process.env.CI ? 'retain-on-failure' : 'on',
   },
 
  // grep: /@smoke/, 
