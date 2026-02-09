@@ -26,6 +26,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Install Allure
+        run: npm install -g allure-commandline  
+
       # Cache Playwright Browsers
       - name: Cache Playwright browsers
         uses: actions/cache@v4
@@ -38,6 +41,8 @@ jobs:
      
     
       - name: Run regression tests
+        env:
+          CI: true
         run: node scripts/report.js smoke
 
       - name: Add Allure Environment Info
