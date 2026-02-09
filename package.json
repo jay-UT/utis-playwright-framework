@@ -5,7 +5,7 @@
   "scripts": {
   "test": "playwright test",
   "test:ci:regression": "playwright test --grep @regression",
-  "test:ci:smoke": "playwright test --grep @smoke",
+  "test:ci:smoke": "playwright test --grep @smoke --headed",
   "test:ci:failure": "playwright test --grep @failure",
   "test:ci:demo": "playwright test --grep @demo",
 
