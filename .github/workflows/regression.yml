@@ -29,6 +29,15 @@ jobs:
       - name: Install Allure
         run: npm install -g allure-commandline  
 
+      - name: Restore Allure History
+        uses: actions/cache@v4
+        with:
+          # This must match globalHistoryPath in your report.js
+          path: reports/allurereport/latest-history
+          key: allure-history-${{ github.run_id }}
+          restore-keys: |
+            allure-history-  
+
       # Cache Playwright Browsers
       - name: Cache Playwright browsers
         uses: actions/cache@v4
@@ -39,7 +48,17 @@ jobs:
       - name: Install Playwright browsers
         run: npx playwright install --with-deps
      
-    
+      # - name: Restore Allure History
+      #   uses: actions/cache@v4
+      #   with:
+      #     # This is where your report.js expects the history to be
+      #     path: reports/allurereport/cireports/history
+      #     # A unique key for this run's cache
+      #     key: allure-history-${{ github.run_id }}
+      #     # Look for the most recent cache starting with this prefix
+      #     restore-keys: |
+      #       allure-history-   
+      
       - name: Run regression tests
         env:
           CI: true

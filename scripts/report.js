@@ -39,7 +39,7 @@ const playwrightReportDir = path.join("reports", "playwrightreport", folderSuffi
 const allureReportDir = path.join("reports", "allurereport", folderSuffix);
 const allureResultsDir = "allure-results"; 
 
-// Persistent history for local trends
+// Persistent history location for trends
 const globalHistoryPath = path.join("reports", "allurereport", "latest-history");
 
 /* -------------------------------------------
@@ -59,6 +59,9 @@ function exists(p) { return fs.existsSync(p); }
 
 function safeCopy(src, dest) {
   if (exists(src)) {
+    // Ensure destination directory exists before copying
+    const destDir = path.dirname(dest);
+    if (!exists(destDir)) fs.mkdirSync(destDir, { recursive: true });
     fs.cpSync(src, dest, { recursive: true, force: true });
   }
 }
@@ -69,52 +72,57 @@ function safeCopy(src, dest) {
 try {
   console.log(`🚀 Running ${mode} report in ${isCI ? "CI" : "Local"} mode...`);
 
-  // Clean old raw results
+  /* --- CLEAN OLD RESULTS --- */
   if (exists(allureResultsDir)) {
     fs.rmSync(allureResultsDir, { recursive: true, force: true });
   }
   fs.mkdirSync(allureResultsDir, { recursive: true });
 
-  /* --- RESTORE HISTORY (For Trend Graph) --- */
+  /* --- RESTORE HISTORY (TREND) --- */
   const historyTarget = path.join(allureResultsDir, "history");
+  
+  // Logic: Check local history first, then check if we are in CI
   if (exists(globalHistoryPath)) {
     console.log("📈 Found previous history. Restoring trends...");
-    fs.mkdirSync(historyTarget, { recursive: true });
     safeCopy(globalHistoryPath, historyTarget);
   }
 
   /* --- RUN PLAYWRIGHT TESTS --- */
-  // Pass the output path to Playwright config
+  // Ensure Playwright outputs its HTML report to our specific subfolder
   process.env.PLAYWRIGHT_HTML_REPORT = playwrightReportDir;
   
-  if (mode === "full") {
-    run("npx playwright test", true);
-  } else {
-    run(`npx playwright test --grep ${tagMap[mode]}`, true);
-  }
+  const testCmd = mode === "full" 
+    ? "npx playwright test" 
+    : `npx playwright test --grep ${tagMap[mode]}`;
+  
+  run(testCmd, true);
 
   /* --- ADD ALLURE METADATA --- */
+  // Environment and Executor info help Allure display context
   run("node scripts/allure-env.js", true);
   run("node scripts/allure-executor.js", true);
 
   /* --- GENERATE ALLURE REPORT --- */
   if (exists(allureResultsDir) && fs.readdirSync(allureResultsDir).length > 0) {
     console.log(`📊 Generating Allure HTML report to: ${allureReportDir}`);
-    // Note: Generating the report creates a NEW 'history' folder inside allureReportDir
+    
+    // Ensure the output directory exists
+    fs.mkdirSync(allureReportDir, { recursive: true });
+    
+    // Generate the dashboard
     run(`npx allure generate ${allureResultsDir} --clean --single-file -o ${allureReportDir}`, true);
 
-    /* --- SAVE HISTORY FOR NEXT TIME (Must happen AFTER generation) --- */
+    /* --- SAVE HISTORY FOR NEXT TIME --- */
     const newHistoryGenerated = path.join(allureReportDir, "history");
     if (exists(newHistoryGenerated)) {
       console.log("💾 Saving updated history for the next run...");
-      fs.mkdirSync(globalHistoryPath, { recursive: true });
       safeCopy(newHistoryGenerated, globalHistoryPath);
     }
   } else {
-    console.log("⚠️ No allure results found. Skipping.");
+    console.log("⚠️ No allure results found. Skipping Allure generation.");
   }
 
-  /* --- CLEANUP --- */
+  /* --- CLEANUP RAW DATA --- */
   if (exists(allureResultsDir)) {
     fs.rmSync(allureResultsDir, { recursive: true, force: true });
   }
@@ -124,6 +132,6 @@ try {
   console.log(`📂 Allure Report:     ${allureReportDir}`);
 
 } catch (err) {
-  console.error(err);
+  console.error("❌ Fatal Script Error:", err);
   process.exit(1);
 }
