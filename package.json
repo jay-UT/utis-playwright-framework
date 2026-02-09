@@ -7,6 +7,7 @@
   "test:ci:regression": "playwright test --grep @regression",
   "test:ci:smoke": "playwright test --grep @smoke",
   "test:ci:failure": "playwright test --grep @failure",
+  "test:ci:demo": "playwright test --grep @demo",
 
   "purge": "powershell -Command \"Get-ChildItem -Directory -Filter 'allure-report-*' | Where-Object { $_.LastWriteTime -lt (Get-Date).AddDays(-30) } | Remove-Item -Recurse -Force -ErrorAction SilentlyContinue\"",
 

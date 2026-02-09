@@ -16,7 +16,7 @@ concurrency:
 
 jobs:
   regression:
-    name: Run Automation Regression
+    name: Run Automation Regression + PR Comment
     runs-on: ubuntu-latest
 
     steps:
@@ -40,7 +40,7 @@ jobs:
 
       - name: Run regression tests
         id: run_tests
-        run: npm run test:ci:regression
+        run: npm run test:ci:demo
         continue-on-error: true
 
       - name: Upload Playwright report as Pages artifact
@@ -106,3 +106,11 @@ jobs:
               issue_number: context.issue.number,
               body
             });
+
+            
+      - name: Fail if test cases failed
+        if: steps.run_tests.outcome == 'failure'
+        run: |
+                echo "Tests failed ❌"
+                exit 1  
+

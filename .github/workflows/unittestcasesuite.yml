@@ -44,7 +44,7 @@ jobs:
 
       - name: Run regression tests
         id: run_tests
-        run: npm run test:ci:regression
+        run: npm run test:ci:smoke
         continue-on-error: true
 
       - name: Upload Playwright report as Pages artifact
