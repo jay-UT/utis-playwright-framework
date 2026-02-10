@@ -41,10 +41,10 @@ export default defineConfig({
     ['html', { outputFolder: `reports/playwrightreport-${folderSuffix}`, open: 'never' }],
     ['json', { outputFile: 'playwright-results.json' }],
     ['list'],
-    ['allure-playwright', { 
-      outputFolder: `reports/allurereport/${folderSuffix}` 
-    }],
-    // ['allure-playwright', { resultsDir: 'allure-results' }]
+    // ['allure-playwright', { 
+    //   outputFolder: `reports/allurereport/${folderSuffix}` 
+    // }],
+    ['allure-playwright', { resultsDir: 'allure-results' }]
   ],
 
   /* Shared settings for all the projects */

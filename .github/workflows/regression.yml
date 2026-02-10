@@ -52,13 +52,11 @@ jobs:
       - name: Restore Allure History
         uses: actions/cache@v4
         with:
-          # This is where your report.js expects the history to be
-          path: reports/allurereport/cireports/history
-          # A unique key for this run's cache
+          # This must match 'globalHistoryPath' in your report.js
+          path: reports/allurereport/latest-history
           key: allure-history-${{ github.run_id }}
-          # Look for the most recent cache starting with this prefix
           restore-keys: |
-            allure-history-   
+            allure-history-
 
       - name: Run regression tests
         # env:
