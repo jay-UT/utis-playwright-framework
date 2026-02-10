@@ -54,6 +54,9 @@ const globalHistoryPath = path.join("Reports", "allurereport", "ci", "history");
 
 const allureResultsDir = "allure-results";
 
+fs.mkdirSync(playwrightReportDir, { recursive: true });
+fs.mkdirSync(allureReportDir, { recursive: true });
+
 
 /* -------------------------------------------
     3. HELPER FUNCTIONS

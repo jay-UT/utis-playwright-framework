@@ -9,10 +9,10 @@ on:
     branches:
       - Shaarif
 
-permissions: # This replaces the "General" menu settings if you can't find them
-  contents: read
-  pages: write
-  id-token: write      
+# permissions: # This replaces the "General" menu settings if you can't find them
+#   contents: write
+#   pages: write
+#   id-token: write      
 
 jobs:
   regression:
@@ -33,7 +33,9 @@ jobs:
         run: npm ci
 
       - name: Install Allure
-        run: npm install -g allure-commandline  
+        run: npm install -g allure-commandline
+        
+      
 
       # - name: Restore Allure History
       #   uses: actions/cache@v4
@@ -57,26 +59,33 @@ jobs:
       - name: Restore Allure History
         uses: actions/cache@v4
         with:
-          # This must match 'globalHistoryPath' in your report.js
-          # path: reports/allurereport/latest-history
-          path: Reports/allurereport/latest-history
-          key: allure-history-${{ github.run_id }}
+          path: Reports/allurereport/ci/history
+          key: allure-history-${{ github.ref_name }}
           restore-keys: |
             allure-history-
+
 
       - name: Run regression tests
         env:
           CI: true
-        run: node scripts/report.js failure_case
+        run: node scripts/report.js smoke
 
-      - name: Deploy to GitHub Pages
+      - name: Save Allure History
         if: always()
-        uses: peaceiris/actions-gh-pages@v3
+        uses: actions/cache/save@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: Reports/allurereport/ci
-          publish_branch: gh-pages
-          keep_files: true
+          path: Reports/allurereport/ci/history
+          key: allure-history-${{ github.ref_name }}
+  
+
+      # - name: Deploy to GitHub Pages
+      #   if: always()
+      #   uses: peaceiris/actions-gh-pages@v3
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     publish_dir: Reports/allurereport/ci
+      #     publish_branch: gh-pages
+      #     keep_files: true
 
         
       
@@ -90,6 +99,8 @@ jobs:
           echo "Executor=GitHub Actions" >> Reports/allurereport/ci/environment.properties
           echo "Date=$(date +'%d-%m-%y')" >> Reports/allurereport/ci/environment.properties
 
+      
+      
       - name: Upload Playwright HTML reports
         if: always()
         uses: actions/upload-artifact@v4
