@@ -8,8 +8,10 @@
   "report:failure_case": "node scripts/report.js failure_case",
   "report:signin": "node scripts/report.js signin",
   "report:smoke": "node scripts/report.js smoke",
-  "report:open": "allure serve reports/allurereport"
-} ,
+  "report:open": "allure serve Reports/allurereport/ci",
+  "test:local": "playwright test && node scripts/generateAllure.js",
+  "test:ci": "playwright test && node scripts/generateAllure.js"
+  } ,
   "keywords": [],
   "author": "",
   "license": "ISC",

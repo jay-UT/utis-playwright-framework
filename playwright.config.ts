@@ -16,8 +16,12 @@ const timestamp =
 //   .slice(0, 8)
 //   .replace(/:/g, "")
 
+const playwrightReportFolder = isCI
+  ? 'reports/playwrightreport/cireports'
+  : `reports/playwrightreport/localreports/playwright-${timestamp}`;
+
 // Dynamic folder naming based on environment
-const folderSuffix = isCI ? 'cireports' : `localreport-${timestamp}`;
+// const folderSuffix = isCI ? 'cireports' : `localreport-${timestamp}`;
 
 export default defineConfig({
   
@@ -37,15 +41,22 @@ export default defineConfig({
   workers: isCI ? 1 : 1,
 
   /* 🔹 REPORTERS: Allure + HTML */ 
-  reporter: [
-    ['html', { outputFolder: `reports/playwrightreport-${folderSuffix}`, open: 'never' }],
+reporter: [
+    ['html', { outputFolder: process.env.PW_HTML_REPORT_FOLDER, open: 'never' }],
     ['json', { outputFile: 'playwright-results.json' }],
     ['list'],
-    // ['allure-playwright', { 
-    //   outputFolder: `reports/allurereport/${folderSuffix}` 
-    // }],
     ['allure-playwright', { resultsDir: 'allure-results' }]
   ],
+
+  // reporter: [
+  //   ['html', { outputFolder: `reports/playwrightreport-${folderSuffix}`, open: 'never' }],
+  //   ['json', { outputFile: 'playwright-results.json' }],
+  //   ['list'],
+  //   // ['allure-playwright', { 
+  //   //   outputFolder: `reports/allurereport/${folderSuffix}` 
+  //   // }],
+  //   ['allure-playwright', { resultsDir: 'allure-results' }]
+  // ],
 
   /* Shared settings for all the projects */
 //   use: {

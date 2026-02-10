@@ -2,7 +2,7 @@
   "config": {
     "configFile": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\playwright.config.ts",
     "rootDir": "C:/Users/UTIS LAPTOP 570/Desktop/PlaywrightHS/utis-playwright-framework/tests",
-    "forbidOnly": true,
+    "forbidOnly": false,
     "fullyParallel": true,
     "globalSetup": null,
     "globalTeardown": null,
@@ -18,7 +18,7 @@
       {
         "outputDir": "C:/Users/UTIS LAPTOP 570/Desktop/PlaywrightHS/utis-playwright-framework/test-results",
         "repeatEach": 1,
-        "retries": 1,
+        "retries": 0,
         "metadata": {
           "actualWorkers": 1
         },
@@ -37,7 +37,7 @@
       [
         "html",
         {
-          "outputFolder": "reports/playwrightreport-cireports",
+          "outputFolder": "Reports\\playwright\\local\\playwright-10-02-2026_13-10-24",
           "open": "never"
         }
       ],
@@ -54,7 +54,7 @@
       [
         "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\node_modules\\allure-playwright\\dist\\cjs\\index.js",
         {
-          "outputFolder": "reports/allurereport/cireports"
+          "resultsDir": "allure-results"
         }
       ]
     ],
@@ -99,7 +99,7 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 18513,
+                  "duration": 11920,
                   "errors": [],
                   "stdout": [
                     {
@@ -111,22 +111,22 @@
                   "steps": [
                     {
                       "title": "Step 1: Navigate to Henry Schein UK Medical URL",
-                      "duration": 16877
+                      "duration": 10704
                     },
                     {
                       "title": "Step 2: Verify the Henry Schein icon should be visible on the page",
-                      "duration": 189
+                      "duration": 36
                     },
                     {
                       "title": "Step 3: Click the Henry Schein icon",
-                      "duration": 675
+                      "duration": 622
                     },
                     {
                       "title": "Step 4: Verify page navigates to Henry Schein home page",
-                      "duration": 217
+                      "duration": 36
                     }
                   ],
-                  "startTime": "2026-02-09T17:16:06.514Z",
+                  "startTime": "2026-02-10T07:40:26.975Z",
                   "annotations": [],
                   "attachments": [
                     {
@@ -173,6 +173,16 @@
                       "name": "Allure Metadata (metadata)",
                       "contentType": "application/vnd.allure.message+json",
                       "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InRhZyIsInZhbHVlIjoiZGVtbyJ9XX19"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\test-results\\HomePage-01-To-verify-the--3445b-is-present-on-the-Home-page-HenrySchein\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\test-results\\HomePage-01-To-verify-the--3445b-is-present-on-the-Home-page-HenrySchein\\video.webm"
                     }
                   ]
                 }
@@ -206,7 +216,7 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 18368,
+                  "duration": 13087,
                   "errors": [],
                   "stdout": [
                     {
@@ -230,26 +240,26 @@
                   "steps": [
                     {
                       "title": "Step 1: Navigate to the Henry Schein website.",
-                      "duration": 12228
+                      "duration": 8195
                     },
                     {
                       "title": "Step 2: Confirm that the Sign In button is visible.",
-                      "duration": 395
+                      "duration": 255
                     },
                     {
                       "title": "Step 3: Enter a valid username and password.",
-                      "duration": 2721
+                      "duration": 2397
                     },
                     {
                       "title": "Step 4: Click the Sign In button.",
-                      "duration": 719
+                      "duration": 666
                     },
                     {
                       "title": "Step 5: Verify the user is successfully logged in",
-                      "duration": 1588
+                      "duration": 881
                     }
                   ],
-                  "startTime": "2026-02-09T17:16:25.398Z",
+                  "startTime": "2026-02-10T07:40:39.356Z",
                   "annotations": [],
                   "attachments": [
                     {
@@ -296,6 +306,16 @@
                       "name": "Allure Metadata (metadata)",
                       "contentType": "application/vnd.allure.message+json",
                       "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InRhZyIsInZhbHVlIjoiZGVtbyJ9XX19"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\test-results\\HomePage-02-To-Verify-the--a2e75-ctionality-on-the-Home-page-HenrySchein\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\test-results\\HomePage-02-To-Verify-the--a2e75-ctionality-on-the-Home-page-HenrySchein\\video.webm"
                     }
                   ]
                 }
@@ -329,7 +349,7 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 13792,
+                  "duration": 11199,
                   "errors": [],
                   "stdout": [
                     {
@@ -353,26 +373,26 @@
                   "steps": [
                     {
                       "title": "Step 1: Navigate to  HenrySchein url",
-                      "duration": 10024
+                      "duration": 7755
                     },
                     {
                       "title": "Step 2: Verify the sign in button should be visible on the home page",
-                      "duration": 53
+                      "duration": 88
                     },
                     {
                       "title": "Step 3: Enter invalid username and password",
-                      "duration": 2396
+                      "duration": 1946
                     },
                     {
                       "title": "Step 4: Click the sign-in submit button",
-                      "duration": 710
+                      "duration": 717
                     },
                     {
                       "title": "Step 5: Verify the user cannot sign in successfully",
-                      "duration": 214
+                      "duration": 346
                     }
                   ],
-                  "startTime": "2026-02-09T17:16:43.802Z",
+                  "startTime": "2026-02-10T07:40:52.468Z",
                   "annotations": [],
                   "attachments": [
                     {
@@ -419,6 +439,16 @@
                       "name": "Allure Metadata (metadata)",
                       "contentType": "application/vnd.allure.message+json",
                       "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InRhZyIsInZhbHVlIjoiaW52YWxpZHNpZ25pbiJ9XX19"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\test-results\\HomePage-03-To-Verify-that-323a3-in-with-invalid-credentials-HenrySchein\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\test-results\\HomePage-03-To-Verify-that-323a3-in-with-invalid-credentials-HenrySchein\\video.webm"
                     }
                   ]
                 }
@@ -451,7 +481,7 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 27626,
+                  "duration": 23409,
                   "errors": [],
                   "stdout": [
                     {
@@ -475,22 +505,22 @@
                   "steps": [
                     {
                       "title": "Step 1: Navigate to Henry Schein url",
-                      "duration": 10085
+                      "duration": 7371
                     },
                     {
                       "title": "Step 2: Verify the Sign up button should be visible on the home page",
-                      "duration": 634
+                      "duration": 49
                     },
                     {
                       "title": "Step 3: Click on the Sign up button",
-                      "duration": 873
+                      "duration": 604
                     },
                     {
                       "title": "Step 4: Verify user is navigated from home page",
-                      "duration": 15365
+                      "duration": 14935
                     }
                   ],
-                  "startTime": "2026-02-09T17:16:57.624Z",
+                  "startTime": "2026-02-10T07:41:03.698Z",
                   "annotations": [],
                   "attachments": [
                     {
@@ -532,6 +562,16 @@
                       "name": "Allure Metadata (metadata)",
                       "contentType": "application/vnd.allure.message+json",
                       "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InRhZyIsInZhbHVlIjoic2lnbnVwIn1dfX0="
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\test-results\\HomePage-04-To-verify-the-Sign-up-flow-on-the-Home-page-HenrySchein\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\test-results\\HomePage-04-To-verify-the-Sign-up-flow-on-the-Home-page-HenrySchein\\video.webm"
                     }
                   ]
                 }
@@ -549,8 +589,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-02-09T17:16:03.658Z",
-    "duration": 81869.75,
+    "startTime": "2026-02-10T07:40:25.828Z",
+    "duration": 61512.689000000006,
     "expected": 4,
     "skipped": 0,
     "unexpected": 0,

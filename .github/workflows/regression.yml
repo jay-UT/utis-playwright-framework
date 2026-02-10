@@ -10,7 +10,7 @@ on:
       - Shaarif
 
 permissions: # This replaces the "General" menu settings if you can't find them
-  contents: write
+  contents: read
   pages: write
   id-token: write      
 
@@ -27,7 +27,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
+          
 
       - name: Install dependencies
         run: npm ci
@@ -58,7 +58,8 @@ jobs:
         uses: actions/cache@v4
         with:
           # This must match 'globalHistoryPath' in your report.js
-          path: reports/allurereport/latest-history
+          # path: reports/allurereport/latest-history
+          path: Reports/allurereport/latest-history
           key: allure-history-${{ github.run_id }}
           restore-keys: |
             allure-history-
@@ -66,43 +67,44 @@ jobs:
       - name: Run regression tests
         env:
           CI: true
-        run: node scripts/report.js signin
+        run: node scripts/report.js failure_case
 
       - name: Deploy to GitHub Pages
         if: always()
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: reports/allurereport/cireports
+          publish_dir: Reports/allurereport/ci
           publish_branch: gh-pages
-          keep_files: true  
+          keep_files: true
 
+        
+      
       - name: Add Allure Environment Info
         if: always()
         run: |
-          # 1. Create the folder so the 'echo' command doesn't fail
-          mkdir -p reports/allurereport/cireports
           
-          # 2. Use '>' to overwrite old local files with fresh CI info
-          echo "Environment=CI" > reports/allurereport/cireports/environment.properties
-          echo "Executor=GitHub Actions" >> reports/allurereport/cireports/environment.properties
+          mkdir -p Reports/allurereport/ci
           
-          # 3. Add a single clean date to prevent the double-date bug
-          echo "Date=$(date +'%d-%m-%y')" >> reports/allurereport/cireports/environment.properties
+          echo "Environment=CI" > Reports/allurereport/ci/environment.properties
+          echo "Executor=GitHub Actions" >> Reports/allurereport/ci/environment.properties
+          echo "Date=$(date +'%d-%m-%y')" >> Reports/allurereport/ci/environment.properties
 
       - name: Upload Playwright HTML reports
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: playwright-html-reports
-          path: reports/playwrightreport/cireports/
+          path: Reports/playwright/ci/
+          # path: reports/playwrightreport/cireports/
 
-      - name: Upload Allure Results
+      - name: Upload Allure Report
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: allure-html-report
-          path: reports/allurereport/cireports/    
+          path: Reports/playwright/ci/
+          # path: reports/allurereport/cireports/    
 
 
       # - name: Upload Playwright report

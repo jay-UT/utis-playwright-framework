@@ -24,28 +24,36 @@ if (!tagMap.hasOwnProperty(mode)) {
 }
 
 /* -------------------------------------------
-    2. DATE & PATH CONFIGURATION
+    DATE & PATH CONFIGURATION
 --------------------------------------------*/
+
 function formatTimestamp() {
   const d = new Date();
   const pad = (n) => String(n).padStart(2, "0");
-  const dd = pad(d.getDate());
-  const mm = pad(d.getMonth() + 1);
-  const yy = String(d.getFullYear()).slice(-2);
-  
-  // Clean format: dd-mm-yy (Prevents Allure from doubling dates)
-  return `${dd}-${mm}-${yy}`;
+
+  return (
+    `${pad(d.getDate())}-${pad(d.getMonth() + 1)}-${d.getFullYear()}_` +
+    `${pad(d.getHours())}-${pad(d.getMinutes())}-${pad(d.getSeconds())}`
+  );
 }
 
 const timestamp = formatTimestamp();
-const folderSuffix = isCI ? "cireports" : `localreport-${timestamp}`;
 
-const playwrightReportDir = path.join("reports", "playwrightreport", folderSuffix);
-const allureReportDir = path.join("reports", "allurereport", folderSuffix);
-const allureResultsDir = "allure-results"; 
+/* ===== FINAL FOLDER STRUCTURE ===== */
 
-// Persistent history location for trends
-const globalHistoryPath = path.join("reports", "allurereport", "latest-history");
+const playwrightReportDir = isCI
+  ? path.join("Reports", "playwright", "ci")
+  : path.join("Reports", "playwright", "local", `playwright-${timestamp}`);
+
+const allureReportDir = isCI
+  ? path.join("Reports", "allurereport", "ci")
+  : path.join("Reports", "allurereport", "local", `allure-${timestamp}`);
+
+// Allure history stored ONLY in CI folder
+const globalHistoryPath = path.join("Reports", "allurereport", "ci", "history");
+
+const allureResultsDir = "allure-results";
+
 
 /* -------------------------------------------
     3. HELPER FUNCTIONS
@@ -92,7 +100,9 @@ try {
 
   /* --- RUN PLAYWRIGHT TESTS --- */
   // Ensure Playwright outputs its HTML report to our specific subfolder
-  process.env.PLAYWRIGHT_HTML_REPORT = playwrightReportDir;
+  // process.env.PLAYWRIGHT_HTML_REPORT = playwrightReportDir;
+  process.env.PW_HTML_REPORT_FOLDER = playwrightReportDir;
+
   
   const testCmd = mode === "full" 
     ? "npx playwright test" 

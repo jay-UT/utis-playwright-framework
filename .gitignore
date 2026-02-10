@@ -51,6 +51,9 @@ Thumbs.db
 /blob-report/
 /playwright/.cache/
 /playwright/.auth/
+Reports/playwright/local
+Reports/allurereport/local
+
 
 # Allure
 reports/
