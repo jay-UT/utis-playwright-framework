@@ -42,11 +42,11 @@ export default defineConfig({
 
   /* 🔹 REPORTERS: Allure + HTML */ 
 reporter: [
-    ['html', { outputFolder: process.env.PW_HTML_REPORT_FOLDER, open: 'never' }],
-    ['json', { outputFile: 'playwright-results.json' }],
-    ['list'],
-    ['allure-playwright', { resultsDir: 'allure-results' }]
-  ],
+  ['html', { outputFolder: process.env.PLAYWRIGHT_HTML_REPORT, open: 'never' }],
+  ['json', { outputFile: 'playwright-results.json' }],
+  ['list'],
+  ['allure-playwright', { resultsDir: 'allure-results' }]
+],
 
   // reporter: [
   //   ['html', { outputFolder: `reports/playwrightreport-${folderSuffix}`, open: 'never' }],

@@ -103,8 +103,8 @@ try {
 
   /* --- RUN PLAYWRIGHT TESTS --- */
   // Ensure Playwright outputs its HTML report to our specific subfolder
-  // process.env.PLAYWRIGHT_HTML_REPORT = playwrightReportDir;
-  process.env.PW_HTML_REPORT_FOLDER = playwrightReportDir;
+  process.env.PLAYWRIGHT_HTML_REPORT = playwrightReportDir;
+  // process.env.PW_HTML_REPORT_FOLDER = playwrightReportDir;
 
   
   const testCmd = mode === "full" 
