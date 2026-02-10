@@ -5,9 +5,8 @@ const fs = require("fs");
 const path = require("path");
 
 /* -------------------------------------------
-    1. ENVIRONMENT & MODE SETUP
+   REPORT MODE
 --------------------------------------------*/
-const isCI = !!process.env.CI;
 const mode = process.argv[2] || "full";
 
 const tagMap = {
@@ -19,47 +18,37 @@ const tagMap = {
 };
 
 if (!tagMap.hasOwnProperty(mode)) {
-  console.error(`Invalid report type. Usage: node scripts/report.js [full|regression|failure_case|signin|smoke]`);
+  console.error(`
+Invalid report type.
+
+Usage:
+node scripts/report.js full
+node scripts/report.js regression
+node scripts/report.js failure_case
+node scripts/report.js signin
+node scripts/report.js smoke
+`);
   process.exit(1);
 }
 
 /* -------------------------------------------
-    DATE & PATH CONFIGURATION
+   DATE FORMAT dd-mm-yyyy_HH-mm-ss
 --------------------------------------------*/
-
 function formatTimestamp() {
   const d = new Date();
   const pad = (n) => String(n).padStart(2, "0");
 
-  return (
-    `${pad(d.getDate())}-${pad(d.getMonth() + 1)}-${d.getFullYear()}_` +
-    `${pad(d.getHours())}-${pad(d.getMinutes())}-${pad(d.getSeconds())}`
-  );
+  return `${pad(d.getDate())}-${pad(d.getMonth() + 1)}-${d.getFullYear()}_${pad(d.getHours())}-${pad(d.getMinutes())}-${pad(d.getSeconds())}`;
 }
 
 const timestamp = formatTimestamp();
+const reportDir = `allure-report-${timestamp}`;
 
-/* ===== FINAL FOLDER STRUCTURE ===== */
-
-const playwrightReportDir = isCI
-  ? path.join("Reports", "playwright", "ci")
-  : path.join("Reports", "playwright", "local", `playwright-${timestamp}`);
-
-const allureReportDir = isCI
-  ? path.join("Reports", "allurereport", "ci")
-  : path.join("Reports", "allurereport", "local", `allure-${timestamp}`);
-
-// Allure history stored ONLY in CI folder
-const globalHistoryPath = path.join("Reports", "allurereport", "ci", "history");
-
-const allureResultsDir = "allure-results";
-
-fs.mkdirSync(playwrightReportDir, { recursive: true });
-fs.mkdirSync(allureReportDir, { recursive: true });
-
+const latestDir = path.join("reports", "latest");
+const archiveDir = path.join("reports", "archive");
 
 /* -------------------------------------------
-    3. HELPER FUNCTIONS
+   SAFE EXECUTION
 --------------------------------------------*/
 function run(command, allowFailure = false) {
   try {
@@ -71,83 +60,103 @@ function run(command, allowFailure = false) {
   }
 }
 
-function exists(p) { return fs.existsSync(p); }
-
+/* -------------------------------------------
+   SAFE COPY
+--------------------------------------------*/
 function safeCopy(src, dest) {
-  if (exists(src)) {
-    if (!exists(path.dirname(dest))) fs.mkdirSync(path.dirname(dest), { recursive: true });
+  if (fs.existsSync(src)) {
     fs.cpSync(src, dest, { recursive: true, force: true });
   }
 }
 
+/* -------------------------------------------
+   CHECK EXISTENCE
+--------------------------------------------*/
+function exists(p) {
+  return fs.existsSync(p);
+}
+
 /* ===========================================
-    4. MAIN EXECUTION
+   MAIN EXECUTION
 ===========================================*/
 try {
-  console.log(`🚀 Running ${mode} report in ${isCI ? "CI" : "Local"} mode...`);
 
-  /* --- CLEAN OLD RESULTS --- */
-  if (exists(allureResultsDir)) {
-    fs.rmSync(allureResultsDir, { recursive: true, force: true });
-  }
-  fs.mkdirSync(allureResultsDir, { recursive: true });
+  console.log(`🚀 Running ${mode} report...`);
 
-  /* --- RESTORE HISTORY (TREND) --- */
-  const historyTarget = path.join(allureResultsDir, "history");
-  
-  // Logic: Check local history first, then check if we are in CI
-  if (exists(globalHistoryPath)) {
-    console.log("📈 Found previous history. Restoring trends...");
-    safeCopy(globalHistoryPath, historyTarget);
+  /* -----------------------------
+     CLEAN OLD RESULTS
+  ------------------------------*/
+  if (exists("allure-results")) {
+    fs.rmSync("allure-results", { recursive: true, force: true });
   }
 
-  /* --- RUN PLAYWRIGHT TESTS --- */
-  // Ensure Playwright outputs its HTML report to our specific subfolder
-  process.env.PLAYWRIGHT_HTML_REPORT = playwrightReportDir;
-  // process.env.PW_HTML_REPORT_FOLDER = playwrightReportDir;
+  fs.mkdirSync("allure-results", { recursive: true });
 
-  
-  const testCmd = mode === "full" 
-    ? "npx playwright test" 
-    : `npx playwright test --grep ${tagMap[mode]}`;
-  
-  run(testCmd, true);
+  /* -----------------------------
+     RESTORE HISTORY (TREND)
+  ------------------------------*/
+  const historySource = path.join(latestDir, "history");
+  const historyTarget = path.join("allure-results", "history");
 
-  /* --- ADD ALLURE METADATA --- */
-  // Environment and Executor info help Allure display context
+  if (exists(historySource)) {
+    console.log("📈 Restoring history...");
+    fs.mkdirSync(historyTarget, { recursive: true });
+    safeCopy(historySource, historyTarget);
+  }
+
+  /* -----------------------------
+     RUN PLAYWRIGHT TESTS
+  ------------------------------*/
+  if (mode === "full") {
+    run("npx playwright test", true);
+  } else {
+    run(`npx playwright test --grep ${tagMap[mode]}`, true);
+  }
+
+  /* -----------------------------
+     ADD ALLURE METADATA
+  ------------------------------*/
   run("node scripts/allure-env.js", true);
   run("node scripts/allure-executor.js", true);
 
-  /* --- GENERATE ALLURE REPORT --- */
-  if (exists(allureResultsDir) && fs.readdirSync(allureResultsDir).length > 0) {
-    console.log(`📊 Generating Allure HTML report to: ${allureReportDir}`);
-    
-    // Ensure the output directory exists
-    fs.mkdirSync(allureReportDir, { recursive: true });
-    
-    // Generate the dashboard
-    run(`npx allure generate ${allureResultsDir} --clean --single-file -o ${allureReportDir}`, true);
+  /* -----------------------------
+     GENERATE ALLURE REPORT
+  ------------------------------*/
+  if (exists("allure-results") && fs.readdirSync("allure-results").length > 0) {
+  run(`npx allure generate allure-results --clean -o ${reportDir}`, true);
+} else {
+  console.log("⚠️ No allure results found. Skipping Allure report generation.");
+  process.exit(0);
+}
 
-    /* --- SAVE HISTORY FOR NEXT TIME --- */
-    const newHistoryGenerated = path.join(allureReportDir, "history");
-    if (exists(newHistoryGenerated)) {
-      console.log("💾 Saving updated history for the next run...");
-      safeCopy(newHistoryGenerated, globalHistoryPath);
-    }
-  } else {
-    console.log("⚠️ No allure results found. Skipping Allure generation.");
-  }
+  // run(`npx allure generate allure-results --clean --single-file -o ${reportDir}`);
+  // run(`npx allure generate allure-results --clean -o ${reportDir}`);
 
-  /* --- CLEANUP RAW DATA --- */
-  if (exists(allureResultsDir)) {
-    fs.rmSync(allureResultsDir, { recursive: true, force: true });
-  }
+  /* -----------------------------
+     CREATE REPORT DIRECTORIES
+  ------------------------------*/
+  fs.mkdirSync(latestDir, { recursive: true });
+  fs.mkdirSync(archiveDir, { recursive: true });
 
-  console.log("\n✅ Execution Finished");
-  console.log(`📂 Playwright Report: ${playwrightReportDir}`);
-  console.log(`📂 Allure Report:     ${allureReportDir}`);
+  /* -----------------------------
+     ARCHIVE REPORT
+  ------------------------------*/
+  console.log("📦 Archiving report...");
+  safeCopy(reportDir, path.join(archiveDir, reportDir));
+
+  /* -----------------------------
+     UPDATE LATEST REPORT
+  ------------------------------*/
+  console.log("📂 Updating latest report...");
+  fs.rmSync(latestDir, { recursive: true, force: true });
+  fs.mkdirSync(latestDir, { recursive: true });
+  safeCopy(reportDir, latestDir);
+
+  console.log("✅ Allure report generated successfully");
+  console.log(`📂 Latest Report → reports/latest/index.html`);
+  console.log(`📦 Archived Report → reports/archive/${reportDir}`);
 
 } catch (err) {
-  console.error("❌ Fatal Script Error:", err);
+  console.error(err);
   process.exit(1);
 }

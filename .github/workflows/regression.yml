@@ -9,11 +9,6 @@ on:
     branches:
       - Shaarif
 
-# permissions: # This replaces the "General" menu settings if you can't find them
-#   contents: write
-#   pages: write
-#   id-token: write      
-
 jobs:
   regression:
     name: Run Automation Regression
@@ -27,95 +22,29 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          
 
       - name: Install dependencies
         run: npm ci
 
-      - name: Install Allure
-        run: npm install -g allure-commandline
-        
-      
-
-      # - name: Restore Allure History
-      #   uses: actions/cache@v4
-      #   with:
-      #     # This must match globalHistoryPath in your report.js
-      #     path: reports/allurereport/latest-history
-      #     key: allure-history-${{ github.run_id }}
-      #     restore-keys: |
-      #       allure-history-  
-
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+     
       # Cache Playwright Browsers
       - name: Cache Playwright browsers
         uses: actions/cache@v4
         with:
           path: ~/.cache/ms-playwright
-          key: playwright-${{ runner.os }}   
-
-      - name: Install Playwright browsers
-        run: npx playwright install --with-deps
-     
-      - name: Restore Allure History
-        uses: actions/cache@v4
-        with:
-          path: Reports/allurereport/ci/history
-          key: allure-history-${{ github.ref_name }}
-          restore-keys: |
-            allure-history-
-
+          key: playwright-${{ runner.os }}  
 
       - name: Run regression tests
-        env:
-          CI: true
-        run: node scripts/report.js smoke
+        run: npm run report:regression
 
-      - name: Save Allure History
-        if: always()
-        uses: actions/cache/save@v4
-        with:
-          path: Reports/allurereport/ci/history
-          key: allure-history-${{ github.ref_name }}
-  
-
-      # - name: Deploy to GitHub Pages
-      #   if: always()
-      #   uses: peaceiris/actions-gh-pages@v3
-      #   with:
-      #     github_token: ${{ secrets.GITHUB_TOKEN }}
-      #     publish_dir: Reports/allurereport/ci
-      #     publish_branch: gh-pages
-      #     keep_files: true
-
-        
-      
-      - name: Add Allure Environment Info
-        if: always()
-        run: |
-          
-          mkdir -p Reports/allurereport/ci
-          
-          echo "Environment=CI" > Reports/allurereport/ci/environment.properties
-          echo "Executor=GitHub Actions" >> Reports/allurereport/ci/environment.properties
-          echo "Date=$(date +'%d-%m-%y')" >> Reports/allurereport/ci/environment.properties
-
-      
-      
       - name: Upload Playwright HTML reports
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: playwright-html-reports
-          path: Reports/playwright/ci/
-          # path: reports/playwrightreport/cireports/
-
-      - name: Upload Allure Report
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: allure-html-report
-          path: Reports/playwright/ci/
-          # path: reports/allurereport/cireports/    
+          path: reports/
 
 
       # - name: Upload Playwright report
@@ -125,19 +54,19 @@ jobs:
       #     name: playwright-report
       #     path: playwright-report/
 
-      # - name: Upload Latest Allure Report
-      #   if: always()
-      #   uses: actions/upload-artifact@v4
-      #   with:
-      #     name: allure-latest-report
-      #     path: reports/latest
+      - name: Upload Latest Allure Report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-latest-report
+          path: reports/latest
 
-      # - name: Upload Allure Archived Reports
-      #   if: always()
-      #   uses: actions/upload-artifact@v4
-      #   with:
-      #     name: allure-archive-reports
-      #     path: reports/archive    
+      - name: Upload Allure Archived Reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-archive-reports
+          path: reports/archive    
 
       # - name: Upload Allure results
       #   if: always()
@@ -158,4 +87,4 @@ jobs:
       #   uses: actions/upload-artifact@v4
       #   with:
       #     name: ${{ env.REPORT_FOLDER }}
-      #     path: ${{ env.REPORT_FOLDER }}/
+      #     path: ${{ env.REPORT_FOLDER }}
