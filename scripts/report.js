@@ -29,7 +29,12 @@ if (!tagMap.hasOwnProperty(mode)) {
 function formatTimestamp() {
   const d = new Date();
   const pad = (n) => String(n).padStart(2, "0");
-  return `${pad(d.getDate())}-${pad(d.getMonth() + 1)}-${d.getFullYear()}_${pad(d.getHours())}-${pad(d.getMinutes())}-${pad(d.getSeconds())}`;
+  const dd = pad(d.getDate());
+  const mm = pad(d.getMonth() + 1);
+  const yy = String(d.getFullYear()).slice(-2);
+  
+  // Clean format: dd-mm-yy (Prevents Allure from doubling dates)
+  return `${dd}-${mm}-${yy}`;
 }
 
 const timestamp = formatTimestamp();
@@ -59,9 +64,7 @@ function exists(p) { return fs.existsSync(p); }
 
 function safeCopy(src, dest) {
   if (exists(src)) {
-    // Ensure destination directory exists before copying
-    const destDir = path.dirname(dest);
-    if (!exists(destDir)) fs.mkdirSync(destDir, { recursive: true });
+    if (!exists(path.dirname(dest))) fs.mkdirSync(path.dirname(dest), { recursive: true });
     fs.cpSync(src, dest, { recursive: true, force: true });
   }
 }

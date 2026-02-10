@@ -9,6 +9,11 @@ on:
     branches:
       - Shaarif
 
+permissions: # This replaces the "General" menu settings if you can't find them
+  contents: write
+  pages: write
+  id-token: write      
+
 jobs:
   regression:
     name: Run Automation Regression
@@ -59,16 +64,31 @@ jobs:
             allure-history-
 
       - name: Run regression tests
-        # env:
-        #   CI: true
-        run: node scripts/report.js smoke
+        env:
+          CI: true
+        run: node scripts/report.js signin
+
+      - name: Deploy to GitHub Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: reports/allurereport/cireports
+          publish_branch: gh-pages
+          keep_files: true  
 
       - name: Add Allure Environment Info
         if: always()
         run: |
+          # 1. Create the folder so the 'echo' command doesn't fail
           mkdir -p reports/allurereport/cireports
-          echo "Environment=CI" >> reports/allurereport/cireports/environment.properties
-          echo "Executor=GitHub Actions" >> reports/allurereport/cireports/environment.properties  
+          
+          # 2. Use '>' to overwrite old local files with fresh CI info
+          echo "Environment=CI" > reports/allurereport/cireports/environment.properties
+          echo "Executor=GitHub Actions" >> reports/allurereport/cireports/environment.properties
+          
+          # 3. Add a single clean date to prevent the double-date bug
+          echo "Date=$(date +'%d-%m-%y')" >> reports/allurereport/cireports/environment.properties
 
       - name: Upload Playwright HTML reports
         if: always()
