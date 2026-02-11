@@ -18,7 +18,7 @@ const executor = {
   name: process.env.CI ? "GitHub Actions" : "Local Execution",
   type: "playwright",
   buildName: `Execution ${formatDate()}`,
-  reportName: `Allure Report - ${formatDate()}`,
+  reportName: `Allure Report `,
   buildUrl: process.env.GITHUB_SERVER_URL
     ? `${process.env.GITHUB_SERVER_URL}/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID}`
     : "Local Run"

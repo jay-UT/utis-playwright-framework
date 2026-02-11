@@ -841,7 +841,7 @@ test('12-To Verify the error message for invalid login credentials',
       tag: ['@regression', '@signin', '@failure_case'],
    },
    async ({ page, home, config }) => {
-      allure.epic('User Authentication');
+      allure.epic('Authentication');
       allure.feature('Sign In Functionality');
       allure.story('Invalid Login Attempt'); 
       allure.owner('Shaarif');

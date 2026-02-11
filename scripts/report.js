@@ -123,7 +123,7 @@ try {
      GENERATE ALLURE REPORT
   ------------------------------*/
   if (exists("allure-results") && fs.readdirSync("allure-results").length > 0) {
-  run(`npx allure generate allure-results --clean -o ${reportDir}`, true);
+  run(`npx allure generate allure-results --clean --single-file -o ${reportDir}`, true);
 } else {
   console.log("⚠️ No allure results found. Skipping Allure report generation.");
   process.exit(0);

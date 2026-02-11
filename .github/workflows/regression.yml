@@ -37,7 +37,7 @@ jobs:
           key: playwright-${{ runner.os }}  
 
       - name: Run regression tests
-        run: npm run report:regression
+        run: npm run report:smoke
 
       - name: Upload Playwright HTML reports
         if: always()

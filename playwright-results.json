@@ -37,7 +37,7 @@
       [
         "html",
         {
-          "outputFolder": "Reports\\playwright\\local\\playwright-10-02-2026_13-10-24",
+          "outputFolder": "reports/html-report-11-02-2026_12-37-20",
           "open": "never"
         }
       ],
@@ -79,123 +79,6 @@
       "line": 0,
       "specs": [
         {
-          "title": "01-To verify the Henry Schein icon is present on the Home page",
-          "ok": true,
-          "tags": [
-            "regression",
-            "smoke",
-            "homepage",
-            "demo"
-          ],
-          "tests": [
-            {
-              "timeout": 90000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "HenrySchein",
-              "projectName": "HenrySchein",
-              "results": [
-                {
-                  "workerIndex": 0,
-                  "parallelIndex": 0,
-                  "status": "passed",
-                  "duration": 11920,
-                  "errors": [],
-                  "stdout": [
-                    {
-                      "text": "verified the page is navigated to home page\n"
-                    }
-                  ],
-                  "stderr": [],
-                  "retry": 0,
-                  "steps": [
-                    {
-                      "title": "Step 1: Navigate to Henry Schein UK Medical URL",
-                      "duration": 10704
-                    },
-                    {
-                      "title": "Step 2: Verify the Henry Schein icon should be visible on the page",
-                      "duration": 36
-                    },
-                    {
-                      "title": "Step 3: Click the Henry Schein icon",
-                      "duration": 622
-                    },
-                    {
-                      "title": "Step 4: Verify page navigates to Henry Schein home page",
-                      "duration": 36
-                    }
-                  ],
-                  "startTime": "2026-02-10T07:40:26.975Z",
-                  "annotations": [],
-                  "attachments": [
-                    {
-                      "name": "Allure Metadata (metadata)",
-                      "contentType": "application/vnd.allure.message+json",
-                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6ImVwaWMiLCJ2YWx1ZSI6IkhvbWUgUGFnZSJ9XX19"
-                    },
-                    {
-                      "name": "Allure Metadata (metadata)",
-                      "contentType": "application/vnd.allure.message+json",
-                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6ImZlYXR1cmUiLCJ2YWx1ZSI6IkJyYW5kaW5nICYgTmF2aWdhdGlvbiJ9XX19"
-                    },
-                    {
-                      "name": "Allure Metadata (metadata)",
-                      "contentType": "application/vnd.allure.message+json",
-                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InN0b3J5IiwidmFsdWUiOiJWZXJpZnkgSGVucnkgU2NoZWluIExvZ28ifV19fQ=="
-                    },
-                    {
-                      "name": "Allure Metadata (metadata)",
-                      "contentType": "application/vnd.allure.message+json",
-                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6Im93bmVyIiwidmFsdWUiOiJTaGFhcmlmIn1dfX0="
-                    },
-                    {
-                      "name": "Allure Metadata (metadata)",
-                      "contentType": "application/vnd.allure.message+json",
-                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InNldmVyaXR5IiwidmFsdWUiOiJub3JtYWwifV19fQ=="
-                    },
-                    {
-                      "name": "Allure Metadata (metadata)",
-                      "contentType": "application/vnd.allure.message+json",
-                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InRhZyIsInZhbHVlIjoicmVncmVzc2lvbiJ9XX19"
-                    },
-                    {
-                      "name": "Allure Metadata (metadata)",
-                      "contentType": "application/vnd.allure.message+json",
-                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InRhZyIsInZhbHVlIjoic21va2UifV19fQ=="
-                    },
-                    {
-                      "name": "Allure Metadata (metadata)",
-                      "contentType": "application/vnd.allure.message+json",
-                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InRhZyIsInZhbHVlIjoiaG9tZXBhZ2UifV19fQ=="
-                    },
-                    {
-                      "name": "Allure Metadata (metadata)",
-                      "contentType": "application/vnd.allure.message+json",
-                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InRhZyIsInZhbHVlIjoiZGVtbyJ9XX19"
-                    },
-                    {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\test-results\\HomePage-01-To-verify-the--3445b-is-present-on-the-Home-page-HenrySchein\\test-finished-1.png"
-                    },
-                    {
-                      "name": "video",
-                      "contentType": "video/webm",
-                      "path": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\test-results\\HomePage-01-To-verify-the--3445b-is-present-on-the-Home-page-HenrySchein\\video.webm"
-                    }
-                  ]
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "62a0194cb94d3eec4948-d66d471a4a626f4e5d6a",
-          "file": "HomePage.spec.ts",
-          "line": 21,
-          "column": 5
-        },
-        {
           "title": "02-To Verify the sign-in functionality on the Home page",
           "ok": true,
           "tags": [
@@ -216,7 +99,7 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 13087,
+                  "duration": 17573,
                   "errors": [],
                   "stdout": [
                     {
@@ -240,26 +123,26 @@
                   "steps": [
                     {
                       "title": "Step 1: Navigate to the Henry Schein website.",
-                      "duration": 8195
+                      "duration": 11572
                     },
                     {
                       "title": "Step 2: Confirm that the Sign In button is visible.",
-                      "duration": 255
+                      "duration": 126
                     },
                     {
                       "title": "Step 3: Enter a valid username and password.",
-                      "duration": 2397
+                      "duration": 3068
                     },
                     {
                       "title": "Step 4: Click the Sign In button.",
-                      "duration": 666
+                      "duration": 877
                     },
                     {
                       "title": "Step 5: Verify the user is successfully logged in",
-                      "duration": 881
+                      "duration": 445
                     }
                   ],
-                  "startTime": "2026-02-10T07:40:39.356Z",
+                  "startTime": "2026-02-11T07:07:22.078Z",
                   "annotations": [],
                   "attachments": [
                     {
@@ -349,7 +232,7 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 11199,
+                  "duration": 14308,
                   "errors": [],
                   "stdout": [
                     {
@@ -373,26 +256,26 @@
                   "steps": [
                     {
                       "title": "Step 1: Navigate to  HenrySchein url",
-                      "duration": 7755
+                      "duration": 9338
                     },
                     {
                       "title": "Step 2: Verify the sign in button should be visible on the home page",
-                      "duration": 88
+                      "duration": 75
                     },
                     {
                       "title": "Step 3: Enter invalid username and password",
-                      "duration": 1946
+                      "duration": 3293
                     },
                     {
                       "title": "Step 4: Click the sign-in submit button",
-                      "duration": 717
+                      "duration": 761
                     },
                     {
                       "title": "Step 5: Verify the user cannot sign in successfully",
-                      "duration": 346
+                      "duration": 326
                     }
                   ],
-                  "startTime": "2026-02-10T07:40:52.468Z",
+                  "startTime": "2026-02-11T07:07:39.872Z",
                   "annotations": [],
                   "attachments": [
                     {
@@ -462,12 +345,12 @@
           "column": 5
         },
         {
-          "title": "04-To verify the Sign up flow on the Home page",
-          "ok": true,
+          "title": "12-To Verify the error message for invalid login credentials",
+          "ok": false,
           "tags": [
             "regression",
-            "smoke",
-            "signup"
+            "signin",
+            "failure_case"
           ],
           "tests": [
             {
@@ -480,47 +363,80 @@
                 {
                   "workerIndex": 0,
                   "parallelIndex": 0,
-                  "status": "passed",
-                  "duration": 23409,
-                  "errors": [],
+                  "status": "failed",
+                  "duration": 32695,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('//div[@data-test-id=\\'login.unknownKey1\\']')\nTimeout: 5000ms\n\u001b[32m- Expected substring  - 1\u001b[39m\n\u001b[31m+ Received string     + 5\u001b[39m\n\n\u001b[32m- \u001b[7mP\u001b[27mlease enter \u001b[7mvalid Username/Password\u001b[27m\u001b[39m\n\u001b[31m+ The username and/or password entered is incorrect,\u001b[39m\n\u001b[31m+ \u001b[7mp\u001b[27mlease \u001b[7mre-\u001b[27menter \u001b[7mcorrect username or password.\u001b[27m\u001b[39m\n\u001b[31m+ If you enter incorrect user password three times,\u001b[39m\n\u001b[31m+ then your account will be locked and you will need to\u001b[39m\n\u001b[31m+ reset your password or contact support.\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('//div[@data-test-id=\\'login.unknownKey1\\']')\u001b[22m\n\u001b[2m    9 × locator resolved to <div role=\"alert\" aria-atomic=\"true\" _ngcontent-my-app-c344=\"\" data-test-id=\"login.unknownKey1\" class=\"errorMessage caption1-regular text-left ng-star-inserted\">The username and/or password entered is incorrect…</div>\u001b[22m\n\u001b[2m      - unexpected value \"The username and/or password entered is incorrect,\u001b[22m\n\u001b[2mplease re-enter correct username or password.\u001b[22m\n\u001b[2mIf you enter incorrect user password three times,\u001b[22m\n\u001b[2mthen your account will be locked and you will need to\u001b[22m\n\u001b[2mreset your password or contact support.\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('//div[@data-test-id=\\'login.unknownKey1\\']')\nTimeout: 5000ms\n\u001b[32m- Expected substring  - 1\u001b[39m\n\u001b[31m+ Received string     + 5\u001b[39m\n\n\u001b[32m- \u001b[7mP\u001b[27mlease enter \u001b[7mvalid Username/Password\u001b[27m\u001b[39m\n\u001b[31m+ The username and/or password entered is incorrect,\u001b[39m\n\u001b[31m+ \u001b[7mp\u001b[27mlease \u001b[7mre-\u001b[27menter \u001b[7mcorrect username or password.\u001b[27m\u001b[39m\n\u001b[31m+ If you enter incorrect user password three times,\u001b[39m\n\u001b[31m+ then your account will be locked and you will need to\u001b[39m\n\u001b[31m+ reset your password or contact support.\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('//div[@data-test-id=\\'login.unknownKey1\\']')\u001b[22m\n\u001b[2m    9 × locator resolved to <div role=\"alert\" aria-atomic=\"true\" _ngcontent-my-app-c344=\"\" data-test-id=\"login.unknownKey1\" class=\"errorMessage caption1-regular text-left ng-star-inserted\">The username and/or password entered is incorrect…</div>\u001b[22m\n\u001b[2m      - unexpected value \"The username and/or password entered is incorrect,\u001b[22m\n\u001b[2mplease re-enter correct username or password.\u001b[22m\n\u001b[2mIf you enter incorrect user password three times,\u001b[22m\n\u001b[2mthen your account will be locked and you will need to\u001b[22m\n\u001b[2mreset your password or contact support.\"\u001b[22m\n\n    at C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\tests\\HomePage.spec.ts:876:33\n    at C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\tests\\HomePage.spec.ts:871:7",
+                    "location": {
+                      "file": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\tests\\HomePage.spec.ts",
+                      "column": 33,
+                      "line": 876
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 874 |\u001b[39m          \u001b[36mconst\u001b[39m errorMsg \u001b[33m=\u001b[39m (home\u001b[33m.\u001b[39msign_in_error_msg_xpath)\u001b[33m;\u001b[39m\n \u001b[90m 875 |\u001b[39m          \u001b[36mawait\u001b[39m expect(errorMsg)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 876 |\u001b[39m          \u001b[36mawait\u001b[39m expect(errorMsg)\u001b[33m.\u001b[39mtoContainText(\u001b[32m'Please enter valid Username/Password'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 877 |\u001b[39m       })\n \u001b[90m 878 |\u001b[39m\n \u001b[90m 879 |\u001b[39m    })\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\tests\\HomePage.spec.ts",
+                        "column": 33,
+                        "line": 876
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('//div[@data-test-id=\\'login.unknownKey1\\']')\nTimeout: 5000ms\n\u001b[32m- Expected substring  - 1\u001b[39m\n\u001b[31m+ Received string     + 5\u001b[39m\n\n\u001b[32m- \u001b[7mP\u001b[27mlease enter \u001b[7mvalid Username/Password\u001b[27m\u001b[39m\n\u001b[31m+ The username and/or password entered is incorrect,\u001b[39m\n\u001b[31m+ \u001b[7mp\u001b[27mlease \u001b[7mre-\u001b[27menter \u001b[7mcorrect username or password.\u001b[27m\u001b[39m\n\u001b[31m+ If you enter incorrect user password three times,\u001b[39m\n\u001b[31m+ then your account will be locked and you will need to\u001b[39m\n\u001b[31m+ reset your password or contact support.\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('//div[@data-test-id=\\'login.unknownKey1\\']')\u001b[22m\n\u001b[2m    9 × locator resolved to <div role=\"alert\" aria-atomic=\"true\" _ngcontent-my-app-c344=\"\" data-test-id=\"login.unknownKey1\" class=\"errorMessage caption1-regular text-left ng-star-inserted\">The username and/or password entered is incorrect…</div>\u001b[22m\n\u001b[2m      - unexpected value \"The username and/or password entered is incorrect,\u001b[22m\n\u001b[2mplease re-enter correct username or password.\u001b[22m\n\u001b[2mIf you enter incorrect user password three times,\u001b[22m\n\u001b[2mthen your account will be locked and you will need to\u001b[22m\n\u001b[2mreset your password or contact support.\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 874 |\u001b[39m          \u001b[36mconst\u001b[39m errorMsg \u001b[33m=\u001b[39m (home\u001b[33m.\u001b[39msign_in_error_msg_xpath)\u001b[33m;\u001b[39m\n \u001b[90m 875 |\u001b[39m          \u001b[36mawait\u001b[39m expect(errorMsg)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 876 |\u001b[39m          \u001b[36mawait\u001b[39m expect(errorMsg)\u001b[33m.\u001b[39mtoContainText(\u001b[32m'Please enter valid Username/Password'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 877 |\u001b[39m       })\n \u001b[90m 878 |\u001b[39m\n \u001b[90m 879 |\u001b[39m    })\u001b[0m\n\u001b[2m    at C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\tests\\HomePage.spec.ts:876:33\u001b[22m\n\u001b[2m    at C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\tests\\HomePage.spec.ts:871:7\u001b[22m"
+                    }
+                  ],
                   "stdout": [
                     {
-                      "text": "Navigated to Henry Schein url\n"
+                      "text": "Navigated to  HenrySchein url\n"
                     },
                     {
-                      "text": "Verified the Sign up button is visible on the home page\n"
+                      "text": "Verified the sign in button should be visible on the home page\n"
                     },
                     {
-                      "text": "Clicked on the Sign up button\n"
+                      "text": "Entered invalid username and password\n"
                     },
                     {
-                      "text": "Verified navigation to Registration page\n"
+                      "text": "Clicked the sign-in submit button\n"
                     },
                     {
-                      "text": "Clicked Continue and new sign-up stopped till here...\n"
+                      "text": "Please enter valid Username/Password\n"
                     }
                   ],
                   "stderr": [],
                   "retry": 0,
                   "steps": [
                     {
-                      "title": "Step 1: Navigate to Henry Schein url",
-                      "duration": 7371
+                      "title": "Step 1: Navigate to  HenrySchein url",
+                      "duration": 17335
                     },
                     {
-                      "title": "Step 2: Verify the Sign up button should be visible on the home page",
-                      "duration": 49
+                      "title": "Step 2: Verify the sign in button should be visible on the home page",
+                      "duration": 1537
                     },
                     {
-                      "title": "Step 3: Click on the Sign up button",
-                      "duration": 604
+                      "title": "Step 3: Enter invalid username and password",
+                      "duration": 6415
                     },
                     {
-                      "title": "Step 4: Verify user is navigated from home page",
-                      "duration": 14935
+                      "title": "Step 4: Click the sign-in submit button",
+                      "duration": 1004
+                    },
+                    {
+                      "title": "Step 5: Verify the user cannot sign in successfully",
+                      "duration": 5471,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('//div[@data-test-id=\\'login.unknownKey1\\']')\nTimeout: 5000ms\n\u001b[32m- Expected substring  - 1\u001b[39m\n\u001b[31m+ Received string     + 5\u001b[39m\n\n\u001b[32m- \u001b[7mP\u001b[27mlease enter \u001b[7mvalid Username/Password\u001b[27m\u001b[39m\n\u001b[31m+ The username and/or password entered is incorrect,\u001b[39m\n\u001b[31m+ \u001b[7mp\u001b[27mlease \u001b[7mre-\u001b[27menter \u001b[7mcorrect username or password.\u001b[27m\u001b[39m\n\u001b[31m+ If you enter incorrect user password three times,\u001b[39m\n\u001b[31m+ then your account will be locked and you will need to\u001b[39m\n\u001b[31m+ reset your password or contact support.\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('//div[@data-test-id=\\'login.unknownKey1\\']')\u001b[22m\n\u001b[2m    9 × locator resolved to <div role=\"alert\" aria-atomic=\"true\" _ngcontent-my-app-c344=\"\" data-test-id=\"login.unknownKey1\" class=\"errorMessage caption1-regular text-left ng-star-inserted\">The username and/or password entered is incorrect…</div>\u001b[22m\n\u001b[2m      - unexpected value \"The username and/or password entered is incorrect,\u001b[22m\n\u001b[2mplease re-enter correct username or password.\u001b[22m\n\u001b[2mIf you enter incorrect user password three times,\u001b[22m\n\u001b[2mthen your account will be locked and you will need to\u001b[22m\n\u001b[2mreset your password or contact support.\"\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('//div[@data-test-id=\\'login.unknownKey1\\']')\nTimeout: 5000ms\n\u001b[32m- Expected substring  - 1\u001b[39m\n\u001b[31m+ Received string     + 5\u001b[39m\n\n\u001b[32m- \u001b[7mP\u001b[27mlease enter \u001b[7mvalid Username/Password\u001b[27m\u001b[39m\n\u001b[31m+ The username and/or password entered is incorrect,\u001b[39m\n\u001b[31m+ \u001b[7mp\u001b[27mlease \u001b[7mre-\u001b[27menter \u001b[7mcorrect username or password.\u001b[27m\u001b[39m\n\u001b[31m+ If you enter incorrect user password three times,\u001b[39m\n\u001b[31m+ then your account will be locked and you will need to\u001b[39m\n\u001b[31m+ reset your password or contact support.\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('//div[@data-test-id=\\'login.unknownKey1\\']')\u001b[22m\n\u001b[2m    9 × locator resolved to <div role=\"alert\" aria-atomic=\"true\" _ngcontent-my-app-c344=\"\" data-test-id=\"login.unknownKey1\" class=\"errorMessage caption1-regular text-left ng-star-inserted\">The username and/or password entered is incorrect…</div>\u001b[22m\n\u001b[2m      - unexpected value \"The username and/or password entered is incorrect,\u001b[22m\n\u001b[2mplease re-enter correct username or password.\u001b[22m\n\u001b[2mIf you enter incorrect user password three times,\u001b[22m\n\u001b[2mthen your account will be locked and you will need to\u001b[22m\n\u001b[2mreset your password or contact support.\"\u001b[22m\n\n    at C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\tests\\HomePage.spec.ts:876:33\n    at C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\tests\\HomePage.spec.ts:871:7",
+                        "location": {
+                          "file": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\tests\\HomePage.spec.ts",
+                          "column": 33,
+                          "line": 876
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 874 |\u001b[39m          \u001b[36mconst\u001b[39m errorMsg \u001b[33m=\u001b[39m (home\u001b[33m.\u001b[39msign_in_error_msg_xpath)\u001b[33m;\u001b[39m\n \u001b[90m 875 |\u001b[39m          \u001b[36mawait\u001b[39m expect(errorMsg)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 876 |\u001b[39m          \u001b[36mawait\u001b[39m expect(errorMsg)\u001b[33m.\u001b[39mtoContainText(\u001b[32m'Please enter valid Username/Password'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 877 |\u001b[39m       })\n \u001b[90m 878 |\u001b[39m\n \u001b[90m 879 |\u001b[39m    })\u001b[0m"
+                      }
                     }
                   ],
-                  "startTime": "2026-02-10T07:41:03.698Z",
+                  "startTime": "2026-02-11T07:07:54.210Z",
                   "annotations": [],
                   "attachments": [
                     {
@@ -531,12 +447,12 @@
                     {
                       "name": "Allure Metadata (metadata)",
                       "contentType": "application/vnd.allure.message+json",
-                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6ImZlYXR1cmUiLCJ2YWx1ZSI6IkhvbWUgUGFnZSBTaWduIFVwIn1dfX0="
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6ImZlYXR1cmUiLCJ2YWx1ZSI6IlNpZ24gSW4gRnVuY3Rpb25hbGl0eSJ9XX19"
                     },
                     {
                       "name": "Allure Metadata (metadata)",
                       "contentType": "application/vnd.allure.message+json",
-                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InN0b3J5IiwidmFsdWUiOiJVc2VyIFJlZ2lzdHJhdGlvbiJ9XX19"
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InN0b3J5IiwidmFsdWUiOiJJbnZhbGlkIExvZ2luIEF0dGVtcHQifV19fQ=="
                     },
                     {
                       "name": "Allure Metadata (metadata)",
@@ -556,32 +472,42 @@
                     {
                       "name": "Allure Metadata (metadata)",
                       "contentType": "application/vnd.allure.message+json",
-                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InRhZyIsInZhbHVlIjoic21va2UifV19fQ=="
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InRhZyIsInZhbHVlIjoic2lnbmluIn1dfX0="
                     },
                     {
                       "name": "Allure Metadata (metadata)",
                       "contentType": "application/vnd.allure.message+json",
-                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InRhZyIsInZhbHVlIjoic2lnbnVwIn1dfX0="
+                      "body": "eyJ0eXBlIjoibWV0YWRhdGEiLCJkYXRhIjp7ImxhYmVscyI6W3sibmFtZSI6InRhZyIsInZhbHVlIjoiZmFpbHVyZV9jYXNlIn1dfX0="
                     },
                     {
                       "name": "screenshot",
                       "contentType": "image/png",
-                      "path": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\test-results\\HomePage-04-To-verify-the-Sign-up-flow-on-the-Home-page-HenrySchein\\test-finished-1.png"
+                      "path": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\test-results\\HomePage-12-To-Verify-the--6e4b5-r-invalid-login-credentials-HenrySchein\\test-failed-1.png"
                     },
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\test-results\\HomePage-04-To-verify-the-Sign-up-flow-on-the-Home-page-HenrySchein\\video.webm"
+                      "path": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\test-results\\HomePage-12-To-Verify-the--6e4b5-r-invalid-login-credentials-HenrySchein\\video.webm"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\test-results\\HomePage-12-To-Verify-the--6e4b5-r-invalid-login-credentials-HenrySchein\\trace.zip"
                     }
-                  ]
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\tests\\HomePage.spec.ts",
+                    "column": 33,
+                    "line": 876
+                  }
                 }
               ],
-              "status": "expected"
+              "status": "unexpected"
             }
           ],
-          "id": "62a0194cb94d3eec4948-c7a9ec292eb481ad3e3d",
+          "id": "62a0194cb94d3eec4948-30640f4fc34175a79513",
           "file": "HomePage.spec.ts",
-          "line": 186,
+          "line": 839,
           "column": 5
         }
       ]
@@ -589,11 +515,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-02-10T07:40:25.828Z",
-    "duration": 61512.689000000006,
-    "expected": 4,
+    "startTime": "2026-02-11T07:07:20.999Z",
+    "duration": 67197.561,
+    "expected": 2,
     "skipped": 0,
-    "unexpected": 0,
+    "unexpected": 1,
     "flaky": 0
   }
 }
