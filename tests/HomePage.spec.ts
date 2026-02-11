@@ -38,7 +38,7 @@ test('01-To verify the Henry Schein icon is present on the Home page',
       });
 
       await test.step("Step 4: Verify page navigates to Henry Schein home page", async () => {
-         await expect(page).toHaveURL('https://www.henryschein.co.uk/');
+         await expect(page).toHaveURL('https://www.henryscheintest.co.uk/');
          console.log("verified the page is navigated to home page")
       });
    });
