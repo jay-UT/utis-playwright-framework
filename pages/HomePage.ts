@@ -1,5 +1,7 @@
 import { Page, expect, Locator } from '@playwright/test'
 import path from 'node:path';
+import { CommonMethods } from '../utils/commonSteps';
+import { compileFunction } from 'node:vm';
 
 export class HomePage {
     //Locators
@@ -121,9 +123,169 @@ export class HomePage {
             return true
         }
         return false
-
-
     }
 
+    async ClickIcon(){
+        try{
+        await CommonMethods.safeClick(this.page,this.icon_xpath)
+        }
+        catch(error){
+            console.log(`Exception occurs while clicking the icon :"${error}`)
+            throw error;
+        }
+    }
+     
+    async ClickSignIn(){
+        try{    
+            await CommonMethods.safeClick(this.page,this.sign_in_xpath)
+        }
+        catch(error){
+            console.log(`Exception occurs while clicking the sign in :" ${error}`)
+            throw error;
+        }
+    }
+
+    async FillUsername(username : string){
+        try {
+            await CommonMethods.writeText(this.page,this.username_xpath,username)
+        }catch(error){
+            console.log(`Exception occurs while writing the username :" ${error}`)
+            throw error;
+        }
+    }
+
+    async FillPassword(password : string){
+        try{
+            await CommonMethods.writeText(this.page,this.password_xpath,password)
+        }catch(error){
+            console.log(`Exception occurs while writing the password :" ${error}`)
+            throw error;
+        }
+    }
+
+    async ClickSignInSubmitButton(){
+        try {
+            await CommonMethods.safeClick(this.page,this.sign_in_submit_btn_xpath)
+        } catch (error) {
+            console.log(`Exception occurs while clicking the sign in submit button:" ${error}`)
+            throw error;
+        }
+    }
+
+    async ClickSignUpButton(){
+        try {
+            await CommonMethods.safeClick(this.page,this.sign_up_xpath)
+        } catch (error) {
+            console.log(`Exception occurs while clicking the sign up button:" ${error}`)
+            throw error;
+        }
+    }
+
+    async FillRegistrationUsername(regUsername : string){
+        try {
+            await CommonMethods.writeText(this.page, this.reg_username_input, regUsername)
+        } catch (error) {
+            console.log(`Exception occurs while filling the username for registration:" ${error}`)
+            throw error;
+        }
+    }
+
+    async FillRegistrationPassword(regPassword : string){
+        try {
+            await CommonMethods.writeText(this.page, this.reg_password_input, regPassword)
+        } catch (error) {
+            console.log(`Exception occurs while filling the password for registration:" ${error}`)
+            throw error;
+        }
+    }
+
+    async FillRegistrationConfirmPassword(cnfRegPassword : string){
+        try {
+            await CommonMethods.writeText(this.page,this.reg_confirm_password_input,cnfRegPassword)
+        } catch (error) {
+            console.log(`Exception occurs while filling the confirm password for registration:" ${error}`)
+            throw error;
+        }
+    }
+
+    async FillRegistrationEmail(email : string){
+        try {
+            await CommonMethods.writeText(this.page,this.reg_email_input,email)
+        } catch (error) {
+            console.log(`Exception occurs while filling the email for registration:" ${error}`)
+            throw error;
+        }
+    }
+    async ClickRegistrationNextButton(){
+        try {
+            await CommonMethods.safeClick(this.page,this.reg_next_step_btn)
+        } catch (error) {
+            console.log(`Exception occurs while clicking the next button in registration:" ${error}`)
+            throw error;
+        }
+    }
+    async ClickRegistrationContinueButton(){
+        try {
+            await CommonMethods.safeClick(this.page,this.continue_btn)
+        } catch (error) {
+            console.log(`Exception occurs while clicking the continue button in registration:" ${error}`)
+            throw error;
+        }
+    }
+
+    async FillTextInSearchBar(searchInput : string){
+        try {
+            await CommonMethods.writeText(this.page,this.search_input,searchInput)
+        } catch (error) {
+            console.log(`Exception occurs when the search is not happend" ${error}`)
+            throw error;
+        }  
+    }
+
+    async ClickTopSupplies(){
+        try {
+            await CommonMethods.safeClick(this.page,this.main_menu_Top_Supplies)
+        } catch (error) {
+            console.log(`Exception occurs when clicking the top supplies" ${error}`)
+            throw error;
+        }
+    }
+
+    async ClickTopEquipment(){
+        try {
+            await CommonMethods.safeClick(this.page,this.main_menu_Top_Equipment)
+        } catch (error) {
+            console.log(`Exception occurs when clicking the top equipment" ${error}`)
+            throw error;
+        }
+    } 
+
+    async ClickPharmaceuticals(){
+        try {
+            await CommonMethods.safeClick(this.page,this.main_menu_Pharmaceuticals)
+        } catch (error) {
+            console.log(`Exception occurs when clicking the Pharmaceuticals" ${error}`)
+            throw error;
+        }
+    }
+
+    async ClickFurnitureDetail(){
+        try {
+            await CommonMethods.safeClick(this.page,this.main_menu_Furniture)
+        } catch (error) {
+            console.log(`Exception occurs when clicking the furniture details" ${error}`)
+            throw error;
+        }
+    }
+    
+    async ClickMainMenuDashboard(){
+        try {
+            await CommonMethods.safeClick(this.page,this.main_menu_My_Dashboard)
+        } catch (error) {
+            console.log(`Exception occurs when clicking the Dashboard" ${error}`)
+            throw error;
+        }
+        
+    }
 
 }

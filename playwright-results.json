@@ -1,9 +1,9 @@
 {
   "config": {
-    "configFile": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\playwright.config.ts",
-    "rootDir": "C:/Users/UTIS LAPTOP 570/Desktop/PlaywrightHS/utis-playwright-framework/tests",
+    "configFile": "D:\\utis-playwright-framework\\playwright.config.ts",
+    "rootDir": "D:/utis-playwright-framework/tests",
     "forbidOnly": false,
-    "fullyParallel": false,
+    "fullyParallel": true,
     "globalSetup": null,
     "globalTeardown": null,
     "globalTimeout": 0,
@@ -16,7 +16,7 @@
     "preserveOutput": "always",
     "projects": [
       {
-        "outputDir": "C:/Users/UTIS LAPTOP 570/Desktop/PlaywrightHS/utis-playwright-framework/test-results",
+        "outputDir": "D:/utis-playwright-framework/test-results",
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
@@ -24,7 +24,7 @@
         },
         "id": "HenrySchein",
         "name": "HenrySchein",
-        "testDir": "C:/Users/UTIS LAPTOP 570/Desktop/PlaywrightHS/utis-playwright-framework/tests",
+        "testDir": "D:/utis-playwright-framework/tests",
         "testIgnore": [],
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
@@ -37,7 +37,7 @@
       [
         "html",
         {
-          "outputFolder": "reports/html-report-2026-02-04T12-43-11-009Z",
+          "outputFolder": "reports/html-report-191054",
           "open": "never"
         }
       ],
@@ -52,7 +52,7 @@
         null
       ],
       [
-        "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\node_modules\\allure-playwright\\dist\\cjs\\index.js",
+        "D:\\utis-playwright-framework\\node_modules\\allure-playwright\\dist\\cjs\\index.js",
         {
           "resultsDir": "allure-results"
         }
@@ -67,8 +67,8 @@
     "tags": [],
     "updateSnapshots": "missing",
     "updateSourceMethod": "patch",
-    "version": "1.58.0",
-    "workers": 4,
+    "version": "1.58.1",
+    "workers": 1,
     "webServer": null
   },
   "suites": [
@@ -79,9 +79,14 @@
       "line": 0,
       "specs": [
         {
-          "title": " To Verify that the user cannot sign in",
-          "ok": false,
-          "tags": [],
+          "title": "01-To verify the Henry Schein icon is present on the Home page",
+          "ok": true,
+          "tags": [
+            "regression",
+            "smoke",
+            "homepage",
+            "demo"
+          ],
           "tests": [
             {
               "timeout": 90000,
@@ -93,28 +98,147 @@
                 {
                   "workerIndex": 0,
                   "parallelIndex": 0,
-                  "status": "failed",
-                  "duration": 15969,
-                  "error": {
-                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('//div[@data-test-id=\\'login.unknownKey1\\']')\nTimeout: 5000ms\n\u001b[32m- Expected substring  - 1\u001b[39m\n\u001b[31m+ Received string     + 5\u001b[39m\n\n\u001b[32m- Hi\u001b[39m\n\u001b[31m+ The username and/or password entered is incorrect,\u001b[39m\n\u001b[31m+ please re-enter correct username or password.\u001b[39m\n\u001b[31m+ If you enter incorrect user password three times,\u001b[39m\n\u001b[31m+ then your account will be locked and you will need to\u001b[39m\n\u001b[31m+ reset your password or contact support.\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('//div[@data-test-id=\\'login.unknownKey1\\']')\u001b[22m\n\u001b[2m    9 × locator resolved to <div role=\"alert\" aria-atomic=\"true\" _ngcontent-my-app-c341=\"\" data-test-id=\"login.unknownKey1\" class=\"errorMessage caption1-regular text-left ng-star-inserted\">The username and/or password entered is incorrect…</div>\u001b[22m\n\u001b[2m      - unexpected value \"The username and/or password entered is incorrect,\u001b[22m\n\u001b[2mplease re-enter correct username or password.\u001b[22m\n\u001b[2mIf you enter incorrect user password three times,\u001b[22m\n\u001b[2mthen your account will be locked and you will need to\u001b[22m\n\u001b[2mreset your password or contact support.\"\u001b[22m\n",
-                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('//div[@data-test-id=\\'login.unknownKey1\\']')\nTimeout: 5000ms\n\u001b[32m- Expected substring  - 1\u001b[39m\n\u001b[31m+ Received string     + 5\u001b[39m\n\n\u001b[32m- Hi\u001b[39m\n\u001b[31m+ The username and/or password entered is incorrect,\u001b[39m\n\u001b[31m+ please re-enter correct username or password.\u001b[39m\n\u001b[31m+ If you enter incorrect user password three times,\u001b[39m\n\u001b[31m+ then your account will be locked and you will need to\u001b[39m\n\u001b[31m+ reset your password or contact support.\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('//div[@data-test-id=\\'login.unknownKey1\\']')\u001b[22m\n\u001b[2m    9 × locator resolved to <div role=\"alert\" aria-atomic=\"true\" _ngcontent-my-app-c341=\"\" data-test-id=\"login.unknownKey1\" class=\"errorMessage caption1-regular text-left ng-star-inserted\">The username and/or password entered is incorrect…</div>\u001b[22m\n\u001b[2m      - unexpected value \"The username and/or password entered is incorrect,\u001b[22m\n\u001b[2mplease re-enter correct username or password.\u001b[22m\n\u001b[2mIf you enter incorrect user password three times,\u001b[22m\n\u001b[2mthen your account will be locked and you will need to\u001b[22m\n\u001b[2mreset your password or contact support.\"\u001b[22m\n\n    at C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\tests\\HomePage.spec.ts:659:30\n    at C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\tests\\HomePage.spec.ts:654:4",
-                    "location": {
-                      "file": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\tests\\HomePage.spec.ts",
-                      "column": 30,
-                      "line": 659
-                    },
-                    "snippet": "\u001b[0m \u001b[90m 657 |\u001b[39m       \u001b[36mconst\u001b[39m errorMsg \u001b[33m=\u001b[39m (home\u001b[33m.\u001b[39msign_in_error_msg_xpath)\u001b[33m;\u001b[39m\n \u001b[90m 658 |\u001b[39m       \u001b[36mawait\u001b[39m expect(errorMsg)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 659 |\u001b[39m       \u001b[36mawait\u001b[39m expect(errorMsg)\u001b[33m.\u001b[39mtoContainText(\u001b[32m'Hi'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 660 |\u001b[39m    })\n \u001b[90m 661 |\u001b[39m\n \u001b[90m 662 |\u001b[39m })\u001b[0m"
-                  },
-                  "errors": [
+                  "status": "passed",
+                  "duration": 14805,
+                  "errors": [],
+                  "stdout": [
                     {
-                      "location": {
-                        "file": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\tests\\HomePage.spec.ts",
-                        "column": 30,
-                        "line": 659
-                      },
-                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('//div[@data-test-id=\\'login.unknownKey1\\']')\nTimeout: 5000ms\n\u001b[32m- Expected substring  - 1\u001b[39m\n\u001b[31m+ Received string     + 5\u001b[39m\n\n\u001b[32m- Hi\u001b[39m\n\u001b[31m+ The username and/or password entered is incorrect,\u001b[39m\n\u001b[31m+ please re-enter correct username or password.\u001b[39m\n\u001b[31m+ If you enter incorrect user password three times,\u001b[39m\n\u001b[31m+ then your account will be locked and you will need to\u001b[39m\n\u001b[31m+ reset your password or contact support.\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('//div[@data-test-id=\\'login.unknownKey1\\']')\u001b[22m\n\u001b[2m    9 × locator resolved to <div role=\"alert\" aria-atomic=\"true\" _ngcontent-my-app-c341=\"\" data-test-id=\"login.unknownKey1\" class=\"errorMessage caption1-regular text-left ng-star-inserted\">The username and/or password entered is incorrect…</div>\u001b[22m\n\u001b[2m      - unexpected value \"The username and/or password entered is incorrect,\u001b[22m\n\u001b[2mplease re-enter correct username or password.\u001b[22m\n\u001b[2mIf you enter incorrect user password three times,\u001b[22m\n\u001b[2mthen your account will be locked and you will need to\u001b[22m\n\u001b[2mreset your password or contact support.\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 657 |\u001b[39m       \u001b[36mconst\u001b[39m errorMsg \u001b[33m=\u001b[39m (home\u001b[33m.\u001b[39msign_in_error_msg_xpath)\u001b[33m;\u001b[39m\n \u001b[90m 658 |\u001b[39m       \u001b[36mawait\u001b[39m expect(errorMsg)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 659 |\u001b[39m       \u001b[36mawait\u001b[39m expect(errorMsg)\u001b[33m.\u001b[39mtoContainText(\u001b[32m'Hi'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 660 |\u001b[39m    })\n \u001b[90m 661 |\u001b[39m\n \u001b[90m 662 |\u001b[39m })\u001b[0m\n\u001b[2m    at C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\tests\\HomePage.spec.ts:659:30\u001b[22m\n\u001b[2m    at C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\tests\\HomePage.spec.ts:654:4\u001b[22m"
+                      "text": "verified the page is navigated to home page\n"
                     }
                   ],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Step 1: Navigate to Henry Schein UK Medical URL",
+                      "duration": 12215
+                    },
+                    {
+                      "title": "Step 2: Verify the Henry Schein icon should be visible on the page",
+                      "duration": 241
+                    },
+                    {
+                      "title": "Step 3: Click the Henry Schein icon",
+                      "duration": 1228
+                    },
+                    {
+                      "title": "Step 4: Verify page navigates to Henry Schein home page",
+                      "duration": 93
+                    }
+                  ],
+                  "startTime": "2026-02-11T13:40:57.122Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "62a0194cb94d3eec4948-d66d471a4a626f4e5d6a",
+          "file": "HomePage.spec.ts",
+          "line": 20,
+          "column": 6
+        },
+        {
+          "title": "02-To Verify the sign-in functionality on the Home page",
+          "ok": true,
+          "tags": [
+            "regression",
+            "smoke",
+            "signin",
+            "demo"
+          ],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "HenrySchein",
+              "projectName": "HenrySchein",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 17024,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Navigated to  Henry Schein url\n"
+                    },
+                    {
+                      "text": "Verified the sign in button should be visible on the home page\n"
+                    },
+                    {
+                      "text": "Entered the username and password\n"
+                    },
+                    {
+                      "text": "clicked the sign-in submit button\n"
+                    },
+                    {
+                      "text": "Verified the user is successfully logged in\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Step 1: Navigate to the Henry Schein website.",
+                      "duration": 10868
+                    },
+                    {
+                      "title": "Step 2: Confirm that the Sign In button is visible.",
+                      "duration": 174
+                    },
+                    {
+                      "title": "Step 3: Enter a valid username and password.",
+                      "duration": 2578
+                    },
+                    {
+                      "title": "Step 4: Click the Sign In button.",
+                      "duration": 697
+                    },
+                    {
+                      "title": "Step 5: Verify the user is successfully logged in",
+                      "duration": 1766
+                    }
+                  ],
+                  "startTime": "2026-02-11T13:41:12.449Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "62a0194cb94d3eec4948-e7a1f0bc77cbc3b39c73",
+          "file": "HomePage.spec.ts",
+          "line": 58,
+          "column": 6
+        },
+        {
+          "title": "03-To Verify that the user cannot sign in with invalid credentials",
+          "ok": true,
+          "tags": [
+            "regression",
+            "smoke",
+            "signin",
+            "invalidsignin"
+          ],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "HenrySchein",
+              "projectName": "HenrySchein",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 16586,
+                  "errors": [],
                   "stdout": [
                     {
                       "text": "Navigated to  HenrySchein url\n"
@@ -137,62 +261,254 @@
                   "steps": [
                     {
                       "title": "Step 1: Navigate to  HenrySchein url",
-                      "duration": 7138
+                      "duration": 11274
                     },
                     {
                       "title": "Step 2: Verify the sign in button should be visible on the home page",
-                      "duration": 76
+                      "duration": 207
                     },
                     {
                       "title": "Step 3: Enter invalid username and password",
-                      "duration": 2216
+                      "duration": 3015
                     },
                     {
                       "title": "Step 4: Click the sign-in submit button",
-                      "duration": 664
+                      "duration": 747
                     },
                     {
                       "title": "Step 5: Verify the user cannot sign in successfully",
-                      "duration": 5355,
-                      "error": {
-                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('//div[@data-test-id=\\'login.unknownKey1\\']')\nTimeout: 5000ms\n\u001b[32m- Expected substring  - 1\u001b[39m\n\u001b[31m+ Received string     + 5\u001b[39m\n\n\u001b[32m- Hi\u001b[39m\n\u001b[31m+ The username and/or password entered is incorrect,\u001b[39m\n\u001b[31m+ please re-enter correct username or password.\u001b[39m\n\u001b[31m+ If you enter incorrect user password three times,\u001b[39m\n\u001b[31m+ then your account will be locked and you will need to\u001b[39m\n\u001b[31m+ reset your password or contact support.\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('//div[@data-test-id=\\'login.unknownKey1\\']')\u001b[22m\n\u001b[2m    9 × locator resolved to <div role=\"alert\" aria-atomic=\"true\" _ngcontent-my-app-c341=\"\" data-test-id=\"login.unknownKey1\" class=\"errorMessage caption1-regular text-left ng-star-inserted\">The username and/or password entered is incorrect…</div>\u001b[22m\n\u001b[2m      - unexpected value \"The username and/or password entered is incorrect,\u001b[22m\n\u001b[2mplease re-enter correct username or password.\u001b[22m\n\u001b[2mIf you enter incorrect user password three times,\u001b[22m\n\u001b[2mthen your account will be locked and you will need to\u001b[22m\n\u001b[2mreset your password or contact support.\"\u001b[22m\n",
-                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('//div[@data-test-id=\\'login.unknownKey1\\']')\nTimeout: 5000ms\n\u001b[32m- Expected substring  - 1\u001b[39m\n\u001b[31m+ Received string     + 5\u001b[39m\n\n\u001b[32m- Hi\u001b[39m\n\u001b[31m+ The username and/or password entered is incorrect,\u001b[39m\n\u001b[31m+ please re-enter correct username or password.\u001b[39m\n\u001b[31m+ If you enter incorrect user password three times,\u001b[39m\n\u001b[31m+ then your account will be locked and you will need to\u001b[39m\n\u001b[31m+ reset your password or contact support.\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('//div[@data-test-id=\\'login.unknownKey1\\']')\u001b[22m\n\u001b[2m    9 × locator resolved to <div role=\"alert\" aria-atomic=\"true\" _ngcontent-my-app-c341=\"\" data-test-id=\"login.unknownKey1\" class=\"errorMessage caption1-regular text-left ng-star-inserted\">The username and/or password entered is incorrect…</div>\u001b[22m\n\u001b[2m      - unexpected value \"The username and/or password entered is incorrect,\u001b[22m\n\u001b[2mplease re-enter correct username or password.\u001b[22m\n\u001b[2mIf you enter incorrect user password three times,\u001b[22m\n\u001b[2mthen your account will be locked and you will need to\u001b[22m\n\u001b[2mreset your password or contact support.\"\u001b[22m\n\n    at C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\tests\\HomePage.spec.ts:659:30\n    at C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\tests\\HomePage.spec.ts:654:4",
-                        "location": {
-                          "file": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\tests\\HomePage.spec.ts",
-                          "column": 30,
-                          "line": 659
-                        },
-                        "snippet": "\u001b[0m \u001b[90m 657 |\u001b[39m       \u001b[36mconst\u001b[39m errorMsg \u001b[33m=\u001b[39m (home\u001b[33m.\u001b[39msign_in_error_msg_xpath)\u001b[33m;\u001b[39m\n \u001b[90m 658 |\u001b[39m       \u001b[36mawait\u001b[39m expect(errorMsg)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 659 |\u001b[39m       \u001b[36mawait\u001b[39m expect(errorMsg)\u001b[33m.\u001b[39mtoContainText(\u001b[32m'Hi'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 660 |\u001b[39m    })\n \u001b[90m 661 |\u001b[39m\n \u001b[90m 662 |\u001b[39m })\u001b[0m"
-                      }
+                      "duration": 270
                     }
                   ],
-                  "startTime": "2026-02-04T12:43:12.132Z",
+                  "startTime": "2026-02-11T13:41:29.531Z",
                   "annotations": [],
-                  "attachments": [
-                    {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\test-results\\HomePage--To-Verify-that-the-user-cannot-sign-in-HenrySchein\\test-failed-1.png"
-                    },
-                    {
-                      "name": "video",
-                      "contentType": "video/webm",
-                      "path": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\test-results\\HomePage--To-Verify-that-the-user-cannot-sign-in-HenrySchein\\video.webm"
-                    }
-                  ],
-                  "errorLocation": {
-                    "file": "C:\\Users\\UTIS LAPTOP 570\\Desktop\\PlaywrightHS\\utis-playwright-framework\\tests\\HomePage.spec.ts",
-                    "column": 30,
-                    "line": 659
-                  }
+                  "attachments": []
                 }
               ],
-              "status": "unexpected"
+              "status": "expected"
             }
           ],
-          "id": "62a0194cb94d3eec4948-f52153c7a30a655c3e00",
+          "id": "62a0194cb94d3eec4948-4d3dd391216d4c1efb66",
           "file": "HomePage.spec.ts",
-          "line": 634,
+          "line": 107,
+          "column": 6
+        },
+        {
+          "title": "04-To verify the Sign up flow on the Home page",
+          "ok": true,
+          "tags": [
+            "regression",
+            "smoke",
+            "signup"
+          ],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "HenrySchein",
+              "projectName": "HenrySchein",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 30805,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Navigated to Henry Schein url\n"
+                    },
+                    {
+                      "text": "Verified the Sign up button is visible on the home page\n"
+                    },
+                    {
+                      "text": "Clicked on the Sign up button\n"
+                    },
+                    {
+                      "text": "Verified navigation to Registration page\n"
+                    },
+                    {
+                      "text": "Clicked Continue and new sign-up stopped till here...\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Step 1: Navigate to Henry Schein url",
+                      "duration": 13259
+                    },
+                    {
+                      "title": "Step 2: Verify the Sign up button should be visible on the home page",
+                      "duration": 183
+                    },
+                    {
+                      "title": "Step 3: Click on the Sign up button",
+                      "duration": 1154
+                    },
+                    {
+                      "title": "Step 4: Verify user is navigated from home page",
+                      "duration": 14551
+                    }
+                  ],
+                  "startTime": "2026-02-11T13:41:46.173Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "62a0194cb94d3eec4948-c7a9ec292eb481ad3e3d",
+          "file": "HomePage.spec.ts",
+          "line": 157,
+          "column": 6
+        },
+        {
+          "title": "06-Verify Main Menu Buttons Are Enabled and Interactive",
+          "ok": true,
+          "tags": [
+            "regression",
+            "menu",
+            "buttons"
+          ],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "HenrySchein",
+              "projectName": "HenrySchein",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 24674,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Navigated to  Henry Schein url\n"
+                    },
+                    {
+                      "text": "Clicked the Sign-In button on home page\n"
+                    },
+                    {
+                      "text": "Entered the username and password\n"
+                    },
+                    {
+                      "text": "Clicked the sign-in submit button\n"
+                    },
+                    {
+                      "text": "Verified the user is successfully logged in\n"
+                    },
+                    {
+                      "text": "Top Supplies button is enabled\n"
+                    },
+                    {
+                      "text": "List of Top Supplies are displayed\n"
+                    },
+                    {
+                      "text": "Top Equipment button is enabled\n"
+                    },
+                    {
+                      "text": "List of Top Equipment are displayed\n"
+                    },
+                    {
+                      "text": "Pharmaceuticals button is enabled\n"
+                    },
+                    {
+                      "text": "List of Pharmaceuticals are displayed\n"
+                    },
+                    {
+                      "text": "Furniture button is enabled\n"
+                    },
+                    {
+                      "text": "List of Furniture are displayed\n"
+                    },
+                    {
+                      "text": "My Dashboard button is enabled\n"
+                    },
+                    {
+                      "text": "My Dashboard details are displayed\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Step 1: Navigate to  HenrySchein url",
+                      "duration": 10827
+                    },
+                    {
+                      "title": "Step 2: Click Sign-In button on the home page to log in",
+                      "duration": 170
+                    },
+                    {
+                      "title": "Step 3: Enter the username and password",
+                      "duration": 2660
+                    },
+                    {
+                      "title": "Step 4: Click the sign-in submit button",
+                      "duration": 706
+                    },
+                    {
+                      "title": "Step 5: Verify the user is successfully logged in",
+                      "duration": 5857
+                    },
+                    {
+                      "title": "Step 6: Click Top Supplies button from main menu",
+                      "duration": 210
+                    },
+                    {
+                      "title": "Step 7: I should see list of Top Supplies",
+                      "duration": 28
+                    },
+                    {
+                      "title": "Step 8: Click Top Equipment button from main menu",
+                      "duration": 1099
+                    },
+                    {
+                      "title": "Step 9: I should see list of Top Equipment",
+                      "duration": 192
+                    },
+                    {
+                      "title": "Step 10: Click Pharmaceuticals button from main menu",
+                      "duration": 690
+                    },
+                    {
+                      "title": "Step 11: I should see list of Pharmaceuticals",
+                      "duration": 58
+                    },
+                    {
+                      "title": "Step 12: Click Furniture button from main menu",
+                      "duration": 14
+                    },
+                    {
+                      "title": "Step 13: I should see list of Furniture",
+                      "duration": 17
+                    },
+                    {
+                      "title": "Step 14: Click My Dashboard button from main menu",
+                      "duration": 860
+                    },
+                    {
+                      "title": "Step 15: I should see list of My Dashboard",
+                      "duration": 28
+                    }
+                  ],
+                  "startTime": "2026-02-11T13:42:17.038Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "62a0194cb94d3eec4948-504e93489646b7d5a183",
+          "file": "HomePage.spec.ts",
+          "line": 294,
           "column": 6
         }
       ]
@@ -200,11 +516,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-02-04T12:43:11.033Z",
-    "duration": 17316.106,
-    "expected": 0,
+    "startTime": "2026-02-11T13:40:54.861Z",
+    "duration": 107780.349,
+    "expected": 5,
     "skipped": 0,
-    "unexpected": 1,
+    "unexpected": 0,
     "flaky": 0
   }
 }

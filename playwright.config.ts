@@ -21,7 +21,7 @@ export default defineConfig({
   retries: process.env.CI ? 2 : 0,
 
   /* Opt out of parallel tests on CI */
-  workers: process.env.CI ? 1 : undefined,
+  workers: process.env.CI ? 1 : 1,
 
   /* 🔹 REPORTERS: Allure + HTML */
   reporter: [
@@ -48,7 +48,7 @@ export default defineConfig({
     /* Capture trace on first retry */
     trace: 'on-first-retry',
 
-    headless: true,
+    headless: false,
 
     launchOptions: {
       slowMo: 500, // wait 500ms between each action
