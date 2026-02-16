@@ -6,6 +6,7 @@ import { TestConfig} from '../test.config'
 import { test,expect} from '../utils/fixture'
 import { Assert, fail } from 'node:assert'
 import { assert } from 'node:console'
+import { TIMEOUT } from 'node:dns'
 
 /*
 1)Testcase-01 : To verify the Henry Schein icon is present on the Home page
@@ -17,7 +18,7 @@ import { assert } from 'node:console'
  4.verify the page is navigated to home page
 */
 
-test.only('01-To verify the Henry Schein icon is present on the Home page',
+test('01-To verify the Henry Schein icon is present on the Home page',
    {
       tag: ['@regression', '@smoke', '@homepage', '@demo'],
    },
@@ -55,7 +56,7 @@ test.only('01-To verify the Henry Schein icon is present on the Home page',
  5.Verify the user is successfully logged in
 */
 
-test.only('02-To Verify the sign-in functionality on the Home page', {
+test('02-To Verify the sign-in functionality on the Home page', {
    tag: ['@regression', '@smoke', '@signin' ,'@demo'],
 },
    async ({ page, home, config }) => {
@@ -79,7 +80,6 @@ test.only('02-To Verify the sign-in functionality on the Home page', {
       })
       // 4.click the sign-in submit button
       await test.step("Step 4: Click the Sign In button.", async () => {
-         //await CommonMethods.safeClick(page, home.sign_in_submit_btn_xpath)
          await home.ClickSignInSubmitButton()
          console.log("clicked the sign-in submit button")
       })
@@ -104,7 +104,7 @@ Steps
 5.Verify the user cannot sign in successfully
 */
 
-test.only('03-To Verify that the user cannot sign in with invalid credentials',
+test('03-To Verify that the user cannot sign in with invalid credentials',
    {
       tag: ['@regression', '@smoke', '@signin' ,'@invalidsignin'],
    },
@@ -154,7 +154,7 @@ Steps
 4.Verify user is navigated to Sign up / Registration page
 */
 
-test.only('04-To verify the Sign up flow on the Home page',
+test('04-To verify the Sign up flow on the Home page',
    {
       tag: ['@regression', '@smoke', '@signup'],
    },
@@ -291,7 +291,7 @@ Steps
 15.I should see list of My Dashboard
 */
 
-test.only('06-Verify Main Menu Buttons Are Enabled and Interactive',
+test('06-Verify Main Menu Buttons Are Enabled and Interactive',
    {
       tag: ['@regression', '@menu', '@buttons'],
    },
@@ -405,13 +405,13 @@ test('07-Verify Main Menu Links Are Enabled and Interactive',
          console.log("Clicked the Sign-In button on home page")
       })
       await test.step("Step 3: Enter the username and password", async () => {
-         await CommonMethods.safeClick(page, home.sign_in_xpath, 35000)
-         await CommonMethods.writeText(page, home.username_xpath, config.username, 10000)
-         await CommonMethods.writeText(page, home.password_xpath, config.password, 10000)
+         await home.ClickSignIn()
+         await home.FillUsername(config.username)
+         await home.FillPassword(config.password)
          console.log("Entered the username and password")
       })
       await test.step("Step 4: Click the sign-in submit button", async () => {
-         await CommonMethods.safeClick(page, home.sign_in_submit_btn_xpath)
+         await home.ClickSignInSubmitButton()
          console.log("Clicked the sign-in submit button")
       })
       await test.step("Step 5: Verify the user is successfully logged in", async () => {
@@ -419,7 +419,7 @@ test('07-Verify Main Menu Links Are Enabled and Interactive',
          console.log("Verified the user is successfully logged in")
       })
       await test.step("Step 6: Click Clearance link from main menu", async () => {
-         await CommonMethods.safeClick(page, home.main_menu_Clearance)
+         await home.ClickMainMenuClearance()
          console.log("Clicked Clearance Link")
       })
       await test.step("Step 7: Link should navigate to Clearance Page", async () => {
@@ -427,18 +427,20 @@ test('07-Verify Main Menu Links Are Enabled and Interactive',
          console.log("Verified the page is navigated to Clearance page")
       })
       await test.step("Step 8: Click Blog link from main menu", async () => {
-         await CommonMethods.safeClick(page, home.main_menu_Blog)
+         await home.ClickMainMenuBlog()
          console.log("Clicked Blog Link")
       })
       await test.step("Step 9: Link should navigate to Blog Page", async () => {
+         await page.waitForLoadState('load'); 
          await expect(page).toHaveURL('https://www.henryschein.co.uk/blog/medical-blog');
          console.log("Verified the page is navigated to Blog page")
       })
       await test.step("Step 10: Click Order From History link from main menu", async () => {
-         await CommonMethods.safeClick(page, home.main_menu_Order_From_History, 30000)
+         await home.ClickMainMenuOrderFromHistory()
          console.log("Clicked Order From History Link")
       })
       await test.step("Step 11: Link should navigate to Order From History", async () => {
+         await page.waitForLoadState('load');
          await expect(page).toHaveURL('https://www.henryschein.co.uk/dashboard/myorders?activetab=item-history-tab');
          console.log("Verified the page is navigated to Order From History page")
       })
@@ -473,13 +475,13 @@ test('08-Verify that the cart icon displays the correct item count when products
          console.log("Clicked the Sign-In button on home page")
       })
       await test.step("Step 3: Enter the username and password", async () => {
-         await CommonMethods.safeClick(page, home.sign_in_xpath, 35000)
-         await CommonMethods.writeText(page, home.username_xpath, config.username, 10000)
-         await CommonMethods.writeText(page, home.password_xpath, config.password, 10000)
+         await home.ClickSignIn()
+         await home.FillUsername(config.username)
+         await home.FillPassword(config.password)
          console.log("Entered the username and password")
       })
       await test.step("Step 4: Click the sign-in submit button", async () => {
-         await CommonMethods.safeClick(page, home.sign_in_submit_btn_xpath)
+         await home.ClickSignInSubmitButton()
          console.log("Clicked the sign-in submit button")
       })
       await test.step("Step 5: Verify the user is successfully logged in", async () => {
@@ -490,12 +492,11 @@ test('08-Verify that the cart icon displays the correct item count when products
          await expect(home.view_basket_qty).toBeVisible();
          const cartText = await home.view_basket_qty.innerText();
          console.log(`Cart badge text: ${cartText}`);
-
          initialCount = parseInt(cartText.replace(/\D/g, '') || '0');
 
       })
       await test.step("Step 7: Add product to cart", async () => {
-         await CommonMethods.writeText(page, home.search_input, "DIS258");
+         await home.FillTextInSearchBar("DIS258")
          await page.keyboard.press("Enter");
          console.log("Entered Product Id");
          await CommonMethods.safeClick(page, home.product_1)
@@ -549,14 +550,14 @@ test("09-Verify that the tooltip is displays the address when hovering over the 
       })
       // 3.)Enter valid username and password.
       await test.step("Step 3: Enter a valid username and password.", async () => {
-         await CommonMethods.safeClick(page, home.sign_in_xpath, 15000)
-         await CommonMethods.writeText(page, home.username_xpath, config.USERNAME, 10000)
-         await CommonMethods.writeText(page, home.password_xpath, config.PASSWORD, 10000)
+         await home.ClickSignIn()
+         await home.FillUsername(config.USERNAME)
+         await home.FillPassword(config.PASSWORD)
          console.log("Entered the username and password")
       })
       // 4.)Click the Sign In button.
       await test.step("Step 4: Click the Sign In button.", async () => {
-         await CommonMethods.safeClick(page, home.sign_in_submit_btn_xpath)
+         await home.ClickSignInSubmitButton()
          console.log("clicked the sign-in submit button")
       })
       // 5.)Verify that the address tooltip is visible in the menu bar.
@@ -566,7 +567,7 @@ test("09-Verify that the tooltip is displays the address when hovering over the 
       })
       // 6.)Hover over the address tooltip and check that the tooltip displays the address information.
       await test.step("Step 6: Hover over the address tooltip and check that the tooltip displays the address information.", async () => {
-         await CommonMethods.mouseOver(page, home.address_tooltip_xpath)
+         await home.MouseHoverTooltip()
          //var addressInfo:String;
          const tooltipText: string | null = await CommonMethods.getTextFromElement(page, home.address_tooltip_xpath)
          if (tooltipText == null) {
@@ -615,14 +616,14 @@ test("11-Verify that the banner slider displays all slides with their respective
       })
 
       await test.step("Step 3: Enter a valid username and password.", async () => {
-         await CommonMethods.safeClick(page, home.sign_in_xpath, 15000)
-         await CommonMethods.writeText(page, home.username_xpath, config.username, 10000)
-         await CommonMethods.writeText(page, home.password_xpath, config.password, 10000)
+         await home.ClickSignIn()
+         await home.FillUsername(config.username)
+         await home.FillPassword(config.password)
          console.log("Entered the username and password")
       })
 
       await test.step("Step 4: Click the Sign In button.", async () => {
-         await CommonMethods.safeClick(page, home.sign_in_submit_btn_xpath)
+         await home.ClickSignInSubmitButton()
          console.log("clicked the sign-in submit button")
       })
 
@@ -641,7 +642,7 @@ test("11-Verify that the banner slider displays all slides with their respective
             else {
                throw new Error(`Banner slide text is null at iteration ${i}`);
             }
-            await CommonMethods.safeClick(page, home.slideNavButton, 10000)
+            await home.ClickBannerNavigationButton()
          }
          const UniqueSlides = new Set(bannerSlides)
          console.log(UniqueSlides)
@@ -686,13 +687,13 @@ test('11-Verify Footer Links Are Interactive and Navigate to respective pages',
          console.log("Clicked the Sign-In button on home page")
       })
       await test.step("Step 3: Enter the username and password", async () => {
-         await CommonMethods.safeClick(page, home.sign_in_xpath, 35000)
-         await CommonMethods.writeText(page, home.username_xpath, config.username, 10000)
-         await CommonMethods.writeText(page, home.password_xpath, config.password, 10000)
+        await home.ClickSignIn()
+        await home.FillUsername(config.username)
+        await home.FillPassword(config.password)
          console.log("Entered the username and password")
       })
       await test.step("Step 4: Click the sign-in submit button", async () => {
-         await CommonMethods.safeClick(page, home.sign_in_submit_btn_xpath)
+         await home.ClickSignInSubmitButton()
          console.log("Clicked the sign-in submit button")
       })
       await test.step("Step 5: Verify the user is successfully logged in", async () => {
@@ -700,7 +701,7 @@ test('11-Verify Footer Links Are Interactive and Navigate to respective pages',
          console.log("Verified the user is successfully logged in")
       })
       await test.step("Step 6: Click Legal Terms link on footer section", async () => {
-         await CommonMethods.safeClick(page, home.footer_Legal_Terms, 3000)
+         await home.ClickFooterLegalTerms()
          console.log("Clicked Legal Terms Link")
       })
       await test.step("Step 7: Link should navigate to Legal Terms Page", async () => {
@@ -708,7 +709,7 @@ test('11-Verify Footer Links Are Interactive and Navigate to respective pages',
          console.log("Verified the page is navigated to Legal Terms page")
       })
       await test.step("Step 8: Click Privacy Notice link on footer section", async () => {
-         await CommonMethods.safeClick(page, home.footer_Privacy_Notice, 30000)
+         await home.ClickFooterPrivacyNotice()
          console.log("Clicked Privacy Notice Link")
       })
       await test.step("Step 9: Link should navigate to Privacy Notice Page", async () => {
@@ -716,7 +717,7 @@ test('11-Verify Footer Links Are Interactive and Navigate to respective pages',
          console.log("Verified the page is navigated to Privacy Notice page")
       })
       await test.step("Step 10: Click Delivery and Returns link on footer section", async () => {
-         await CommonMethods.safeClick(page, home.footer_Delivery_and_Returns, 3000)
+         await home.ClickFooterDeliveryAndReturns()
          console.log("Clicked Delivery and Returns Link")
       })
       await test.step("Step 11: Link should navigate to Delivery and Returns page", async () => {
@@ -724,13 +725,13 @@ test('11-Verify Footer Links Are Interactive and Navigate to respective pages',
          console.log("Verified the page is navigated to Delivery and Returns page")
       })
       await test.step("Step 12: Click LinkedIn link on footer section & wait for new tab", async () => {
-         const [linkedinPage] = await Promise.all([page.context().waitForEvent('page'), CommonMethods.safeClick(page, home.footer_LinkedIn)]);
+         const [linkedinPage] = await Promise.all([page.context().waitForEvent('page'), home.ClickFooterLinkedIn()]);
          console.log("Clicked LinkedIn Link");
          // Wait for LinkedIn page to load",async()=>{
          await linkedinPage.waitForLoadState('domcontentloaded');
       })
       await test.step("Step 13: Verify LinkedIn URL", async () => {
-         const [linkedinPage] = await Promise.all([page.context().waitForEvent('page'), CommonMethods.safeClick(page, home.footer_LinkedIn)]);
+         const [linkedinPage] = await Promise.all([page.context().waitForEvent('page'), home.ClickFooterLinkedIn()]);
          await expect(linkedinPage).toHaveURL('https://www.linkedin.com/showcase/henry-schein-medical-uk/?viewAsMember=true');
          console.log("Verified navigation to LinkedIn page");
       })
@@ -754,13 +755,13 @@ test('12-To Verify the error message for invalid login credentials',
          console.log("Verified the sign in button should be visible on the home page")
       })
       await test.step("Step 3: Enter invalid username and password", async () => {
-         await CommonMethods.safeClick(page, home.sign_in_xpath, 35000)
-         await CommonMethods.writeText(page, home.username_xpath, config.invalid_username, 30000)
-         await CommonMethods.writeText(page, home.password_xpath, config.invalid_password, 30000)
+         await home.ClickSignIn()
+         await home.FillUsername(config.invalid_username)
+         await home.FillPassword(config.invalid_password)
          console.log("Entered invalid username and password")
       })
       await test.step("Step 4: Click the sign-in submit button", async () => {
-         await CommonMethods.safeClick(page, home.sign_in_submit_btn_xpath)
+         await home.ClickSignInSubmitButton()
          console.log("Clicked the sign-in submit button")
       })
       await test.step("Step 5: Verify the user cannot sign in successfully", async () => {

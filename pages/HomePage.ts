@@ -288,4 +288,84 @@ export class HomePage {
         
     }
 
+    async ClickMainMenuClearance(){
+        try {
+            await CommonMethods.safeClick(this.page,this.main_menu_Clearance)
+        } catch (error) {
+            console.log(`Exception occurs when clicking the Clearance" ${error}`)
+            throw error;
+        }
+    }
+
+    async ClickMainMenuBlog(){
+        try {
+            await CommonMethods.safeClick(this.page,this.main_menu_Blog)
+        } catch (error) {
+             console.log(`Exception occurs when clicking the Blog" ${error}`)
+            throw error;
+        }
+    }
+    
+    async ClickMainMenuOrderFromHistory(){
+        try {
+            await CommonMethods.safeClick(this.page,this.main_menu_Order_From_History)
+        } catch (error) {
+           console.log(`Exception occurs when clicking the Order from history" ${error}`)
+           throw error;
+        }
+    }
+
+    async MouseHoverTooltip(){
+        try {
+            await CommonMethods.mouseOver(this.page,this.address_tooltip_xpath)
+        } catch (error) {
+           console.log(`Exception occurs when hovering hover tooltip" ${error}`)
+           throw error;
+        }
+    }
+
+    async ClickBannerNavigationButton(){
+        try {
+            await CommonMethods.safeClick(this.page,this.slideNavButton)
+        } catch (error) {
+            console.log(`Exception occurs when clicking the navigation button" ${error}`)
+            throw error;
+        }
+    }
+    
+    async ClickFooterLegalTerms(){
+        try {
+            await CommonMethods.safeClick(this.page,this.footer_Legal_Terms)
+        } catch (error) {
+            console.log(`Exception occurs when clicking the footer legal terms" ${error}`)
+            throw error;
+        }
+    }
+
+    async ClickFooterPrivacyNotice(){
+        try {
+            await CommonMethods.safeClick(this.page,this.footer_Privacy_Notice)
+        } catch (error) {
+            console.log(`Exception occurs when clicking the footer privacy notice" ${error}`)
+            throw error;
+        }
+    }
+
+    async ClickFooterDeliveryAndReturns(){
+        try {
+            await CommonMethods.safeClick(this.page,this.footer_Delivery_and_Returns)
+        } catch (error) {
+            console.log(`Exception occurs when clicking the footer delivery and returns" ${error}`)
+            throw error;
+        }
+    }
+    
+    async ClickFooterLinkedIn(){
+        try {
+            await CommonMethods.safeClick(this.page,this.footer_LinkedIn)
+        } catch (error) {
+            console.log(`Exception occurs when clicking the footer linked_In" ${error}`)
+            throw error;
+        }
+    }
 }

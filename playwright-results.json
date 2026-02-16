@@ -37,7 +37,7 @@
       [
         "html",
         {
-          "outputFolder": "reports/html-report-191054",
+          "outputFolder": "reports/html-report-153225",
           "open": "never"
         }
       ],
@@ -79,13 +79,11 @@
       "line": 0,
       "specs": [
         {
-          "title": "01-To verify the Henry Schein icon is present on the Home page",
+          "title": "05-Verify that the search bar accepts input and displays relevant suggestions",
           "ok": true,
           "tags": [
             "regression",
-            "smoke",
-            "homepage",
-            "demo"
+            "search"
           ],
           "tests": [
             {
@@ -99,237 +97,20 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 14805,
-                  "errors": [],
-                  "stdout": [
-                    {
-                      "text": "verified the page is navigated to home page\n"
-                    }
-                  ],
-                  "stderr": [],
-                  "retry": 0,
-                  "steps": [
-                    {
-                      "title": "Step 1: Navigate to Henry Schein UK Medical URL",
-                      "duration": 12215
-                    },
-                    {
-                      "title": "Step 2: Verify the Henry Schein icon should be visible on the page",
-                      "duration": 241
-                    },
-                    {
-                      "title": "Step 3: Click the Henry Schein icon",
-                      "duration": 1228
-                    },
-                    {
-                      "title": "Step 4: Verify page navigates to Henry Schein home page",
-                      "duration": 93
-                    }
-                  ],
-                  "startTime": "2026-02-11T13:40:57.122Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "62a0194cb94d3eec4948-d66d471a4a626f4e5d6a",
-          "file": "HomePage.spec.ts",
-          "line": 20,
-          "column": 6
-        },
-        {
-          "title": "02-To Verify the sign-in functionality on the Home page",
-          "ok": true,
-          "tags": [
-            "regression",
-            "smoke",
-            "signin",
-            "demo"
-          ],
-          "tests": [
-            {
-              "timeout": 90000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "HenrySchein",
-              "projectName": "HenrySchein",
-              "results": [
-                {
-                  "workerIndex": 0,
-                  "parallelIndex": 0,
-                  "status": "passed",
-                  "duration": 17024,
-                  "errors": [],
-                  "stdout": [
-                    {
-                      "text": "Navigated to  Henry Schein url\n"
-                    },
-                    {
-                      "text": "Verified the sign in button should be visible on the home page\n"
-                    },
-                    {
-                      "text": "Entered the username and password\n"
-                    },
-                    {
-                      "text": "clicked the sign-in submit button\n"
-                    },
-                    {
-                      "text": "Verified the user is successfully logged in\n"
-                    }
-                  ],
-                  "stderr": [],
-                  "retry": 0,
-                  "steps": [
-                    {
-                      "title": "Step 1: Navigate to the Henry Schein website.",
-                      "duration": 10868
-                    },
-                    {
-                      "title": "Step 2: Confirm that the Sign In button is visible.",
-                      "duration": 174
-                    },
-                    {
-                      "title": "Step 3: Enter a valid username and password.",
-                      "duration": 2578
-                    },
-                    {
-                      "title": "Step 4: Click the Sign In button.",
-                      "duration": 697
-                    },
-                    {
-                      "title": "Step 5: Verify the user is successfully logged in",
-                      "duration": 1766
-                    }
-                  ],
-                  "startTime": "2026-02-11T13:41:12.449Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "62a0194cb94d3eec4948-e7a1f0bc77cbc3b39c73",
-          "file": "HomePage.spec.ts",
-          "line": 58,
-          "column": 6
-        },
-        {
-          "title": "03-To Verify that the user cannot sign in with invalid credentials",
-          "ok": true,
-          "tags": [
-            "regression",
-            "smoke",
-            "signin",
-            "invalidsignin"
-          ],
-          "tests": [
-            {
-              "timeout": 90000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "HenrySchein",
-              "projectName": "HenrySchein",
-              "results": [
-                {
-                  "workerIndex": 0,
-                  "parallelIndex": 0,
-                  "status": "passed",
-                  "duration": 16586,
-                  "errors": [],
-                  "stdout": [
-                    {
-                      "text": "Navigated to  HenrySchein url\n"
-                    },
-                    {
-                      "text": "Verified the sign in button should be visible on the home page\n"
-                    },
-                    {
-                      "text": "Entered invalid username and password\n"
-                    },
-                    {
-                      "text": "Clicked the sign-in submit button\n"
-                    },
-                    {
-                      "text": "Please enter valid Username/Password\n"
-                    }
-                  ],
-                  "stderr": [],
-                  "retry": 0,
-                  "steps": [
-                    {
-                      "title": "Step 1: Navigate to  HenrySchein url",
-                      "duration": 11274
-                    },
-                    {
-                      "title": "Step 2: Verify the sign in button should be visible on the home page",
-                      "duration": 207
-                    },
-                    {
-                      "title": "Step 3: Enter invalid username and password",
-                      "duration": 3015
-                    },
-                    {
-                      "title": "Step 4: Click the sign-in submit button",
-                      "duration": 747
-                    },
-                    {
-                      "title": "Step 5: Verify the user cannot sign in successfully",
-                      "duration": 270
-                    }
-                  ],
-                  "startTime": "2026-02-11T13:41:29.531Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "62a0194cb94d3eec4948-4d3dd391216d4c1efb66",
-          "file": "HomePage.spec.ts",
-          "line": 107,
-          "column": 6
-        },
-        {
-          "title": "04-To verify the Sign up flow on the Home page",
-          "ok": true,
-          "tags": [
-            "regression",
-            "smoke",
-            "signup"
-          ],
-          "tests": [
-            {
-              "timeout": 90000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "HenrySchein",
-              "projectName": "HenrySchein",
-              "results": [
-                {
-                  "workerIndex": 0,
-                  "parallelIndex": 0,
-                  "status": "passed",
-                  "duration": 30805,
+                  "duration": 27686,
                   "errors": [],
                   "stdout": [
                     {
                       "text": "Navigated to Henry Schein url\n"
                     },
                     {
-                      "text": "Verified the Sign up button is visible on the home page\n"
+                      "text": "Search bar is visible\n"
                     },
                     {
-                      "text": "Clicked on the Sign up button\n"
+                      "text": "Entered search keyword\n"
                     },
                     {
-                      "text": "Verified navigation to Registration page\n"
-                    },
-                    {
-                      "text": "Clicked Continue and new sign-up stopped till here...\n"
+                      "text": "Search suggestions container exists\n"
                     }
                   ],
                   "stderr": [],
@@ -337,22 +118,22 @@
                   "steps": [
                     {
                       "title": "Step 1: Navigate to Henry Schein url",
-                      "duration": 13259
+                      "duration": 10880
                     },
                     {
-                      "title": "Step 2: Verify the Sign up button should be visible on the home page",
-                      "duration": 183
+                      "title": "Step 2: Verify search bar is visible",
+                      "duration": 459
                     },
                     {
-                      "title": "Step 3: Click on the Sign up button",
-                      "duration": 1154
+                      "title": "Step 3: Enter search keyword",
+                      "duration": 1426
                     },
                     {
-                      "title": "Step 4: Verify user is navigated from home page",
-                      "duration": 14551
+                      "title": "Step 4: Verify search suggestions are displayed",
+                      "duration": 0
                     }
                   ],
-                  "startTime": "2026-02-11T13:41:46.173Z",
+                  "startTime": "2026-02-12T10:02:28.068Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -360,9 +141,9 @@
               "status": "expected"
             }
           ],
-          "id": "62a0194cb94d3eec4948-c7a9ec292eb481ad3e3d",
+          "id": "62a0194cb94d3eec4948-4e066987826912aa2c75",
           "file": "HomePage.spec.ts",
-          "line": 157,
+          "line": 228,
           "column": 6
         },
         {
@@ -385,7 +166,7 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 24674,
+                  "duration": 22058,
                   "errors": [],
                   "stdout": [
                     {
@@ -439,47 +220,47 @@
                   "steps": [
                     {
                       "title": "Step 1: Navigate to  HenrySchein url",
-                      "duration": 10827
+                      "duration": 12266
                     },
                     {
                       "title": "Step 2: Click Sign-In button on the home page to log in",
-                      "duration": 170
+                      "duration": 122
                     },
                     {
                       "title": "Step 3: Enter the username and password",
-                      "duration": 2660
+                      "duration": 2736
                     },
                     {
                       "title": "Step 4: Click the sign-in submit button",
-                      "duration": 706
+                      "duration": 714
                     },
                     {
                       "title": "Step 5: Verify the user is successfully logged in",
-                      "duration": 5857
+                      "duration": 909
                     },
                     {
                       "title": "Step 6: Click Top Supplies button from main menu",
-                      "duration": 210
+                      "duration": 147
                     },
                     {
                       "title": "Step 7: I should see list of Top Supplies",
-                      "duration": 28
+                      "duration": 64
                     },
                     {
                       "title": "Step 8: Click Top Equipment button from main menu",
-                      "duration": 1099
+                      "duration": 2016
                     },
                     {
                       "title": "Step 9: I should see list of Top Equipment",
-                      "duration": 192
+                      "duration": 21
                     },
                     {
                       "title": "Step 10: Click Pharmaceuticals button from main menu",
-                      "duration": 690
+                      "duration": 1152
                     },
                     {
                       "title": "Step 11: I should see list of Pharmaceuticals",
-                      "duration": 58
+                      "duration": 31
                     },
                     {
                       "title": "Step 12: Click Furniture button from main menu",
@@ -487,18 +268,18 @@
                     },
                     {
                       "title": "Step 13: I should see list of Furniture",
-                      "duration": 17
+                      "duration": 12
                     },
                     {
                       "title": "Step 14: Click My Dashboard button from main menu",
-                      "duration": 860
+                      "duration": 692
                     },
                     {
                       "title": "Step 15: I should see list of My Dashboard",
-                      "duration": 28
+                      "duration": 11
                     }
                   ],
-                  "startTime": "2026-02-11T13:42:17.038Z",
+                  "startTime": "2026-02-12T10:02:57.331Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -510,15 +291,539 @@
           "file": "HomePage.spec.ts",
           "line": 294,
           "column": 6
+        },
+        {
+          "title": "07-Verify Main Menu Links Are Enabled and Interactive",
+          "ok": true,
+          "tags": [
+            "regression",
+            "menu",
+            "links"
+          ],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "HenrySchein",
+              "projectName": "HenrySchein",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 35144,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Navigated to  Henry Schein url\n"
+                    },
+                    {
+                      "text": "Clicked the Sign-In button on home page\n"
+                    },
+                    {
+                      "text": "Entered the username and password\n"
+                    },
+                    {
+                      "text": "Clicked the sign-in submit button\n"
+                    },
+                    {
+                      "text": "Verified the user is successfully logged in\n"
+                    },
+                    {
+                      "text": "Clicked Clearance Link\n"
+                    },
+                    {
+                      "text": "Verified the page is navigated to Clearance page\n"
+                    },
+                    {
+                      "text": "Clicked Blog Link\n"
+                    },
+                    {
+                      "text": "Verified the page is navigated to Blog page\n"
+                    },
+                    {
+                      "text": "Clicked Order From History Link\n"
+                    },
+                    {
+                      "text": "Verified the page is navigated to Order From History page\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Step 1: Navigate to  Henry Schein url",
+                      "duration": 11166
+                    },
+                    {
+                      "title": "Step 2: Click Sign-In button on the home page to log in",
+                      "duration": 182
+                    },
+                    {
+                      "title": "Step 3: Enter the username and password",
+                      "duration": 2912
+                    },
+                    {
+                      "title": "Step 4: Click the sign-in submit button",
+                      "duration": 774
+                    },
+                    {
+                      "title": "Step 5: Verify the user is successfully logged in",
+                      "duration": 502
+                    },
+                    {
+                      "title": "Step 6: Click Clearance link from main menu",
+                      "duration": 2042
+                    },
+                    {
+                      "title": "Step 7: Link should navigate to Clearance Page",
+                      "duration": 170
+                    },
+                    {
+                      "title": "Step 8: Click Blog link from main menu",
+                      "duration": 733
+                    },
+                    {
+                      "title": "Step 9: Link should navigate to Blog Page",
+                      "duration": 1628
+                    },
+                    {
+                      "title": "Step 10: Click Order From History link from main menu",
+                      "duration": 1922
+                    },
+                    {
+                      "title": "Step 11: Link should navigate to Order From History",
+                      "duration": 12180
+                    }
+                  ],
+                  "startTime": "2026-02-12T10:03:19.444Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "62a0194cb94d3eec4948-275917dcb36ef264c7bd",
+          "file": "HomePage.spec.ts",
+          "line": 393,
+          "column": 6
+        },
+        {
+          "title": "08-Verify that the cart icon displays the correct item count when products are added to the cart",
+          "ok": true,
+          "tags": [
+            "regression",
+            "cart"
+          ],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "HenrySchein",
+              "projectName": "HenrySchein",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 39137,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Navigated to  Henry Schein url\n"
+                    },
+                    {
+                      "text": "Clicked the Sign-In button on home page\n"
+                    },
+                    {
+                      "text": "Entered the username and password\n"
+                    },
+                    {
+                      "text": "Clicked the sign-in submit button\n"
+                    },
+                    {
+                      "text": "Verified the user is successfully logged in\n"
+                    },
+                    {
+                      "text": "Cart badge text: 105\n"
+                    },
+                    {
+                      "text": "Entered Product Id\n"
+                    },
+                    {
+                      "text": "Selected Product\n"
+                    },
+                    {
+                      "text": "Product added to Cart\n"
+                    },
+                    {
+                      "text": "Clicked View Basket\n"
+                    },
+                    {
+                      "text": "Updated cart count: 106\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Step 1: Navigate to  Henry Schein url",
+                      "duration": 11869
+                    },
+                    {
+                      "title": "Step 2: Click Sign-In button on the home page to log in",
+                      "duration": 145
+                    },
+                    {
+                      "title": "Step 3: Enter the username and password",
+                      "duration": 2798
+                    },
+                    {
+                      "title": "Step 4: Click the sign-in submit button",
+                      "duration": 818
+                    },
+                    {
+                      "title": "Step 5: Verify the user is successfully logged in",
+                      "duration": 1475
+                    },
+                    {
+                      "title": "Step 6: Verify the Cart badge quantity",
+                      "duration": 833
+                    },
+                    {
+                      "title": "Step 7: Add product to cart",
+                      "duration": 7516
+                    },
+                    {
+                      "title": "Step 8: Verify the cart count and cart badge count are correct",
+                      "duration": 12171
+                    }
+                  ],
+                  "startTime": "2026-02-12T10:03:54.636Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "62a0194cb94d3eec4948-15bdb8f843bc71abcc75",
+          "file": "HomePage.spec.ts",
+          "line": 461,
+          "column": 6
+        },
+        {
+          "title": "09-Verify that the tooltip is displays the address when hovering over the address information icon",
+          "ok": true,
+          "tags": [
+            "regression",
+            "tooltip"
+          ],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "HenrySchein",
+              "projectName": "HenrySchein",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 24895,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Navigated to  Henry Schein url\n"
+                    },
+                    {
+                      "text": "Verified the sign in button should be visible on the home page\n"
+                    },
+                    {
+                      "text": "Entered the username and password\n"
+                    },
+                    {
+                      "text": "clicked the sign-in submit button\n"
+                    },
+                    {
+                      "text": "the address-tooltip is visible\n"
+                    },
+                    {
+                      "text": "Verified that the address-tooltip is displays the address when it is hovered \n"
+                    },
+                    {
+                      "text": "Ship Location :Test company\n"
+                    },
+                    {
+                      "text": "Address  test address  \n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Step 1: Navigate to the Henry Schein website.",
+                      "duration": 15482
+                    },
+                    {
+                      "title": "Step 2: Confirm that the Sign In button is visible.",
+                      "duration": 99
+                    },
+                    {
+                      "title": "Step 3: Enter a valid username and password.",
+                      "duration": 2697
+                    },
+                    {
+                      "title": "Step 4: Click the Sign In button.",
+                      "duration": 736
+                    },
+                    {
+                      "title": "Step 5: Verify that the address tooltip is visible in the menu bar.",
+                      "duration": 2018
+                    },
+                    {
+                      "title": "Step 6: Hover over the address tooltip and check that the tooltip displays the address information.",
+                      "duration": 2670
+                    }
+                  ],
+                  "startTime": "2026-02-12T10:04:33.817Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "62a0194cb94d3eec4948-3ec11d242d873a3be1c6",
+          "file": "HomePage.spec.ts",
+          "line": 536,
+          "column": 6
+        },
+        {
+          "title": "11-Verify that the banner slider displays all slides with their respective content and transitions between slides when the Navigation Arrows buttons are clicked.",
+          "ok": true,
+          "tags": [
+            "regression",
+            "slider"
+          ],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "HenrySchein",
+              "projectName": "HenrySchein",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 32973,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Navigated to  Henry Schein url\n"
+                    },
+                    {
+                      "text": "Verified the sign in button should be visible on the home page\n"
+                    },
+                    {
+                      "text": "Entered the username and password\n"
+                    },
+                    {
+                      "text": "clicked the sign-in submit button\n"
+                    },
+                    {
+                      "text": "The banner is displayed\n"
+                    },
+                    {
+                      "text": "Set(5) {\n  \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                    \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                            \\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'                                    Have You Tried Our Own Brand?\\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'                                Join those who are testing smarter\\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'                                    \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                                        Shop Now \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                            \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'                            \\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'                            \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'                    \\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                     \\n'\u001b[39m +\n    \u001b[32m'                    \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                    \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'            '\u001b[39m,\n  \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                    \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                            \\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'                                    High Quality, Reliable, Single-Use\\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'                                Guaranteed With Our Money-Back Promise\\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'                                    \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                                        Buy Now\\n'\u001b[39m +\n    \u001b[32m'                                    \\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                            \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'                            \\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'                            \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'                    \\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                     \\n'\u001b[39m +\n    \u001b[32m'                    \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                    \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'            '\u001b[39m,\n  \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                    \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                            \\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'                                    Rolling Out Big Value\\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'                                Give Our Own Brand A Go\\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                                    \\n'\u001b[39m +\n    \u001b[32m'                                        Try Our Recycled Couch Roll\\n'\u001b[39m +\n    \u001b[32m'                                    \\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                            \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'                            \\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'                            \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'                    \\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                     \\n'\u001b[39m +\n    \u001b[32m'                    \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                    \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'            '\u001b[39m,\n  \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                    \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                            \\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'                                    Freshen Up Your Consulting Room\\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'                                Curtains and Accessories in A Range of Colours\\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'                                    \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                                        Try Our Own Brand Curtains and Accessories \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                            \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'                            \\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'                            \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'                    \\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                     \\n'\u001b[39m +\n    \u001b[32m'                    \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                    \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'            '\u001b[39m,\n  \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                    \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                            \\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'                                    Have You Examined Our New Ranges?\\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'                                New Products, Same Fair Prices\\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                                    \\n'\u001b[39m +\n    \u001b[32m'                                        Shop New In\\n'\u001b[39m +\n    \u001b[32m'                                    \\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                            \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'                            \\n'\u001b[39m +\n    \u001b[32m'                                \\n'\u001b[39m +\n    \u001b[32m'                            \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'                    \\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                     \\n'\u001b[39m +\n    \u001b[32m'                    \\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                        \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                    \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'                \\n'\u001b[39m +\n    \u001b[32m'\\n'\u001b[39m +\n    \u001b[32m'            '\u001b[39m\n}\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Step 1: Navigate to the Henry Schein website.",
+                      "duration": 16246
+                    },
+                    {
+                      "title": "Step 2: Confirm that the Sign In button is visible.",
+                      "duration": 930
+                    },
+                    {
+                      "title": "Step 3: Enter a valid username and password.",
+                      "duration": 3412
+                    },
+                    {
+                      "title": "Step 4: Click the Sign In button.",
+                      "duration": 870
+                    },
+                    {
+                      "title": "Step 5: Verify that the banner is displayed on the home page.",
+                      "duration": 23
+                    },
+                    {
+                      "title": "Step 6: Verify that the banner slides when the user clicks Navigation Arrows buttons .",
+                      "duration": 10269
+                    }
+                  ],
+                  "startTime": "2026-02-12T10:04:58.765Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "62a0194cb94d3eec4948-87ceae4336ab545310b8",
+          "file": "HomePage.spec.ts",
+          "line": 604,
+          "column": 6
+        },
+        {
+          "title": "11-Verify Footer Links Are Interactive and Navigate to respective pages",
+          "ok": true,
+          "tags": [
+            "regression",
+            "footer"
+          ],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "HenrySchein",
+              "projectName": "HenrySchein",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 88226,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Navigated to  Henry Schein url\n"
+                    },
+                    {
+                      "text": "Clicked the Sign-In button on home page\n"
+                    },
+                    {
+                      "text": "Entered the username and password\n"
+                    },
+                    {
+                      "text": "Clicked the sign-in submit button\n"
+                    },
+                    {
+                      "text": "Verified the user is successfully logged in\n"
+                    },
+                    {
+                      "text": "Clicked Legal Terms Link\n"
+                    },
+                    {
+                      "text": "Verified the page is navigated to Legal Terms page\n"
+                    },
+                    {
+                      "text": "Clicked Privacy Notice Link\n"
+                    },
+                    {
+                      "text": "Verified the page is navigated to Privacy Notice page\n"
+                    },
+                    {
+                      "text": "Clicked Delivery and Returns Link\n"
+                    },
+                    {
+                      "text": "Verified the page is navigated to Delivery and Returns page\n"
+                    },
+                    {
+                      "text": "Clicked LinkedIn Link\n"
+                    },
+                    {
+                      "text": "Verified navigation to LinkedIn page\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Step 1: Navigate to  Henry Schein url",
+                      "duration": 13392
+                    },
+                    {
+                      "title": "Step 2: Click Sign-In button on the home page to log in",
+                      "duration": 232
+                    },
+                    {
+                      "title": "Step 3: Enter the username and password",
+                      "duration": 3353
+                    },
+                    {
+                      "title": "Step 4: Click the sign-in submit button",
+                      "duration": 755
+                    },
+                    {
+                      "title": "Step 5: Verify the user is successfully logged in",
+                      "duration": 1530
+                    },
+                    {
+                      "title": "Step 6: Click Legal Terms link on footer section",
+                      "duration": 14450
+                    },
+                    {
+                      "title": "Step 7: Link should navigate to Legal Terms Page",
+                      "duration": 8691
+                    },
+                    {
+                      "title": "Step 8: Click Privacy Notice link on footer section",
+                      "duration": 1467
+                    },
+                    {
+                      "title": "Step 9: Link should navigate to Privacy Notice Page",
+                      "duration": 8981
+                    },
+                    {
+                      "title": "Step 10: Click Delivery and Returns link on footer section",
+                      "duration": 12577
+                    },
+                    {
+                      "title": "Step 11: Link should navigate to Delivery and Returns page",
+                      "duration": 41
+                    },
+                    {
+                      "title": "Step 12: Click LinkedIn link on footer section & wait for new tab",
+                      "duration": 13464
+                    },
+                    {
+                      "title": "Step 13: Verify LinkedIn URL",
+                      "duration": 6272
+                    }
+                  ],
+                  "startTime": "2026-02-12T10:05:31.795Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "62a0194cb94d3eec4948-c7a96b7aaba792377fcf",
+          "file": "HomePage.spec.ts",
+          "line": 676,
+          "column": 6
         }
       ]
     }
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-02-11T13:40:54.861Z",
-    "duration": 107780.349,
-    "expected": 5,
+    "startTime": "2026-02-12T10:02:25.827Z",
+    "duration": 275377.59500000003,
+    "expected": 7,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0
