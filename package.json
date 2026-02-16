@@ -8,7 +8,7 @@
   "report:failure_case": "node scripts/report.js failure_case",
   "report:signin": "node scripts/report.js signin",
   "report:smoke": "node scripts/report.js smoke",
-  "report:open": "allure open reports/latest"
+  "report:open": "allure open reports/latest_Allure_report"
 } ,
   "keywords": [],
   "author": "",

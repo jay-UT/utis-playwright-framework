@@ -59,14 +59,14 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: allure-latest-report
-          path: reports/latest
+          path: reports/latest_ALlure_report
 
       - name: Upload Allure Archived Reports
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: allure-archive-reports
-          path: reports/archive    
+          path: reports/archive_Allure_reports   
 
       # - name: Upload Allure results
       #   if: always()

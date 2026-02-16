@@ -34,7 +34,7 @@ export default defineConfig({
 
   /* 🔹 REPORTERS: Allure + HTML */ 
   reporter: [
-    ['html', { outputFolder: `reports/html-report-${timestamp}`, open: 'never' }],
+    ['html', { outputFolder: `reports/playwright_report/html-report-${timestamp}`, open: 'never' }],
     ['json', { outputFile: 'playwright-results.json' }],
     ['list'],
     ['allure-playwright', { resultsDir: 'allure-results' }]
