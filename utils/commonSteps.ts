@@ -12,25 +12,31 @@ export class CommonMethods {
     timeout: number = 30000
   ): Promise<boolean> {
     try {
-      await page.goto(url, { timeout });
-      await page.waitForLoadState('domcontentloaded', { timeout });
-      await page.waitForLoadState('networkidle', { timeout });
+      await page.goto(url, {
+       waitUntil: 'domcontentloaded',
+       timeout,
+    });
+
 
       // Accept cookies if present
       try {
         const acceptButton = page.locator('button:has-text("Accept")');
-        await acceptButton.waitFor({ timeout: 50000 });
+        await acceptButton.waitFor({ state: 'visible', timeout: 5000 });
         await acceptButton.click();
         //console.log(`Cookies accepted on ${url}`);
       } catch (error) {
         //console.log(`[INFO] No cookies popup found or failed to click: ${error}`);
       }
 
+       // Let CMP settle
+        await page.waitForTimeout(1000);
+
       // Click UK Medical
       try {
         const ukMedicalXpath = "//div[text()='UK Medical']";
         const ukMedical = page.locator(ukMedicalXpath);
-        await ukMedical.waitFor({ timeout: 50000 });
+        await ukMedical.waitFor({ state: 'visible', timeout: 5000 });
+        await ukMedical.scrollIntoViewIfNeeded();
         await ukMedical.click();
         // console.log(`'UK Medical' clicked on ${url}`);
       } catch (error) {
@@ -48,12 +54,20 @@ export class CommonMethods {
   static async safeClick(
     page: Page,
     Locator: Locator,
-    timeout: number = 35000
+    timeout: number = 15000
   ): Promise<void> {
-    await expect(Locator).toBeVisible({ timeout });
-    await Locator.click();
-  }
+     // Wait until visible
+  await Locator.waitFor({ state: 'visible', timeout });
 
+  // Ensure it is inside viewport (mobile safe)
+  await Locator.scrollIntoViewIfNeeded();
+
+  // Allow UI animation / re-render to settle
+  await page.waitForTimeout(300);
+
+  // Perform click
+  await Locator.click({ timeout });
+  }
   static logConsoleMessage(msg: any): void {
     console.log(`[CONSOLE] ${msg.text()}`);
   }

@@ -71,10 +71,27 @@ export default defineConfig({
  // grep: /@smoke/, 
 
   projects: [
-    {
+
+  {
       name: 'HenrySchein',
       use: { ...devices['Desktop Chrome'] },
+  }, 
+
+  {
+    name: 'Mobile Safari',
+    use: {
+      ...devices['iPhone 14 Pro Max'],
+        locale: 'en-GB',
+        timezoneId: 'Europe/London',
     },
+  },
+
+ /* {
+    name: 'Mobile Chrome',
+    use: {
+      ...devices['Pixel 7'],
+    },
+  },*/
     //{
     //name: 'firefox',
     //use: { ...devices['Desktop Firefox'] },

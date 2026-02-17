@@ -10,7 +10,7 @@ import * as allure from "allure-js-commons";
 
 /*
 1)Testcase-01 : To verify the Henry Schein icon is present on the Home page
- Tags : @regression
+ Tags : @regression, '@smoke', '@homepage', '@demo'
  Steps 
  1.Navigate to  Henry Schein url
  2.verify the Henry Schein icon should be visible on the page
@@ -263,9 +263,9 @@ Steps
 */
 
 // 1. Navigate to Henry Schein url
-test('05-Verify that the search bar accepts input and displays relevant suggestions',
+test('05-Verify that the accepts input and displays relevant suggestions',
    {
-      tag: ['@regression', '@search'],
+      tag: ['@regression', '@search', '@Mobile Safari'],
    },
    async ({ page, home, config }) => {
 
@@ -838,7 +838,7 @@ test('11-Verify Footer Links Are Interactive and Navigate to respective pages',
 */
 test('12-To Verify the error message for invalid login credentials',
    {
-      tag: ['@regression', '@signin', '@failure_case'],
+      tag: ['@regression', '@signin', '@failure_case', '@Mobile Safari'],
    },
    async ({ page, home, config }) => {
       allure.epic('Authentication');
@@ -877,7 +877,76 @@ test('12-To Verify the error message for invalid login credentials',
       })
 
    })
+   
+   /*
+   13)Testcase-13 : Verify the mobile browser actions to view hamburger menu
+   1. Navigate to Henry Schein url
+   2. Click on hamburger menu (mobile only) 
+   3.Click on the Top supplies
+   4. Verify mobile menu opened
 
+   */
+test(
+  '12- Verify hamburger menu click on mobile',
+  {
+    tag: ['@regression', '@mobile', '@hamburger', '@Mobile Safari'],
+  },
+  async ({ page, home, config }, testInfo) => {
+
+     test.skip(
+      !testInfo.project.name.includes('Mobile'),
+      'Hamburger menu test runs only on Mobile-only'
+    );
+
+
+    await test.step("Step 1: Navigate to Henry Schein url", async () => {
+      await CommonMethods.navigateToPageUKMedical(page, config.appUrl, 10000);
+      console.log("Navigated to Henry Schein url");
+    });
+
+    // 2. Click on hamburger menu (mobile only)
+    await test.step("Step 2: Click on hamburger menu icon", async () => {
+      await home.hamburger_menu.scrollIntoViewIfNeeded();
+      await home.hamburger_menu.click({ force: true });
+      console.log("Hamburger menu clicked");
+    });
+
+    await test.step("3.Click on the Top supplies", async () => {
+      await home.Top_supplies.waitFor({ state: 'visible' });
+      await home.Top_supplies.click();
+      console.log("Top Supplies clicked");
+    });
+
+    // 3. (Optional) Verify mobile menu opened
+    await test.step("Step 4: Verify mobile menu options are visible", async () => {
+      await expect(page.locator('[data-test-id="mega_menu_component_a_23"]')).toBeVisible({ timeout: 10000 });
+      console.log("Mobile menu opened successfully");
+    });
+
+    //4 Scroll the page till bottom:
+    await test.step('Step 5: Scroll page till bottom', async () => {
+      await page.evaluate(async () => {
+         await new Promise<void>((resolve) => {
+            let totalHeight = 0;
+            const distance = 150; // smaller = slower scroll
+            const timer = setInterval(() => {
+               const scrollHeight = document.body.scrollHeight;
+               window.scrollBy(0, distance);
+               totalHeight += distance;
+
+               if (totalHeight >= scrollHeight) {
+                  clearInterval(timer);
+                  resolve();
+               }
+            }, 200); // increase time = slower scroll
+         });
+      });
+      console.log('Page scrolled till bottom');
+   
+   })
+
+  }
+);
 
 
 
