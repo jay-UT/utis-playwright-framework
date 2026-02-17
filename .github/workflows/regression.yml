@@ -54,33 +54,33 @@ jobs:
       #     name: playwright-report
       #     path: playwright-report/
 
-      - name: Upload Latest Allure Report
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: allure-latest-report
-          path: reports/latest_ALlure_report
-
-      - name: Upload Allure Archived Reports
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: allure-archive-reports
-          path: reports/archive   
-
-      # - name: Upload Allure results
+      # - name: Upload Latest Allure Report
       #   if: always()
       #   uses: actions/upload-artifact@v4
       #   with:
-      #     name: allure-results
-      #     path: allure-results/
+      #     name: allure-latest-report
+      #     path: reports/latest_ALlure_report
 
-      # - name: Generate Allure report with timestamp
+      # - name: Upload Allure Archived Reports
       #   if: always()
-      #   run: |
-      #     TIME=$(date +'%Y%m%d_%H%M%S')
-      #     npx allure generate allure-results --clean --single-file -o allure-report-$TIME
-      #     echo "REPORT_FOLDER=allure-report-$TIME" >> $GITHUB_ENV
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: allure-archive-reports
+      #     path: reports/archive   
+
+      - name: Upload Allure results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-results
+          path: allure-results/
+
+      - name: Generate Allure report with timestamp
+        if: always()
+        run: |
+          TIME=$(date +'%Y%m%d_%H%M%S')
+          npx allure generate allure-results --clean --single-file -o allure-report-$TIME
+          echo "REPORT_FOLDER=allure-report-$TIME" >> $GITHUB_ENV
 
       # - name: Upload Allure HTML report
       #   if: always()
