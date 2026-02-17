@@ -29,4 +29,4 @@ fs.writeFileSync(
   JSON.stringify(executor, null, 2)
 );
 
-console.log("✅ Allure executor file created");
+console.log("Allure executor file created");

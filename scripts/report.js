@@ -89,7 +89,7 @@ function exists(p) {
 ===========================================*/
 try {
 
-  console.log(`🚀 Running ${mode} report...`);
+  console.log(` Running ${mode} report...`);
 
   /* -----------------------------
      CLEAN OLD RESULTS
@@ -109,7 +109,7 @@ try {
   const historyTarget = path.join("allure-results", "history");
 
   if (exists(historySource)) {
-    console.log("📈 Restoring Allure history...");
+    console.log(" Restoring Allure history...");
     fs.mkdirSync(historyTarget, { recursive: true });
     safeCopy(historySource, historyTarget);
   }
@@ -136,7 +136,7 @@ try {
   if (exists("allure-results") && fs.readdirSync("allure-results").length > 0) {
     run(`npx allure generate allure-results --clean --single-file -o ${allureTimestampDir}`, true);
   } else {
-    console.log("⚠️ No Allure results found. Skipping Allure report generation.");
+    console.log(" No Allure results found. Skipping Allure report generation.");
     process.exit(0);
   }
 
@@ -150,7 +150,7 @@ try {
   /* -----------------------------
      ARCHIVE ALLURE REPORT
   ------------------------------*/
-  // console.log("📦 Archiving Allure report...");
+  // console.log(" Archiving Allure report...");
   // safeCopy(allureTimestampDir, path.join(archiveAllureDir, allureTimestampDir));
 
  
@@ -158,7 +158,7 @@ try {
   /* -----------------------------
      UPDATE LATEST ALLURE REPORT
   ------------------------------*/
-console.log("📂 Updating latest Allure report...");
+console.log(" Updating latest Allure report...");
 fs.rmSync(latestAllureDir, { recursive: true, force: true });
 fs.mkdirSync(latestAllureDir, { recursive: true });
 safeCopy(allureTimestampDir, latestAllureDir);
@@ -168,19 +168,19 @@ safeCopy(allureTimestampDir, latestAllureDir);
      UPDATE LATEST PLAYWRIGHT REPORT
   ------------------------------*/
   // if (exists(playwrightTimestampDir)) {
-  //   console.log("📂 Updating latest Playwright report...");
+  //   console.log(" Updating latest Playwright report...");
   //   fs.rmSync(latestPlaywrightDir, { recursive: true, force: true });
   //   fs.mkdirSync(latestPlaywrightDir, { recursive: true });
   //   safeCopy(playwrightTimestampDir, latestPlaywrightDir);
   // }
 
-  console.log("✅ Allure report generated successfully");
-  console.log("✅ Playwright report generated successfully");
+  console.log(" Allure report generated successfully");
+  console.log(" Playwright report generated successfully");
 
-  console.log(`📂 Latest Allure Report → reports/latest_Allure_report/index.html`);
-  console.log(`📦 Archived Allure Report → reports/archive_Allure_report/${allureTimestampDir}`);
+  console.log(` Latest Allure Report → reports/latest_Allure_report/index.html`);
+  console.log(` Archived Allure Report → reports/archive_Allure_report/${allureTimestampDir}`);
 
-  console.log(`📂 Playwright Report → reports/Playwright_report/${playwrightTimestampDir}`);
+  console.log(` Playwright Report → reports/Playwright_report/${playwrightTimestampDir}`);
 
 
 } catch (err) {

@@ -20,4 +20,4 @@ fs.writeFileSync(
   content.trim()
 );
 
-console.log("✅ Allure environment file created");
+console.log("Allure environment file created");

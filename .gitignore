@@ -57,6 +57,7 @@ Reports/allurereport/local
 
 # Allure
 reports/
+html-report-*/
 allure-results/
 allure-report/
 allure-report-*/
