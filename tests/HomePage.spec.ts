@@ -219,7 +219,7 @@ Steps
 */
 
 // 1. Navigate to Henry Schein url
-test('05-Verify that the search bar accepts input and displays relevant suggestions',
+test('05-Verify that the accepts input and displays relevant suggestions',
    {
       tag: ['@regression', '@search', '@Mobile Safari'],
    },
