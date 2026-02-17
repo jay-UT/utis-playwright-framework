@@ -1,10 +1,16 @@
-import { defineConfig, devices } from '@playwright/test';
+import { defineConfig, devices, } from '@playwright/test';
 
 const timestamp = new Date()
   .toISOString()
   .replace(/[:.]/g, '-');
 
 export default defineConfig({
+ // globalSetup: './global.setup.ts',
+ /* use: {
+    storageState: 'storageState.json',
+    navigationTimeout: 30000,
+    actionTimeout: 30000,
+  },*/
   timeout: 90 * 1000,   //30000 ms(30 secs)
 
   testDir: './tests',
@@ -31,7 +37,7 @@ export default defineConfig({
   /* Shared settings for all the projects */
   use: {
     /* Capture trace on first retry */
-    trace: 'on-first-retry',
+    trace: 'retain-on-failure',
 
     headless: true,
 
@@ -47,10 +53,27 @@ export default defineConfig({
   //grep: /@master/, 
 
   projects: [
-    {
+
+  {
       name: 'HenrySchein',
       use: { ...devices['Desktop Chrome'] },
+  }, 
+
+  {
+    name: 'Mobile Safari',
+    use: {
+      ...devices['iPhone 14 Pro Max'],
+        locale: 'en-GB',
+        timezoneId: 'Europe/London',
     },
+  },
+
+ /* {
+    name: 'Mobile Chrome',
+    use: {
+      ...devices['Pixel 7'],
+    },
+  },*/
     //{
     //name: 'firefox',
     //use: { ...devices['Desktop Firefox'] },

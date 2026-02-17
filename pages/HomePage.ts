@@ -54,6 +54,8 @@ export class HomePage {
     public readonly Review_Order: Locator;
     public readonly Review_Order_Page: Locator;
     public readonly view_basket: Locator;
+    public readonly hamburger_menu: Locator;
+    public readonly Top_supplies: Locator;
 
     //constructor
     constructor(page: Page) {
@@ -113,6 +115,8 @@ export class HomePage {
         this.Review_Order = page.locator("//button[@data-test-id='shipping_button_revieworder']")
         this.Review_Order_Page = page.locator("//h1[@data-test-id='reviewOrder.ReviewOrderTitleText3']")
         this.view_basket = page.locator("//img[@data-test-id='cart_image_icon']")
+        this.hamburger_menu = page.locator('sc-placeholder[name="topnavigation"] span[aria-label="Toggle navigation"]');
+        this.Top_supplies =page.locator("//button[contains(@class,'button-link')]//span[normalize-space()='Top Supplies']"); 
 
     }
     async isHomePageExist() {

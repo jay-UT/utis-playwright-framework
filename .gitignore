@@ -56,6 +56,7 @@ Thumbs.db
 allure-results/
 allure-report/
 allure-report-*/
+reports/
 
 # Environmentgit add .gitignore
 
