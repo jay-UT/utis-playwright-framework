@@ -37,14 +37,17 @@ jobs:
           key: playwright-${{ runner.os }}  
 
       - name: Run regression tests
-        run: npm run report:signin
+        run: npm run report:smoke
 
       - name: Upload Playwright HTML reports
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: playwright-html-reports
-          path: reports/
+          path: |
+            reports/latest_Allure_report
+            reports/archive_Allure_report
+            reports/playwright_report
 
 
       # - name: Upload Playwright report
