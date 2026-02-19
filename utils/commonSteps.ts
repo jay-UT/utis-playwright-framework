@@ -100,4 +100,11 @@ export class CommonMethods {
     await Locator.waitFor({ state: 'visible' });
     await Locator.hover();
   }
+
+  static async Check_CheckBox(
+    page : Page,
+    Locator:Locator
+  ):Promise<void>{
+    await Locator.check();
+  }
 }

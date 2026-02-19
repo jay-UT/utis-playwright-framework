@@ -56,7 +56,16 @@ export class HomePage {
     public readonly Review_Order: Locator;
     public readonly Review_Order_Page: Locator;
     public readonly view_basket: Locator;
-
+    //Amazon variables
+    public readonly amazonSearchBar : Locator;
+    public readonly amazonSearchIcon : Locator;
+    public readonly freeShipping : Locator;
+    public readonly amazonAddToCartBtn : Locator;
+    public readonly amazonCartIcon : Locator;
+    public readonly freeShippingText : Locator;
+    public readonly product_title : Locator;
+    public readonly proceedToBuyBtn : Locator;
+    public readonly subtotal : Locator; 
     //constructor
     constructor(page: Page) {
         this.page = page;
@@ -116,6 +125,16 @@ export class HomePage {
         this.Review_Order_Page = page.locator("//h1[@data-test-id='reviewOrder.ReviewOrderTitleText3']")
         this.view_basket = page.locator("//img[@data-test-id='cart_image_icon']")
 
+        //Amazon locators
+        this.amazonSearchBar =  page.getByRole('searchbox')
+        this.amazonSearchIcon= page.locator('#nav-search-submit-button')
+        this.freeShipping = page.locator("//span[contains(@data-csa-c-content-id,'p_n_free_shipping')]")
+        this.amazonAddToCartBtn = page.locator("(//button[@aria-label='Add to cart'])[1]")
+        this.amazonCartIcon = page.locator("//a[@id='nav-cart']")
+        this.freeShippingText =  page.locator("(//div[@class='a-row a-color-base udm-primary-delivery-message'])[1]/div[@class='a-column a-span12']")
+        this.product_title= page.locator("(//div[@class='a-section a-spacing-small a-spacing-top-small'])[1]//div[@data-cy='title-recipe']")
+        this.proceedToBuyBtn = page.locator("//input[@name='proceedToRetailCheckout']")
+        this.subtotal = page.locator("//span[@id='sc-subtotal-label-activecart']")
     }
     async isHomePageExist() {
         let title: string = await this.page.title()
@@ -367,5 +386,173 @@ export class HomePage {
             console.log(`Exception occurs when clicking the footer linked_In" ${error}`)
             throw error;
         }
+    }
+
+    async FillTextInAmazonSearchBar(searchInput : string){
+         try {
+            await CommonMethods.writeText(this.page,this.amazonSearchBar,searchInput)
+        } catch (error) {
+            console.log(`Exception occurs when the search is not happend" ${error}`)
+            throw error;
+        }  
+    }
+
+    async ClickAmazonSearchBtn(){
+        try {
+            await CommonMethods.safeClick(this.page,this.amazonSearchIcon)
+        } catch (error) {
+            console.log(`Exception occurs when clicking the search icon" ${error}`)
+            throw error;
+        }
+    }
+
+    async CheckFreeShippingCheckBox(){
+        try {
+           // await CommonMethods.Check_CheckBox(this.page,this.freeShipping)
+           await CommonMethods.safeClick(this.page,this.freeShipping)
+        } catch (error) {
+            console.log(`Exception occurs when free shipping checkbox is clicked" ${error}`)
+            throw error;
+        }
+    }
+
+    async ClickAddToCartBtn(){
+        try {
+            await CommonMethods.safeClick(this.page,this.amazonAddToCartBtn)
+        } catch (error) {
+            console.log(`Exception occurs when Add to cart button is clicked" ${error}`)
+            throw error;
+        }
+    }
+    async ClickAmazonCartIcon(){
+        try {
+            await CommonMethods.safeClick(this.page,this.amazonCartIcon)
+        } catch (error) {
+            console.log(`Exception occurs when cart Icon is clicked" ${error}`)
+            throw error;
+        }
+    }
+    
+    async ClickProceedtoBuyBtn(){
+        try {
+            await CommonMethods.safeClick(this.page,this.proceedToBuyBtn)
+        } catch (error) {
+            console.log(`Exception occurs when proceed to buy button is clicked" ${error}`)
+            throw error;
+        }
+    }
+
+    async Hs_IconIsDisplayed(){
+        try {
+            await CommonMethods.isElementDisplayed(this.page,this.icon_xpath)
+        } catch (error) {
+            console.log(`Exception occurs due to element is not displayed" ${error}`)
+            throw error;
+        }
+    }
+
+    async SignInBtnIsDisplayed(){
+        try {
+            await CommonMethods.isElementDisplayed(this.page,this.sign_in_xpath)
+        } catch (error) {
+            console.log(`Exception occurs due to element is not displayed" ${error}`)
+            throw error;
+        }
+    }
+    async UserAccountTabIsDisplayed(){
+        try {
+            await CommonMethods.isElementDisplayed(this.page,this.user_account_tab_xpath)
+        } catch (error) {
+            console.log(`Exception occurs due to element is not displayed" ${error}`)
+            throw error;
+        }
+    }
+    async SignInErrorMsgIsDisplayed(){
+         try {
+            await CommonMethods.isElementDisplayed(this.page,this.sign_in_error_msg_xpath)
+        } catch (error) {
+            console.log(`Exception occurs due to element is not displayed" ${error}`)
+            throw error;
+        }
+    }
+
+    async SignUpBtnIsDisplayed(){
+          try {
+            await CommonMethods.isElementDisplayed(this.page,this.sign_up_xpath)
+        } catch (error) {
+            console.log(`Exception occurs due to element is not displayed" ${error}`)
+            throw error;
+        }
+    }
+
+    async SearchBarIsDisplayed(){
+        try {
+            await CommonMethods.isElementDisplayed(this.page,this.search_input)
+        } catch (error) {
+            console.log(`Exception occurs due to element is not displayed" ${error}`)
+            throw error;
+        }
+    }
+
+    async TopSuppliesBtnIsDisplayed(){
+        try {
+            await CommonMethods.isElementDisplayed(this.page,this.main_menu_Top_Supplies)
+        } catch (error) {
+            console.log(`Exception occurs due to element is not displayed" ${error}`)
+            throw error;
+        }
+    }
+    async TopEquipmentBtnIsDisplayed(){
+       try {
+            await CommonMethods.isElementDisplayed(this.page,this.main_menu_Top_Equipment)
+        } catch (error) {
+            console.log(`Exception occurs due to element is not displayed" ${error}`)
+            throw error;
+        } 
+    }
+
+    async PharmaceuticalsBtnIsDisplayed(){
+        try {
+            await CommonMethods.isElementDisplayed(this.page,this.main_menu_Pharmaceuticals)
+        } catch (error) {
+            console.log(`Exception occurs due to element is not displayed" ${error}`)
+            throw error;
+        } 
+    }
+
+    async FurnitureBtnIsDisplayed(){
+        try {
+            await CommonMethods.isElementDisplayed(this.page,this.main_menu_Furniture)
+        } catch (error) {
+            console.log(`Exception occurs due to element is not displayed" ${error}`)
+            throw error;
+        } 
+    }
+
+    async DashBoardBtnIsDisplayed(){
+        try {
+            await CommonMethods.isElementDisplayed(this.page,this.main_menu_My_Dashboard)
+        } catch (error) {
+            console.log(`Exception occurs due to element is not displayed" ${error}`)
+            throw error;
+        } 
+    }
+
+    async AddressToolTipIsDisplayed(){
+       try {
+            await CommonMethods.isElementDisplayed(this.page,this.address_tooltip_xpath)
+        } catch (error) {
+            console.log(`Exception occurs due to element is not displayed" ${error}`)
+            throw error;
+        }  
+    }
+
+    async SliderBannerIsDislplayed(){
+        try {
+            await CommonMethods.isElementDisplayed(this.page,this.sliderBanner_xpath)
+        } catch (error) {
+            console.log(`Exception occurs due to element is not displayed" ${error}`)
+            throw error;
+        } 
     }
 }
