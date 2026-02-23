@@ -25,20 +25,17 @@ test('01-To verify the Henry Schein icon is present on the Home page',
       tag: ['@regression', '@smoke', '@homepage', '@demo'],
    },
    async ({ page, home, config }) => {
-      //  const config= new TestConfig();
-      //  const home =new HomePage(page);
-
+      
       await test.step("Step 1: Navigate to Henry Schein UK Medical URL", async () => {
-         await CommonMethods.navigateToPageUKMedical(page, config.appUrl, 30000);
+         await home.navigateToHsUKMedical(config.appUrl)
       });
 
       await test.step("Step 2: Verify the Henry Schein icon should be visible on the page", async () => {
-         //await CommonMethods.isElementDisplayed(page, home.icon_xpath, 30000);
-         await home.Hs_IconIsDisplayed()
+         await home.isHSIconIsVisible
       });
 
       await test.step("Step 3: Click the Henry Schein icon", async () => {
-         await home.ClickIcon();
+         await home.clickIcon();
       });
 
       await test.step("Step 4: Verify page navigates to Henry Schein home page", async () => {
@@ -66,31 +63,29 @@ test('02-To Verify the sign-in functionality on the Home page', {
 
       //  1.Navigate to  Henry Schein url
       await test.step("Step 1: Navigate to the Henry Schein website.", async () => {
-         await CommonMethods.navigateToPageUKMedical(page, config.appUrl, 10000)
+         await home.navigateToHsUKMedical(config.appUrl)
          console.log("Navigated to  Henry Schein url")
       })
       // 2.Verify the sign in button should be visible on the home page
       await test.step("Step 2: Confirm that the Sign In button is visible.", async () => {
-         //await CommonMethods.isElementDisplayed(page, home.sign_in_xpath, 20000)
-         await home.SignInBtnIsDisplayed()
+         await home.isSignInBtnVisible()
          console.log("Verified the sign in button should be visible on the home page")
       })
       // 3.Enter the username and password
       await test.step("Step 3: Enter a valid username and password.", async () => {
-         await home.ClickSignIn()
-         await home.FillUsername(config.username)
-         await home.FillPassword(config.password)
+         await home.clickSignIn()
+         await home.fillUsername(config.username)
+         await home.fillPassword(config.password)
          console.log("Entered the username and password")
       })
       // 4.click the sign-in submit button
       await test.step("Step 4: Click the Sign In button.", async () => {
-         await home.ClickSignInSubmitButton()
+         await home.clickSignInSubmitButton()
          console.log("clicked the sign-in submit button")
       })
       // 5.Verify the user is successfully logged in
       await test.step("Step 5: Verify the user is successfully logged in", async () => {
-        // await CommonMethods.isElementDisplayed(page, home.user_account_tab_xpath, 10000)
-        await home.UserAccountTabIsDisplayed()
+        await home.isUserAccountTabVisible()
          console.log("Verified the user is successfully logged in")
       })
    })
@@ -116,31 +111,25 @@ test('03-To Verify that the user cannot sign in with invalid credentials',
    async ({ page, home, config }) => {
 
       await test.step("Step 1: Navigate to  HenrySchein url", async () => {
-         await CommonMethods.navigateToPageUKMedical(page, config.appUrl, 30000)
+         await home.navigateToHsUKMedical(config.appUrl)
          console.log("Navigated to  HenrySchein url")
       })
       await test.step("Step 2: Verify the sign in button should be visible on the home page", async () => {
-         //await CommonMethods.isElementDisplayed(page, home.sign_in_xpath, 30000)
-         await home.SignInBtnIsDisplayed()
+         await home.isSignInBtnVisible()
          console.log("Verified the sign in button should be visible on the home page")
       })
       await test.step("Step 3: Enter invalid username and password", async () => {
-         // await CommonMethods.safeClick(page, home.sign_in_xpath, 35000)
-         // await CommonMethods.writeText(page, home.username_xpath, config.invalid_username, 30000)
-         // await CommonMethods.writeText(page, home.password_xpath, config.invalid_password, 30000)
-         await home.ClickSignIn()
-         await home.FillUsername(config.invalid_username)
-         await home.FillPassword(config.invalid_password)
+         await home.clickSignIn()
+         await home.fillUsername(config.invalid_username)
+         await home.fillPassword(config.invalid_password)
          console.log("Entered invalid username and password")
       })
       await test.step("Step 4: Click the sign-in submit button", async () => {
-         //await CommonMethods.safeClick(page, home.sign_in_submit_btn_xpath)
-         await home.ClickSignInSubmitButton()
+         await home.clickSignInSubmitButton()
          console.log("Clicked the sign-in submit button")
       })
       await test.step("Step 5: Verify the user cannot sign in successfully", async () => {
-         //await CommonMethods.isElementDisplayed(page, home.sign_in_error_msg_xpath, 30000)
-         await home.SignInErrorMsgIsDisplayed()
+         await home.isSignInErrorMsgVisible()
          console.log("Please enter valid Username/Password")
          const errorMsg = (home.sign_in_error_msg_xpath);
          await expect(errorMsg).toBeVisible();
@@ -169,18 +158,16 @@ test('04-To verify the Sign up flow on the Home page',
 
       // 1.Navigate to Henry Schein url
       await test.step("Step 1: Navigate to Henry Schein url", async () => {
-         await CommonMethods.navigateToPageUKMedical(page, config.appUrl, 10000)
+         await home.navigateToHsUKMedical(config.appUrl)
          console.log("Navigated to Henry Schein url")
       })
       await test.step("Step 2: Verify the Sign up button should be visible on the home page", async () => {
-        // await CommonMethods.isElementDisplayed(page, home.sign_up_xpath, 15000)
-        await home.SignUpBtnIsDisplayed()
+         await home.isSignUpBtnVisible()
          console.log("Verified the Sign up button is visible on the home page")
       })
       // 3.Click on the Sign up button
       await test.step("Step 3: Click on the Sign up button", async () => {
-         //await CommonMethods.safeClick(page, home.sign_up_xpath, 10000)
-         await home.ClickSignUpButton()
+         await home.clickSignUpButton()
          console.log("Clicked on the Sign up button")
       })
       // 4.Verify user is navigated from home page
@@ -188,35 +175,35 @@ test('04-To verify the Sign up flow on the Home page',
          await expect(page).toHaveURL(/registration/)
          console.log("Verified navigation to Registration page")
          await page.waitForTimeout(2000); // waits for 2 seconds
-
          // Scroll username field into view (for visibility)
          await home.reg_username_input.scrollIntoViewIfNeeded();
 
          // 5.Enter Username
          const username = `testuser_${Date.now()}`;
-         await home.FillRegistrationUsername(username)
+         await home.fillRegistrationUsername(username)
 
          //Email-Verification 
          const email = `testuser_${Date.now()}@gmail.com`;
          await home.reg_email_input.scrollIntoViewIfNeeded();
-         await home.FillRegistrationEmail(email)
+         await home.fillRegistrationEmail(email)
 
          //Password-Verification:
          const password = "Test@1234";
 
          await home.reg_password_input.scrollIntoViewIfNeeded();
-         await home.FillRegistrationPassword(password)
+         await home.fillRegistrationPassword(password)
 
          await home.reg_confirm_password_input.scrollIntoViewIfNeeded();
-         await CommonMethods.writeText(page, home.reg_confirm_password_input, password, 10000);
+         //await CommonMethods.writeText(page, home.reg_confirm_password_input, password, 10000);
+         await home.fillRegistrationConfirmPassword(password)
 
          await home.reg_next_step_btn.scrollIntoViewIfNeeded();
-         await home.ClickRegistrationNextButton()
+         await home.clickRegistrationNextButton()
 
 
          // Handle New Customer Web Notice popup
          await expect(home.continue_btn).toBeVisible({ timeout: 10000 });
-         await home.ClickRegistrationContinueButton()
+         await home.clickRegistrationContinueButton()
          await page.waitForTimeout(5000);
          console.log("Clicked Continue and new sign-up stopped till here...");
       })
@@ -239,18 +226,18 @@ test('05-Verify that the search bar accepts input and displays relevant suggesti
    },
    async ({ page, home, config }) => {
       await test.step("Step 1: Navigate to Henry Schein url", async () => {
-         await CommonMethods.navigateToPageUKMedical(page, config.appUrl, 10000);
+         await home.navigateToHsUKMedical(config.appUrl);
          console.log("Navigated to Henry Schein url");
       })
       // 2. Verify search bar is visible
       await test.step("Step 2: Verify search bar is visible", async () => {
-        // await CommonMethods.isElementDisplayed(page, home.search_input, 10000);
-        await home.SearchBarIsDisplayed()
+        await home.isSearchBarVisible()
          console.log("Search bar is visible");
       })
       // 3. Enter search keyword
       await test.step("Step 3: Enter search keyword", async () => {
-         await home.FillTextInSearchBar("mask")
+
+         await home.fillTextInSearchBar("mask")
          console.log("Entered search keyword");
          await page.keyboard.press("Enter");
       })
@@ -307,34 +294,31 @@ test('06-Verify Main Menu Buttons Are Enabled and Interactive',
    async ({ page, home, config }) => {
 
       await test.step("Step 1: Navigate to  HenrySchein url", async () => {
-         await CommonMethods.navigateToPageUKMedical(page, config.appUrl, 30000)
+         await home.navigateToHsUKMedical(config.appUrl)
          console.log("Navigated to  Henry Schein url")
       })
       await test.step("Step 2: Click Sign-In button on the home page to log in", async () => {
-         //await CommonMethods.isElementDisplayed(page, home.sign_in_xpath, 20000)
-         await home.SignInBtnIsDisplayed()
+         await home.isSignInBtnVisible()
          console.log("Clicked the Sign-In button on home page")
       })
       await test.step("Step 3: Enter the username and password", async () => {
-         await home.ClickSignIn()
-         await home.FillUsername(config.username)
-         await home.FillPassword(config.password)
+         await home.clickSignIn()
+         await home.fillUsername(config.username)
+         await home.fillPassword(config.password)
          console.log("Entered the username and password")
       })
       await test.step("Step 4: Click the sign-in submit button", async () => {
-         await home.ClickSignInSubmitButton()
+         await home.clickSignInSubmitButton()
          console.log("Clicked the sign-in submit button")
       })
       await test.step("Step 5: Verify the user is successfully logged in", async () => {
-         //await CommonMethods.isElementDisplayed(page, home.user_account_tab_xpath, 30000)
-         await home.UserAccountTabIsDisplayed()
+         await home.isUserAccountTabVisible()
          console.log("Verified the user is successfully logged in")
       })
       await test.step("Step 6: Click Top Supplies button from main menu", async () => {
-         //await CommonMethods.isElementDisplayed(page, home.main_menu_Top_Supplies, 30000)
-         await home.TopSuppliesBtnIsDisplayed()
+         await home.isTopSuppliesBtnVisible()
          console.log("Top Supplies button is enabled")
-         home.ClickTopSupplies()
+         home.clickTopSupplies()
       })
       await test.step("Step 7: I should see list of Top Supplies", async () => {
          const Top_Supplies = home.main_menu_Top_Supplies_detail
@@ -342,10 +326,9 @@ test('06-Verify Main Menu Buttons Are Enabled and Interactive',
          console.log("List of Top Supplies are displayed")
       })
       await test.step("Step 8: Click Top Equipment button from main menu", async () => {
-         //await CommonMethods.isElementDisplayed(page, home.main_menu_Top_Equipment, 30000)
-         await home.TopEquipmentBtnIsDisplayed()
+         await home.isTopEquipmentBtnVisible()
          console.log("Top Equipment button is enabled")
-         await home.ClickTopEquipment()
+         await home.clickTopEquipment()
       })
       await test.step("Step 9: I should see list of Top Equipment", async () => {
          const Top_Equipment = home.main_menu_Top_Equipment_detail
@@ -353,10 +336,9 @@ test('06-Verify Main Menu Buttons Are Enabled and Interactive',
          console.log("List of Top Equipment are displayed")
       })
       await test.step("Step 10: Click Pharmaceuticals button from main menu", async () => {
-         //await CommonMethods.isElementDisplayed(page, home.main_menu_Pharmaceuticals, 30000)
-         await home.PharmaceuticalsBtnIsDisplayed()
+         await home.isPharmaceuticalsBtnVisible()
          console.log("Pharmaceuticals button is enabled")
-         await home.ClickPharmaceuticals()
+         await home.clickPharmaceuticals()
       })
       await test.step("Step 11: I should see list of Pharmaceuticals", async () => {
          const List_Pharmaceuticals = home.main_menu_Pharmaceuticals_details
@@ -364,10 +346,9 @@ test('06-Verify Main Menu Buttons Are Enabled and Interactive',
          console.log("List of Pharmaceuticals are displayed")
       })
       await test.step("Step 12: Click Furniture button from main menu", async () => {
-         //await CommonMethods.isElementDisplayed(page, home.main_menu_Furniture, 30000)
-         await home.FurnitureBtnIsDisplayed()
+         await home.isFurnitureBtnVisible()
          console.log("Furniture button is enabled")
-         home.ClickFurnitureDetail()
+         home.clickFurnitureDetail()
       })
       await test.step("Step 13: I should see list of Furniture", async () => {
          const List_Furniture = home.main_menu_Furniture_details
@@ -375,10 +356,9 @@ test('06-Verify Main Menu Buttons Are Enabled and Interactive',
          console.log("List of Furniture are displayed")
       })
       await test.step("Step 14: Click My Dashboard button from main menu", async () => {
-         //await CommonMethods.isElementDisplayed(page, home.main_menu_My_Dashboard, 30000)
-         await home.DashBoardBtnIsDisplayed()
+         await home.isDashBoardBtnVisible()
          console.log("My Dashboard button is enabled")
-         await home.ClickMainMenuDashboard()  
+         await home.clickMainMenuDashboard()  
       })
       await test.step("Step 15: I should see list of My Dashboard", async () => {
          const Dashboard = home.main_menu_My_Dashboard_details
@@ -413,31 +393,29 @@ test('07-Verify Main Menu Links Are Enabled and Interactive',
    async ({ page, home, config }) => {
 
       await test.step("Step 1: Navigate to  Henry Schein url", async () => {
-         await CommonMethods.navigateToPageUKMedical(page, config.appUrl, 30000)
+         await home.navigateToHsUKMedical(config.appUrl)
          console.log("Navigated to  Henry Schein url")
       })
       await test.step("Step 2: Click Sign-In button on the home page to log in", async () => {
-        // await CommonMethods.isElementDisplayed(page, home.sign_in_xpath, 20000)
-        await home.SignInBtnIsDisplayed()
+        await home.isSignInBtnVisible()
          console.log("Clicked the Sign-In button on home page")
       })
       await test.step("Step 3: Enter the username and password", async () => {
-         await home.ClickSignIn()
-         await home.FillUsername(config.username)
-         await home.FillPassword(config.password)
+         await home.clickSignIn()
+         await home.fillUsername(config.username)
+         await home.fillPassword(config.password)
          console.log("Entered the username and password")
       })
       await test.step("Step 4: Click the sign-in submit button", async () => {
-         await home.ClickSignInSubmitButton()
+         await home.clickSignInSubmitButton()
          console.log("Clicked the sign-in submit button")
       })
       await test.step("Step 5: Verify the user is successfully logged in", async () => {
-        // await CommonMethods.isElementDisplayed(page, home.user_account_tab_xpath, 25000)
-        await home.UserAccountTabIsDisplayed()
+        await home.isUserAccountTabVisible()
          console.log("Verified the user is successfully logged in")
       })
       await test.step("Step 6: Click Clearance link from main menu", async () => {
-         await home.ClickMainMenuClearance()
+         await home.clickMainMenuClearance()
          console.log("Clicked Clearance Link")
       })
       await test.step("Step 7: Link should navigate to Clearance Page", async () => {
@@ -445,7 +423,7 @@ test('07-Verify Main Menu Links Are Enabled and Interactive',
          console.log("Verified the page is navigated to Clearance page")
       })
       await test.step("Step 8: Click Blog link from main menu", async () => {
-         await home.ClickMainMenuBlog()
+         await home.clickMainMenuBlog()
          console.log("Clicked Blog Link")
       })
       await test.step("Step 9: Link should navigate to Blog Page", async () => {
@@ -454,7 +432,7 @@ test('07-Verify Main Menu Links Are Enabled and Interactive',
          console.log("Verified the page is navigated to Blog page")
       })
       await test.step("Step 10: Click Order From History link from main menu", async () => {
-         await home.ClickMainMenuOrderFromHistory()
+         await home.clickMainMenuOrderFromHistory()
          console.log("Clicked Order From History Link")
       })
       await test.step("Step 11: Link should navigate to Order From History", async () => {
@@ -485,27 +463,25 @@ test('08-Verify that the cart icon displays the correct item count when products
       let initialCount: number;
 
       await test.step("Step 1: Navigate to  Henry Schein url", async () => {
-         await CommonMethods.navigateToPageUKMedical(page, config.appUrl, 30000)
+         await home.navigateToHsUKMedical(config.appUrl)
          console.log("Navigated to  Henry Schein url")
       })
       await test.step("Step 2: Click Sign-In button on the home page to log in", async () => {
-        // await CommonMethods.isElementDisplayed(page, home.sign_in_xpath, 20000)
-        await home.SignInBtnIsDisplayed()
+        await home.isSignInBtnVisible()
          console.log("Clicked the Sign-In button on home page")
       })
       await test.step("Step 3: Enter the username and password", async () => {
-         await home.ClickSignIn()
-         await home.FillUsername(config.username)
-         await home.FillPassword(config.password)
+         await home.clickSignIn()
+         await home.fillUsername(config.username)
+         await home.fillPassword(config.password)
          console.log("Entered the username and password")
       })
       await test.step("Step 4: Click the sign-in submit button", async () => {
-         await home.ClickSignInSubmitButton()
+         await home.clickSignInSubmitButton()
          console.log("Clicked the sign-in submit button")
       })
       await test.step("Step 5: Verify the user is successfully logged in", async () => {
-         //await CommonMethods.isElementDisplayed(page, home.user_account_tab_xpath, 25000)
-         await home.UserAccountTabIsDisplayed()
+         await home.isUserAccountTabVisible()
          console.log("Verified the user is successfully logged in")
       })
       await test.step("Step 6: Verify the Cart badge quantity", async () => {
@@ -516,16 +492,17 @@ test('08-Verify that the cart icon displays the correct item count when products
 
       })
       await test.step("Step 7: Add product to cart", async () => {
-         await home.FillTextInSearchBar("DIS258")
+         await home.fillTextInSearchBar("DIS258")
          await page.keyboard.press("Enter");
          console.log("Entered Product Id");
          await CommonMethods.safeClick(page, home.product_1)
          console.log("Selected Product")
-         await CommonMethods.safeClick(page, home.Add_to_basket)
+         //await CommonMethods.safeClick(page, home.Add_to_basket)
+         await home.clickAddToCartBtn()
          console.log("Product added to Cart");
       })
       await test.step("Step 8: Verify the cart count and cart badge count are correct", async () => {
-         await CommonMethods.safeClick(page, home.view_basket, 30000);
+         await home.clickBasketIcon()
          console.log("Clicked View Basket")
          await expect(home.view_basket_qty).toBeVisible();
          await page.reload();
@@ -560,36 +537,34 @@ test("09-Verify that the tooltip is displays the address when hovering over the 
 
       // 1.)Go to the Henry Schein website.
       await test.step("Step 1: Navigate to the Henry Schein website.", async () => {
-         await CommonMethods.navigateToPageUKMedical(page, config.appUrl, 10000)
+         await home.navigateToHsUKMedical(config.appUrl)
          console.log("Navigated to  Henry Schein url")
       })
       // 2.)Ensure the Sign In button is visible.
       await test.step("Step 2: Confirm that the Sign In button is visible.", async () => {
-         //await CommonMethods.isElementDisplayed(page, home.sign_in_xpath, 20000)
-         await home.SignInBtnIsDisplayed()
+         await home.isSignInBtnVisible()
          console.log("Verified the sign in button should be visible on the home page")
       })
       // 3.)Enter valid username and password.
       await test.step("Step 3: Enter a valid username and password.", async () => {
-         await home.ClickSignIn()
-         await home.FillUsername(config.USERNAME)
-         await home.FillPassword(config.PASSWORD)
+         await home.clickSignIn()
+         await home.fillUsername(config.USERNAME)
+         await home.fillPassword(config.PASSWORD)
          console.log("Entered the username and password")
       })
       // 4.)Click the Sign In button.
       await test.step("Step 4: Click the Sign In button.", async () => {
-         await home.ClickSignInSubmitButton()
+         await home.clickSignInSubmitButton()
          console.log("clicked the sign-in submit button")
       })
       // 5.)Verify that the address tooltip is visible in the menu bar.
       await test.step("Step 5: Verify that the address tooltip is visible in the menu bar.", async () => {
-        // await CommonMethods.isElementDisplayed(page, home.address_tooltip_xpath)
-        await home.AddressToolTipIsDisplayed()
+        await home.isAddressToolTipVisible()
          console.log("the address-tooltip is visible")
       })
       // 6.)Hover over the address tooltip and check that the tooltip displays the address information.
       await test.step("Step 6: Hover over the address tooltip and check that the tooltip displays the address information.", async () => {
-         await home.MouseHoverTooltip()
+         await home.mouseHoverTooltip()
          //var addressInfo:String;
          const tooltipText: string | null = await CommonMethods.getTextFromElement(page, home.address_tooltip_xpath)
          if (tooltipText == null) {
@@ -629,30 +604,28 @@ test("11-Verify that the banner slider displays all slides with their respective
    async ({ page, home, config }) => {
 
       await test.step("Step 1: Navigate to the Henry Schein website.", async () => {
-         await CommonMethods.navigateToPageUKMedical(page, config.appUrl, 10000)
+         await home.navigateToHsUKMedical(config.appUrl)
          console.log("Navigated to  Henry Schein url")
       })
       await test.step("Step 2: Confirm that the Sign In button is visible.", async () => {
-         //await CommonMethods.isElementDisplayed(page, home.sign_in_xpath, 20000)
-         await home.SignInBtnIsDisplayed()
+         await home.isSignInBtnVisible()
          console.log("Verified the sign in button should be visible on the home page")
       })
 
       await test.step("Step 3: Enter a valid username and password.", async () => {
-         await home.ClickSignIn()
-         await home.FillUsername(config.username)
-         await home.FillPassword(config.password)
+         await home.clickSignIn()
+         await home.fillUsername(config.username)
+         await home.fillPassword(config.password)
          console.log("Entered the username and password")
       })
 
       await test.step("Step 4: Click the Sign In button.", async () => {
-         await home.ClickSignInSubmitButton()
+         await home.clickSignInSubmitButton()
          console.log("clicked the sign-in submit button")
       })
 
       await test.step("Step 5: Verify that the banner is displayed on the home page.", async () => {
-         //await CommonMethods.isElementDisplayed(page, home.sliderBanner_xpath)
-         await home.SliderBannerIsDislplayed()
+         await home.isSliderBannerVisible()
          console.log("The banner is displayed")
       })
 
@@ -666,7 +639,7 @@ test("11-Verify that the banner slider displays all slides with their respective
             else {
                throw new Error(`Banner slide text is null at iteration ${i}`);
             }
-            await home.ClickBannerNavigationButton()
+            await home.clickBannerNavigationButton()
          }
          const UniqueSlides = new Set(bannerSlides)
          console.log(UniqueSlides)
@@ -696,38 +669,36 @@ Steps
 13.Link should navigate to LinkedIn
 */
 
-test('11-Verify Footer Links Are Interactive and Navigate to respective pages',
+test('12-Verify Footer Links Are Interactive and Navigate to respective pages',
    {
       tag: ['@regression', '@footer'],
    },
    async ({ page, home, config }) => {
 
       await test.step("Step 1: Navigate to  Henry Schein url", async () => {
-         await CommonMethods.navigateToPageUKMedical(page, config.appUrl, 30000)
+         await home.navigateToHsUKMedical(config.appUrl)
          console.log("Navigated to  Henry Schein url")
       })
       await test.step("Step 2: Click Sign-In button on the home page to log in", async () => {
-        // await CommonMethods.isElementDisplayed(page, home.sign_in_xpath, 20000)
-        await home.SignInBtnIsDisplayed()
+        await home.isSignInBtnVisible()
          console.log("Clicked the Sign-In button on home page")
       })
       await test.step("Step 3: Enter the username and password", async () => {
-        await home.ClickSignIn()
-        await home.FillUsername(config.username)
-        await home.FillPassword(config.password)
+        await home.clickSignIn()
+        await home.fillUsername(config.username)
+        await home.fillPassword(config.password)
          console.log("Entered the username and password")
       })
       await test.step("Step 4: Click the sign-in submit button", async () => {
-         await home.ClickSignInSubmitButton()
+         await home.clickSignInSubmitButton()
          console.log("Clicked the sign-in submit button")
       })
       await test.step("Step 5: Verify the user is successfully logged in", async () => {
-        // await CommonMethods.isElementDisplayed(page, home.user_account_tab_xpath, 25000)
-        await home.UserAccountTabIsDisplayed()
+        await home.isUserAccountTabVisible()
          console.log("Verified the user is successfully logged in")
       })
       await test.step("Step 6: Click Legal Terms link on footer section", async () => {
-         await home.ClickFooterLegalTerms()
+         await home.clickFooterLegalTerms()
          console.log("Clicked Legal Terms Link")
       })
       await test.step("Step 7: Link should navigate to Legal Terms Page", async () => {
@@ -735,7 +706,7 @@ test('11-Verify Footer Links Are Interactive and Navigate to respective pages',
          console.log("Verified the page is navigated to Legal Terms page")
       })
       await test.step("Step 8: Click Privacy Notice link on footer section", async () => {
-         await home.ClickFooterPrivacyNotice()
+         await home.clickFooterPrivacyNotice()
          console.log("Clicked Privacy Notice Link")
       })
       await test.step("Step 9: Link should navigate to Privacy Notice Page", async () => {
@@ -743,7 +714,7 @@ test('11-Verify Footer Links Are Interactive and Navigate to respective pages',
          console.log("Verified the page is navigated to Privacy Notice page")
       })
       await test.step("Step 10: Click Delivery and Returns link on footer section", async () => {
-         await home.ClickFooterDeliveryAndReturns()
+         await home.clickFooterDeliveryAndReturns()
          console.log("Clicked Delivery and Returns Link")
       })
       await test.step("Step 11: Link should navigate to Delivery and Returns page", async () => {
@@ -751,49 +722,46 @@ test('11-Verify Footer Links Are Interactive and Navigate to respective pages',
          console.log("Verified the page is navigated to Delivery and Returns page")
       })
       await test.step("Step 12: Click LinkedIn link on footer section & wait for new tab", async () => {
-         const [linkedinPage] = await Promise.all([page.context().waitForEvent('page'), home.ClickFooterLinkedIn()]);
+         const [linkedinPage] = await Promise.all([page.context().waitForEvent('page'), home.clickFooterLinkedIn()]);
          console.log("Clicked LinkedIn Link");
-         // Wait for LinkedIn page to load",async()=>{
          await linkedinPage.waitForLoadState('domcontentloaded');
       })
       await test.step("Step 13: Verify LinkedIn URL", async () => {
-         const [linkedinPage] = await Promise.all([page.context().waitForEvent('page'), home.ClickFooterLinkedIn()]);
+         const [linkedinPage] = await Promise.all([page.context().waitForEvent('page'), home.clickFooterLinkedIn()]);
          await expect(linkedinPage).toHaveURL('https://www.linkedin.com/showcase/henry-schein-medical-uk/?viewAsMember=true');
          console.log("Verified navigation to LinkedIn page");
       })
    })
 
 /*
-12)Testcase-12 : Verify that the user cannot sign in with invalid credentials (Failure case)
+13)Testcase-13 : Verify that the user cannot sign in with invalid credentials (Failure case)
 */
-test('12-To Verify the error message for invalid login credentials',
+test('13-To Verify the error message for invalid login credentials',
    {
       tag: ['@regression', '@signin', '@failure_case'],
    },
    async ({ page, home, config }) => {
 
       await test.step("Step 1: Navigate to  HenrySchein url", async () => {
-         await CommonMethods.navigateToPageUKMedical(page, config.appUrl, 30000)
+         await home.navigateToHsUKMedical(config.appUrl)
          console.log("Navigated to  HenrySchein url")
       })
       await test.step("Step 2: Verify the sign in button should be visible on the home page", async () => {
-        // await CommonMethods.isElementDisplayed(page, home.sign_in_xpath, 30000)
-        await home.SignInBtnIsDisplayed()
+        await home.isSignInBtnVisible()
          console.log("Verified the sign in button should be visible on the home page")
       })
       await test.step("Step 3: Enter invalid username and password", async () => {
-         await home.ClickSignIn()
-         await home.FillUsername(config.invalid_username)
-         await home.FillPassword(config.invalid_password)
+         await home.clickSignIn()
+         await home.fillUsername(config.invalid_username)
+         await home.fillPassword(config.invalid_password)
          console.log("Entered invalid username and password")
       })
       await test.step("Step 4: Click the sign-in submit button", async () => {
-         await home.ClickSignInSubmitButton()
+         await home.clickSignInSubmitButton()
          console.log("Clicked the sign-in submit button")
       })
       await test.step("Step 5: Verify the user cannot sign in successfully", async () => {
-         //await CommonMethods.isElementDisplayed(page, home.sign_in_error_msg_xpath, 30000)
-         await home.SignInErrorMsgIsDisplayed()
+         await home.isSignInErrorMsgVisible()
          console.log("Please enter valid Username/Password")
          const errorMsg = (home.sign_in_error_msg_xpath);
          await expect(errorMsg).toBeVisible();
@@ -803,21 +771,23 @@ test('12-To Verify the error message for invalid login credentials',
    })
 
    const languages = ['en_IN', 'ta_IN','hi_IN','ml_IN'];
-   languages.forEach((lang) => {
-   test(`Amazon cart flow and filters validation ${lang}`,async({page,config,home})=>{
+   let i : number=14
+   languages.forEach((lang) => { 
+   test(`${i}.Amazon cart flow and filters validation ${lang}`,{
+      tag: ['@Amazon','@Multi-language'],
+   },async({page,config,home})=>{
 
       await test.step("Step 1: Navigate to Amazon Website",async()=>{
          await page.goto(`https://www.amazon.in/ref=nav_logo?language=${lang}`)
-         //await page.goto(config.amazonurl)
       })
 
       await test.step("Step 2: Search an item in search bar",async()=>{
-         await home.FillTextInAmazonSearchBar("Gaming Laptops")
-         await home.ClickAmazonSearchBtn()
+         await home.fillTextInAmazonSearchBar("Gaming Laptops")
+         await home.clickAmazonSearchBtn()
       })
        
       await test.step("Step 3:Apply specific filters",async()=>{
-         await home.CheckFreeShippingCheckBox()
+         await home.checkFreeShippingCheckBox()
         await page.locator("//div[@id='brandsRefinements']//span[text()='Lenovo']").scrollIntoViewIfNeeded()
          await page.locator(`//div[@id='brandsRefinements']//span[text()='${config.BrandENG}']`).click()
       })
@@ -854,11 +824,8 @@ test('12-To Verify the error message for invalid login credentials',
       })
 
       await test.step("Step 5:Clicked the add to cart button",async()=>{
-         await page.waitForTimeout(5000);
-         //await home.ClickAddToCartBtn()
          if(lang=="ta_IN"){
          await page.locator(`(//button[@aria-label='${config.addToCart_tamil}'])[1]`).click()
-         await page.waitForTimeout(5000);
          }
          else if(lang=="en_IN"){
          await page.locator(`(//button[@aria-label='${config.addToCart_eng}'])[1]`).click()
@@ -866,16 +833,14 @@ test('12-To Verify the error message for invalid login credentials',
          }
          else if(lang=="hi_IN"){
          await page.locator(`(//button[@aria-label='${config.addToCart_hindi}'])[1]`).click()
-         await page.waitForTimeout(5000);
          }
          else if(lang=="ml_IN"){
          await page.locator(`(//button[@aria-label='${config.addToCart_Malayalam}'])[1]`).click()
-         await page.waitForTimeout(5000);
          }
       })
 
       await test.step("Step 6: Navigate to cart page",async()=>{
-         await home.ClickAmazonCartIcon()
+         await home.clickAmazonCartIcon()
       })
       await test.step("Step 7: Verify the subtotal is displayed",async()=>{
          await CommonMethods.isElementDisplayed(page,home.subtotal)
@@ -899,9 +864,10 @@ test('12-To Verify the error message for invalid login credentials',
       })
 
       await test.step("Step 8: Click the Proceed to buy button",async()=>{
-         await home.ClickProceedtoBuyBtn()
+         await home.clickProceedtoBuyBtn()
          })
-   })
+      })
+   i++
 })
 
 
@@ -940,7 +906,7 @@ test('08-Verify User Is Able to Place an Order Successfully',
    async ({ page, home, config }) => {
 
       await test.step("Step 1: Navigate to  Henry Schein url", async () => {
-         await CommonMethods.navigateToPageUKMedical(page, config.appUrl, 30000)
+         await home.navigateToHsUKMedical(config.appUrl)
          console.log("Navigated to  Henry Schein url")
       })
       await test.step("Step 2: Click Sign-In button on the home page to log in", async () => {

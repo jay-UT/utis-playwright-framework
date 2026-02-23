@@ -144,7 +144,16 @@ export class HomePage {
         return false
     }
 
-    async ClickIcon(){
+    async navigateToHsUKMedical(url : string){
+        try{
+        await CommonMethods.navigateToPageUKMedical(this.page,url);
+        }
+        catch(error){
+            console.log(`Exception occurs while navigating to HS home page :"${error}`)
+            throw error;
+        }
+    }
+    async clickIcon(){
         try{
         await CommonMethods.safeClick(this.page,this.icon_xpath)
         }
@@ -154,7 +163,7 @@ export class HomePage {
         }
     }
      
-    async ClickSignIn(){
+    async clickSignIn(){
         try{    
             await CommonMethods.safeClick(this.page,this.sign_in_xpath)
         }
@@ -164,7 +173,7 @@ export class HomePage {
         }
     }
 
-    async FillUsername(username : string){
+    async fillUsername(username : string){
         try {
             await CommonMethods.writeText(this.page,this.username_xpath,username)
         }catch(error){
@@ -173,7 +182,7 @@ export class HomePage {
         }
     }
 
-    async FillPassword(password : string){
+    async fillPassword(password : string){
         try{
             await CommonMethods.writeText(this.page,this.password_xpath,password)
         }catch(error){
@@ -182,7 +191,7 @@ export class HomePage {
         }
     }
 
-    async ClickSignInSubmitButton(){
+    async clickSignInSubmitButton(){
         try {
             await CommonMethods.safeClick(this.page,this.sign_in_submit_btn_xpath)
         } catch (error) {
@@ -191,7 +200,7 @@ export class HomePage {
         }
     }
 
-    async ClickSignUpButton(){
+    async clickSignUpButton(){
         try {
             await CommonMethods.safeClick(this.page,this.sign_up_xpath)
         } catch (error) {
@@ -200,7 +209,7 @@ export class HomePage {
         }
     }
 
-    async FillRegistrationUsername(regUsername : string){
+    async fillRegistrationUsername(regUsername : string){
         try {
             await CommonMethods.writeText(this.page, this.reg_username_input, regUsername)
         } catch (error) {
@@ -209,7 +218,7 @@ export class HomePage {
         }
     }
 
-    async FillRegistrationPassword(regPassword : string){
+    async fillRegistrationPassword(regPassword : string){
         try {
             await CommonMethods.writeText(this.page, this.reg_password_input, regPassword)
         } catch (error) {
@@ -218,7 +227,7 @@ export class HomePage {
         }
     }
 
-    async FillRegistrationConfirmPassword(cnfRegPassword : string){
+    async fillRegistrationConfirmPassword(cnfRegPassword : string){
         try {
             await CommonMethods.writeText(this.page,this.reg_confirm_password_input,cnfRegPassword)
         } catch (error) {
@@ -227,7 +236,7 @@ export class HomePage {
         }
     }
 
-    async FillRegistrationEmail(email : string){
+    async fillRegistrationEmail(email : string){
         try {
             await CommonMethods.writeText(this.page,this.reg_email_input,email)
         } catch (error) {
@@ -235,7 +244,7 @@ export class HomePage {
             throw error;
         }
     }
-    async ClickRegistrationNextButton(){
+    async clickRegistrationNextButton(){
         try {
             await CommonMethods.safeClick(this.page,this.reg_next_step_btn)
         } catch (error) {
@@ -243,7 +252,7 @@ export class HomePage {
             throw error;
         }
     }
-    async ClickRegistrationContinueButton(){
+    async clickRegistrationContinueButton(){
         try {
             await CommonMethods.safeClick(this.page,this.continue_btn)
         } catch (error) {
@@ -252,7 +261,7 @@ export class HomePage {
         }
     }
 
-    async FillTextInSearchBar(searchInput : string){
+    async fillTextInSearchBar(searchInput : string){
         try {
             await CommonMethods.writeText(this.page,this.search_input,searchInput)
         } catch (error) {
@@ -261,7 +270,7 @@ export class HomePage {
         }  
     }
 
-    async ClickTopSupplies(){
+    async clickTopSupplies(){
         try {
             await CommonMethods.safeClick(this.page,this.main_menu_Top_Supplies)
         } catch (error) {
@@ -270,7 +279,7 @@ export class HomePage {
         }
     }
 
-    async ClickTopEquipment(){
+    async clickTopEquipment(){
         try {
             await CommonMethods.safeClick(this.page,this.main_menu_Top_Equipment)
         } catch (error) {
@@ -279,7 +288,7 @@ export class HomePage {
         }
     } 
 
-    async ClickPharmaceuticals(){
+    async clickPharmaceuticals(){
         try {
             await CommonMethods.safeClick(this.page,this.main_menu_Pharmaceuticals)
         } catch (error) {
@@ -288,7 +297,7 @@ export class HomePage {
         }
     }
 
-    async ClickFurnitureDetail(){
+    async clickFurnitureDetail(){
         try {
             await CommonMethods.safeClick(this.page,this.main_menu_Furniture)
         } catch (error) {
@@ -297,7 +306,7 @@ export class HomePage {
         }
     }
     
-    async ClickMainMenuDashboard(){
+    async clickMainMenuDashboard(){
         try {
             await CommonMethods.safeClick(this.page,this.main_menu_My_Dashboard)
         } catch (error) {
@@ -307,7 +316,7 @@ export class HomePage {
         
     }
 
-    async ClickMainMenuClearance(){
+    async clickMainMenuClearance(){
         try {
             await CommonMethods.safeClick(this.page,this.main_menu_Clearance)
         } catch (error) {
@@ -316,7 +325,7 @@ export class HomePage {
         }
     }
 
-    async ClickMainMenuBlog(){
+    async clickMainMenuBlog(){
         try {
             await CommonMethods.safeClick(this.page,this.main_menu_Blog)
         } catch (error) {
@@ -325,7 +334,7 @@ export class HomePage {
         }
     }
     
-    async ClickMainMenuOrderFromHistory(){
+    async clickMainMenuOrderFromHistory(){
         try {
             await CommonMethods.safeClick(this.page,this.main_menu_Order_From_History)
         } catch (error) {
@@ -334,7 +343,7 @@ export class HomePage {
         }
     }
 
-    async MouseHoverTooltip(){
+    async mouseHoverTooltip(){
         try {
             await CommonMethods.mouseOver(this.page,this.address_tooltip_xpath)
         } catch (error) {
@@ -343,7 +352,7 @@ export class HomePage {
         }
     }
 
-    async ClickBannerNavigationButton(){
+    async clickBannerNavigationButton(){
         try {
             await CommonMethods.safeClick(this.page,this.slideNavButton)
         } catch (error) {
@@ -352,7 +361,7 @@ export class HomePage {
         }
     }
     
-    async ClickFooterLegalTerms(){
+    async clickFooterLegalTerms(){
         try {
             await CommonMethods.safeClick(this.page,this.footer_Legal_Terms)
         } catch (error) {
@@ -361,7 +370,7 @@ export class HomePage {
         }
     }
 
-    async ClickFooterPrivacyNotice(){
+    async clickFooterPrivacyNotice(){
         try {
             await CommonMethods.safeClick(this.page,this.footer_Privacy_Notice)
         } catch (error) {
@@ -370,7 +379,7 @@ export class HomePage {
         }
     }
 
-    async ClickFooterDeliveryAndReturns(){
+    async clickFooterDeliveryAndReturns(){
         try {
             await CommonMethods.safeClick(this.page,this.footer_Delivery_and_Returns)
         } catch (error) {
@@ -379,7 +388,7 @@ export class HomePage {
         }
     }
     
-    async ClickFooterLinkedIn(){
+    async clickFooterLinkedIn(){
         try {
             await CommonMethods.safeClick(this.page,this.footer_LinkedIn)
         } catch (error) {
@@ -388,7 +397,7 @@ export class HomePage {
         }
     }
 
-    async FillTextInAmazonSearchBar(searchInput : string){
+    async fillTextInAmazonSearchBar(searchInput : string){
          try {
             await CommonMethods.writeText(this.page,this.amazonSearchBar,searchInput)
         } catch (error) {
@@ -397,7 +406,7 @@ export class HomePage {
         }  
     }
 
-    async ClickAmazonSearchBtn(){
+    async clickAmazonSearchBtn(){
         try {
             await CommonMethods.safeClick(this.page,this.amazonSearchIcon)
         } catch (error) {
@@ -406,7 +415,7 @@ export class HomePage {
         }
     }
 
-    async CheckFreeShippingCheckBox(){
+    async checkFreeShippingCheckBox(){
         try {
            // await CommonMethods.Check_CheckBox(this.page,this.freeShipping)
            await CommonMethods.safeClick(this.page,this.freeShipping)
@@ -416,7 +425,7 @@ export class HomePage {
         }
     }
 
-    async ClickAddToCartBtn(){
+    async clickAmazonAddToCartBtn(){
         try {
             await CommonMethods.safeClick(this.page,this.amazonAddToCartBtn)
         } catch (error) {
@@ -424,7 +433,7 @@ export class HomePage {
             throw error;
         }
     }
-    async ClickAmazonCartIcon(){
+    async clickAmazonCartIcon(){
         try {
             await CommonMethods.safeClick(this.page,this.amazonCartIcon)
         } catch (error) {
@@ -433,7 +442,7 @@ export class HomePage {
         }
     }
     
-    async ClickProceedtoBuyBtn(){
+    async clickProceedtoBuyBtn(){
         try {
             await CommonMethods.safeClick(this.page,this.proceedToBuyBtn)
         } catch (error) {
@@ -442,7 +451,7 @@ export class HomePage {
         }
     }
 
-    async Hs_IconIsDisplayed(){
+    async isHSIconIsVisible(){
         try {
             await CommonMethods.isElementDisplayed(this.page,this.icon_xpath)
         } catch (error) {
@@ -451,7 +460,7 @@ export class HomePage {
         }
     }
 
-    async SignInBtnIsDisplayed(){
+    async isSignInBtnVisible(){
         try {
             await CommonMethods.isElementDisplayed(this.page,this.sign_in_xpath)
         } catch (error) {
@@ -459,7 +468,7 @@ export class HomePage {
             throw error;
         }
     }
-    async UserAccountTabIsDisplayed(){
+    async isUserAccountTabVisible(){
         try {
             await CommonMethods.isElementDisplayed(this.page,this.user_account_tab_xpath)
         } catch (error) {
@@ -467,7 +476,7 @@ export class HomePage {
             throw error;
         }
     }
-    async SignInErrorMsgIsDisplayed(){
+    async isSignInErrorMsgVisible(){
          try {
             await CommonMethods.isElementDisplayed(this.page,this.sign_in_error_msg_xpath)
         } catch (error) {
@@ -476,7 +485,7 @@ export class HomePage {
         }
     }
 
-    async SignUpBtnIsDisplayed(){
+    async isSignUpBtnVisible(){
           try {
             await CommonMethods.isElementDisplayed(this.page,this.sign_up_xpath)
         } catch (error) {
@@ -485,7 +494,7 @@ export class HomePage {
         }
     }
 
-    async SearchBarIsDisplayed(){
+    async isSearchBarVisible(){
         try {
             await CommonMethods.isElementDisplayed(this.page,this.search_input)
         } catch (error) {
@@ -494,7 +503,7 @@ export class HomePage {
         }
     }
 
-    async TopSuppliesBtnIsDisplayed(){
+    async isTopSuppliesBtnVisible(){
         try {
             await CommonMethods.isElementDisplayed(this.page,this.main_menu_Top_Supplies)
         } catch (error) {
@@ -502,7 +511,7 @@ export class HomePage {
             throw error;
         }
     }
-    async TopEquipmentBtnIsDisplayed(){
+    async isTopEquipmentBtnVisible(){
        try {
             await CommonMethods.isElementDisplayed(this.page,this.main_menu_Top_Equipment)
         } catch (error) {
@@ -511,7 +520,7 @@ export class HomePage {
         } 
     }
 
-    async PharmaceuticalsBtnIsDisplayed(){
+    async isPharmaceuticalsBtnVisible(){
         try {
             await CommonMethods.isElementDisplayed(this.page,this.main_menu_Pharmaceuticals)
         } catch (error) {
@@ -520,7 +529,7 @@ export class HomePage {
         } 
     }
 
-    async FurnitureBtnIsDisplayed(){
+    async isFurnitureBtnVisible(){
         try {
             await CommonMethods.isElementDisplayed(this.page,this.main_menu_Furniture)
         } catch (error) {
@@ -529,7 +538,7 @@ export class HomePage {
         } 
     }
 
-    async DashBoardBtnIsDisplayed(){
+    async isDashBoardBtnVisible(){
         try {
             await CommonMethods.isElementDisplayed(this.page,this.main_menu_My_Dashboard)
         } catch (error) {
@@ -538,7 +547,7 @@ export class HomePage {
         } 
     }
 
-    async AddressToolTipIsDisplayed(){
+    async isAddressToolTipVisible(){
        try {
             await CommonMethods.isElementDisplayed(this.page,this.address_tooltip_xpath)
         } catch (error) {
@@ -547,11 +556,29 @@ export class HomePage {
         }  
     }
 
-    async SliderBannerIsDislplayed(){
+    async isSliderBannerVisible(){
         try {
             await CommonMethods.isElementDisplayed(this.page,this.sliderBanner_xpath)
         } catch (error) {
             console.log(`Exception occurs due to element is not displayed" ${error}`)
+            throw error;
+        } 
+    }
+
+    async clickAddToCartBtn(){
+         try {
+            await CommonMethods.safeClick(this.page,this.Add_to_basket)
+        } catch (error) {
+            console.log(`Exception occurs when clicking the add to basket button" ${error}`)
+            throw error;
+        } 
+    }
+
+    async clickBasketIcon(){
+        try {
+            await CommonMethods.safeClick(this.page,this.view_basket)
+        } catch (error) {
+            console.log(`Exception occurs when clicking the basket Icon" ${error}`)
             throw error;
         } 
     }
