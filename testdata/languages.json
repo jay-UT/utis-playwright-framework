@@ -1,0 +1,26 @@
+{
+  "en_IN": {
+    "freeShipping": "FREE delivery",
+    "brand": "Lenovo",
+    "addToCart": "Add to cart",
+    "subTotal": "Subtotal"
+  },
+  "ta_IN": {
+    "freeShipping": "இலவச டெலிவரி",
+    "brand": "Lenovo",
+    "addToCart": "கார்ட்டில் சேர்",
+    "subTotal": "மொத்தம்"
+  },
+  "hi_IN": {
+    "freeShipping": "मुफ़्त डिलीवरी",
+    "brand": "Lenovo",
+    "addToCart": "कार्ट में जोड़ें",
+    "subTotal": "उप-योग"
+  },
+  "ml_IN": {
+    "freeShipping": "സൗജന്യ ഡെലിവറി",
+    "brand": "Lenovo",
+    "addToCart": "കാര്‍ട്ടിലേക്ക് ചേർക്കുക",
+    "subTotal": "സബ് ടോട്ടൽ"
+  }
+}

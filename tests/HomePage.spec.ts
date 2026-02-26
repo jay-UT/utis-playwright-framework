@@ -769,14 +769,20 @@ test('13-To Verify the error message for invalid login credentials',
       })
 
    })
+ 
 
-   const languages = ['en_IN', 'ta_IN','hi_IN','ml_IN'];
+
+const languagesData = DataProvider.getDataFromJson('./testdata/languages.json');
+   const selectedLanguage = process.env.LANG?.trim();
+   const languages = selectedLanguage && languagesData[selectedLanguage]
+  ? [selectedLanguage] 
+  : Object.keys(languagesData); 
    let i : number=14
    languages.forEach((lang) => { 
-   test(`${i}.Amazon cart flow and filters validation ${lang}`,{
+test(`${i}.Amazon cart flow and filters validation ${lang}`,{
       tag: ['@Amazon','@Multi-language'],
    },async({page,config,home})=>{
-
+      const data =languagesData[lang]
       await test.step("Step 1: Navigate to Amazon Website",async()=>{
          await page.goto(`https://www.amazon.in/ref=nav_logo?language=${lang}`)
       })
@@ -788,56 +794,22 @@ test('13-To Verify the error message for invalid login credentials',
        
       await test.step("Step 3:Apply specific filters",async()=>{
          await home.checkFreeShippingCheckBox()
-        await page.locator("//div[@id='brandsRefinements']//span[text()='Lenovo']").scrollIntoViewIfNeeded()
-         await page.locator(`//div[@id='brandsRefinements']//span[text()='${config.BrandENG}']`).click()
+         await page.locator("//div[@id='brandsRefinements']//span[text()='Lenovo']").scrollIntoViewIfNeeded()
+         await page.locator(`//div[@id='brandsRefinements']//span[text()='${data.brand}']`).click()
       })
       
       await test.step("Step 4:Validate the applied filters is applied in cart page",async()=>{
-         if(lang=="ta_IN"){
-            const freeShip :string|null  = await CommonMethods.getTextFromElement(page,home.freeShippingText);
-            console.log(freeShip)
-         expect(freeShip).toContain(config.FreeShipTamil)
-         const brandName : string|null = await CommonMethods.getTextFromElement(page,home.product_title)
-         expect(brandName).toContain(config.BrandTamil)
-         }
-         else if(lang=="en_IN"){
+         
          const freeShip :string|null  = await CommonMethods.getTextFromElement(page,home.freeShippingText);
          console.log(freeShip)
-         expect(freeShip).toContain(config.FreeShipEng)
+         expect(freeShip).toContain(data.freeShipping)
          const brandName : string|null = await CommonMethods.getTextFromElement(page,home.product_title)
-         expect(brandName).toContain(config.BrandENG)
-         }
-         else if(lang=="hi_IN"){
-         const freeShip :string|null  = await CommonMethods.getTextFromElement(page,home.freeShippingText);
-         console.log(freeShip)
-         expect(freeShip).toContain(config.FreeShipHindi)
-         const brandName : string|null = await CommonMethods.getTextFromElement(page,home.product_title)
-         expect(brandName).toContain(config.BrandTamil)
-         }
-         else if(lang=="ml_IN"){
-         const freeShip :string|null  = await CommonMethods.getTextFromElement(page,home.freeShippingText);
-         console.log(freeShip)
-         expect(freeShip).toContain(config.FreeShipMalayalam)
-         const brandName : string|null = await CommonMethods.getTextFromElement(page,home.product_title)
-         expect(brandName).toContain(config.BrandMalayalam)
-         }
+         expect(brandName).toContain(data.brand)
       })
 
       await test.step("Step 5:Clicked the add to cart button",async()=>{
-         if(lang=="ta_IN"){
-         await page.locator(`(//button[@aria-label='${config.addToCart_tamil}'])[1]`).click()
-         }
-         else if(lang=="en_IN"){
-         await page.locator(`(//button[@aria-label='${config.addToCart_eng}'])[1]`).click()
-         await page.waitForTimeout(5000);
-         }
-         else if(lang=="hi_IN"){
-         await page.locator(`(//button[@aria-label='${config.addToCart_hindi}'])[1]`).click()
-         }
-         else if(lang=="ml_IN"){
-         await page.locator(`(//button[@aria-label='${config.addToCart_Malayalam}'])[1]`).click()
-         }
-      })
+         await page.locator(`(//button[@aria-label='${data.addToCart}'])[1]`).click()
+       })
 
       await test.step("Step 6: Navigate to cart page",async()=>{
          await home.clickAmazonCartIcon()
@@ -845,22 +817,10 @@ test('13-To Verify the error message for invalid login credentials',
       await test.step("Step 7: Verify the subtotal is displayed",async()=>{
          await CommonMethods.isElementDisplayed(page,home.subtotal)
          const subTotalText= await CommonMethods.getTextFromElement(page,home.subtotal)
-         if(lang=="ta_IN"){
-         expect(subTotalText).toContain(config.subTotalTamil)
+        
+         expect(subTotalText).toContain(data.subTotal)
          console.log(subTotalText)
-         }
-         else if(lang=="en_IN"){
-            expect(subTotalText).toContain(config.subTotalEng)
-            console.log(subTotalText)
-         }
-         else if(lang=="hi_IN"){
-            expect(subTotalText).toContain(config.subTotalHindi)
-            console.log(subTotalText)
-         }
-         else if(lang=="ml_IN"){
-            expect(subTotalText).toContain(config.SubTotalMalayalam)
-            console.log(subTotalText)
-         }
+       
       })
 
       await test.step("Step 8: Click the Proceed to buy button",async()=>{
@@ -869,10 +829,6 @@ test('13-To Verify the error message for invalid login credentials',
       })
    i++
 })
-
-
-
-
 
 
 
