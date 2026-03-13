@@ -62,10 +62,22 @@ export default defineConfig({
  // grep: /@smoke/, 
 
   projects: [
+    // {
+    //   name: 'HenrySchein',
+    //   use: { ...devices['Desktop Chrome'] },
+       
+    // },
     {
       name: 'HenrySchein',
-      use: { ...devices['Desktop Chrome'] },
-    },
+      use: {
+        ...devices['Desktop Chrome'],
+        browserName: 'chromium',
+        launchOptions: {
+          executablePath: 'C:/Program Files/Google/Chrome/Application/chrome.exe'
+        }
+      }
+    }
+
     //{
     //name: 'firefox',
     //use: { ...devices['Desktop Firefox'] },

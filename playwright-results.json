@@ -37,7 +37,7 @@
       [
         "html",
         {
-          "outputFolder": "reports/html-report-125212",
+          "outputFolder": "reports/html-report-182428",
           "open": "never"
         }
       ],
@@ -79,11 +79,11 @@
       "line": 0,
       "specs": [
         {
-          "title": "14.Amazon cart flow and filters validation en_IN",
+          "title": "08-Verify that the cart icon displays the correct item count when products are added to the cart",
           "ok": true,
           "tags": [
-            "Amazon",
-            "Multi-language"
+            "regression",
+            "cart"
           ],
           "tests": [
             {
@@ -97,53 +97,80 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 12156,
+                  "duration": 29884,
                   "errors": [],
                   "stdout": [
                     {
-                      "text": "FREE delivery Sat, 28 Feb\n"
+                      "text": "Navigated to  Henry Schein url\n"
                     },
                     {
-                      "text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSubtotal (1 item):\n"
+                      "text": "Clicked the Sign-In button on home page\n"
+                    },
+                    {
+                      "text": "Entered the username and password\n"
+                    },
+                    {
+                      "text": "Clicked the sign-in submit button\n"
+                    },
+                    {
+                      "text": "Verified the user is successfully logged in\n"
+                    },
+                    {
+                      "text": "Cart badge text: 10View Basket\n"
+                    },
+                    {
+                      "text": "Entered Product Id\n"
+                    },
+                    {
+                      "text": "Selected Product\n"
+                    },
+                    {
+                      "text": "Product added to Cart\n"
+                    },
+                    {
+                      "text": "Clicked View Basket\n"
+                    },
+                    {
+                      "text": "Updated cart count: 11\n"
                     }
                   ],
                   "stderr": [],
                   "retry": 0,
                   "steps": [
                     {
-                      "title": "Step 1: Navigate to Amazon Website",
-                      "duration": 1776
+                      "title": "Step 1: Navigate to  Henry Schein url",
+                      "duration": 10959
                     },
                     {
-                      "title": "Step 2: Search an item in search bar",
-                      "duration": 1692
+                      "title": "Step 2: Click Sign-In button on the home page to log in",
+                      "duration": 245
                     },
                     {
-                      "title": "Step 3:Apply specific filters",
-                      "duration": 4575
+                      "title": "Step 3: Enter the username and password",
+                      "duration": 1729
                     },
                     {
-                      "title": "Step 4:Validate the applied filters is applied in cart page",
-                      "duration": 91
+                      "title": "Step 4: Click the sign-in submit button",
+                      "duration": 348
                     },
                     {
-                      "title": "Step 5:Clicked the add to cart button",
-                      "duration": 1102
+                      "title": "Step 5: Verify the user is successfully logged in",
+                      "duration": 1455
                     },
                     {
-                      "title": "Step 6: Navigate to cart page",
-                      "duration": 1411
+                      "title": "Step 6: Verify the Cart badge quantity",
+                      "duration": 117
                     },
                     {
-                      "title": "Step 7: Verify the subtotal is displayed",
-                      "duration": 165
+                      "title": "Step 7: Add product to cart",
+                      "duration": 5748
                     },
                     {
-                      "title": "Step 8: Click the Proceed to buy button",
-                      "duration": 569
+                      "title": "Step 8: Verify the cart count and cart badge count are correct",
+                      "duration": 8083
                     }
                   ],
-                  "startTime": "2026-02-26T07:22:14.356Z",
+                  "startTime": "2026-03-12T12:54:30.175Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -151,253 +178,19 @@
               "status": "expected"
             }
           ],
-          "id": "62a0194cb94d3eec4948-207dafd92af4d4a53963",
+          "id": "62a0194cb94d3eec4948-15bdb8f843bc71abcc75",
           "file": "HomePage.spec.ts",
-          "line": 782,
-          "column": 5
-        },
-        {
-          "title": "15.Amazon cart flow and filters validation ta_IN",
-          "ok": true,
-          "tags": [
-            "Amazon",
-            "Multi-language"
-          ],
-          "tests": [
-            {
-              "timeout": 90000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "HenrySchein",
-              "projectName": "HenrySchein",
-              "results": [
-                {
-                  "workerIndex": 0,
-                  "parallelIndex": 0,
-                  "status": "passed",
-                  "duration": 12446,
-                  "errors": [],
-                  "stdout": [
-                    {
-                      "text": "இலவச டெலிவரி சனி, 28 பிப்.\n"
-                    },
-                    {
-                      "text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nமொத்தம் (1 பொருள்):\n"
-                    }
-                  ],
-                  "stderr": [],
-                  "retry": 0,
-                  "steps": [
-                    {
-                      "title": "Step 1: Navigate to Amazon Website",
-                      "duration": 1797
-                    },
-                    {
-                      "title": "Step 2: Search an item in search bar",
-                      "duration": 1505
-                    },
-                    {
-                      "title": "Step 3:Apply specific filters",
-                      "duration": 5035
-                    },
-                    {
-                      "title": "Step 4:Validate the applied filters is applied in cart page",
-                      "duration": 341
-                    },
-                    {
-                      "title": "Step 5:Clicked the add to cart button",
-                      "duration": 1509
-                    },
-                    {
-                      "title": "Step 6: Navigate to cart page",
-                      "duration": 1070
-                    },
-                    {
-                      "title": "Step 7: Verify the subtotal is displayed",
-                      "duration": 153
-                    },
-                    {
-                      "title": "Step 8: Click the Proceed to buy button",
-                      "duration": 620
-                    }
-                  ],
-                  "startTime": "2026-02-26T07:22:27.090Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "62a0194cb94d3eec4948-4ed54869c17d3fba37f9",
-          "file": "HomePage.spec.ts",
-          "line": 782,
-          "column": 5
-        },
-        {
-          "title": "16.Amazon cart flow and filters validation hi_IN",
-          "ok": true,
-          "tags": [
-            "Amazon",
-            "Multi-language"
-          ],
-          "tests": [
-            {
-              "timeout": 90000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "HenrySchein",
-              "projectName": "HenrySchein",
-              "results": [
-                {
-                  "workerIndex": 0,
-                  "parallelIndex": 0,
-                  "status": "passed",
-                  "duration": 12530,
-                  "errors": [],
-                  "stdout": [
-                    {
-                      "text": "मुफ़्त डिलीवरी शनि, 28 फ़र॰\n"
-                    },
-                    {
-                      "text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nउप-योग (1 आइटम):\n"
-                    }
-                  ],
-                  "stderr": [],
-                  "retry": 0,
-                  "steps": [
-                    {
-                      "title": "Step 1: Navigate to Amazon Website",
-                      "duration": 1720
-                    },
-                    {
-                      "title": "Step 2: Search an item in search bar",
-                      "duration": 1568
-                    },
-                    {
-                      "title": "Step 3:Apply specific filters",
-                      "duration": 4309
-                    },
-                    {
-                      "title": "Step 4:Validate the applied filters is applied in cart page",
-                      "duration": 188
-                    },
-                    {
-                      "title": "Step 5:Clicked the add to cart button",
-                      "duration": 1453
-                    },
-                    {
-                      "title": "Step 6: Navigate to cart page",
-                      "duration": 1086
-                    },
-                    {
-                      "title": "Step 7: Verify the subtotal is displayed",
-                      "duration": 140
-                    },
-                    {
-                      "title": "Step 8: Click the Proceed to buy button",
-                      "duration": 1371
-                    }
-                  ],
-                  "startTime": "2026-02-26T07:22:39.588Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "62a0194cb94d3eec4948-10c6cb86067ec3392174",
-          "file": "HomePage.spec.ts",
-          "line": 782,
-          "column": 5
-        },
-        {
-          "title": "17.Amazon cart flow and filters validation ml_IN",
-          "ok": true,
-          "tags": [
-            "Amazon",
-            "Multi-language"
-          ],
-          "tests": [
-            {
-              "timeout": 90000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "HenrySchein",
-              "projectName": "HenrySchein",
-              "results": [
-                {
-                  "workerIndex": 0,
-                  "parallelIndex": 0,
-                  "status": "passed",
-                  "duration": 13095,
-                  "errors": [],
-                  "stdout": [
-                    {
-                      "text": "സൗജന്യ ഡെലിവറി ശനി, ഫെബ്രു 28\n"
-                    },
-                    {
-                      "text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nസബ് ടോട്ടൽ (1 ഇനം):\n"
-                    }
-                  ],
-                  "stderr": [],
-                  "retry": 0,
-                  "steps": [
-                    {
-                      "title": "Step 1: Navigate to Amazon Website",
-                      "duration": 1711
-                    },
-                    {
-                      "title": "Step 2: Search an item in search bar",
-                      "duration": 1540
-                    },
-                    {
-                      "title": "Step 3:Apply specific filters",
-                      "duration": 5276
-                    },
-                    {
-                      "title": "Step 4:Validate the applied filters is applied in cart page",
-                      "duration": 80
-                    },
-                    {
-                      "title": "Step 5:Clicked the add to cart button",
-                      "duration": 686
-                    },
-                    {
-                      "title": "Step 6: Navigate to cart page",
-                      "duration": 1535
-                    },
-                    {
-                      "title": "Step 7: Verify the subtotal is displayed",
-                      "duration": 182
-                    },
-                    {
-                      "title": "Step 8: Click the Proceed to buy button",
-                      "duration": 1365
-                    }
-                  ],
-                  "startTime": "2026-02-26T07:22:52.156Z",
-                  "annotations": [],
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "62a0194cb94d3eec4948-7ab7f76959cf0ee10efd",
-          "file": "HomePage.spec.ts",
-          "line": 782,
-          "column": 5
+          "line": 457,
+          "column": 6
         }
       ]
     }
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-02-26T07:22:12.208Z",
-    "duration": 53396.585999999996,
-    "expected": 4,
+    "startTime": "2026-03-12T12:54:28.169Z",
+    "duration": 32582.364,
+    "expected": 1,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0

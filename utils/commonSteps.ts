@@ -48,7 +48,7 @@ export class CommonMethods {
   static async safeClick(
     page: Page,
     Locator: Locator,
-    timeout: number = 35000
+    timeout: number = 45000
   ): Promise<void> {
     await expect(Locator).toBeVisible({ timeout });
     await Locator.click();

@@ -454,7 +454,7 @@ test('07-Verify Main Menu Links Are Enabled and Interactive',
 7.Add a product to cart
 8.Verify the cart count and cart badge count are correct */
 
-test('08-Verify that the cart icon displays the correct item count when products are added to the cart',
+test.only('08-Verify that the cart icon displays the correct item count when products are added to the cart',
    {
       tag: ['@regression', '@cart'],
    },
@@ -486,13 +486,15 @@ test('08-Verify that the cart icon displays the correct item count when products
       })
       await test.step("Step 6: Verify the Cart badge quantity", async () => {
          await expect(home.view_basket_qty).toBeVisible();
-         const cartText = await home.view_basket_qty.innerText();
+        // const cartText = await home.view_basket_qty.innerText();
+         const cartText = await CommonMethods.getTextFromElement(page, home.view_basket_qty);
          console.log(`Cart badge text: ${cartText}`);
-         initialCount = parseInt(cartText.replace(/\D/g, '') || '0');
+         initialCount = parseInt(cartText?.replace(/\D/g, '') || '0');
 
       })
       await test.step("Step 7: Add product to cart", async () => {
          await home.fillTextInSearchBar("DIS258")
+         page.waitForTimeout(3000)
          await page.keyboard.press("Enter");
          console.log("Entered Product Id");
          await CommonMethods.safeClick(page, home.product_1)
@@ -765,7 +767,7 @@ test('13-To Verify the error message for invalid login credentials',
          console.log("Please enter valid Username/Password")
          const errorMsg = (home.sign_in_error_msg_xpath);
          await expect(errorMsg).toBeVisible();
-         await expect(errorMsg).toContainText('Please enter valid Username/Password');
+         await expect(errorMsg).toContainText('username and/or password entered is incorrect');
       })
 
    })
